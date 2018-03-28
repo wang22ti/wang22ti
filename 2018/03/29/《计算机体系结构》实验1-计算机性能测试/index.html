@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王子泰" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="#背景介绍 本次实验中，我共计采用5种方式（4个成熟的测试软件和1个自己写的小程序）对3台计算机（期间对联想小新V4000进行固态的改装升级）进行了全方位的测试，具体方案如下表所示：     MIIX 5Pro 小新V4000  （改装固态） 小新V4000  （未改装） 方正  Wenxiang E620     鲁大师 √ √ √ √   CrystalDisk √ √ × ×   CPU-Z">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《计算机体系结构》实验1-计算机性能测试">
+<meta property="og:url" content="http://wang22ti.com/2018/03/29/《计算机体系结构》实验1-计算机性能测试/index.html">
+<meta property="og:site_name" content="王子泰">
+<meta property="og:description" content="#背景介绍 本次实验中，我共计采用5种方式（4个成熟的测试软件和1个自己写的小程序）对3台计算机（期间对联想小新V4000进行固态的改装升级）进行了全方位的测试，具体方案如下表所示：     MIIX 5Pro 小新V4000  （改装固态） 小新V4000  （未改装） 方正  Wenxiang E620     鲁大师 √ √ √ √   CrystalDisk √ √ × ×   CPU-Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wang22ti.com/2018/03/29/《计算机体系结构》实验1-计算机性能测试/d:/45504/Documents/MiCloud/blog/source/_posts/《计算机体系结构》实验1-计算机性能测试/1.png">
+<meta property="og:updated_time" content="2018-03-28T17:19:06.598Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《计算机体系结构》实验1-计算机性能测试">
+<meta name="twitter:description" content="#背景介绍 本次实验中，我共计采用5种方式（4个成熟的测试软件和1个自己写的小程序）对3台计算机（期间对联想小新V4000进行固态的改装升级）进行了全方位的测试，具体方案如下表所示：     MIIX 5Pro 小新V4000  （改装固态） 小新V4000  （未改装） 方正  Wenxiang E620     鲁大师 √ √ √ √   CrystalDisk √ √ × ×   CPU-Z">
+<meta name="twitter:image" content="http://wang22ti.com/2018/03/29/《计算机体系结构》实验1-计算机性能测试/d:/45504/Documents/MiCloud/blog/source/_posts/《计算机体系结构》实验1-计算机性能测试/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wang22ti.com/2018/03/29/《计算机体系结构》实验1-计算机性能测试/"/>
+
+
+
+
+
+  <title>《计算机体系结构》实验1-计算机性能测试 | 王子泰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王子泰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哭也欢乐，悲也潇洒</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wang22ti.com/2018/03/29/《计算机体系结构》实验1-计算机性能测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang22ti">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王子泰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《计算机体系结构》实验1-计算机性能测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T01:04:40+08:00">
+                2018-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,852 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#背景介绍</p>
+<p>本次实验中，我共计采用5种方式（4个成熟的测试软件和1个自己写的小程序）对3台计算机（期间对联想小新V4000进行固态的改装升级）进行了全方位的测试，具体方案如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>MIIX 5Pro</strong></th>
+<th><strong>小新V4000</strong>  <strong>（改装固态）</strong></th>
+<th><strong>小新V4000</strong>  <strong>（未改装）</strong></th>
+<th><strong>方正</strong>  <strong>Wenxiang E620</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>鲁大师</strong></td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>CrystalDisk</strong></td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td><strong>CPU-Z</strong></td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td><strong>Performance Test 9</strong></td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td><strong>My benchmark</strong></td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p>​        此外，根据鲁大师、CPU-Z的检测结果，3台计算机主要的软硬件配置如下表所示：</p>
+<p> <img src="/2018/03/29/《计算机体系结构》实验1-计算机性能测试/d:/45504\Documents\MiCloud\blog\source\_posts\《计算机体系结构》实验1-计算机性能测试\1.png" alt="1"></p>
+<p>#测试过程与结果分析</p>
+<p>##鲁大师磁盘测试</p>
+<p>鲁大师磁盘检测的健康程度取决于访问该存储单元的响应时间。小于三毫秒为优秀，小于12毫秒为良好，是小于20毫秒为正常，小于120毫秒为瑕疵，小于600毫秒为丢失，大于600毫秒为严重，无法读取为损坏。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">优良</th>
+<th style="text-align:center">良好</th>
+<th style="text-align:center">正常</th>
+<th style="text-align:center">瑕疵</th>
+<th style="text-align:center">丢失</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">方正</td>
+<td style="text-align:center"><strong>1779866</strong></td>
+<td style="text-align:center"><strong>69891</strong></td>
+<td style="text-align:center"><strong>20114</strong></td>
+<td style="text-align:center"><strong>12976</strong></td>
+<td style="text-align:center"><strong>712</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">小新_旧</td>
+<td style="text-align:center"><strong>2185385</strong></td>
+<td style="text-align:center"><strong>275919</strong></td>
+<td style="text-align:center"><strong>11963</strong></td>
+<td style="text-align:center"><strong>37386</strong></td>
+<td style="text-align:center"><strong>1750</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">小新_新</td>
+<td style="text-align:center"><strong>951431</strong></td>
+<td style="text-align:center"><strong>9</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">MIIX</td>
+<td style="text-align:center"><strong>1953524</strong></td>
+<td style="text-align:center"><strong>6</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>从上表的测试结果可以看出，在经过一段时间的使用后，机械硬盘具有明显的损耗，小部分存储单元延迟较长；而固态硬盘，具有良好的稳定性，在一段时间的使用之后仍然保持优良的健康状态。</p>
+<p>##鲁大师性能测试</p>
+<p>鲁大师的计算机性能测试，包括处理器、显卡、内存和硬盘。总分是根据各个属性加权求和得到。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>总分</th>
+<th>处理器</th>
+<th>显卡</th>
+<th>内存</th>
+<th>硬盘</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方正</td>
+<td><strong>58240</strong></td>
+<td><strong>46696</strong></td>
+<td><strong>3651</strong></td>
+<td><strong>6963</strong></td>
+<td><strong>930</strong></td>
+</tr>
+<tr>
+<td>小新_旧</td>
+<td><strong>70953</strong></td>
+<td><strong>32486</strong></td>
+<td><strong>28744</strong></td>
+<td><strong>8223</strong></td>
+<td><strong>1500</strong></td>
+</tr>
+<tr>
+<td>小新_新</td>
+<td><strong>96665</strong></td>
+<td><strong>32728</strong></td>
+<td><strong>26217</strong></td>
+<td><strong>8223</strong></td>
+<td><strong>10860</strong></td>
+</tr>
+<tr>
+<td>MIIX</td>
+<td><strong>126353</strong></td>
+<td><strong>39076</strong></td>
+<td><strong>11722</strong></td>
+<td><strong>9006</strong></td>
+<td><strong>42960</strong></td>
+</tr>
+</tbody>
+</table>
+<p>通过分析上表数据，可以得到一些结论：</p>
+<p>越新的计算机测试总分越高，这符合计算机发展的常识与我日常使用的体验；</p>
+<p>近几代英特尔处理器升级幅度并不是很大；</p>
+<p>得益于较大的功率，桌面级处理器相较于笔记本级处理器具有较大优势；</p>
+<p>独立显卡具有碾压于核心显卡的处理能力，不过近几年核心显卡有了较大的发展；</p>
+<p>近几年内存升级幅度并不是很大；</p>
+<p>固态硬盘具有碾压机械硬盘的传输速度。</p>
+<p>##CrystalDisk</p>
+<p>​      CrystalDisk测试主要包括硬盘的顺序读写、4k读写，其中比较容易理解的顺序读写结果如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Read(MB/s)</strong></th>
+<th><strong>Write(MB/s)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小新_新</td>
+<td><strong>561.9</strong></td>
+<td><strong>305.5</strong></td>
+</tr>
+<tr>
+<td>MIIX</td>
+<td><strong>2041.2</strong></td>
+<td><strong>1588.4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>可以看出，固态硬盘之间也有较大差距。查阅相关资料可知，这主要取决于固态硬盘的闪存颗粒、主控芯片以及接口规格。不过从实际体验来看，SATA3固态硬盘的500MB/s读取速度与300MB/s写入速度已经满足了日常的基本需求，实际体验没有太大的差别。</p>
+<p>##CPU-Z</p>
+<p>​        CPU-Z测试主要包括处理器的单核性能和多核性能。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>单核</strong></th>
+<th><strong>多核</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>小新_新</strong></td>
+<td><strong>322.7</strong></td>
+<td><strong>895.3</strong></td>
+</tr>
+<tr>
+<td><strong>MIIX</strong></td>
+<td><strong>344.2</strong></td>
+<td><strong>1002.7</strong></td>
+</tr>
+</tbody>
+</table>
+<p>从上表可知，虽然代数相差两代，但是i7 7500U相较于i7 5500U并没有显著的提升。两款CPU的功耗、工艺、核心数量、线程数量制成完全相同，区别主要在于架构和主频。单从处理性能来看，英特尔牙膏厂的称号名副其实，可见垄断并不利于技术的进步。</p>
+<p>##Performance Test 9</p>
+<p>​        PerformanceTest 9测试内容主要包括CPU、2d图形、3d图形、内存和磁盘。这些属性和鲁大师的相似，2d图形和3d图形相比更看重CPU的处理能力。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>PassMark</strong></th>
+<th><strong>CPU</strong></th>
+<th><strong>2D图形</strong></th>
+<th><strong>3D图形</strong></th>
+<th><strong>内存</strong></th>
+<th><strong>磁盘</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>小新_新</strong></td>
+<td><strong>2214.3</strong></td>
+<td><strong>4284.8</strong></td>
+<td><strong>617.2</strong></td>
+<td><strong>550.9</strong></td>
+<td><strong>1720.1</strong></td>
+<td><strong>5443.1</strong></td>
+</tr>
+<tr>
+<td><strong>MIIX</strong></td>
+<td><strong>2186.2</strong></td>
+<td><strong>5534.9</strong></td>
+<td><strong>460.3</strong></td>
+<td><strong>453.0</strong></td>
+<td><strong>2341.8</strong></td>
+<td><strong>19460.6</strong></td>
+</tr>
+</tbody>
+</table>
+<p>令人意外的是，上表显示比较老旧的联想小新获得了更高的总分，这一方面可能是因为硬盘在该项测试中所占权重较小，另一方面可能是因为联想小新具有更大的机身体积，故而具有较好的散热。由此可见，计算机性能测试的标准并不唯一，每一项属性所占的权重因人而异；同时，计算机的性能参数并不是决定计算机最终实际使用性能的唯一指标。</p>
+<p>##My benchmark</p>
+<p>​      除了使用上述的成熟软件，我还编写了以下的python3.5程序，以测试不同电脑的性能。</p>
+<p>​        每次测试要按不同次数执行三个操作。其中，第一个操作是整数0到1000万的累加，主要考察CPU的整数加法计算能力；第二个操作是1到1万的阶乘，主要考察CPU的整数乘法计算能力；第三个操作是，对17MB纯文本文件的读写，文本内容为所有维基百科的词条，主要考察计算机的IO读写速度。四次测试中，三种操作的频数之比分别为10:10:10，28:1:1，1:28:1，1:1:28。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>T1(s)</th>
+<th>T2(s)</th>
+<th>T3(s)</th>
+<th>Ttotal(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小新V4000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[10,  10, 10]</td>
+<td>11.19</td>
+<td>1.33</td>
+<td>22.34</td>
+<td>34.87</td>
+</tr>
+<tr>
+<td>[28,  1, 1]</td>
+<td>31.30</td>
+<td>0.13</td>
+<td>2.23</td>
+<td>33.67</td>
+</tr>
+<tr>
+<td>[1,  28, 1]</td>
+<td>1.15</td>
+<td>3.70</td>
+<td>2.26</td>
+<td>7.11</td>
+</tr>
+<tr>
+<td>[1,  1, 28]</td>
+<td>1.11</td>
+<td>0.13</td>
+<td>62.62</td>
+<td>63.87</td>
+</tr>
+<tr>
+<td>MIIX  5pro</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[10,  10, 10]</td>
+<td>10.37</td>
+<td>1.12</td>
+<td>6.84</td>
+<td>28.33</td>
+</tr>
+<tr>
+<td>[28,  1, 1]</td>
+<td>28.7</td>
+<td>0.11</td>
+<td>1.68</td>
+<td>30.56</td>
+</tr>
+<tr>
+<td>[1,  28, 1]</td>
+<td>1.01</td>
+<td>3.08</td>
+<td>1.68</td>
+<td>5.77</td>
+</tr>
+<tr>
+<td>[1,  1, 28]</td>
+<td>1.06</td>
+<td>0.11</td>
+<td>47.3</td>
+<td>48.5</td>
+</tr>
+</tbody>
+</table>
+<p>测试的结果比较符合预期，即两者在CPU的处理能力上相差不大，而MIIX在磁盘读写的能力上有明显的优势。此外，本实验中操作三在总时长中占比较大，真实应用场景中，应该对相应的操作进行优化，从而有效的提高全局加速比。</p>
+<h1 id="购机建议"><a href="#购机建议" class="headerlink" title="购机建议"></a>购机建议</h1><p>根据上述实验结论，提出以下的购机建议：</p>
+<p>受制于笔记本功耗与工艺制成的阻碍，低压版处理器实际性能相距不大，散热成为实际性能的瓶颈。</p>
+<p>独立显卡具有碾压核心显卡的处理能力，有游戏、大型图像处理以及机器学习需求的用户需要购买较为高端的显卡。</p>
+<p>硬盘的读写速度是制约当前计算机实际使用体验的重要瓶颈。在预算充足的情况下，尽量购买带有固态硬盘的计算机。</p>
+<p>由于软件的更新升级，内存容量的大小建议8G起步。</p>
+<p>计算机的实际使用体验不仅取决于各项性能参数，还取决于显示器键盘触控板等外设的质量、配备接口的数量与质量、实际做工以及硬件之间的配合程度，不能陷入单纯比较参数的陷阱当中，一切以实际的使用体验为准。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>本次实验中，我首先使用四种成熟的测试软件对个人的两台计算机和机房的计算机进行性能测试，然后又自己编写python程序测试个人的两台计算机性能，得到了一系列实验数据，并分析得到相关实验结论。</p>
+<p>通过本次实验，我从总体上了解了计算机测试的各项指标，验证了课堂上所学的相关知识与课下了解的近几年计算机发展状况，同时对个人的计算机状况有了较为深入的理解，这些必将有利于我进一步的学习与实践。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/26/小团队管理概论/" rel="next" title="小团队管理概论">
+                <i class="fa fa-chevron-left"></i> 小团队管理概论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzU0NC8xMDEwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wang22ti</p>
+              <p class="site-description motion-element" itemprop="description">学习，日记，杂谈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wang22ti" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wang22ti@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#购机建议"><span class="nav-number">1.</span> <span class="nav-text">购机建议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wang22ti</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</span>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">访问人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">访问次数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
