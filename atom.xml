@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wang22ti.com/"/>
-  <updated>2018-04-02T04:48:09.312Z</updated>
+  <updated>2018-04-09T16:53:46.517Z</updated>
   <id>http://wang22ti.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《计算机体系结构》实验2-MIPS指令集</title>
+    <link href="http://wang22ti.com/2018/04/10/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E3%80%8B%E5%AE%9E%E9%AA%8C2-MIPS%E6%8C%87%E4%BB%A4%E9%9B%86/"/>
+    <id>http://wang22ti.com/2018/04/10/《计算机体系结构》实验2-MIPS指令集/</id>
+    <published>2018-04-09T16:53:46.000Z</published>
+    <updated>2018-04-09T16:53:46.517Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>《操作系统》作业2.5-进程控制块的类C语言描述</title>
@@ -64,16 +78,16 @@
     <link href="http://wang22ti.com/2018/04/01/%E6%97%A5%E8%AE%B018-4/"/>
     <id>http://wang22ti.com/2018/04/01/日记18-4/</id>
     <published>2018-04-01T13:23:32.000Z</published>
-    <updated>2018-04-08T16:39:39.135Z</updated>
+    <updated>2018-04-09T16:15:13.400Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="18-4-8"><a href="#18-4-8" class="headerlink" title="18-4-8"></a>18-4-8</h1><p>翔哥一大早又去了医院，啊，上午困得要死。。课上睡着了。。</p><p>之后在1706班做党支部的述职。</p><p>下午睡醒后好多啦！一顿疯狂操作，搞定了支部等级评估、活动案例和活动总结，班级这波事情基本算是结束啦！</p><p>语音输入真是神器！</p><p>本来想把软件工程的作业写好的，然而实在恶心，于是把体系结构的作业写了一半，对MIPS有了初步的理解。</p><p>晚上给同学们分翔哥送我的草莓，蛮好吃的~</p><p>今天真的早睡啦，晚安。</p><p>但是又没有写算法！！！</p><h1 id="18-4-7"><a href="#18-4-7" class="headerlink" title="18-4-7"></a>18-4-7</h1><p>一早被翔哥喊醒，带他去校医院、北京大学附属人民医院、清华大学第二附属医院去看尿结石。。</p><p>匆匆赶到学校，吃了外卖就开班会</p><p>开完班会和大家一起去新中关看《头号玩家》，</p><p>虽然由于玩的游戏不多导致看不懂许多梗吧，但是CG特效真的特别棒！</p><p>本来因为感觉姗哥闷闷不乐留下来，</p><p>结果和袁锐去吃鱼肉火锅啊哈哈。</p><p>好久没有慢悠悠地涮火锅了啊。。</p><p>回来骑ofo，mmd，坏了4辆，骑上的巨沉，几乎可以当做健身了。。</p><p>没有写文件、没有写代码、没有操任何社团的心，</p><p>真是生活的一天啊。。</p><p>这样的日子，多一点好还是少一点好呢？</p><h1 id="18-4-6"><a href="#18-4-6" class="headerlink" title="18-4-6"></a>18-4-6</h1><p>写了个逆序对的题，</p><p>其他时间主要在做班会PPT。。</p><p>学习不能耽误了。</p><p>老妈喝醉了，但是肺腑之言却让我很感动。</p><h1 id="18-4-5"><a href="#18-4-5" class="headerlink" title="18-4-5"></a>18-4-5</h1><p>啊，吃晚饭之前都在玩，可以说是很悠闲了。</p><p>下午睡觉，很有精神，就写了归并排序，</p><p>重点重温了模板，C++水平已经超越巅峰值。</p><p>之后打羽毛球，好久没锻炼了。。</p><p>末了梳理了一下班级和党支部的事务。</p><h1 id="18-4-4"><a href="#18-4-4" class="headerlink" title="18-4-4"></a>18-4-4</h1><p>妈耶，大雪纷飞。</p><p>上了三节课，浑浑噩噩睡到3点，白天就过去了，不开心。</p><p>晚上处理了班级、党支部的一些事情，填好了英才奖的申请表。</p><p>时清给我的钱没及时给老妈，买了电影票又不够给大哥，于是从老妈那里空手套白狼一波，嘿嘿</p><p>之后玩了一会《守望先锋》</p><h1 id="18-4-3"><a href="#18-4-3" class="headerlink" title="18-4-3"></a>18-4-3</h1><p>下午开了班级负责人的会</p><p>团日活动、支部等级评定、团员评优、党员述职、看电影……</p><p>一大堆事情一下子铺开了。</p><p>大创估计就是校级了，有点忧伤，但没事！这算什么</p><p>晚上接到李老师关于英才奖的通知，希望好结果。</p><p>末了写了MIUI俱乐部的帖子。</p><h1 id="18-4-2"><a href="#18-4-2" class="headerlink" title="18-4-2"></a>18-4-2</h1><p>论文的进度变为预审了，清明把另一篇写好吧。</p><p>上午终于把时清手机的事情处理了，啊，貌似没听课，GG。</p><p>中午开班长支书会，关于支部评定。。</p><p>晚上开了党支部学习会，补了一些材料。。</p><p>其余的时间好不容易写了一题acm，主要好久没写C++啦</p><p>目前来看，主要任务包括课程作业、新论文、班级社团党支部事务、算法与创新竞赛。</p><h1 id="18-4-1"><a href="#18-4-1" class="headerlink" title="18-4-1"></a>18-4-1</h1><p>上午很无奈地回绝了徐老师的邀请。</p><p>下午似乎没有干啥就过去了。。操作系统作业2-5贼复杂。</p><p>晚上去听庆岩的算法讲座，发现高中算法竞赛的内容真是重要。</p><p>熬夜把操作系统作业2.5搞定了</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="18-4-9"><a href="#18-4-9" class="headerlink" title="18-4-9"></a>18-4-9</h1><p>中午去开了一个班长支书的临时会议，又多了点事情。。</p><p>姗哥做的推送蛮好哒，虽然她觉得排版有问题，但是最后还是有177和13的阅读量和赞呀！</p><p>下午写好了体系结构的作业！十分高质量的。</p><p>晚上彻底搞定了团日活动的案例和总结，</p><p>还有修改了英才奖的申请表。</p><p>看来周六去吃鱼肉火锅是正确的！</p><h1 id="18-4-8"><a href="#18-4-8" class="headerlink" title="18-4-8"></a>18-4-8</h1><p>翔哥一大早又去了医院，啊，上午困得要死。。课上睡着了。。</p><p>之后在1706班做党支部的述职。</p><p>下午睡醒后好多啦！一顿疯狂操作，搞定了支部等级评估、活动案例和活动总结，班级这波事情基本算是结束啦！</p><p>语音输入真是神器！</p><p>本来想把软件工程的作业写好的，然而实在恶心，于是把体系结构的作业写了一半，对MIPS有了初步的理解。</p><p>晚上给同学们分翔哥送我的草莓，蛮好吃的~</p><p>今天真的早睡啦，晚安。</p><p>但是又没有写算法！！！</p><h1 id="18-4-7"><a href="#18-4-7" class="headerlink" title="18-4-7"></a>18-4-7</h1><p>一早被翔哥喊醒，带他去校医院、北京大学附属人民医院、清华大学第二附属医院去看尿结石。。</p><p>匆匆赶到学校，吃了外卖就开班会</p><p>开完班会和大家一起去新中关看《头号玩家》，</p><p>虽然由于玩的游戏不多导致看不懂许多梗吧，但是CG特效真的特别棒！</p><p>本来因为感觉姗哥闷闷不乐留下来，</p><p>结果和袁锐去吃鱼肉火锅啊哈哈。</p><p>好久没有慢悠悠地涮火锅了啊。。</p><p>回来骑ofo，mmd，坏了4辆，骑上的巨沉，几乎可以当做健身了。。</p><p>没有写文件、没有写代码、没有操任何社团的心，</p><p>真是生活的一天啊。。</p><p>这样的日子，多一点好还是少一点好呢？</p><h1 id="18-4-6"><a href="#18-4-6" class="headerlink" title="18-4-6"></a>18-4-6</h1><p>写了个逆序对的题，</p><p>其他时间主要在做班会PPT。。</p><p>学习不能耽误了。</p><p>老妈喝醉了，但是肺腑之言却让我很感动。</p><h1 id="18-4-5"><a href="#18-4-5" class="headerlink" title="18-4-5"></a>18-4-5</h1><p>啊，吃晚饭之前都在玩，可以说是很悠闲了。</p><p>下午睡觉，很有精神，就写了归并排序，</p><p>重点重温了模板，C++水平已经超越巅峰值。</p><p>之后打羽毛球，好久没锻炼了。。</p><p>末了梳理了一下班级和党支部的事务。</p><h1 id="18-4-4"><a href="#18-4-4" class="headerlink" title="18-4-4"></a>18-4-4</h1><p>妈耶，大雪纷飞。</p><p>上了三节课，浑浑噩噩睡到3点，白天就过去了，不开心。</p><p>晚上处理了班级、党支部的一些事情，填好了英才奖的申请表。</p><p>时清给我的钱没及时给老妈，买了电影票又不够给大哥，于是从老妈那里空手套白狼一波，嘿嘿</p><p>之后玩了一会《守望先锋》</p><h1 id="18-4-3"><a href="#18-4-3" class="headerlink" title="18-4-3"></a>18-4-3</h1><p>下午开了班级负责人的会</p><p>团日活动、支部等级评定、团员评优、党员述职、看电影……</p><p>一大堆事情一下子铺开了。</p><p>大创估计就是校级了，有点忧伤，但没事！这算什么</p><p>晚上接到李老师关于英才奖的通知，希望好结果。</p><p>末了写了MIUI俱乐部的帖子。</p><h1 id="18-4-2"><a href="#18-4-2" class="headerlink" title="18-4-2"></a>18-4-2</h1><p>论文的进度变为预审了，清明把另一篇写好吧。</p><p>上午终于把时清手机的事情处理了，啊，貌似没听课，GG。</p><p>中午开班长支书会，关于支部评定。。</p><p>晚上开了党支部学习会，补了一些材料。。</p><p>其余的时间好不容易写了一题acm，主要好久没写C++啦</p><p>目前来看，主要任务包括课程作业、新论文、班级社团党支部事务、算法与创新竞赛。</p><h1 id="18-4-1"><a href="#18-4-1" class="headerlink" title="18-4-1"></a>18-4-1</h1><p>上午很无奈地回绝了徐老师的邀请。</p><p>下午似乎没有干啥就过去了。。操作系统作业2-5贼复杂。</p><p>晚上去听庆岩的算法讲座，发现高中算法竞赛的内容真是重要。</p><p>熬夜把操作系统作业2.5搞定了</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;18-4-8&quot;&gt;&lt;a href=&quot;#18-4-8&quot; class=&quot;headerlink&quot; title=&quot;18-4-8&quot;&gt;&lt;/a&gt;18-4-8&lt;/h1&gt;&lt;p&gt;翔哥一大早又去了医院，啊，上午困得要死。。课上睡着了。。&lt;/p&gt;
-&lt;p&gt;之后在1706班做党支部的述职。&lt;/
+        &lt;h1 id=&quot;18-4-9&quot;&gt;&lt;a href=&quot;#18-4-9&quot; class=&quot;headerlink&quot; title=&quot;18-4-9&quot;&gt;&lt;/a&gt;18-4-9&lt;/h1&gt;&lt;p&gt;中午去开了一个班长支书的临时会议，又多了点事情。。&lt;/p&gt;
+&lt;p&gt;姗哥做的推送蛮好哒，虽然她觉得排版有问题，
       
     
     </summary>
@@ -495,31 +509,6 @@
       <category term="域名" scheme="http://wang22ti.com/tags/%E5%9F%9F%E5%90%8D/"/>
     
       <category term="百度" scheme="http://wang22ti.com/tags/%E7%99%BE%E5%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学建模美赛讲座18-1-26</title>
-    <link href="http://wang22ti.com/2018/01/26/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%BE%8E%E8%B5%9B%E8%AE%B2%E5%BA%A718-1-26/"/>
-    <id>http://wang22ti.com/2018/01/26/数学建模美赛讲座18-1-26/</id>
-    <published>2018-01-26T13:48:03.000Z</published>
-    <updated>2018-02-04T04:28:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>分为<code>MCM(数学建模竞赛)</code>和<code>ICM(交叉学科建模竞赛)</code>，前者题目开放，蓝色电子版证书；后者封闭，红色。</p><p>最佳3人一队，必须同一学校，强调团队合作精神。</p><a id="more"></a><p>成员可以来自任何专业，指导老师可以为任何人。</p><p>前些年竞赛题和解答论文可以参考<a href="www.mathmodels.org">www.mathmodels.org</a></p><h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><p>注册需要交100美元，有系统分配的控制号（参赛队号）才算报名成功，是队伍唯一的标志，包括提交文件都需要。交大找王兵团老师，纸质版的。</p><h1 id="题目发布"><a href="#题目发布" class="headerlink" title="题目发布"></a>题目发布</h1><p>美国东部时间下午5点，北京时间2月9号上午6点，发布题目，除了第一个其他是镜像</p><ol><li><a href="www.comap.com/undergraduate/contents/mcm">www.comap.com/undergraduate/contents/mcm</a></li><li><a href="www.comap-math.com/mcm/index.html">www.comap-math.com/mcm/index.html</a></li><li><a href="www.comap-math.com/mcm/index.html">www.comap-math.com/mcm/index.html</a></li><li><a href="www.mathismore.net/mcm/index.html">www.mathismore.net/mcm/index.html</a></li><li><a href="www.mathportals.net/mcm/index.html">www.mathportals.net/mcm/index.html</a></li><li><a href="www.immchallenge.org/mcm/index.html">www.immchallenge.org/mcm/index.html</a></li></ol><p>选题时间不超过1天半（有些人找老婆需要一辈子，有些人只需要一眼）</p><p>题目网上有翻译，最好看原文。</p><p>需要了解MCM和ICM的差异，一共6道题目</p><p><code>MCM</code>连续A、离散B、数据分析C</p><p><code>ICM</code>运筹学/网络科学D、环境科学E、政策研究F</p><p>每个题都有不同的获奖比例，对于难题获奖比例高，并不一定要做完，做完也不一定得奖，比的是相对能力。并不是用一个数学方法解决了就能得奖。一等奖论文一般至少有20页，尽量丰富。</p><h1 id="论文撰写与提交"><a href="#论文撰写与提交" class="headerlink" title="论文撰写与提交"></a>论文撰写与提交</h1><p>比赛过程中是不应该有任何队员以外的人的介入，包括指导老师。</p><p>结论需要数据，数学处理。比的就是想法，把实际问题转化为数学模型、数学描述，不是结论获得的过程，因此论文中无非论文的支撑材料例如程序、软件，可以有算法描述。</p><p>主要内容为公式、图表，甚至占到比三分之一还高，部分中国的阅卷老师受制于英文水平，重点看公式。外国的阅卷老师一般只看特等奖或一等奖。另外，不要放太多的图表，要选一部分写出结论。</p><p>比赛过程中，如果发现题目有不完善的地方，会在网站上更新。也可以发送邮件到<a href="">mcm@comap.com</a>反馈，其中要包括参赛号。</p><p>英文，字体不小于12p，纸张不大于a4页眉必须有参赛号<code>Team#*****</code>和页码数，<code>summary sheet</code>不需要页眉，只能写1页，解答从第2页开始。</p><p>论文中不能出现除参赛号以外的任何个人信息，如果需要写信，<code>sincerely, Team #******</code></p><p>论文文件格式为pdf或word，文件名为参赛号，发送到邮箱<a href="">solutions@comap.com</a>，主题为<code>COMAP 参赛号</code>，不要重复发送，附件小于17MB，不要使用云附件或超大附件。</p><p>控制页要签名，选好题才能有，打印拍好，以pdf或图像格式发送到<a href="">forms@comap.com</a>，其他要求同上。</p><p>提交48小时后，如果论文电子版状态显示<code>Received</code>就OK，如果是<code>not yet received</code>就得重发</p><h1 id="评审与奖项"><a href="#评审与奖项" class="headerlink" title="评审与奖项"></a>评审与奖项</h1><p>评审在3月到4月完成，结果4月30号之前公布，分为</p><p><code>不合格Disqualified</code>：违反竞赛规则，取消资格</p><p><code>不超过参赛Unsuccessful</code>：没完成基本问题</p><p><code>成功参赛Successful Participant</code>：完成基本要求，给出结果</p><p><code>优秀Honorable Mention</code>：包含建模和问题解决的全部要素，超过平均水平</p><p><code>优异Meritorious</code>：全部要素，很多方面优秀，表述清晰</p><p><code>优胜提名Finalist</code>：进入最后一轮评审，2%</p><p><code>优胜Outstanding Winner</code>：公开出版</p><p>官网<code>download certification</code>下载电子版证书，随时都可以下载。</p><p>Media Contest，参赛者免费的多媒体竞赛</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>性别混合队伍，女生可以进男生宿舍，男生不能进女生。从2月8号可以进。</p><p><code>公共邮箱</code><a href="">xxdswbt@163.com</a></p><p><code>密码</code>认识我的直接找我要吧</p><h1 id="数学建模论文的9个部分"><a href="#数学建模论文的9个部分" class="headerlink" title="数学建模论文的9个部分"></a>数学建模论文的9个部分</h1><h2 id="1-摘要summary"><a href="#1-摘要summary" class="headerlink" title="1. 摘要summary"></a>1. 摘要<code>summary</code></h2><p>   第一页的后2/3，论文的压缩总结，10-15分，用来在大规模论文中进行初选。</p><h2 id="2-问题叙述introduction-amp-background"><a href="#2-问题叙述introduction-amp-background" class="headerlink" title="2. 问题叙述introduction&amp;background"></a>2. 问题叙述<code>introduction</code>&amp;<code>background</code></h2><p>   把题目用自己的话叙述一下</p><h2 id="3-模型假设与符号说明assumption-amp-description"><a href="#3-模型假设与符号说明assumption-amp-description" class="headerlink" title="3. 模型假设与符号说明assumption&amp;description"></a>3. 模型假设与符号说明<code>assumption</code>&amp;<code>description</code></h2><p>   选取问题的主要矛盾，简化次要矛盾，美赛当中可能还需要概念说明。</p><h2 id="4-模型的建立"><a href="#4-模型的建立" class="headerlink" title="4. 模型的建立"></a>4. 模型的建立</h2><p>   主体，不要指望用现成的模型求解问题就得奖</p><p>   可以通过不同的角度提出不同的问题并加以建模</p><h2 id="5-模型的求解solution"><a href="#5-模型的求解solution" class="headerlink" title="5. 模型的求解solution"></a>5. 模型的求解<code>solution</code></h2><p>   软件能算出来当然ok，然而可能算不出来。这时要用数学处理简化求解过程（数值分析）</p><p>   一般来说结果只要不是太离谱，都默认是对的。由于假设不同，很有可能相同题目的结果并不一样，但这并不重要，关键在于建模的过程。</p><h2 id="6-模型检验与误差分析"><a href="#6-模型检验与误差分析" class="headerlink" title="6. 模型检验与误差分析"></a>6. 模型检验与误差分析</h2><p>   近似方法的可用性，占分并不高</p><h2 id="7-模型评价strength-amp-weakness"><a href="#7-模型评价strength-amp-weakness" class="headerlink" title="7. 模型评价strength&amp;weakness"></a>7. 模型评价<code>strength</code>&amp;<code>weakness</code></h2><p>   不重要但是必须得有。由于文化的差异，不要谦虚了，坚信自己不是”微小的工作“。</p><p>   毛病可以写，但是不要写本质的毛病。 </p><h2 id="8-参考文献reference"><a href="#8-参考文献reference" class="headerlink" title="8. 参考文献reference"></a>8. 参考文献<code>reference</code></h2><p>   很重要，使用了别人的方法没注明参考文献会被认为抄袭，列出来不会影响结果。</p><p>   中文的翻译为英文，网页也是可以有的</p><h2 id="9-附录appendix"><a href="#9-附录appendix" class="headerlink" title="9. 附录appendix"></a>9. 附录<code>appendix</code></h2><p>   可有可无，不要放代码！代码优劣可以放在算法描述中。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;分为&lt;code&gt;MCM(数学建模竞赛)&lt;/code&gt;和&lt;code&gt;ICM(交叉学科建模竞赛)&lt;/code&gt;，前者题目开放，蓝色电子版证书；后者封闭，红色。&lt;/p&gt;
-&lt;p&gt;最佳3人一队，必须同一学校，强调团队合作精神。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数学建模美赛" scheme="http://wang22ti.com/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%BE%8E%E8%B5%9B/"/>
-    
-    
-      <category term="数学建模" scheme="http://wang22ti.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-      <category term="论文格式" scheme="http://wang22ti.com/tags/%E8%AE%BA%E6%96%87%E6%A0%BC%E5%BC%8F/"/>
     
   </entry>
   
