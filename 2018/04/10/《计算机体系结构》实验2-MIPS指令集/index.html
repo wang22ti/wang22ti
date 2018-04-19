@@ -118,7 +118,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image26.png">
 <meta property="og:image" content="http://wang22ti.com/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image27.png">
 <meta property="og:image" content="http://wang22ti.com/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image28.png">
-<meta property="og:updated_time" content="2018-04-10T15:51:01.691Z">
+<meta property="og:updated_time" content="2018-04-11T14:34:40.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《计算机体系结构》实验2-MIPS指令集">
 <meta name="twitter:description" content="0 lab1的内容0.1  Exercise1由下图易知LW R2,100(R3)对应的二进制代码为10001100011 00010 0000000001100100，转化为十六进制为0x8C62 0064。                                由下图易知SW R5,100(R6)对应的二进制代码为10101100110 00101 000000001100100，转化">
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,703 字
+                  2,706 字
                 </span>
               
 
@@ -451,7 +451,7 @@
 <p> <img src="/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image12.png" alt=""></p>
 <p>​        从这里可以明白REGIMM指明了immediate instruction的条件，看来opcode是一个很重要的信息！进一步检索，得到了更通用的信息——</p>
 <p> <img src="/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image13.png" alt=""></p>
-<p>​        这幅图告诉我们，所有的MIPS指令都具有6+5+5+16的形式，其中前6位被称为opcode——显然就是operation code！很顺利地，还找到了以下的几张表格——</p>
+<p>​        这幅图告诉我们，所有的MIPS指令都具有类似于6+5+5+16的形式，其中前6位被称为opcode——显然就是operation code！很顺利地，还找到了以下的几张表格——</p>
 <p> <img src="/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image14.png" alt=""></p>
 <p> <img src="/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image15.png" alt=""></p>
 <p> <img src="/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image16.png" alt=""></p>
@@ -494,7 +494,7 @@
 <p> <img src="/2018/04/10/《计算机体系结构》实验2-MIPS指令集/image28.png" alt=""></p>
 <p>​        最终的CPI为1.640，远远小于5，可见流水线的威力。</p>
 <h2 id="3-2-指令观察小结"><a href="#3-2-指令观察小结" class="headerlink" title="3.2 指令观察小结"></a>3.2 指令观察小结</h2><p>​        这次仿真观察真是惊喜连连，我收获了哪些呢？</p>
-<p>一、 流水线是一个复杂的系统，包括指令周期的划分、指令周期的对齐、资源冲突的应对等等，可以有效地提高CPI。</p>
+<p>一、 流水线是一个复杂的系统，包括指令周期的划分、指令周期的对齐、资源冲突的应对等等，可以有效地减小CPI。</p>
 <p>二、 为了对齐指令周期，需要尽量减少各个阶段的时间长度，例如通过指令长度的对齐和指令格式的统一提高译码效率。</p>
 <p>三、 对了避免部分周期，尤其是执行周期流水线效率的影响，在设计指令集的时候就考虑使用不同的硬件以提高执行效率，例如采用协处理器专门处理浮点运算，采用专门的硬件计算加速乘法计算（这样的思想也被应用到近几年的异构计算中）。</p>
 <h1 id="4-参考文献"><a href="#4-参考文献" class="headerlink" title="4 参考文献"></a>4 参考文献</h1><p>[1] MIPS指令集</p>
@@ -544,6 +544,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/《虚拟化与云计算》学习/" rel="prev" title="《虚拟化与云计算》学习">
+                《虚拟化与云计算》学习 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -625,7 +629,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
