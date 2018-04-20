@@ -81,20 +81,21 @@
 
 
 
-<meta name="description" content="嘉哥要做一个简单的云盘，所以就一步一步来吧。 1 FTP#1.1 FTP命令行上传 嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见百度经验：怎样在命令行中使用FTP .png) 1.2 python的FTP库ftplib上传有了上面的过程，python代码也很好理解啦，使用python自带的ftplib库：">
+<meta name="description" content="嘉哥要做一个简单的云盘，所以就一步一步来吧。 1 FTP#1.1 FTP命令行上传下载 嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见百度经验：怎样在命令行中使用FTP .png) 下载需要使用LITERAL PASV设置为被动模式，具体参见ftp错误150 Opening ASCII mode data">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《虚拟化与云计算》学习">
 <meta property="og:url" content="http://wang22ti.com/2018/04/13/《虚拟化与云计算》学习/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="嘉哥要做一个简单的云盘，所以就一步一步来吧。 1 FTP#1.1 FTP命令行上传 嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见百度经验：怎样在命令行中使用FTP .png) 1.2 python的FTP库ftplib上传有了上面的过程，python代码也很好理解啦，使用python自带的ftplib库：">
+<meta property="og:description" content="嘉哥要做一个简单的云盘，所以就一步一步来吧。 1 FTP#1.1 FTP命令行上传下载 嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见百度经验：怎样在命令行中使用FTP .png) 下载需要使用LITERAL PASV设置为被动模式，具体参见ftp错误150 Opening ASCII mode data">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wang22ti.com/2018/04/13/《虚拟化与云计算》学习/屏幕截图(540">
+<meta property="og:image" content="http://wang22ti.com/2018/04/13/《虚拟化与云计算》学习/屏幕截图(543">
 <meta property="og:image" content="http://wang22ti.com/2018/04/13/《虚拟化与云计算》学习/Snipaste_2018-04-13_11-54-53.png">
 <meta property="og:image" content="http://wang22ti.com/2018/04/13/《虚拟化与云计算》学习/1523593140997.png">
-<meta property="og:updated_time" content="2018-04-13T05:15:45.399Z">
+<meta property="og:updated_time" content="2018-04-20T00:48:05.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《虚拟化与云计算》学习">
-<meta name="twitter:description" content="嘉哥要做一个简单的云盘，所以就一步一步来吧。 1 FTP#1.1 FTP命令行上传 嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见百度经验：怎样在命令行中使用FTP .png) 1.2 python的FTP库ftplib上传有了上面的过程，python代码也很好理解啦，使用python自带的ftplib库：">
+<meta name="twitter:description" content="嘉哥要做一个简单的云盘，所以就一步一步来吧。 1 FTP#1.1 FTP命令行上传下载 嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见百度经验：怎样在命令行中使用FTP .png) 下载需要使用LITERAL PASV设置为被动模式，具体参见ftp错误150 Opening ASCII mode data">
 <meta name="twitter:image" content="http://wang22ti.com/2018/04/13/《虚拟化与云计算》学习/屏幕截图(540">
 
 
@@ -358,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  679 字
+                  1,002 字
                 </span>
               
 
@@ -374,7 +375,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -396,9 +397,12 @@
 
       
         <p>嘉哥要做一个简单的云盘，所以就一步一步来吧。</p>
-<h1 id="1-FTP"><a href="#1-FTP" class="headerlink" title="1 FTP"></a>1 FTP</h1><p>#1.1 FTP命令行上传</p>
+<h1 id="1-FTP"><a href="#1-FTP" class="headerlink" title="1 FTP"></a>1 FTP</h1><p>#1.1 FTP命令行上传下载</p>
 <p>嘉哥用阿里云开了一台云服务器，安装了ftp服务器，打开了端口，关闭了用户验证，于是我就可以用匿名（Anonymous）的方式登录。解释参见<a href="https://jingyan.baidu.com/article/fdbd4277d8a4f7b89e3f48ab.html" target="_blank" rel="noopener">百度经验：怎样在命令行中使用FTP</a></p>
 <p><img src="/2018/04/13/《虚拟化与云计算》学习/屏幕截图(540" alt="">.png)</p>
+<p>下载需要使用<code>LITERAL PASV</code>设置为被动模式，具体参见<a href="https://blog.csdn.net/wxqian25/article/details/16821333" target="_blank" rel="noopener">ftp错误150 Opening ASCII mode data connection for /bin/ls.</a>以及<a href="https://bbs.csdn.net/topics/310044648/" target="_blank" rel="noopener">CMD里的FTP命令，怎么切换FTP的主被动模式？</a></p>
+<p>默认下载目录为c:\user\45504，其中45504是我的用户名。</p>
+<p><img src="/2018/04/13/《虚拟化与云计算》学习/屏幕截图(543" alt="">.png)</p>
 <h1 id="1-2-python的FTP库ftplib上传"><a href="#1-2-python的FTP库ftplib上传" class="headerlink" title="1.2 python的FTP库ftplib上传"></a>1.2 python的FTP库ftplib上传</h1><p>有了上面的过程，python代码也很好理解啦，使用python自带的<code>ftplib</code>库：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ftplib <span class="keyword">import</span> FTP</span><br><span class="line"></span><br><span class="line">ip = <span class="string">'101.200.57.174'</span></span><br><span class="line">user = <span class="string">'Anonymous'</span></span><br><span class="line">password = <span class="string">'wang22ti@163.com'</span></span><br><span class="line"></span><br><span class="line">file_name = <span class="string">'wang22ti.docx'</span></span><br><span class="line"></span><br><span class="line">ftp = FTP()</span><br><span class="line">ftp.set_pasv(<span class="keyword">False</span>)</span><br><span class="line">ftp.set_debuglevel(<span class="number">2</span>)</span><br><span class="line">ftp.connect(ip)</span><br><span class="line">ftp.login(user, password)</span><br><span class="line">print(ftp.getwelcome())</span><br><span class="line">ftp.storbinary(<span class="string">'STOR %s'</span> % file_name, open(file_name, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
 <p>其中<code>ftp.set_debuglevel</code>设置日志等级，<code>ftp.storbinary</code>以二进制的方式打开文件并上传。</p>
@@ -410,8 +414,9 @@
 <p><img src="/2018/04/13/《虚拟化与云计算》学习/Snipaste_2018-04-13_11-54-53.png" alt=""></p>
 <p>本以为找到它修改为<code>utf-8</code>就好了，结果又发生了新的错误：</p>
 <p><img src="/2018/04/13/《虚拟化与云计算》学习/1523593140997.png" alt=""></p>
-<p>百思不得其解，<a href="https://blog.csdn.net/chenhongwu666/article/details/43524035" target="_blank" rel="noopener">CSDN的一个博客</a>说是服务器的问题，需要将服务器是否接受<code>utf-8</code>打开（看来命令行走的不是utf-8），结果结果改来改去还是这个问题！最后发现一个神贴：<a href="https://blog.csdn.net/iamsujin/article/details/19616247" target="_blank" rel="noopener">CSDN：python实现ftp中的乱码问题</a>。用更优雅的方法修改为<code>GB18030</code>就ok啦，这是最后的代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ftplib <span class="keyword">import</span> FTP</span><br><span class="line"></span><br><span class="line">ip = <span class="string">'101.200.57.174'</span></span><br><span class="line">user = <span class="string">'Anonymous'</span></span><br><span class="line">password = <span class="string">'wang22ti@163.com'</span></span><br><span class="line"></span><br><span class="line">file_name = <span class="string">'王王王.docx'</span></span><br><span class="line"></span><br><span class="line">ftp = FTP()</span><br><span class="line">ftp.set_pasv(<span class="keyword">False</span>)</span><br><span class="line">ftp.encoding = <span class="string">'GB18030'</span></span><br><span class="line">ftp.set_debuglevel(<span class="number">2</span>)</span><br><span class="line">ftp.connect(ip)</span><br><span class="line">ftp.login(user, password)</span><br><span class="line"><span class="comment"># print(ftp.getwelcome())</span></span><br><span class="line">ftp.storbinary(<span class="string">'STOR %s'</span> % file_name, open(file_name, <span class="string">'rb'</span>))</span><br></pre></td></tr></table></figure>
+<p>百思不得其解，<a href="https://blog.csdn.net/chenhongwu666/article/details/43524035" target="_blank" rel="noopener">CSDN的一个博客</a>说是服务器的问题，需要将服务器是否接受<code>utf-8</code>打开（看来命令行走的不是utf-8），结果结果改来改去还是这个问题！最后发现一个神贴：<a href="https://blog.csdn.net/iamsujin/article/details/19616247" target="_blank" rel="noopener">CSDN：python实现ftp中的乱码问题</a>。用更优雅的方法修改为<code>GB18030</code>就ok啦。之后又从<a href="http://www.jb51.net/article/88215.htm" target="_blank" rel="noopener">Python中的FTP通信模块ftplib的用法整理</a>学习了其他的操作，这是最后的代码，部分操作没有测试：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> ftplib <span class="keyword">import</span> FTP</span><br><span class="line"></span><br><span class="line">ip = <span class="string">'101.200.57.174'</span></span><br><span class="line">user = <span class="string">'Anonymous'</span></span><br><span class="line">password = <span class="string">''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file_name = '王王王.docx'</span></span><br><span class="line">file_name = <span class="string">'wang22ti.docx'</span></span><br><span class="line"></span><br><span class="line">ftp = FTP()</span><br><span class="line">ftp.set_pasv(<span class="keyword">False</span>)</span><br><span class="line">ftp.encoding = <span class="string">'GB18030'</span></span><br><span class="line">ftp.set_debuglevel(<span class="number">2</span>)</span><br><span class="line">ftp.connect(ip)</span><br><span class="line">ftp.login(user, password)</span><br><span class="line">print(ftp.getwelcome())</span><br><span class="line">ftp.storbinary(<span class="string">'STOR %s'</span> % file_name, open(file_name, <span class="string">'rb'</span>))</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'wang22ti_downloaded.docx'</span>, <span class="string">'wb'</span>)</span><br><span class="line">bufsize = <span class="number">1024</span></span><br><span class="line">ftp.retrbinary(<span class="string">'RETR %s'</span> % file_name, f.write, bufsize)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ftp.cwd(pathname) #设置FTP当前操作的路径</span></span><br><span class="line"><span class="comment"># ftp.dir() #显示目录下文件信息</span></span><br><span class="line"><span class="comment"># file_list = ftp.nlst() #获取目录下的文件</span></span><br><span class="line"><span class="comment"># from pprint import pprint</span></span><br><span class="line"><span class="comment"># pprint(file_list)</span></span><br><span class="line"><span class="comment"># ftp.mkd(pathname) #新建远程目录</span></span><br><span class="line"><span class="comment"># ftp.pwd() #返回当前所在位置</span></span><br><span class="line"><span class="comment"># ftp.rmd(dirname) #删除远程目录</span></span><br><span class="line">ftp.delete(file_name) <span class="comment">#删除远程文件</span></span><br><span class="line"><span class="keyword">if</span> file_name <span class="keyword">not</span> <span class="keyword">in</span> ftp.nlst():</span><br><span class="line">    print(<span class="string">'delete OK - %s'</span> % file_name)</span><br><span class="line"><span class="comment"># ftp.rename(fromname, toname)#将fromname修改名称为toname。</span></span><br></pre></td></tr></table></figure>
+<h1 id="1-3-对ftplib的进一步封装"><a href="#1-3-对ftplib的进一步封装" class="headerlink" title="1.3 对ftplib的进一步封装"></a>1.3 对ftplib的进一步封装</h1><p>可以说，ftplib已经比较方便了，但是一方面类似于<code>storbinary</code>和<code>retrbinary</code>一类的函数封装性仍然不够好，另一方面在实际使用中还会出现长时间无响应的情况。为了能够在作业中的体验更好，进一步封装ftplib如下：</p>
 
       
     </div>
@@ -608,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-FTP"><span class="nav-number">1.</span> <span class="nav-text">1 FTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-2-python的FTP库ftplib上传"><span class="nav-number">2.</span> <span class="nav-text">1.2 python的FTP库ftplib上传</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-FTP"><span class="nav-number">1.</span> <span class="nav-text">1 FTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-2-python的FTP库ftplib上传"><span class="nav-number">2.</span> <span class="nav-text">1.2 python的FTP库ftplib上传</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-3-对ftplib的进一步封装"><span class="nav-number">3.</span> <span class="nav-text">1.3 对ftplib的进一步封装</span></a></li></ol></div>
             
 
           </div>
