@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="1 进程的同步与互斥创建4个进程P1-P4。要求进程P1在P2，P3之前，P4在其他进程之后执行。P2、P3两个进程互斥。用信号量机制实现同步与互斥，并用实验验证。 ​实验说明书中对于semctl以及semget两个函数的讲解存在矛盾，需要详细了解这两个函数的参数含义才能完美地实现进程的同步与互斥，具体函数解释参见我的另一篇博客。本程序实现的函数中，set_value_of_sem对单信号量赋值，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《操作系统》实验3-进程同步">
 <meta property="og:url" content="http://wang22ti.com/2018/04/20/《操作系统》实验3-进程同步/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="1 进程的同步与互斥创建4个进程P1-P4。要求进程P1在P2，P3之前，P4在其他进程之后执行。P2、P3两个进程互斥。用信号量机制实现同步与互斥，并用实验验证。 ​实验说明书中对于semctl以及semget两个函数的讲解存在矛盾，需要详细了解这两个函数的参数含义才能完美地实现进程的同步与互斥，具体函数解释参见我的另一篇博客。本程序实现的函数中，set_value_of_sem对单信号量赋值，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-20T01:10:21.982Z">
+<meta property="og:updated_time" content="2018-04-27T12:45:57.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《操作系统》实验3-进程同步">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="1 进程的同步与互斥创建4个进程P1-P4。要求进程P1在P2，P3之前，P4在其他进程之后执行。P2、P3两个进程互斥。用信号量机制实现同步与互斥，并用实验验证。 ​实验说明书中对于semctl以及semget两个函数的讲解存在矛盾，需要详细了解这两个函数的参数含义才能完美地实现进程的同步与互斥，具体函数解释参见我的另一篇博客。本程序实现的函数中，set_value_of_sem对单信号量赋值，">
 
 
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  311 字
                 </span>
               
 
@@ -391,7 +391,9 @@
       
 
       
-        
+        <h1 id="1-进程的同步与互斥"><a href="#1-进程的同步与互斥" class="headerlink" title="1 进程的同步与互斥"></a>1 进程的同步与互斥</h1><p><strong>创建4个进程P1-P4。要求进程P1在P2，P3之前，P4在其他进程之后执行。P2、P3两个进程互斥。用信号量机制实现同步与互斥，并用实验验证。</strong></p>
+<p>​实验说明书中对于semctl以及semget两个函数的讲解存在矛盾，需要详细了解这两个函数的参数含义才能完美地实现进程的同步与互斥，具体函数解释参见我的另一篇博客。本程序实现的函数中，set_value_of_sem对单信号量赋值，set_values_of_sem可以同时对多个信号量赋值，signal和wait函数与教材中信号量同步函数含义一致。在主函数中，使用5个信号量控制整个进程，其中2个信号量在1执行完之后被同时设置为1从而实现P1在P2和P3之前，1个信号量被用作P2和P3的互斥，另外2个信号量分别在P2和P3执行完之后被设置为1，从而实现P4在所有进程之后。实验结果与源代码如下。可以看出原来不同步的顺序为2143，经过同步的进程为1234或1324，完全符合实验的要求。</p>
+
       
     </div>
     
@@ -484,8 +486,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -500,7 +511,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -568,6 +579,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-进程的同步与互斥"><span class="nav-number">1.</span> <span class="nav-text">1 进程的同步与互斥</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
