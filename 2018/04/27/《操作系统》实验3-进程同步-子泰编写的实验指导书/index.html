@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="引言既然要进行进程同步，首先要有多个进程，所以要学会在Linux环境下使用fork等函数创建进程，具体参见文献[1]或实验《进程控制》，在此不做赘述。下面着重介绍Linux环境下实现进程同步、进程通信、线程同步的C语言函数及其使用方法。 信号量Linux信号量操作的相关函数都声明在头文件&amp;lt;sys/sem.h&amp;gt; 中，包括semget、semop、semctl，以下将分别对其进行介绍。 s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《操作系统》实验3-进程同步-子泰编写的实验指导书">
 <meta property="og:url" content="http://wang22ti.com/2018/04/27/《操作系统》实验3-进程同步-子泰编写的实验指导书/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="引言既然要进行进程同步，首先要有多个进程，所以要学会在Linux环境下使用fork等函数创建进程，具体参见文献[1]或实验《进程控制》，在此不做赘述。下面着重介绍Linux环境下实现进程同步、进程通信、线程同步的C语言函数及其使用方法。 信号量Linux信号量操作的相关函数都声明在头文件&amp;lt;sys/sem.h&amp;gt; 中，包括semget、semop、semctl，以下将分别对其进行介绍。 s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T09:12:09.190Z">
+<meta property="og:updated_time" content="2018-04-28T08:52:19.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《操作系统》实验3-进程同步-子泰编写的实验指导书">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="引言既然要进行进程同步，首先要有多个进程，所以要学会在Linux环境下使用fork等函数创建进程，具体参见文献[1]或实验《进程控制》，在此不做赘述。下面着重介绍Linux环境下实现进程同步、进程通信、线程同步的C语言函数及其使用方法。 信号量Linux信号量操作的相关函数都声明在头文件&amp;lt;sys/sem.h&amp;gt; 中，包括semget、semop、semctl，以下将分别对其进行介绍。 s">
 
 
 
@@ -354,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  3,741 字
                 </span>
               
 
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  15 分钟
                 </span>
               
             </div>
@@ -391,7 +391,75 @@
       
 
       
-        
+        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>既然要进行进程同步，首先要有多个进程，所以要学会在Linux环境下使用<code>fork</code>等函数创建进程，具体参见文献[1]或实验《进程控制》，在此不做赘述。下面着重介绍Linux环境下实现进程同步、进程通信、线程同步的C语言函数及其使用方法。</p>
+<h1 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h1><p>Linux信号量操作的相关函数都声明在头文件<code>&lt;sys/sem.h&gt;</code> 中，包括<code>semget</code>、<code>semop</code>、<code>semctl</code>，以下将分别对其进行介绍。</p>
+<h2 id="semget——得到一个信号量“集”"><a href="#semget——得到一个信号量“集”" class="headerlink" title="semget——得到一个信号量“集”"></a>semget——得到一个信号量“集”</h2><p>调用该函数后，会得到一个信号量集，注意，这意味着可以通过一次调用获得多个信号量，具体怎么使用呢？接下来会介绍。我们先看一下该函数的原型：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">semget</span><span class="params">(<span class="keyword">key_t</span> key, <span class="keyword">int</span> num_sems, <span class="keyword">int</span> sem_flags)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>其中最容易理解的是<code>num_sems</code>，它表示创建的信号量的集合中含有的信号量的个数，当然可以是1个或多个。那其他的参数呢？</p>
+<p><code>key_t key</code>告诉操作系统：“我需要的信号量集键值（可以理解为编号）为key！”收到这个指令后，系统就会给出一个信号量标识符（也可以理解为编号，比如10086）作为semget的返回值（失败返回-1），之后我们使用信号量标识符（10086）而非key实现对信号量的间接操作（操作系统是不会允许我们直接加减信号量的）。</p>
+<p>key和信号量标识符是一一对应的，且标识符的值是由系统根据key计算得到的，所以实际调用的时候，我们只需要考虑对于key限制。如果只使用一个信号量集合，key可以是任意的非零整数（比如1000）。当使用多个集合的时候，由于这种一一对应的关系，为了区别不同的信号量集合，key的值必须是各不相同的。如何做到各不相同呢？一种方法是手动指定不同的值，另一方法是使用函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">key_t</span> ftok( <span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> proj_id);</span><br></pre></td></tr></table></figure>
+<p>将系统中各不相同的文件路径转化为一一对应的整数，具体参见文献[2]，由于本实验中手动指定的方法足以满足要求，所以在此不做赘述。</p>
+<p><code>sem_flags</code>是对得到的信号量集进行权限的配置，典型值为<code>IPC_CREAT | 0666</code>，就是常量IPC_CREAT和八进制数666进行或操作。八进制数的三位依次表示对这个信号量集的操作权限。其中第一个数表示创建者的操作权限，第二个数表示同组人的操作权限，第三个数表示其他人的操作权限。操作权限用4表示读，2表示写，6表示可读也可写，0表示不能读也不能写，具体参见文献[3]。还可以是<code>IPC_CREAT| IPC_EXCL</code>，表示创建一个新的、唯一的信号量，如果信号量已存在，返回-1表示错误。</p>
+<h1 id="semop——改变信号量的值"><a href="#semop——改变信号量的值" class="headerlink" title="semop——改变信号量的值"></a>semop——改变信号量的值</h1><p>通过semget创建了信号量集合之后，我们总需要通过<code>semop</code>改变信号量的值，其原型为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">semop</span><span class="params">(<span class="keyword">int</span> sem_id, struct sembuf *sem_opa, <span class="keyword">size_t</span> num_sem_ops)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>其中<code>sem_id</code>就是通过semget得到的信号量标识符，返回值表示操作是否成功。<code>sem_opa</code>是对该集合中信号量操作的数组（operation array），根据C语言的编程技巧，一般传入数组的同时要传入数组的长度，<code>num_sem_ops</code>就是sem_opa中操作的数量。</p>
+<p>为了让操作系统明白操作的具体内容，sem_opa中的每一个元素都是一个名为<code>sembuf</code>的结构体，其结构定义为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sembuf</span>&#123;</span>  </span><br><span class="line">        <span class="keyword">short</span> sem_num; </span><br><span class="line">        <span class="keyword">short</span> sem_op;</span><br><span class="line">        <span class="keyword">short</span> sem_flg; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其中<code>sem_num</code>表示操作的那一个信号量在信号量集当中的编号，当然是从0开始啦；<code>sem_op</code>表示对信号量进行+=sem_op的操作；<code>sem_flg</code>是对这一操作的进一步解释，典型值<code>SEM_UNDO</code>表示该进程结束的时候撤销这次操作，让信号量回到该进程执行之前的状态，当然也可以设置为0表示正常的操作，进一步解释可以参见文献[4]。需要注意的是，<strong>对sem_flg不同的设置可能会导致死锁、实验现象不可重复等现象，这需要在实验中进一步探索。</strong></p>
+<p>​        当然，为了方便的修改信号量的值，我们可以进一步对semop函数进行封装，比如对指定信号量的<code>wait</code>原语：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">int</span> sem_id, <span class="keyword">int</span> sem_num)</span> </span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sembuf</span> <span class="title">sem_buff</span>;</span></span><br><span class="line">	sem_buff.sem_num = sem_num;</span><br><span class="line">	sem_buff.sem_op = <span class="number">-1</span>;</span><br><span class="line">	sem_buff.sem_flg = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (semop(sem_id, &amp;sem_buff, <span class="number">1</span>) == <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %s\n"</span>, sem_id, <span class="string">"error - wait"</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        类似的，也可以写出对指定信号量的signal操作、或是对某一信号量集内所有信号量的signal、wait操作，具体问题具体分析啦！</p>
+<h1 id="semctl——对信号量的复杂控制"><a href="#semctl——对信号量的复杂控制" class="headerlink" title="semctl——对信号量的复杂控制"></a>semctl——对信号量的复杂控制</h1><p>semop函数似乎已经可以解决很多问题了，但是还远远不够。如果希望对信号量进行赋值而非相对地加减，如果希望得到信号量的值，如果希望得到等待进程的数目……还需要<code>semctl</code>函数，它的原型为：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">semctl</span><span class="params">(<span class="keyword">int</span> sem_id, <span class="keyword">int</span> sem_num, <span class="keyword">int</span> cmd, <span class="keyword">union</span> semun)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>已经容易知道，<code>sem_id</code>是通过semget得到的信号量标识符，<code>sem_num</code>表示控制的那一个信号量在信号量集当中的编号。<code>cmd</code>就是控制的动作，本实验中可能用到的有：</p>
+<p><code>IPC_RMID</code>    将信号量集从内存中删除。<br><code>GETALL</code>        用于读取信号量集中所有信号量的值。<br><code>GETVAL</code>        返回信号量集中某一个信号量的值。<br><code>SETALL</code>        设置信号量集中的所有信号量的值<br><code>SETVAL</code>        设置信号量集中的某一个信号量的值。</p>
+<p>你可能困惑，如果cmd为SETVAL或者SETALL，如果将设置的值传入呢？答案就在可选的参数<code>semun</code>，其结构为如下（值得注意的是，<strong>sem.h中把该联合体的声明注释掉了，需要自己在程序中定义union semun</strong>）。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> semun &#123;</span><br><span class="line">   <span class="keyword">int</span>   val;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span>   <span class="title">semid_ds</span>  *<span class="title">buf</span>;</span></span><br><span class="line">   <span class="keyword">unsigned</span> <span class="keyword">short</span>   *arrary;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果cmd是SETVAL，你想设置的值为10，那么令semun.val=10传入semctl。同理，当cmd为SETALL时，封装函数如下，实现同时对某一信号量集中所有信号量的赋值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">set_values_of_sem</span><span class="params">(<span class="keyword">int</span> sem_id, <span class="keyword">unsigned</span> <span class="keyword">short</span> *arry)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">union</span> semun sem_union;</span><br><span class="line">	sem_union.arry = arry;</span><br><span class="line">	<span class="keyword">if</span> (semctl(sem_id, <span class="keyword">sizeof</span>(arry) - <span class="number">1</span>, SETALL, sem_union) == <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d %s\n"</span>, sem_id, <span class="string">"error - set values of semaphore"</span>);</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由此，我们就可以对信号量集进行复杂的控制，进一步参见文献[5]相关内容。</p>
+<h1 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h1><p>​        由于进程之间的内存是隔离的，因此即便在编程的时候设置一个全局变量，即便在不同进程里打印这个变量的地址也是相同的，不同进程的内的变量也是完全独立的——这告诉我们fork()函数创建的子进程和父进程之间除了id不同外，是完全一样的，甚至变量的地址也是，虽然它们之间已经完全没关系了。</p>
+<p>但有时候进程的通信是必须的——比如生产者消费者模型，所以引入共享内存的方式进行进程通信，即允许两个不同的进程访问同一个逻辑内存。Linux共享内存的实现通过的是声明于<code>sys/shm.h</code>（shared memory）中<code>shmget</code>、<code>shmat</code>、<code>shmdt</code>、<code>shmctl</code>四个函数实现。是不是看起来很眼熟？因为这几个函数的操作逻辑和进程同步的几个函数是很相似的。由于进程通信不是本次实验的重点，因此给出如下的代码模板，详细参见文献[6]相关内容。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> share_memory_id;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">share_data</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="comment">// TO-DO</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">share_data</span> *<span class="title">shared</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 创建共享内存</span></span><br><span class="line">	share_memory_id = shmget(<span class="number">12345</span>, <span class="keyword">sizeof</span>(struct share_data), <span class="number">0666</span>|IPC_CREAT);</span><br><span class="line">	<span class="comment">// 将这段共享内存映射到需要共享的变量上</span></span><br><span class="line">	shared = (struct share_data *) shmat(share_memory_id, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// TO-DO</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="线程互斥"><a href="#线程互斥" class="headerlink" title="线程互斥"></a>线程互斥</h1><p>Linux中的多线程实现的函数，都声明在头文件<code>pthread.h</code>中，包括<code>pthread_create</code>、<code>pthread_join</code>、<code>pthread_exit</code>、<code>pthread_cancel</code>、<code>pthread_self</code>这一类控制进程状态的函数和<code>pthread_mutex_init</code>、<code>pthread_mutex_destroy</code>、<code>pthread_mutex_lock</code>、<code>pthread_mutex_unlock</code>、<code>pthread_mutex_trylock</code>这一类进程互斥锁相关的函数。由于本部分属于预习内容，以下将按照最基本的要求对上述函数进行介绍。</p>
+<h2 id="线程的创建"><a href="#线程的创建" class="headerlink" title="线程的创建"></a>线程的创建</h2><p>​        要使用多线程，首先需要创建多个线程，于是使用函数pthread_create，其原型为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int pthread_create(pthread_t*thread, pthread_attr_t *attr, void *(*start_routine)(void *), void *arg);</span><br></pre></td></tr></table></figure>
+<p>和进程类似的地方是，执行该函数后程序就会产生分支，一方面继续执行调用pthread_create的函数，另一方面开始执行<code>start_routine</code>指定的函数。start_routine究竟是什么？一眼看上去可能不明所以，其实就是你写的一个函数的函数名，比如transfer；如果该函数(transfer)需要参数呢？就通过参数arg构造结构体传入即可。</p>
+<p>​        和进程创建不同的是，pthread_create的返回值表示是否创建成功，而thread实际上是一个int型的指针，指向存储执行函数start_routine进程的id。示例代码如下所示，需要注意的是，因为pthread库不是Linux系统默认的库，连接时需要使用库<code>libpthread.a</code>，所以编译时要加<code>-lpthread</code>参数，比如<code>gcc createThread.c -lpthread -o createThread</code>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// TO-DO</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">pthread_t</span> thid1, thid2;</span><br><span class="line">    pthread_create(&amp;thid1, <span class="literal">NULL</span>, (<span class="keyword">void</span> *)transfer, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_create(&amp;thid2, <span class="literal">NULL</span>, (<span class="keyword">void</span> *)transfer, <span class="literal">NULL</span>);</span><br><span class="line">	pthread_join(thid1, <span class="literal">NULL</span>);</span><br><span class="line">	pthread_join(thid2, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        <code>thread_join</code>是什么意思呢？其原型为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">pthread_join</span><span class="params">(pthread_tthread, <span class="keyword">void</span> **retval)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>在很多情况下，子线程里要进行大量的耗时的运算，主线程往往在子线程之前结束。但是，如果主线程需要用到子线程的处理结果，就要用到pthread_join方法了。可以理解为告诉主线程：“执行到这里的时候，停下来等id为thid的线程！”其中thread为等待线程的id，retval用来存储被等待进程的返回值。</p>
+<p>​        本实验中，还有可能用到的函数为<code>pthread_self</code>，其原型为</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pthread_tpthread_self(<span class="keyword">void</span>);</span><br></pre></td></tr></table></figure>
+<p>很容易理解啦，和<code>getpid</code>很类似，可以得到当前线程的id。另外的两个线程状态管理函数pthread_exit和pthread_cancel，以及pthread_create中参数attr的设置，由于在本实验不是必须的，在此不做赘述，进一步可以参考文献[7]和[8]。</p>
+<h2 id="互斥锁——线程的互斥"><a href="#互斥锁——线程的互斥" class="headerlink" title="互斥锁——线程的互斥"></a>互斥锁——线程的互斥</h2><p>​        和进程通过信号量完成互斥不同，线程的互斥的实现依靠互斥锁。首先，和线程的创建类似，要使用函数<code>pthread_mutex_init(pthread_mutex_t * mutex,const pthread_mutexattr_t*attr)</code>初始化互斥锁，之后在线程函数中使用<code>int pthread_mutex_lock(pthread_mutex_t *mutex)</code>和<code>int pthread_mutex_unlock(pthread_mutex_t*mutex)</code>两个函数进行加锁和解锁（即开始和结束线程对于临界资源的占用），最后使用函数<code>pthread_mutex_destroy(pthread_mutex_t *mutex)</code>销毁一个互斥锁。一个典型的程序示例如下。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pthread_mutex_t</span> mutex;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    pthread_mutex_lock(&amp;mutex);</span><br><span class="line">    <span class="comment">// TO-DO</span></span><br><span class="line">    pthread_mutex_unlock(&amp;mutex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">pthread_t</span> thid1, thid2;</span><br><span class="line">    pthread_mutex_init(&amp;mutex, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_create(&amp;thid1, <span class="literal">NULL</span>, (<span class="keyword">void</span> *)transfer, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_create(&amp;thid2, <span class="literal">NULL</span>, (<span class="keyword">void</span> *)transfer, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_join(thid1, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_join(thid2, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_mutex_destroy(&amp;mutex);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​        互斥锁还有哪些操作呢？线程之间如何同步呢？（这个问题在下次实验中会详细讨论），可以进一步参见文献[9]</p>
+<h2 id="Peterson算法——实现线程互斥的另一种方法"><a href="#Peterson算法——实现线程互斥的另一种方法" class="headerlink" title="Peterson算法——实现线程互斥的另一种方法"></a>Peterson算法——实现线程互斥的另一种方法</h2><p>​        在线程的前提下，由于不存在进程中的内存隔离，因此还可以设置某些精巧的算法实现进程的互斥，Peterson算法就是其中的一个代表。该算法使用两个控制变量数组flag与标量turn，其中flag[n]的值为1表示ID号为n的线程希望使用临界区资源，turn的值为有权访问共享资源的进程的ID号。当线程不能访问临界区资源时，会陷入死循环中作为等待。其伪代码如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line">flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">turn;</span><br><span class="line"></span><br><span class="line">P0: flag[<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    turn = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (flag[<span class="number">1</span>] == <span class="literal">true</span> &amp;&amp; turn == <span class="number">1</span>);</span><br><span class="line">    <span class="comment">// 访问临界区资源</span></span><br><span class="line">flag[<span class="number">0</span>] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">P1: flag[<span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">    turn = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (flag[<span class="number">0</span>] == <span class="literal">true</span> &amp;&amp; turn == <span class="number">0</span>);</span><br><span class="line">    <span class="comment">// 访问临界区资源</span></span><br><span class="line">    flag[<span class="number">1</span>] = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<p>该算法的实现需要在实验中完成，更详细的解释可以参见文献[10]。</p>
+<p>​        </p>
+<h1 id="实验题目"><a href="#实验题目" class="headerlink" title="实验题目"></a>实验题目</h1><p>好了，有了以上的知识储备，完成以下的实验应该没有问题。</p>
+<h2 id="进程的同步与互斥"><a href="#进程的同步与互斥" class="headerlink" title="进程的同步与互斥"></a>进程的同步与互斥</h2><p>创建4个进程P1-P4。要求进程P1在P2，P3之前，P4在其他进程之后执行。P2、P3两个进程互斥。用信号量机制实现同步与互斥，并用实验验证。</p>
+<h2 id="进程的生产者消费者模型"><a href="#进程的生产者消费者模型" class="headerlink" title="进程的生产者消费者模型"></a>进程的生产者消费者模型</h2><p>生产者消费者同步。生产者进程将生产的数据写入文件中。消费者读取文件中的数据。注意，传送的每个数据都是一个字符，文件中最多可写入10个字符。编程实现并用实验验证结果。</p>
+<h2 id="线程的互斥"><a href="#线程的互斥" class="headerlink" title="线程的互斥"></a>线程的互斥</h2><p>假设有两个银行账户，初始金额值分别为</p>
+<p>int nAccount1 = 0,nAccount2 = 0; </p>
+<p>下面是在这两个银行账户间转账一个随机金额的函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">transfer() &#123;</span><br><span class="line">    <span class="keyword">int</span> nTemp1, nTemp2, nRandom;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        nTemp1 = nAccount1;</span><br><span class="line">        nTemp2 = nAccount2;</span><br><span class="line">        nRandom = rand();</span><br><span class="line">        nAccount1 = nTemp1 + nRandom;</span><br><span class="line">        nAccount2 = nTemp2 - nRandom;</span><br><span class="line">        <span class="built_in">printf</span>(“账户金额之和 = %d”, nAccount1 + nAccount2)；</span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>试创建两个转账线程使其并发执行。（1）观察无同步控制时，两个线程并发执行的可能次序；观察账户金额的错误现象（正确的结果应该是两个账户金额之和始终为0）。分析在何种执行次序时会导致错误（2）分别利用互斥锁、Peterson方法实现两个线程互斥，并比较两者时间效率的差异。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] 《linux c 创建进程》<a href="https://blog.csdn.net/u011641885/article/details/47061985" target="_blank" rel="noopener">https://blog.csdn.net/u011641885/article/details/47061985</a></p>
+<p>[2] 《ftok()函数深度解析》<a href="https://blog.csdn.net/u013485792/article/details/50764224" target="_blank" rel="noopener">https://blog.csdn.net/u013485792/article/details/50764224</a></p>
+<p>[3] 《IPC_CREAT | 0660 的意义是什么？》 <a href="http://www.169it.com/tech-qa-linux/article-14093527959559782876.html" target="_blank" rel="noopener">http://www.169it.com/tech-qa-linux/article-14093527959559782876.html</a></p>
+<p>[4] 《struct sembuf的部分讲解》 <a href="https://blog.csdn.net/wanzyao/article/details/55271103" target="_blank" rel="noopener">https://blog.csdn.net/wanzyao/article/details/55271103</a></p>
+<p>[5] 《Linux系统调用–semctl函数详解》 <a href="https://blog.csdn.net/dongzhongshu/article/details/2056516" target="_blank" rel="noopener">https://blog.csdn.net/dongzhongshu/article/details/2056516</a></p>
+<p>[6] 《Linux进程间通信（六）：共享内存shmget()、shmat()、shmdt()、shmctl()》 <a href="https://www.cnblogs.com/52php/p/5861372.html" target="_blank" rel="noopener">https://www.cnblogs.com/52php/p/5861372.html</a></p>
+<p>[7] 《pthread_create()之前的属性设置》 <a href="https://blog.csdn.net/valjackson123/article/details/47395053" target="_blank" rel="noopener">https://blog.csdn.net/valjackson123/article/details/47395053</a></p>
+<p>[8] 《2线程原语：pthread_create()，pthread_self()，pthread_exit(), pthread_join(), pthread_cancel(),pthread_detach()》<a href="https://blog.csdn.net/tototuzuoquan/article/details/39553427" target="_blank" rel="noopener">https://blog.csdn.net/tototuzuoquan/article/details/39553427</a></p>
+<p>[9] 《【Linux C 多线程编程】互斥锁与条件变量》<a href="https://blog.csdn.net/xing_hao/article/details/6626223" target="_blank" rel="noopener">https://blog.csdn.net/xing_hao/article/details/6626223</a></p>
+<p>[10] 《Peterson算法感悟》 <a href="https://blog.csdn.net/yake827/article/details/37878017" target="_blank" rel="noopener">https://blog.csdn.net/yake827/article/details/37878017</a></p>
+
       
     </div>
     
@@ -480,8 +548,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -564,6 +641,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号量"><span class="nav-number">2.</span> <span class="nav-text">信号量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#semget——得到一个信号量“集”"><span class="nav-number">2.1.</span> <span class="nav-text">semget——得到一个信号量“集”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#semop——改变信号量的值"><span class="nav-number">3.</span> <span class="nav-text">semop——改变信号量的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#semctl——对信号量的复杂控制"><span class="nav-number">4.</span> <span class="nav-text">semctl——对信号量的复杂控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程通信"><span class="nav-number">5.</span> <span class="nav-text">进程通信</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程互斥"><span class="nav-number">6.</span> <span class="nav-text">线程互斥</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的创建"><span class="nav-number">6.1.</span> <span class="nav-text">线程的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互斥锁——线程的互斥"><span class="nav-number">6.2.</span> <span class="nav-text">互斥锁——线程的互斥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Peterson算法——实现线程互斥的另一种方法"><span class="nav-number">6.3.</span> <span class="nav-text">Peterson算法——实现线程互斥的另一种方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验题目"><span class="nav-number">7.</span> <span class="nav-text">实验题目</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的同步与互斥"><span class="nav-number">7.1.</span> <span class="nav-text">进程的同步与互斥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程的生产者消费者模型"><span class="nav-number">7.2.</span> <span class="nav-text">进程的生产者消费者模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程的互斥"><span class="nav-number">7.3.</span> <span class="nav-text">线程的互斥</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
