@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王子泰" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="简易Web Mail服务器该实验由我和温浩珉同学合作完成，主要分为TCP连接测试、 TCP连接测试测试步骤 各自编写两个版本的服务端和客户端 分别以对方作为服务器和客户端，测试自己的客户端和服务器程序 将服务端代码上传至服务器，再次测试  测试代码1234567891011121314151617181920# 客户端-王子泰import socketsk = socket.socket(sock">
+<meta property="og:type" content="article">
+<meta property="og:title" content="朝花夕拾——《计算机网络原理》实验合集">
+<meta property="og:url" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/index.html">
+<meta property="og:site_name" content="王子泰">
+<meta property="og:description" content="简易Web Mail服务器该实验由我和温浩珉同学合作完成，主要分为TCP连接测试、 TCP连接测试测试步骤 各自编写两个版本的服务端和客户端 分别以对方作为服务器和客户端，测试自己的客户端和服务器程序 将服务端代码上传至服务器，再次测试  测试代码1234567891011121314151617181920# 客户端-王子泰import socketsk = socket.socket(sock">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image2.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image3.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image4.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image5.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image6.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image8.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image7.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image9.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image10.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image11.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image12.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(1">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(2">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(3">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(4">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(5">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(6">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(7">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(8">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(9">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(10">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(12">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image%20(11">
+<meta property="og:updated_time" content="2018-05-11T15:24:48.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="朝花夕拾——《计算机网络原理》实验合集">
+<meta name="twitter:description" content="简易Web Mail服务器该实验由我和温浩珉同学合作完成，主要分为TCP连接测试、 TCP连接测试测试步骤 各自编写两个版本的服务端和客户端 分别以对方作为服务器和客户端，测试自己的客户端和服务器程序 将服务端代码上传至服务器，再次测试  测试代码1234567891011121314151617181920# 客户端-王子泰import socketsk = socket.socket(sock">
+<meta name="twitter:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/"/>
+
+
+
+
+
+  <title>朝花夕拾——《计算机网络原理》实验合集 | 王子泰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王子泰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哭也欢乐，悲也潇洒</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wang22ti.com/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang22ti">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王子泰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">朝花夕拾——《计算机网络原理》实验合集</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T21:53:51+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络原理/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5,256 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  24 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简易Web-Mail服务器"><a href="#简易Web-Mail服务器" class="headerlink" title="简易Web Mail服务器"></a>简易Web Mail服务器</h1><p>该实验由我和温浩珉同学合作完成，主要分为TCP连接测试、</p>
+<h2 id="TCP连接测试"><a href="#TCP连接测试" class="headerlink" title="TCP连接测试"></a>TCP连接测试</h2><h3 id="测试步骤"><a href="#测试步骤" class="headerlink" title="测试步骤"></a>测试步骤</h3><ol>
+<li>各自编写两个版本的服务端和客户端</li>
+<li>分别以对方作为服务器和客户端，测试自己的客户端和服务器程序</li>
+<li>将服务端代码上传至服务器，再次测试</li>
+</ol>
+<h3 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 客户端-王子泰</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line">sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line"><span class="comment"># 连接到百度</span></span><br><span class="line"><span class="comment"># host, port = 'www.baidu.com', 80</span></span><br><span class="line"><span class="comment"># ip = socket.gethostbyname(host)</span></span><br><span class="line"><span class="comment"># 连接到自己</span></span><br><span class="line">host, port = <span class="string">'127.0.0.1'</span>, <span class="number">80</span></span><br><span class="line">ip = socket.gethostbyname(host)</span><br><span class="line"><span class="comment"># 连接到别人</span></span><br><span class="line"><span class="comment"># host, port = '192.168.43.157', 6666</span></span><br><span class="line"><span class="comment"># ip = socket.gethostbyname(host)</span></span><br><span class="line">ip_port = (ip, port)</span><br><span class="line">sk.connect(ip_port)</span><br><span class="line">message = <span class="string">"GET / HTTP/1.1\r\n\r\n"</span></span><br><span class="line">sk.sendall(bytes(message, encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">info = sk.recv(<span class="number">4096</span>)</span><br><span class="line">print(info)</span><br><span class="line">sk.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务器端-王子泰</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line">sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">host, port = <span class="string">'127.0.0.1'</span>, <span class="number">80</span></span><br><span class="line"><span class="comment"># host, port = '100.89.184.99', 80</span></span><br><span class="line">ip = socket.gethostbyname(host)</span><br><span class="line">ip_port = (ip, port)</span><br><span class="line">sk.bind(ip_port)</span><br><span class="line"></span><br><span class="line">sk.listen()</span><br><span class="line">print(<span class="string">'listening...'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    connect, address = sk.accept()</span><br><span class="line">    print(<span class="string">'accepting...'</span>)</span><br><span class="line">    request = connect.recv(<span class="number">1024</span>)</span><br><span class="line">    print(<span class="string">'receive: '</span> + str(request))</span><br><span class="line">    http_response = <span class="string">"""</span></span><br><span class="line"><span class="string">    HTTP/1.1 200 OK</span></span><br><span class="line"><span class="string">    Hello, World!</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    connect.send(bytes(http_response, encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">    connect.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 客户端-温浩珉</span></span><br><span class="line"><span class="comment">#tcp client</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="comment">#ip_port=('172.27.69.48',9999)</span></span><br><span class="line">ip_port=(<span class="string">'100.89.184.99'</span>,<span class="number">80</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">client_send</span><span class="params">(content=<span class="string">'hallo'</span>)</span>:</span></span><br><span class="line">    sk=socket.socket()</span><br><span class="line">    sk.connect(ip_port)</span><br><span class="line">    sk.sendall(bytes(content,<span class="string">'utf8'</span>))</span><br><span class="line">    server_reply=sk.recv(<span class="number">1024</span>)</span><br><span class="line">    print(str(server_reply,<span class="string">'utf-8'</span>))</span><br><span class="line">    sk.close()</span><br><span class="line">client_send(content=<span class="string">'哈喽，子泰'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务器端-温浩珉</span></span><br><span class="line">ip_port=(<span class="string">'162.219.123.220'</span>,<span class="number">6666</span>)</span><br><span class="line">sk=socket.socket()</span><br><span class="line">sk.bind(ip_port)</span><br><span class="line">sk.listen(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    print(<span class="string">"server waiting..."</span>)</span><br><span class="line">    conn,addr=sk.accept()</span><br><span class="line">    client_data=conn.recv(<span class="number">1024</span>)</span><br><span class="line">    print(str(client_data),<span class="string">'utf-8'</span>)</span><br><span class="line">    conn.sendall(bytes(<span class="string">"ok"</span>))</span><br><span class="line">    conn.close()</span><br></pre></td></tr></table></figure>
+<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image2.png" alt=""></p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image3.png" alt=""></p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image4.png" alt=""></p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image5.png" alt=""></p>
+<h2 id="web服务器搭建"><a href="#web服务器搭建" class="headerlink" title="web服务器搭建"></a>web服务器搭建</h2><h3 id="框架简介"><a href="#框架简介" class="headerlink" title="框架简介"></a>框架简介</h3><p>我们项目采用Django。Django是一个开放源代码的Web应用框架，由Python写成。采用了MVC的框架模式，即模型M，视图V和控制器C.使用模型得到了如下项目文件结构：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image6.png" alt=""></p>
+<h3 id="网站编写"><a href="#网站编写" class="headerlink" title="网站编写"></a>网站编写</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>邮件发送网站<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">background-img</span>=<span class="string">D:\\Study\\必修\\计算机网络原理\\第二章实验\\mail_website\\templates\\back_ground.jpg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"POST"</span> <span class="attr">action</span>=<span class="string">"/mail-send"</span>&gt;</span></span><br><span class="line">     &#123;% csrf_token %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">"height:500px;width:900px"</span> <span class="attr">border</span>=<span class="string">"0"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>收件人<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"recevier"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"发送"</span> <span class="attr">style</span>=<span class="string">"width:100px"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">"width:100px;vertical-align:top;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">b</span>&gt;</span>邮件内容<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span> &gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"content"</span> <span class="attr">style</span>=<span class="string">"height:400px;width:800px;align:right;text-align:top"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"3"</span> <span class="attr">style</span>=<span class="string">"background-color:#FFA500;text-align:center;"</span>&gt;</span></span><br><span class="line">                版权 © mail service.com</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span>&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 视图处理函数view.py</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEBase, MIMEMultipart</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.encoders <span class="keyword">import</span> encode_base64</span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail_send_post</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">"mail_send_post.html"</span>)</span><br><span class="line">_user = <span class="string">"wang22ti@163.com"</span></span><br><span class="line">_pwd = <span class="string">"**********"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mail_send</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        content = request.POST[<span class="string">'content'</span>]</span><br><span class="line">        _to = request.POST[<span class="string">'recevier'</span>]</span><br><span class="line">        msg = MIMEMultipart()</span><br><span class="line">        msg[<span class="string">"Subject"</span>] = <span class="string">"hello world"</span></span><br><span class="line">        msg[<span class="string">"From"</span>] = _user</span><br><span class="line">        <span class="comment"># 图片加入文本</span></span><br><span class="line">        text = MIMEText(<span class="string">'&lt;html&gt;&lt;body&gt;&lt;div&gt;%s&lt;/div&gt;&lt;img src="cid:0"/&gt;&lt;/body&gt;&lt;/html&gt;'</span> % content, <span class="string">'html'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">        msg.attach(text)</span><br><span class="line">        <span class="comment"># 附件</span></span><br><span class="line">        <span class="keyword">with</span> open(<span class="string">r'templates\image\1.png'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="comment"># 设置附件的MIME和文件名 这里是png类型：</span></span><br><span class="line">            attachfile = MIMEBase(<span class="string">'image'</span>, <span class="string">'png'</span>, filename=<span class="string">'1.png'</span>)</span><br><span class="line">            <span class="comment"># 加上必要的头信息</span></span><br><span class="line">            attachfile.add_header(<span class="string">'Content-Disposition'</span>, <span class="string">'attachment'</span>, filename=<span class="string">'1.png'</span>)</span><br><span class="line">            attachfile.add_header(<span class="string">'Content-ID'</span>, <span class="string">'&lt;0&gt;'</span>)</span><br><span class="line">            attachfile.add_header(<span class="string">'X-Attachment-Id'</span>, <span class="string">'0'</span>)</span><br><span class="line">            <span class="comment"># 把附件类容读进来</span></span><br><span class="line">            attachfile.set_payload(f.read())</span><br><span class="line">            <span class="comment"># 利用base64编码</span></span><br><span class="line">            encode_base64(attachfile)</span><br><span class="line">            <span class="comment"># 添加到MIMEMultipart:</span></span><br><span class="line">            msg.attach(attachfile)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            s = smtplib.SMTP(<span class="string">'smtp.163.com'</span>)</span><br><span class="line">            s.login(_user, _pwd)</span><br><span class="line">            s.sendmail(_user, _to, msg.as_string())</span><br><span class="line">            s.quit()</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">"成功发送"</span>)</span><br><span class="line">        <span class="keyword">except</span> smtplib.SMTPException:</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">'发送失败'</span>)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"成功发送"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="网站测试"><a href="#网站测试" class="headerlink" title="网站测试"></a>网站测试</h3><p>本地，服务器响应了HTTP的GET 请求：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image8.png" alt=""></p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image7.png" alt=""></p>
+<p>部署到服务器，同样相应的请求：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image9.png" alt=""></p>
+<h2 id="Email客户端"><a href="#Email客户端" class="headerlink" title="Email客户端"></a>Email客户端</h2><h3 id="使用qq邮箱"><a href="#使用qq邮箱" class="headerlink" title="使用qq邮箱"></a>使用qq邮箱</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 温浩珉负责</span></span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line">_user = <span class="string">"291221910@qq.com"</span></span><br><span class="line">_pwd  = <span class="string">"*********"</span></span><br><span class="line">_to   = <span class="string">"291221910@qq.com"</span></span><br><span class="line">msg = MIMEText(<span class="string">"Test"</span>)</span><br><span class="line">msg[<span class="string">"Subject"</span>] = <span class="string">"don't panic"</span></span><br><span class="line">msg[<span class="string">"From"</span>]    = _user</span><br><span class="line">msg[<span class="string">"To"</span>]      = _to</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    s = smtplib.SMTP_SSL(<span class="string">"smtp.qq.com"</span>, <span class="number">465</span>)</span><br><span class="line">    s.login(_user, _pwd)</span><br><span class="line">    s.sendmail(_user, _to, msg.as_string())</span><br><span class="line">    print(msg.as_string())</span><br><span class="line">    s.quit()</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"Success!"</span>)</span><br><span class="line"><span class="keyword">except</span> smtplib.SMTPException:</span><br><span class="line">    <span class="keyword">print</span> (<span class="string">"Falied"</span>)</span><br></pre></td></tr></table></figure>
+<p>###使用163邮箱</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 王子泰负责</span></span><br><span class="line"><span class="keyword">import</span> smtplib</span><br><span class="line"><span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"><span class="keyword">from</span> email.mime.image <span class="keyword">import</span> MIMEImage</span><br><span class="line"><span class="keyword">from</span> email.mime.multipart <span class="keyword">import</span> MIMEBase, MIMEMultipart</span><br><span class="line"><span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line"><span class="keyword">from</span> email.encoders <span class="keyword">import</span> encode_base64</span><br><span class="line"></span><br><span class="line">mail_name = <span class="string">'wang22ti@163.com'</span></span><br><span class="line">to_list = [mail_name, <span class="string">'455049206@qq.com'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 不构造邮件，会被网易识别为554垃圾邮件</span></span><br><span class="line">msg = MIMEMultipart()</span><br><span class="line"><span class="comment"># 图片</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'1.png'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    image = MIMEImage(f.read())</span><br><span class="line">    msg.attach(image)</span><br><span class="line"><span class="comment"># 图片加入文本</span></span><br><span class="line">text = MIMEText(<span class="string">'&lt;html&gt;&lt;body&gt;&lt;img src="cid:0"/&gt;&lt;/body&gt;&lt;/html&gt;'</span>, <span class="string">'html'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">msg.attach(text)</span><br><span class="line"><span class="comment"># 附件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'1.png'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="comment"># 设置附件的MIME和文件名 这里是png类型：</span></span><br><span class="line">    attachfile = MIMEBase(<span class="string">'image'</span>, <span class="string">'png'</span>, filename=<span class="string">'1.png'</span>)</span><br><span class="line">    <span class="comment"># 加上必要的头信息</span></span><br><span class="line">    attachfile.add_header(<span class="string">'Content-Disposition'</span>, <span class="string">'attachment'</span>, filename=<span class="string">'1.png'</span>)</span><br><span class="line">    attachfile.add_header(<span class="string">'Content-ID'</span>, <span class="string">'&lt;0&gt;'</span>)</span><br><span class="line">    attachfile.add_header(<span class="string">'X-Attachment-Id'</span>, <span class="string">'0'</span>)</span><br><span class="line">    <span class="comment"># 把附件类容读进来</span></span><br><span class="line">    attachfile.set_payload(f.read())</span><br><span class="line">    <span class="comment"># 利用base64编码</span></span><br><span class="line">    encode_base64(attachfile)</span><br><span class="line">    <span class="comment"># 添加到MIMEMultipart:</span></span><br><span class="line">    msg.attach(attachfile)</span><br><span class="line">msg[<span class="string">'Content-Type'</span>] = <span class="string">'Text/HTML'</span></span><br><span class="line">msg[<span class="string">'Subject'</span>] = Header(<span class="string">'hello'</span>, <span class="string">'utf-8'</span>)</span><br><span class="line">msg[<span class="string">'To'</span>] = mail_name</span><br><span class="line">msg[<span class="string">'From'</span>] = <span class="string">'Python_wang22ti &lt;%s&gt;'</span> % mail_name</span><br><span class="line">smtp = smtplib.SMTP(<span class="string">'smtp.163.com'</span>)</span><br><span class="line">smtp.login(mail_name, <span class="string">'**********'</span>)</span><br><span class="line">smtp.sendmail(from_addr=mail_name, to_addrs=to_list, msg=msg.as_string())</span><br><span class="line">smtp.close()</span><br></pre></td></tr></table></figure>
+<h2 id="进一步的开发"><a href="#进一步的开发" class="headerlink" title="进一步的开发"></a>进一步的开发</h2><h3 id="完善发邮件的基本功能"><a href="#完善发邮件的基本功能" class="headerlink" title="完善发邮件的基本功能"></a>完善发邮件的基本功能</h3><p>​    现有的网站只实现了固定用户向不同用户发送文字邮件的功能，虽然在发送的邮件中添加了图片，但是该图片并不能由用户选择。我们希望在下一步的开发中实现用户登录、添加附件、正文自由添加图片等等功能。</p>
+<h3 id="优化用户界面"><a href="#优化用户界面" class="headerlink" title="优化用户界面"></a>优化用户界面</h3><p>​    由于制作匆忙，软件的界面比较简陋，在进一步的开发中可以使用CSS样式表或者HTML5等方法优化界面，使之对用户更加友好。</p>
+<h3 id="加入接收邮件的功能"><a href="#加入接收邮件的功能" class="headerlink" title="加入接收邮件的功能"></a>加入接收邮件的功能</h3><p>​    在开发中我们已经测试了使用POP3协议接收邮件的功能，在进一步的开发中可以加入，并通过图形界面使之对用户更加友好。</p>
+<h3 id="优化报错机制"><a href="#优化报错机制" class="headerlink" title="优化报错机制"></a>优化报错机制</h3><p>​    在现有的版本中，当发送邮件发生错误时。有些情况下，例如图片不在指定的路径当中，返回给用户的是面向开发者的错误说明，在进一步的开发当中，我们需要返回面向用户的错误提醒机制，例如弹窗或者利用CSS样式表；另外的一些情况下，发送错误并不会报错，例如邮件并没有成功送达对方邮箱，这需要我们完善报错的代码，使之能满足更多的需求</p>
+<h3 id="加入数据库，实现更多功能"><a href="#加入数据库，实现更多功能" class="headerlink" title="加入数据库，实现更多功能"></a>加入数据库，实现更多功能</h3><p>​    一方面，可以在客户端实现“已发送”、“草稿箱”、“已删除”、“通讯录”等邮件功能；另一方面，利用机器学习，还可以实现一些更高级的功能，例如邮件分类、垃圾处理等等。</p>
+<h1 id="GBN算法的python实现"><a href="#GBN算法的python实现" class="headerlink" title="GBN算法的python实现"></a>GBN算法的python实现</h1><h2 id="主要问题及解决方案"><a href="#主要问题及解决方案" class="headerlink" title="主要问题及解决方案"></a>主要问题及解决方案</h2><p>（1）数据传送格式</p>
+<p>​      网络数据的传输本质上是以字节流的方式进行的，因此想要传输例如图片的多媒体文件，需要先将其转化为字节流的形式。同时我们给每段字节流加上固定长度的GBN信息，以实现GBN的滑动窗口算法。</p>
+<p>（2）有限状态机的程序表示</p>
+<p>实现GBN协议，核心问题是要解决将有限状态机翻译为程序语言的问题。以发送端的有限状态机来说，在面对不同的触发条件的时候，需要执行不同的程序，而且要能回到最初的状态。在本次实验中，我们给出的方案是将所有要执行的内容放在一个大的循环里面，在循环里面使用if语句进行判断，当满足触发条件的时候，执行if语句中的内容，否则进行下一轮循环。</p>
+<h2 id="实验源码"><a href="#实验源码" class="headerlink" title="实验源码"></a>实验源码</h2><p>代码我们主要分为两部分，发送端（服务端）和接收端（客户端）。实现的代码中，我们采用TCP连接，通过TCP连接中服务端向客户端发送数据来实现GBN协议。</p>
+<p>（1）服务端</p>
+<p>​      监听连接，当有客户端请求数据时，开始传输数据，传输过程中使用GBN协议，直到传输完成。</p>
+<p>（2）客户端</p>
+<p>​        请求TCP连接，不断检查收到的包是否正确，并且给服务端发送相应的ACK。同时设置客户端以一定概率丢掉接收到的包以模拟真实网络环境下的丢包情况。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">host, port = <span class="string">'127.0.0.1'</span>, <span class="number">80</span></span><br><span class="line">ip = socket.gethostbyname(host)</span><br><span class="line">ip_port = (ip, port)</span><br><span class="line">sk.bind(ip_port)</span><br><span class="line">sk.listen()</span><br><span class="line">print(<span class="string">'listening...'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">    mss = <span class="number">1024</span></span><br><span class="line">    head_len = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    connect, address = sk.accept()</span><br><span class="line">    print(<span class="string">'accepting...'</span>)</span><br><span class="line">    request = str(connect.recv(mss), encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    print(<span class="string">'receive: '</span> + request)</span><br><span class="line"></span><br><span class="line">    type_request, file_path = request.split(<span class="string">' '</span>)</span><br><span class="line">    len_data = os.path.getsize(file_path)</span><br><span class="line">    last_packet = int(len_data / (mss - head_len)) + <span class="number">1</span></span><br><span class="line">    connect.send(bytes(str(last_packet), encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">    print(<span class="string">'packet number: '</span> + str(last_packet))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(file_path, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        base = <span class="number">0</span></span><br><span class="line">        next_seq_num = <span class="number">0</span></span><br><span class="line">        window_size = <span class="number">10</span></span><br><span class="line">        time_out = <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">            print(base)</span><br><span class="line">            print(next_seq_num)</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">if</span> next_seq_num &lt; base + window_size:</span><br><span class="line">                    data = f.read(mss - head_len)</span><br><span class="line">                    packet = bytes(str(next_seq_num).ljust(<span class="number">10</span>), encoding=<span class="string">'utf-8'</span>) + data</span><br><span class="line">                    connect.send(packet)</span><br><span class="line">                    <span class="keyword">if</span> base == next_seq_num:</span><br><span class="line">                        connect.settimeout(time_out)</span><br><span class="line">                    next_seq_num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">                ack_list = str(connect.recv(mss), encoding=<span class="string">'utf-8'</span>).split(<span class="string">' '</span>, window_size - <span class="number">1</span>)</span><br><span class="line">                ack_list = [int(i) <span class="keyword">for</span> i <span class="keyword">in</span> ack_list]</span><br><span class="line">                print(ack_list)</span><br><span class="line">                <span class="keyword">if</span> len(ack_list) &gt; <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">if</span> base != next_seq_num:</span><br><span class="line">                        connect.settimeout(time_out)</span><br><span class="line">                    base = max(ack_list) + <span class="number">1</span></span><br><span class="line">                    next_seq_num = base</span><br><span class="line">            <span class="keyword">except</span> socket.timeout <span class="keyword">as</span> e:</span><br><span class="line">                print(<span class="string">'******'</span> + str(base) + str(next_seq_num))</span><br><span class="line">                <span class="keyword">if</span> next_seq_num == last_packet:</span><br><span class="line">                    f.seek((mss - head_len) * (next_seq_num - <span class="number">1</span>), <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    f.seek((mss - head_len) * (next_seq_num - base) * <span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">                next_seq_num = base</span><br><span class="line"></span><br><span class="line">        connect.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># client</span></span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">host, port = <span class="string">'127.0.0.1'</span>, <span class="number">80</span></span><br><span class="line">ip = socket.gethostbyname(host)</span><br><span class="line">ip_port = (ip, port)</span><br><span class="line">sk.connect(ip_port)</span><br><span class="line"></span><br><span class="line">mss = <span class="number">1024</span></span><br><span class="line">file_name = <span class="string">'1.png'</span></span><br><span class="line">message = <span class="string">"GET "</span> + file_name</span><br><span class="line">sk.sendall(bytes(message, encoding=<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">num_packet = int(sk.recv(mss))</span><br><span class="line">print(num_packet)</span><br><span class="line"></span><br><span class="line">head_len = <span class="number">10</span></span><br><span class="line"><span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line">    pic = <span class="string">b''</span></span><br><span class="line">    ack = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">        packet = sk.recv(mss)</span><br><span class="line">        <span class="comment"># 设置一定的丢包率作为测试</span></span><br><span class="line">        <span class="keyword">if</span> random.random() &gt; <span class="number">0.99</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        seq_number = int(str(packet[:head_len], encoding=<span class="string">'utf-8'</span>).replace(<span class="string">' '</span>, <span class="string">''</span>))</span><br><span class="line">        <span class="keyword">if</span> ack == seq_number:</span><br><span class="line">            data = packet[head_len:]</span><br><span class="line">            pic += data</span><br><span class="line">            sk.sendall(bytes(str(ack), encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">            ack += <span class="number">1</span></span><br><span class="line">            print(ack)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            sk.sendall(bytes(str(ack), encoding=<span class="string">'utf-8'</span>))</span><br><span class="line">        <span class="keyword">if</span> seq_number == num_packet - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            <span class="comment"># time.sleep(0.1)</span></span><br><span class="line">    file.write(pic)</span><br><span class="line"></span><br><span class="line">sk.close()</span><br></pre></td></tr></table></figure>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p>程序运行之前，在发送端有文件图片，大小为246kb，如下：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image10.png" alt=""></p>
+<p>程序运行时的效果，客户端打印收到的包的序号：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image11.png" alt=""></p>
+<p>程序运行结束时，客户端文件中收到了完整的图片，大小为246kb，经检查没有错误，说明了传输的可靠性和完整性：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image12.png" alt=""></p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><h3 id="发送方"><a href="#发送方" class="headerlink" title="发送方"></a>发送方</h3><p>​    GBN发送方必须响应以下三种类型的事件：</p>
+<p>​        上层的调用，当上层调用发送函数的时候，发送方首先检查发送窗口是否已满，即是否有N个已发送但未被确认的分组。如果窗口未满，则创建一个分组并将其发送，变量也相应的更新。</p>
+<p>​        收到ACK，在GBN协议中，对序号为n的分组的确认采取累计确认的方式。表明接收方以正确接收序号n以前（包括n在内）的所有分组。</p>
+<p>​        超时事件：如果出现超时，发送方将重传所有已发送还未被确认的分组。如果收到一个ACK，但是仍有已发送但未被确认的分组，则定时器被重新启动，如果没有已发送但未被确认的分组，则定时器被终止。</p>
+<h3 id="接收方"><a href="#接收方" class="headerlink" title="接收方"></a>接收方</h3><p>​        在GBN中，接收方的动作比较简单。</p>
+<p>​        接收方只需要判断当前接收的分组是否正确。如果一个序号为n的分组被正确收到，并且按序（即上次交付给上层的分组的序号是n-1），则接收方位分组n发送一个ACK，并且将改分组中的数据交付到上层。</p>
+<p>​    在其他所有的情况下，接收方都丢弃该分组，并且为最近按序接收的分组重传ACK。</p>
+<p>​    需要注意的是，因为采用累积确定机制，如果分组k已接受并交付，这意味着所有比k小的分组也已经交付。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>​    本次实验中，我们完成了python的网络编程，模拟了GBN协议在真实环境下的运行，对GBN协议有了进一步的了解。</p>
+<p>​    在GBN协议中，接收方会丢弃所有失序的分组，尽管丢弃一个正确接收但是失序的分组有点浪费。但是根据GBN的原理。假定当前期望的编号是n，但是n+1提前达到。因为数据必须是有序交付，接收方可能缓存分组n+1，然后在他收到并交付分组n后，再将该分组交付到上层。但是如果n丢失，则n和n+1的分组都会被重发，因此，接收方只需要丢弃分组n+1即可。</p>
+<p>​    这种方法的优点是接收方缓存简单，即接收方不需要缓存任何失序分组。对于发送方来说，他只需要维护窗口的下边界和和nextseqnum在窗口中的位置。对于接收方来说，只需要维护下一个按序接收的分组的序号。</p>
+<h1 id="Dijkstra-算法的路由软件——python实现"><a href="#Dijkstra-算法的路由软件——python实现" class="headerlink" title="Dijkstra 算法的路由软件——python实现"></a>Dijkstra 算法的路由软件——python实现</h1><h2 id="Dijkstra算法的实现"><a href="#Dijkstra算法的实现" class="headerlink" title="Dijkstra算法的实现"></a>Dijkstra算法的实现</h2><p>本实验的基础内容。我们使用python的第三方库networks生成、存储图，使用标准库语句完成Dijkstra算法的实现——输入一个图，返回存储任意两点间最短路径的字典。关键代码及注释如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_graph</span><span class="params">(num_node)</span>:</span></span><br><span class="line">    G = nx.Graph()</span><br><span class="line">    <span class="comment"># 使用nx.barabasi_albert_graph构造一个num_node顶点，每个新顶点有num_node/10条边的图</span></span><br><span class="line">    <span class="comment"># 在构造的图上赋以权重，存入文件‘graph.txt’中</span></span><br><span class="line">    <span class="keyword">for</span> u, v <span class="keyword">in</span> nx.barabasi_albert_graph(num_node, int(num_node / <span class="number">10</span>), seed=<span class="number">1</span>).edges():</span><br><span class="line">        G.add_edge(u, v, weight=random.randint(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line">    nx.write_edgelist(G, <span class="string">"graph.txt"</span>, data=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> G</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dijkstra</span><span class="params">(G)</span>:</span></span><br><span class="line">    path = &#123;&#125;</span><br><span class="line">    nodes = G.nodes()</span><br><span class="line">    <span class="keyword">for</span> node <span class="keyword">in</span> nodes:</span><br><span class="line">        N_set = [node]</span><br><span class="line">        D = &#123;&#125;</span><br><span class="line">        <span class="comment"># 初始化path和D</span></span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> nodes:</span><br><span class="line">            path[node, v] = [node]</span><br><span class="line">            <span class="keyword">if</span> v <span class="keyword">in</span> G.neighbors(node):</span><br><span class="line">                D[v] = G.get_edge_data(node, v)[<span class="string">'weight'</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                D[v] = float(<span class="string">'inf'</span>)</span><br><span class="line">        <span class="comment"># 算法主体部分</span></span><br><span class="line">        <span class="comment"># 当所有点都在N中时跳出循环</span></span><br><span class="line">        <span class="keyword">while</span> len(N_set) &lt; len(nodes):</span><br><span class="line">            <span class="comment"># 找到距离node最近的点并将其加入N</span></span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> sorted(D, key=D.__getitem__, reverse=<span class="keyword">False</span>):</span><br><span class="line">                <span class="keyword">if</span> w <span class="keyword">not</span> <span class="keyword">in</span> N_set:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            N_set.append(w)</span><br><span class="line">            <span class="comment"># 根据w和新的N，更新D和path</span></span><br><span class="line">            <span class="keyword">for</span> v <span class="keyword">in</span> set(G.neighbors(w)) - set(N_set):</span><br><span class="line">                <span class="comment"># 如果D(v) &gt; D(w) + cost(w, v)，</span></span><br><span class="line">                <span class="comment"># 使用【w的path加上w】作为v的path</span></span><br><span class="line">                <span class="comment"># 使用D(w) + cost(w, v)作为D(v)</span></span><br><span class="line">                <span class="keyword">if</span> D[v] &gt; D[w] + G.get_edge_data(w, v)[<span class="string">'weight'</span>]:</span><br><span class="line">                    path[node, v][:] = path[node, w][:]</span><br><span class="line">                    path[node, v].append(w)</span><br><span class="line">                    D[v] = D[w] + G.get_edge_data(w, v)[<span class="string">'weight'</span>]</span><br><span class="line">        <span class="comment"># 将每个点本身加到其path的最后</span></span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> nodes:</span><br><span class="line">            <span class="keyword">if</span> v != node:</span><br><span class="line">                path[node, v].append(v)</span><br><span class="line">    <span class="keyword">return</span> path</span><br></pre></td></tr></table></figure>
+<h2 id="最优路径的可视化"><a href="#最优路径的可视化" class="headerlink" title="最优路径的可视化"></a>最优路径的可视化</h2><p>networks提供了可视化的接口，我们实现了20个点下5到15的最优路径可视化如下图，上图为原图，下图红色的为最优路径[5, 4, 0, 15]，线的粗细表示两点间的cost。</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (1" alt="">.png)</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (2" alt="">.png)</p>
+<p>关键代码及注释如下，最优路径图由点、非最优路径、最优路径三部分组成：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 采用自己写的dijkstra算法得到最短路径</span></span><br><span class="line">G = get_graph(<span class="number">20</span>)</span><br><span class="line">path = dijkstra(G)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 画出原图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">9</span>, <span class="number">6</span>))</span><br><span class="line">plt.title(<span class="string">"graph"</span>)</span><br><span class="line">pos = nx.spring_layout(G)</span><br><span class="line">nx.draw_networkx(G, pos)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 画出带有5到15的最短路径的图</span></span><br><span class="line">start_node = <span class="number">5</span></span><br><span class="line">end_node = <span class="number">15</span></span><br><span class="line"><span class="comment"># 画点</span></span><br><span class="line">edges = path_to_edges(path, start_node, end_node)</span><br><span class="line">plt.figure(figsize=(<span class="number">9</span>, <span class="number">6</span>))</span><br><span class="line">plt.title(<span class="string">"The shortest path from %d to %d"</span> % (start_node, end_node))</span><br><span class="line">nx.draw_networkx_nodes(G, pos, node_size=<span class="number">40</span>)</span><br><span class="line"><span class="comment"># 画非路径上的边</span></span><br><span class="line">edges_not_in_path = list(set(G.edges()) - set(edges))</span><br><span class="line">edgewidth = [G.get_edge_data(edge[<span class="number">0</span>], edge[<span class="number">1</span>])[<span class="string">'weight'</span>] <span class="keyword">for</span> edge <span class="keyword">in</span> edges_not_in_path]</span><br><span class="line">nx.draw_networkx_edges(G, pos, edgelist=edges_not_in_path, width=edgewidth, edge_color=<span class="string">'b'</span>)</span><br><span class="line"><span class="comment"># 画路径上的边</span></span><br><span class="line">edgewidth = [G.get_edge_data(edge[<span class="number">0</span>], edge[<span class="number">1</span>])[<span class="string">'weight'</span>] <span class="keyword">for</span> edge <span class="keyword">in</span> edges]</span><br><span class="line">nx.draw_networkx_edges(G, pos, edgelist=edges, width=edgewidth, edge_color=<span class="string">'r'</span>)</span><br></pre></td></tr></table></figure>
+<p>##算法结果检查</p>
+<p>一方面，通过人工检查，20个点的图的数据存储在文件中，易知5到15的最优路径的确为[5, 4,0, 15]。</p>
+<p>另一方面，将得到的路径输出并与networks提供的Dijistra算法结果比对，发现全部一致，可以认为我们的算法无误，截取部分结果如下：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (3" alt="">.png)<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (4" alt="">.png)<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (5" alt="">.png)<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (6" alt="">.png)</p>
+<p>关键代码和注释如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 采用networkx实现的dijkstra得到路径并和自己实现的比对</span></span><br><span class="line">path2 = nx.all_pairs_dijkstra_path(G)</span><br><span class="line"><span class="keyword">for</span> start_node <span class="keyword">in</span> G.nodes():</span><br><span class="line">    <span class="keyword">for</span> end_node <span class="keyword">in</span> G.nodes():</span><br><span class="line">        <span class="keyword">if</span> end_node != start_node:</span><br><span class="line">            print(<span class="string">'my：'</span>, path[start_node, end_node])</span><br><span class="line">            print(<span class="string">'nx: '</span>, path2[start_node][end_node])</span><br></pre></td></tr></table></figure>
+<h2 id="路由表的输出"><a href="#路由表的输出" class="headerlink" title="路由表的输出"></a>路由表的输出</h2><p>在本课程中，Dijistra算法的使用根本是为了获得每个路由器的转发表，所以我们将所有的最优路径转化为转发表并输出，部分结果如下，其中左边的为目的路由器，右边的为下一个路由器：<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (7" alt="">.png)<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (8" alt="">.png)<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (9" alt="">.png)<br><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (10" alt="">.png)</p>
+<p>关键代码和注释如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出路由表</span></span><br><span class="line"><span class="keyword">for</span> router <span class="keyword">in</span> G.nodes():</span><br><span class="line">    print(<span class="string">'forwarding table for router %d'</span> % router)</span><br><span class="line">    <span class="keyword">for</span> start_node <span class="keyword">in</span> G.nodes():</span><br><span class="line">        <span class="comment"># 输出路由器router转发来自start_node的数据报的转发表</span></span><br><span class="line">        print(<span class="string">'from start_node %d: '</span> % start_node)</span><br><span class="line">        <span class="keyword">for</span> end_node <span class="keyword">in</span> G.nodes():</span><br><span class="line">            <span class="keyword">if</span> start_node != end_node:</span><br><span class="line">                path_start_to_end = path[start_node, end_node]</span><br><span class="line">                <span class="keyword">if</span> router <span class="keyword">in</span> path_start_to_end:</span><br><span class="line">                    <span class="keyword">if</span> router != end_node:</span><br><span class="line">                        next_router = path_start_to_end[path_start_to_end.index(router) + <span class="number">1</span>]</span><br><span class="line">                    print(<span class="string">'%d\t|\t%d'</span> % (end_node, next_router))</span><br><span class="line">    print(<span class="string">'-----------------------------'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="算法性能对比"><a href="#算法性能对比" class="headerlink" title="算法性能对比"></a>算法性能对比</h2><p>我们将我们的算法与networks提供的算法进行性能比对，测试环境如下：</p>
+<p>处理器：Intel i7 7500U</p>
+<p>内存：8G, lddr4</p>
+<p>系统：windows 10 1709 家庭中文版</p>
+<p>Python版本：python3.5.3</p>
+<p>IDE：PyCharm Community Edition 2017.2.4</p>
+<p>得到的原始数据如下：</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (12" alt="">.png)</p>
+<p>将其可视化后，可以清楚地发现，我们的时间以指数增长，标准的算法以对数增长，这是我们需要进一步优化的地方，低效率的路由算法不具备任何的工程意义。</p>
+<p><img src="/2018/05/11/朝花夕拾——《计算机网络原理》实验合集/image (11" alt="">.png)</p>
+<p>关键代码和注释如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获得原始数据</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'cmp_time.csv'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>, <span class="number">600</span>, <span class="number">20</span>):</span><br><span class="line">        G = get_graph(i)</span><br><span class="line">        print(<span class="string">'node num: %d'</span> % i)</span><br><span class="line">        f.write(<span class="string">'%d,'</span> % i)</span><br><span class="line"></span><br><span class="line">        start1 = time()</span><br><span class="line">        dijkstra(G)</span><br><span class="line">        time1 = time() - start1</span><br><span class="line">        print(time1)</span><br><span class="line">        f.write(str(time1) + <span class="string">','</span>)</span><br><span class="line"></span><br><span class="line">        start2 = time()</span><br><span class="line">        nx.all_pairs_dijkstra_path(G)</span><br><span class="line">        time2 = time() - start2</span><br><span class="line">        print(time2)</span><br><span class="line">        f.write(str(time2) + <span class="string">','</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> time2 &gt; <span class="number">0</span>:</span><br><span class="line">            ratio = time1 / time2</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            ratio = float(<span class="string">'inf'</span>)</span><br><span class="line">        print(ratio)</span><br><span class="line">        f.write(str(ratio) + <span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据可视化</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">select_data</span><span class="params">(datas, attr, min_, max_)</span>:</span></span><br><span class="line">    results = [data <span class="keyword">for</span> data <span class="keyword">in</span> datas <span class="keyword">if</span> data[attr] &gt;= min_ <span class="keyword">and</span> data[attr] &lt;= max_]</span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_data</span><span class="params">(fp, columns=[])</span>:</span></span><br><span class="line">    f = pd.read_csv(fp)</span><br><span class="line">    datas = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(f.__len__()):</span><br><span class="line">        data = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> columns:</span><br><span class="line">            data[c] = f[c][i]</span><br><span class="line">        datas.append(data)</span><br><span class="line">    <span class="keyword">return</span> datas</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    plog = <span class="string">'./cmp_time.csv'</span></span><br><span class="line">    datas = read_data(plog, [<span class="string">'node'</span>, <span class="string">'my'</span>, <span class="string">'nx'</span>, <span class="string">'rate'</span>])</span><br><span class="line">    nodes = [data[<span class="string">'node'</span>] <span class="keyword">for</span> data <span class="keyword">in</span> datas]</span><br><span class="line">    my_ = [data[<span class="string">'my'</span>] <span class="keyword">for</span> data <span class="keyword">in</span> datas]</span><br><span class="line">    nx_ = [data[<span class="string">'nx'</span>] <span class="keyword">for</span> data <span class="keyword">in</span> datas]</span><br><span class="line">    rate_ = [data[<span class="string">'rate'</span>] <span class="keyword">for</span> data <span class="keyword">in</span> datas]</span><br><span class="line"></span><br><span class="line">    fig = plt.figure()</span><br><span class="line">    ax1 = fig.add_subplot(<span class="number">111</span>)</span><br><span class="line">    ax1.set_ylabel(<span class="string">'time'</span>)</span><br><span class="line"></span><br><span class="line">    ax1.plot(nodes, my_, <span class="string">'p-.'</span>, label=<span class="string">" our own algorithm"</span>)</span><br><span class="line">    ax1.plot(nodes, nx_, <span class="string">'p-.'</span>, label=<span class="string">"standard algorithm"</span>)</span><br><span class="line">    plt.legend(loc=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">    ax2 = ax1.twinx()</span><br><span class="line">    ax2.plot(nodes, rate_, <span class="string">'D-.'</span>, color=<span class="string">'r'</span>, label=<span class="string">"rate"</span>)</span><br><span class="line">    ax2.set_ylabel(<span class="string">'rate'</span>)</span><br><span class="line">    plt.legend(loc=<span class="number">1</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+<h2 id="实验总结与未来展望"><a href="#实验总结与未来展望" class="headerlink" title="实验总结与未来展望"></a>实验总结与未来展望</h2><p>​    通过本次实验，我们完成了路由算法的实现、校验、可视化和性能测试。一方面，我们对于算法的理解更加深入，对于网络层数据报的路由转发过程的认识更加清晰，这必将对我们的进一步学习带来积极地影响；另一方面，算法的低效让我们认识到存在的不足和差距，意识到算法对于效率的重要性，我们将以此为基础，做出改进。</p>
+<p>​    限于时间，我们并没有进一步优化算法，现在我们想到的提高程序效率的方案有：</p>
+<ol>
+<li><p>尝试使用更加底层的语言编写程序</p>
+</li>
+<li><p>由于最短路径是双向的，循环应该跳过已经计算好的路径</p>
+</li>
+<li><p>优化程序的逻辑结构、数据的存储方式</p>
+</li>
+<li><p>采用多线程的方式计算路径并调用GPU加速</p>
+</li>
+</ol>
+<p>​    当然，得益于networks库的开源性，我们可以进一步研究其源代码以获得启发，但这可能已经远远超出了本次实验所要求的内容了，在此不做赘述。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/" rel="next" title="朝花夕拾——《汇编与接口技术》综合实验">
+                <i class="fa fa-chevron-left"></i> 朝花夕拾——《汇编与接口技术》综合实验
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzU0NC8xMDEwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wang22ti</p>
+              <p class="site-description motion-element" itemprop="description">学习，日记，杂谈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wang22ti" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wang22ti@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简易Web-Mail服务器"><span class="nav-number">1.</span> <span class="nav-text">简易Web Mail服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP连接测试"><span class="nav-number">1.1.</span> <span class="nav-text">TCP连接测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试步骤"><span class="nav-number">1.1.1.</span> <span class="nav-text">测试步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试代码"><span class="nav-number">1.1.2.</span> <span class="nav-text">测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试结果"><span class="nav-number">1.1.3.</span> <span class="nav-text">测试结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web服务器搭建"><span class="nav-number">1.2.</span> <span class="nav-text">web服务器搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#框架简介"><span class="nav-number">1.2.1.</span> <span class="nav-text">框架简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站编写"><span class="nav-number">1.2.2.</span> <span class="nav-text">网站编写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站测试"><span class="nav-number">1.2.3.</span> <span class="nav-text">网站测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Email客户端"><span class="nav-number">1.3.</span> <span class="nav-text">Email客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用qq邮箱"><span class="nav-number">1.3.1.</span> <span class="nav-text">使用qq邮箱</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进一步的开发"><span class="nav-number">1.4.</span> <span class="nav-text">进一步的开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完善发邮件的基本功能"><span class="nav-number">1.4.1.</span> <span class="nav-text">完善发邮件的基本功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化用户界面"><span class="nav-number">1.4.2.</span> <span class="nav-text">优化用户界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入接收邮件的功能"><span class="nav-number">1.4.3.</span> <span class="nav-text">加入接收邮件的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化报错机制"><span class="nav-number">1.4.4.</span> <span class="nav-text">优化报错机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入数据库，实现更多功能"><span class="nav-number">1.4.5.</span> <span class="nav-text">加入数据库，实现更多功能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GBN算法的python实现"><span class="nav-number">2.</span> <span class="nav-text">GBN算法的python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要问题及解决方案"><span class="nav-number">2.1.</span> <span class="nav-text">主要问题及解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验源码"><span class="nav-number">2.2.</span> <span class="nav-text">实验源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行结果"><span class="nav-number">2.3.</span> <span class="nav-text">运行结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">2.4.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送方"><span class="nav-number">2.4.1.</span> <span class="nav-text">发送方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收方"><span class="nav-number">2.4.2.</span> <span class="nav-text">接收方</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">2.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dijkstra-算法的路由软件——python实现"><span class="nav-number">3.</span> <span class="nav-text">Dijkstra 算法的路由软件——python实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dijkstra算法的实现"><span class="nav-number">3.1.</span> <span class="nav-text">Dijkstra算法的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最优路径的可视化"><span class="nav-number">3.2.</span> <span class="nav-text">最优路径的可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由表的输出"><span class="nav-number">3.3.</span> <span class="nav-text">路由表的输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法性能对比"><span class="nav-number">3.4.</span> <span class="nav-text">算法性能对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验总结与未来展望"><span class="nav-number">3.5.</span> <span class="nav-text">实验总结与未来展望</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wang22ti</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</span>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">访问人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">访问次数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
