@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王子泰" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="这个作业并不是我独立完成的，需要特别感谢祝叶舟和吴文睿两位同学协作。 实验目的1)   综合运用课堂学习的汇编与接口知识，在实践的基础上进一步巩固知识点 2)   通过自学课堂上没有讲到的接口技术，提高同学们的自学意识与能力 3)   通过实验的设计，提高同学们系统工程的意识，提高同学们的创新意识与能力 4)   通过团队协作，提高同学们合作的能力与意识 实验内容内容概述小时候在红白机上，我们都玩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="朝花夕拾——《汇编与接口技术》综合实验">
+<meta property="og:url" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/index.html">
+<meta property="og:site_name" content="王子泰">
+<meta property="og:description" content="这个作业并不是我独立完成的，需要特别感谢祝叶舟和吴文睿两位同学协作。 实验目的1)   综合运用课堂学习的汇编与接口知识，在实践的基础上进一步巩固知识点 2)   通过自学课堂上没有讲到的接口技术，提高同学们的自学意识与能力 3)   通过实验的设计，提高同学们系统工程的意识，提高同学们的创新意识与能力 4)   通过团队协作，提高同学们合作的能力与意识 实验内容内容概述小时候在红白机上，我们都玩">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/1.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/2.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/3.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/4.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/5.png">
+<meta property="og:updated_time" content="2018-05-11T13:32:08.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="朝花夕拾——《汇编与接口技术》综合实验">
+<meta name="twitter:description" content="这个作业并不是我独立完成的，需要特别感谢祝叶舟和吴文睿两位同学协作。 实验目的1)   综合运用课堂学习的汇编与接口知识，在实践的基础上进一步巩固知识点 2)   通过自学课堂上没有讲到的接口技术，提高同学们的自学意识与能力 3)   通过实验的设计，提高同学们系统工程的意识，提高同学们的创新意识与能力 4)   通过团队协作，提高同学们合作的能力与意识 实验内容内容概述小时候在红白机上，我们都玩">
+<meta name="twitter:image" content="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/"/>
+
+
+
+
+
+  <title>朝花夕拾——《汇编与接口技术》综合实验 | 王子泰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王子泰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哭也欢乐，悲也潇洒</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wang22ti.com/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang22ti">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王子泰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">朝花夕拾——《汇编与接口技术》综合实验</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T21:19:37+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/汇编与接口技术/" itemprop="url" rel="index">
+                    <span itemprop="name">汇编与接口技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,906 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这个作业并不是我独立完成的，需要特别感谢祝叶舟和吴文睿两位同学协作。</p>
+<h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><p>1)   综合运用课堂学习的汇编与接口知识，在实践的基础上进一步巩固知识点</p>
+<p>2)   通过自学课堂上没有讲到的接口技术，提高同学们的自学意识与能力</p>
+<p>3)   通过实验的设计，提高同学们系统工程的意识，提高同学们的创新意识与能力</p>
+<p>4)   通过团队协作，提高同学们合作的能力与意识</p>
+<h1 id="实验内容"><a href="#实验内容" class="headerlink" title="实验内容"></a>实验内容</h1><h2 id="内容概述"><a href="#内容概述" class="headerlink" title="内容概述"></a>内容概述</h2><p>小时候在红白机上，我们都玩过经典的“打飞机”游戏，我们的实验就是通过开发板上现有的接口，实现游戏的基本功能，包括：</p>
+<p>1)   用一个像素点表示一下飞机</p>
+<p>2)   通过按键控制飞机移动</p>
+<p>3)   随着时间的推移，自动出现敌人</p>
+<p>4)   通过按键控制飞机开炮，使得同一条直线上的敌人死亡</p>
+<p>5)   当敌人飞越我方飞机，则我方输，显示相关信息</p>
+<p>6)   当将敌人飞机全部消灭，我方胜利，显示相关信息</p>
+<h2 id="实验所用接口"><a href="#实验所用接口" class="headerlink" title="实验所用接口"></a>实验所用接口</h2><p>本次实验一共使用了6个接口，他们的功能如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">接口</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">8255并行接口</td>
+<td style="text-align:center">并行输出点阵的亮灭信息到8*8点阵</td>
+</tr>
+<tr>
+<td style="text-align:center">8*8点阵</td>
+<td style="text-align:center">接收8255的点阵信息并显示游戏界面</td>
+</tr>
+<tr>
+<td style="text-align:center">4*4小键盘</td>
+<td style="text-align:center">输出的信号作为中断源，执行相应的中断程序完成对我方飞机的左右控制与开炮操作</td>
+</tr>
+<tr>
+<td style="text-align:center">8254计数器</td>
+<td style="text-align:center">计时，用于控制新的敌人产生的速度与8*8点阵的刷新频率</td>
+</tr>
+<tr>
+<td style="text-align:center">8259中断控制</td>
+<td style="text-align:center">接收其他接口的信号并产生对应的中断</td>
+</tr>
+<tr>
+<td style="text-align:center">6位数码管</td>
+<td style="text-align:center">用于显示玩家的分数，可以是击落敌机的数量，或者是剩余敌机的数量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="实验连线"><a href="#实验连线" class="headerlink" title="实验连线"></a>实验连线</h2><h3 id="8255与8-8点阵"><a href="#8255与8-8点阵" class="headerlink" title="8255与8*8点阵"></a>8255与8*8点阵</h3><p>用8255的A口输出控制8*8点阵的行信息，B口输出控制8*8点阵的列信息。如果只有行信息或列信息，对应行或列的灯都会被电亮；但如果同时都有行列信息，行和列对应的一个灯会被点亮。通过高速的刷新8*8点阵，当刷新频率超过人眼可以识别的时候，就会形成连续的图像，让人感觉是动画。</p>
+<p><img src="/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/1.png" alt=""></p>
+<h3 id="8254、5259和6位数码管"><a href="#8254、5259和6位数码管" class="headerlink" title="8254、5259和6位数码管"></a>8254、5259和6位数码管</h3><p>和之前做过的实验相同，通过串联两个定时器，8254发出一定频率的方波，当传到系统总线的时候引发中断，执行中断程序让所有的敌人向下移动1个单位，从而推动游戏的发展。而每次集中敌人的时候，也会引发中断，执行相应的程序完成计数并显示到数码管上。</p>
+<p><img src="/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/2.png" alt=""></p>
+<h3 id="8255和小键盘"><a href="#8255和小键盘" class="headerlink" title="8255和小键盘"></a>8255和小键盘</h3><p>通过设置8255的控制字，使得由C接收来自小键盘行和列的信号。通过汇编软件的逻辑操作，完成对是哪一个按键的判断，从而触发相应的中断程序，完成游戏的逻辑控制。</p>
+<p><img src="/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/3.png" alt=""></p>
+<h3 id="实验连线实物图"><a href="#实验连线实物图" class="headerlink" title="实验连线实物图"></a>实验连线实物图</h3><p><img src="/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/4.jpg" alt=""></p>
+<h2 id="实验程序设计"><a href="#实验程序设计" class="headerlink" title="实验程序设计]"></a>实验程序设计]</h2><p>本程序采用中断的方式，否则不断刷新界面，保持画面的稳定性，当有中断的时候处理相应事件完成对应操作。其中，中断服务程序需要完成两个任务，一个是点阵刷新，另外一个是更新敌人。程序的流程图如下：</p>
+<p><img src="/2018/05/11/朝花夕拾——《汇编与接口技术》综合实验/5.png" alt=""></p>
+<h2 id="程序源代码"><a href="#程序源代码" class="headerlink" title="程序源代码"></a>程序源代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br></pre></td><td class="code"><pre><span class="line">;****************************************;</span><br><span class="line">;*        游戏                          *;</span><br><span class="line">;****************************************;</span><br><span class="line">data   segment   </span><br><span class="line">led_cs_0   equ  220H</span><br><span class="line">led_cs_1   equ  221h</span><br><span class="line"></span><br><span class="line">i8254_0    equ  210h</span><br><span class="line">i8254_1    equ  211h</span><br><span class="line">i8254_kz   equ  213h</span><br><span class="line"></span><br><span class="line">i8255_kz   equ  203h</span><br><span class="line">i8255_a    equ  200h</span><br><span class="line">i8255_b    equ  201h</span><br><span class="line">i8255_c    equ  202h</span><br><span class="line"></span><br><span class="line">pdata      db   11h,0h,0h,00h,0h,0h,0h</span><br><span class="line">user       db   08h</span><br><span class="line">num_row    dw   0h</span><br><span class="line">bit_num    db   01h,02h,04h,08h,10h,20h,40h,80h  ;led位置选择码</span><br><span class="line">lose       db   81h,42h,24h,18h,18h,24h,42h,81h</span><br><span class="line">victory    db   00h,66h,99h,81h,42h,24h,18h,00h</span><br><span class="line">enemy      db   21h,42h,42h,04h,8h,78h,12h,20h,10h,40h,20h,04h,10h,04h,80h,10h</span><br><span class="line">ledcode    db   3fh,06h,5bh,4fh,66h,6dh,7dh,07h,7fh,67h,77h,7ch,39h,5eh,79h,71h</span><br><span class="line">flag       db   01h</span><br><span class="line">count      dw   00h</span><br><span class="line">num_enemy  dw   00h</span><br><span class="line">num        db   00h</span><br><span class="line"></span><br><span class="line">data   ends    </span><br><span class="line">code segment  </span><br><span class="line">         assume cs:code,ds:data </span><br><span class="line">start:   cli</span><br><span class="line">         mov   ax,data</span><br><span class="line">         mov   ds,ax</span><br><span class="line">         mov   es,ax  </span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">;------- 8254 初始化---------------   </span><br><span class="line">         mov   dx,i8254_kz    </span><br><span class="line">         mov   al,00110110b      ;0# mode 3</span><br><span class="line">         out   dx,al</span><br><span class="line">         mov   ax,10</span><br><span class="line">         mov   dx,i8254_0</span><br><span class="line">         out   dx,al			;先写入低字节</span><br><span class="line">         mov   al,ah</span><br><span class="line">         out   dx,al			;后写入高字节</span><br><span class="line">         mov   dx,i8254_kz</span><br><span class="line">         mov   al,01111100b		;设8254通道1工作方式2</span><br><span class="line">         out   dx,al</span><br><span class="line">         </span><br><span class="line">         mov   ax,10			;写入循环计数初值1000</span><br><span class="line">         mov   dx,i8254_1</span><br><span class="line">         out   dx,al			;先写低字节</span><br><span class="line">         mov   al,ah</span><br><span class="line">         out   dx,al			;后写高字节</span><br><span class="line"></span><br><span class="line">;------ 8259 初始化----------------      </span><br><span class="line">         push  ds    </span><br><span class="line">         mov   ax,0</span><br><span class="line">         mov   ds,ax</span><br><span class="line">         lea   ax,cs:mint_proc		;写入中断程序入口</span><br><span class="line">         mov   bx,5					;n=IRx</span><br><span class="line">         mov   si,30H           	;base =30H   Master</span><br><span class="line">         add   si,bx</span><br><span class="line">         add   si,si				;type num</span><br><span class="line">         add   si,si				;X4</span><br><span class="line">         mov   ds:[si],ax</span><br><span class="line">         push  cs            </span><br><span class="line">         pop   ax   </span><br><span class="line">         mov   ds:[si+2],ax    </span><br><span class="line">         pop   ds         </span><br><span class="line"></span><br><span class="line">;------ WRITE 8259 MASK WORD-----------</span><br><span class="line">         in    al,21h    </span><br><span class="line">         and   al,11011011b		;mask byte       </span><br><span class="line">         out   21h,al</span><br><span class="line">         sti</span><br><span class="line"></span><br><span class="line">step1:    </span><br><span class="line">         lea   si,ledcode</span><br><span class="line">         mov   cl,num</span><br><span class="line">         add   si,cx</span><br><span class="line">         mov   al,[si]</span><br><span class="line">         mov   dx,led_cs_0</span><br><span class="line">         out   dx,al</span><br><span class="line">         mov   al,00000001b</span><br><span class="line">         mov   dx,led_cs_1</span><br><span class="line">         out   dx,al</span><br><span class="line">         mov   dx,i8255_kz		;8255控制口地址  </span><br><span class="line">         mov   al,10000001b</span><br><span class="line">         out   dx,al</span><br><span class="line">L1:      mov   al,0efh</span><br><span class="line">         mov   dx,i8255_c</span><br><span class="line">         out   dx,al</span><br><span class="line">         mov   dx,i8255_c</span><br><span class="line">         in    al,dx</span><br><span class="line">         or    al,0f0h</span><br><span class="line">         cmp   al,0ffh</span><br><span class="line">         jne   key</span><br><span class="line">         jmp   L1           </span><br><span class="line">key:     mov   bl,al;</span><br><span class="line">noup:    mov   dx,i8255_c</span><br><span class="line">         in    al,dx</span><br><span class="line">         or    al,0f0h</span><br><span class="line">         cmp   al,0ffh</span><br><span class="line">         je    et</span><br><span class="line">         jmp   noup</span><br><span class="line">et:      mov   al,bl</span><br><span class="line">		 or    al,0f0h</span><br><span class="line">		</span><br><span class="line">         cmp   al,0f7h</span><br><span class="line">         jz    toright</span><br><span class="line"></span><br><span class="line">         cmp   al,0fbh</span><br><span class="line">         jz    toleft</span><br><span class="line"></span><br><span class="line">         cmp   al,0fdh</span><br><span class="line">         jz    atta</span><br><span class="line"></span><br><span class="line">         jmp   step1</span><br><span class="line">         </span><br><span class="line">toleft:  mov   al,user</span><br><span class="line">         rol   al,1</span><br><span class="line">         mov   user,al</span><br><span class="line">         jmp   step1</span><br><span class="line"></span><br><span class="line">toright: mov   al,user</span><br><span class="line">         ror   al,1</span><br><span class="line">         mov   user,al</span><br><span class="line">         jmp   step1</span><br><span class="line"></span><br><span class="line">atta:                  </span><br><span class="line">	 lea   si,user;  </span><br><span class="line">	 mov   ah, 00h</span><br><span class="line">isenemy: cmp   ah,8</span><br><span class="line">	 jz    step1</span><br><span class="line">	 inc   ah</span><br><span class="line">	 sub   si,01h</span><br><span class="line">         mov   al,[si]</span><br><span class="line">         cmp   al,0</span><br><span class="line">         jz    isenemy</span><br><span class="line">         xor   al,user				</span><br><span class="line">         cmp   al,[si]</span><br><span class="line">         jnb   isenemy </span><br><span class="line">         mov   [si],al   </span><br><span class="line">         </span><br><span class="line">         mov   al,num</span><br><span class="line">         inc   al;</span><br><span class="line">         cmp   al,0cH</span><br><span class="line">         mov   num,al</span><br><span class="line">          </span><br><span class="line">          </span><br><span class="line">         jc    step1</span><br><span class="line">         cli</span><br><span class="line">win: </span><br><span class="line">         call  disp2</span><br><span class="line">         jmp   win      </span><br><span class="line"> </span><br><span class="line">readkey  proc</span><br><span class="line">scan:    mov   al,0e0h</span><br><span class="line">         mov   dx,i8255_c</span><br><span class="line">         out   dx,al</span><br><span class="line">         mov   dx,i8255_c</span><br><span class="line">         in    al,dx</span><br><span class="line">         or    al,0f0h</span><br><span class="line">         cmp   al,0ffh</span><br><span class="line">         jne   exitkey</span><br><span class="line">         jmp   scan</span><br><span class="line">exitkey: ret</span><br><span class="line">readkey  endp</span><br><span class="line"></span><br><span class="line">keyup    proc</span><br><span class="line">noup1:   mov   dx,i8255_c</span><br><span class="line">         in    al,dx</span><br><span class="line">         or    al,0f0h</span><br><span class="line">         cmp   al,0ffh</span><br><span class="line">         je    et</span><br><span class="line">         jmp   noup</span><br><span class="line">et1:     ret</span><br><span class="line">keyup    endp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">;------Master INT Prog------------------</span><br><span class="line">mint_proc proc far   </span><br><span class="line">         sti</span><br><span class="line">         push  ax</span><br><span class="line">         push  dx</span><br><span class="line">	 push  si</span><br><span class="line">         mov   ax,count</span><br><span class="line">         cmp   ax,500 ;每一秒更新敌人</span><br><span class="line">         jnz   next  </span><br><span class="line">         </span><br><span class="line">         lea   si,user;</span><br><span class="line">         sub   si,01h</span><br><span class="line">         mov   al,[si]</span><br><span class="line">         cmp   al,0</span><br><span class="line">         jz    com</span><br><span class="line">dead:    call  disp1</span><br><span class="line">         jmp   dead</span><br><span class="line">com:     sub   si,01h</span><br><span class="line">         mov   cx,6          </span><br><span class="line">lo:      mov   al,[si]</span><br><span class="line">         mov   [si+1],al;</span><br><span class="line">         sub   si,01h</span><br><span class="line">         loop  lo;</span><br><span class="line">         lea   si,enemy</span><br><span class="line">         add   si,num_enemy</span><br><span class="line">          </span><br><span class="line">         add   num_enemy,01h</span><br><span class="line">         mov   al,[si] </span><br><span class="line">         lea   si,pdata           </span><br><span class="line">         mov   [si],al </span><br><span class="line">         mov   count,0</span><br><span class="line">		  		</span><br><span class="line">next:    add   count,01h</span><br><span class="line">         call  disp    ;每0.01秒刷新一次</span><br><span class="line"></span><br><span class="line">         mov   al,20h  </span><br><span class="line">         out   20h,al</span><br><span class="line">         pop   si</span><br><span class="line">         pop   dx  </span><br><span class="line">         pop   ax         </span><br><span class="line">         iret</span><br><span class="line">mint_proc  endp</span><br><span class="line"></span><br><span class="line">disp     proc        ;显示</span><br><span class="line">         push  dx</span><br><span class="line">         push  bx</span><br><span class="line">         push  ax</span><br><span class="line">         push  si         </span><br><span class="line">         mov   ax,0h           </span><br><span class="line">         mov   num_row,ax;</span><br><span class="line">            </span><br><span class="line">ll1:     cmp   num_row,08h</span><br><span class="line">         jz    exi</span><br><span class="line"></span><br><span class="line">         mov   dx,i8255_kz  ;b口控制列</span><br><span class="line">         mov   al,81h</span><br><span class="line">         out   dx,al</span><br><span class="line">	 lea   si,bit_num</span><br><span class="line">	 add   si,num_row</span><br><span class="line">         mov   al,[si]            </span><br><span class="line">	 mov   dx,i8255_b</span><br><span class="line">         out   dx,al</span><br><span class="line"></span><br><span class="line">         lea   si,pdata  ;a口控制列</span><br><span class="line">	 add   si,num_row</span><br><span class="line">         mov   al,[si]</span><br><span class="line">         mov   dx,i8255_a</span><br><span class="line">         out   dx,al</span><br><span class="line">         call  delay</span><br><span class="line">l3:      inc   num_row</span><br><span class="line">         jmp   ll1   </span><br><span class="line">exi:      		</span><br><span class="line">         pop   si</span><br><span class="line">         pop   ax</span><br><span class="line">         pop   bx</span><br><span class="line">         pop   dx </span><br><span class="line">         ret    </span><br><span class="line">disp     endp</span><br><span class="line"></span><br><span class="line">disp1    proc        ;显示</span><br><span class="line">         push  dx</span><br><span class="line">         push  bx</span><br><span class="line">         push  ax</span><br><span class="line">         push  si         </span><br><span class="line">         mov   ax,0h           </span><br><span class="line">         mov   num_row,ax;</span><br><span class="line">            </span><br><span class="line">ll11:    cmp   num_row,08h</span><br><span class="line">         jz    exi1</span><br><span class="line"></span><br><span class="line">         mov   dx,i8255_kz  ;b口控制列</span><br><span class="line">         mov   al,81h</span><br><span class="line">         out   dx,al</span><br><span class="line">	 lea   si,bit_num</span><br><span class="line">	 add   si,num_row</span><br><span class="line">         mov   al,[si]            </span><br><span class="line">	 mov   dx,i8255_b</span><br><span class="line">         out   dx,al</span><br><span class="line"></span><br><span class="line">         lea   si,lose  ;a口控制列</span><br><span class="line">	 add   si,num_row</span><br><span class="line">         mov   al,[si]</span><br><span class="line">         mov   dx,i8255_a</span><br><span class="line">         out   dx,al</span><br><span class="line">         call  delay</span><br><span class="line">l31:     inc   num_row</span><br><span class="line">         jmp   ll11   </span><br><span class="line">exi1:      		</span><br><span class="line">         pop   si</span><br><span class="line">         pop   ax</span><br><span class="line">         pop   bx</span><br><span class="line">         pop   dx </span><br><span class="line">         ret    </span><br><span class="line">disp1    endp</span><br><span class="line"></span><br><span class="line">disp2    proc        ;显示</span><br><span class="line">         push  dx</span><br><span class="line">         push  bx</span><br><span class="line">         push  ax</span><br><span class="line">         push  si         </span><br><span class="line">         mov   ax,0h           </span><br><span class="line">         mov   num_row,ax;</span><br><span class="line">            </span><br><span class="line">ll12:    cmp   num_row,08h</span><br><span class="line">         jz    exi2</span><br><span class="line"></span><br><span class="line">         mov   dx,i8255_kz  ;b口控制列</span><br><span class="line">         mov   al,81h</span><br><span class="line">         out   dx,al</span><br><span class="line">	 lea   si,bit_num</span><br><span class="line">	 add   si,num_row</span><br><span class="line">         mov   al,[si]            </span><br><span class="line">	 mov   dx,i8255_b</span><br><span class="line">         out   dx,al</span><br><span class="line"></span><br><span class="line">         lea   si,victory  ;a口控制列</span><br><span class="line">	 add   si,num_row</span><br><span class="line">         mov   al,[si]</span><br><span class="line">         mov   dx,i8255_a</span><br><span class="line">         out   dx,al</span><br><span class="line">         call  delay</span><br><span class="line">l32:     inc   num_row</span><br><span class="line">         jmp   ll12  </span><br><span class="line">exi2:      		</span><br><span class="line">         pop   si</span><br><span class="line">         pop   ax</span><br><span class="line">         pop   bx</span><br><span class="line">         pop   dx </span><br><span class="line">         ret    </span><br><span class="line">disp2    endp</span><br><span class="line"></span><br><span class="line">update   proc</span><br><span class="line">         push  ax</span><br><span class="line">         push  bx</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">         pop   bx</span><br><span class="line">         pop   ax  </span><br><span class="line">update   endp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">attack   proc</span><br><span class="line">         push  ax</span><br><span class="line">  </span><br><span class="line">         pop   ax      </span><br><span class="line">attack   endp</span><br></pre></td></tr></table></figure>
+<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><p>录了两个视频，从中可以看到，程序按照我们所期望的方式运行。当我们胜利后，8*8点阵会显示一个心型；当我们失败的时候，会显示一个叉。</p>
+<h1 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h1><p>通过这次的综合研究型实验，我们完成了打飞机游戏，遇到了不少挑战，但最终克服了它们，有了不少收获。主要遇到了三点挑战：</p>
+<p>第一个是图像的显示。由于8×8点阵的显示原理，我们必须采用不断刷新的方式才能显示图像；一方面，如果刷新的频率过快，会导致两次信号的重叠，最终导致显示大量的残影；另一方面，如果刷新频率过慢，两次刷新的图片，由于视觉暂留产生重叠，也得不到良好的显示效果。这个频率的确定需要反复的尝试，最终才能有理想的效果。</p>
+<p>第二是程序逻辑的实现。由于实现的是一个游戏，所以涉及到的逻辑控制比较多，例如屏幕的向下移动，根据玩家操作给予相应的反应，根据游戏运行成败输出相应的图像。这样的汇编程序设计并不容易，每一个逻辑都要编写相应的子程序去进行。</p>
+<p>第三则是新的汇编接口的学习。我们查看系统提供的演示实验，根据提供的演示代码和接线图，理解新的接口的含义。还好，这些接口并不算复杂，我们最终掌握了它。</p>
+<p>当然，这个游戏还有很多改进的地方。比如根据不同的操作以及游戏状态，用蜂鸣器发出相应的声音。这样游戏玩起来更带感，用户体验更好。比如，飞机并不一定需要发射直线的炮弹，还可以向斜前方发射，这样就增加了游戏的难度和挑战，使得游戏更具备可玩性。</p>
+<p>不过总体来说，通过本次实验，我们完成了游戏的设计、新的接口的学习、多个接口的综合使用。这一方面加深了我们对于接口的理解与掌握，在实践的过程中加深了对理论的理解，另一方面提高了我们的创新意识与能力，激发了我们探索的兴趣。这些将在我们的进一步学习中，给我们带来许多积极的影响。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/08/朝花夕拾——《嵌入式系统设计》实验合集/" rel="next" title="朝花夕拾——《嵌入式系统设计》实验合集">
+                <i class="fa fa-chevron-left"></i> 朝花夕拾——《嵌入式系统设计》实验合集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzU0NC8xMDEwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wang22ti</p>
+              <p class="site-description motion-element" itemprop="description">学习，日记，杂谈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wang22ti" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wang22ti@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容"><span class="nav-number">2.</span> <span class="nav-text">实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容概述"><span class="nav-number">2.1.</span> <span class="nav-text">内容概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验所用接口"><span class="nav-number">2.2.</span> <span class="nav-text">实验所用接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验连线"><span class="nav-number">2.3.</span> <span class="nav-text">实验连线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8255与8-8点阵"><span class="nav-number">2.3.1.</span> <span class="nav-text">8255与8*8点阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8254、5259和6位数码管"><span class="nav-number">2.3.2.</span> <span class="nav-text">8254、5259和6位数码管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8255和小键盘"><span class="nav-number">2.3.3.</span> <span class="nav-text">8255和小键盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实验连线实物图"><span class="nav-number">2.3.4.</span> <span class="nav-text">实验连线实物图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验程序设计"><span class="nav-number">2.4.</span> <span class="nav-text">实验程序设计]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序源代码"><span class="nav-number">2.5.</span> <span class="nav-text">程序源代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果"><span class="nav-number">3.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验总结"><span class="nav-number">4.</span> <span class="nav-text">实验总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wang22ti</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</span>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">访问人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">访问次数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
