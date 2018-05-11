@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王子泰" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="系统效果最终实现网页端的图书管理系统，采用的框架为Windows + MySQL + Django + Python的组合。其中逻辑控制以及同数据库的交互由Python和Django提供的接口实现，用户界面网页使用html + CSS+ JavaScript的组合渲染完成。 一方面，为了方便图书馆管理员对图书进行入库、借阅、归还、查询等操作，同时也方便学生对图书信息和个人借阅信息的查询，对该系统进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="朝花夕拾——《数据库系统原理》课程设计">
+<meta property="og:url" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/index.html">
+<meta property="og:site_name" content="王子泰">
+<meta property="og:description" content="系统效果最终实现网页端的图书管理系统，采用的框架为Windows + MySQL + Django + Python的组合。其中逻辑控制以及同数据库的交互由Python和Django提供的接口实现，用户界面网页使用html + CSS+ JavaScript的组合渲染完成。 一方面，为了方便图书馆管理员对图书进行入库、借阅、归还、查询等操作，同时也方便学生对图书信息和个人借阅信息的查询，对该系统进">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image3.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image4.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image5.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image6.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image7.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image8.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image9.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image10.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image11.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image12.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image13.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image14.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image15.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image16.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image17.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image18.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image19.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image20.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image21.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image22.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image23.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image24.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image25.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image26.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image27.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image28.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image29.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image30.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image31.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image32.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image33.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image34.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image35.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image36.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image37.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image38.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image39.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image40.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image41.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image42.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image43.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image44.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image45.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image46.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image47.png">
+<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image48.png">
+<meta property="og:updated_time" content="2018-05-11T17:12:40.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="朝花夕拾——《数据库系统原理》课程设计">
+<meta name="twitter:description" content="系统效果最终实现网页端的图书管理系统，采用的框架为Windows + MySQL + Django + Python的组合。其中逻辑控制以及同数据库的交互由Python和Django提供的接口实现，用户界面网页使用html + CSS+ JavaScript的组合渲染完成。 一方面，为了方便图书馆管理员对图书进行入库、借阅、归还、查询等操作，同时也方便学生对图书信息和个人借阅信息的查询，对该系统进">
+<meta name="twitter:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image3.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/"/>
+
+
+
+
+
+  <title>朝花夕拾——《数据库系统原理》课程设计 | 王子泰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王子泰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哭也欢乐，悲也潇洒</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wang22ti.com/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang22ti">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王子泰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">朝花夕拾——《数据库系统原理》课程设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-12T00:29:02+08:00">
+                2018-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库系统原理/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库系统原理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,822 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="系统效果"><a href="#系统效果" class="headerlink" title="系统效果"></a>系统效果</h1><p>最终实现网页端的图书管理系统，采用的框架为Windows + MySQL + Django + Python的组合。其中逻辑控制以及同数据库的交互由Python和Django提供的接口实现，用户界面网页使用html + CSS+ JavaScript的组合渲染完成。</p>
+<p>一方面，为了方便图书馆管理员对图书进行入库、借阅、归还、查询等操作，同时也方便学生对图书信息和个人借阅信息的查询，对该系统进行了细致的设计。主要体现在：自动判定管理员与其他用户进而跳转到不同界面、美化用户界面、提供即时的搜索结果反馈、对一些项目的填写采用下拉框的方式、提供部分项目的模糊搜索、自动计算例如归还截止日期等信息等等。总体来说，功能完备，具有较好的用户体验。</p>
+<h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p>本图书借阅管理系统，允许管理员和已注册用户使用。管理员具有较高权限，可以进行查询、插入和更新等操作，如图书入库、办理借书证、图书信息查询、用户信息查询、办理图书借阅归还，处理挂失等等；其他用户权限较低，可查询图书信息和本人的历史借阅信息。</p>
+<h2 id="系统目标"><a href="#系统目标" class="headerlink" title="系统目标"></a>系统目标</h2><h3 id="目标概述"><a href="#目标概述" class="headerlink" title="目标概述"></a>目标概述</h3><p>（1）  对系统的用户身份进行认证，根据用户类别跳转到对应界面</p>
+<p>（2）  图书入库</p>
+<p>（3）  办理借书证</p>
+<p>（4）  图书借阅和归还</p>
+<p>（5）  查询图书和读者信息</p>
+<p>（6）  维护图书和读者信息</p>
+<p>（7）  逾期不还的处理</p>
+<p>（8）  处理图书遗失和证件挂失</p>
+<h3 id="系统包含信息"><a href="#系统包含信息" class="headerlink" title="系统包含信息"></a>系统包含信息</h3><p>（1）  图书管理员和读者的密码和身份</p>
+<p>（2）  图书的信息，包括图书编号、书名、作者、出版社、单价、类别、入库时间、入库数量、借阅数量、遗失数量等等。其中，类别包括计算机、语文、数学、小说、英语、地理、物理、化学、政治、生物、历史等等</p>
+<p>（3）  读者的信息，包括用户登录id、登录密码、姓名、性别、出日、级别、办证日期、联系电话、手机号码、证件是否丢失、电子邮箱等等。其中，不同级别会员的最长出借天数、最多借书次数、会费、逾期收费均不同</p>
+<p>（4）  读者的借阅、归还、逾期和挂失信息</p>
+<h3 id="完整性约束"><a href="#完整性约束" class="headerlink" title="完整性约束"></a>完整性约束</h3><p>（1）  图书编号和读者登录id唯一</p>
+<p>（2）  读者借阅的图书一定是系统中提供的图书</p>
+<p>（3）  读者不能重复借阅同一本书</p>
+<p>（4）  读者遗失的图书一定是本人借阅的图书</p>
+<p>（5）  图书被借阅数量不能超过入库数量减去遗失数量</p>
+<p>（6）  遗失图书数量不能超过图书入库数量</p>
+<p>（7）  已挂失的借书证不能登录</p>
+<p>（8）  最长结束天数和最多借书册数由会员级别决定</p>
+<p>（9）  各种信息具有实际意义，例如数量均为非负整数、日期合法等等</p>
+<h3 id="系统交互"><a href="#系统交互" class="headerlink" title="系统交互"></a>系统交互</h3><p>（1）  认证</p>
+<p>验证用户身份，输入用户id和密码，随后的交互取决于用户的身份。</p>
+<p>（2）  读者可进行如下交互</p>
+<table>
+<thead>
+<tr>
+<th>查询图书信息</th>
+<th>按书名、图书类别、作者、出版社进行模糊查询，结果以列表的方式呈现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查询借阅信息</td>
+<td>按书名、图书编号模糊查询，列出该读者的借阅历史，可按是否逾期显示不同结果，结果以列表的方式呈现</td>
+</tr>
+</tbody>
+</table>
+<p>（3）  管理员可进行如下交互</p>
+<table>
+<thead>
+<tr>
+<th>查询图书信息</th>
+<th>按书名、图书类别、作者、出版社进行模糊查询，结果以列表的方式呈现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查询读者信息</td>
+<td>按用户登录id和姓名进行模糊查询，结果以列表的方式呈现</td>
+</tr>
+<tr>
+<td>图书入库</td>
+<td>登记入库图书的各项信息，分配一个新的编号</td>
+</tr>
+<tr>
+<td>办理借阅证</td>
+<td>登记读者各项信息，用户登录id由用户决定，但不允许重复</td>
+</tr>
+<tr>
+<td>图书借阅归还</td>
+<td>不同级别读者最长借阅时间和最多借阅数量均不同</td>
+</tr>
+<tr>
+<td>查询借阅信息</td>
+<td>按书名、图书编号、读者登录id、读者姓名模糊查询，列出满足条件的借阅历史，可按是否逾期显示不同结果，结果以列表的方式呈现</td>
+</tr>
+<tr>
+<td>挂失处理</td>
+<td>包括借书证挂失和图示遗失处理，借书证挂失在挂失数据表中处理，图书遗失在借阅表和图书表中处理</td>
+</tr>
+</tbody>
+</table>
+<h2 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h2><h3 id="顶层数据流图"><a href="#顶层数据流图" class="headerlink" title="顶层数据流图"></a>顶层数据流图</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image3.png" alt=""></p>
+<h3 id="0层数据流图"><a href="#0层数据流图" class="headerlink" title="0层数据流图"></a>0层数据流图</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image4.png" alt=""></p>
+<h3 id="1层数据流图（借书）"><a href="#1层数据流图（借书）" class="headerlink" title="1层数据流图（借书）"></a>1层数据流图（借书）</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image5.png" alt=""></p>
+<h3 id="1层数据流图（还书）"><a href="#1层数据流图（还书）" class="headerlink" title="1层数据流图（还书）"></a>1层数据流图（还书）</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image6.png" alt=""></p>
+<h3 id="1层数据流图（查询）"><a href="#1层数据流图（查询）" class="headerlink" title="1层数据流图（查询）"></a>1层数据流图（查询）</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image7.png" alt=""></p>
+<h2 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h2><h3 id="数据项"><a href="#数据项" class="headerlink" title="数据项"></a>数据项</h3><table>
+<thead>
+<tr>
+<th><strong>数据项名</strong></th>
+<th><strong>含义</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>最大长度</strong></th>
+<th><strong>备注</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>读者登录id</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td>决定了要借阅的图书</td>
+</tr>
+<tr>
+<td><strong>读者姓名</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>读者性别</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>出生日期</strong></td>
+<td>读者相关</td>
+<td>日期型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>电话</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>手机</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>会员级别</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td>决定了最长借阅天数和最多借阅册书</td>
+</tr>
+<tr>
+<td><strong>办证日期</strong></td>
+<td>读者相关</td>
+<td>日期型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>电子邮箱</strong></td>
+<td>读者相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>图书编号</strong></td>
+<td>图书相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td>决定了要借阅的图书</td>
+</tr>
+<tr>
+<td><strong>书名</strong></td>
+<td>图书相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>作者</strong></td>
+<td>图书相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>类别编号</strong></td>
+<td>图书相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td>决定了图书类别</td>
+</tr>
+<tr>
+<td><strong>单价</strong></td>
+<td>图书相关</td>
+<td>浮点型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>出版社</strong></td>
+<td>图书相关</td>
+<td>可变字符型</td>
+<td>255</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>入库日期</strong></td>
+<td>图书相关</td>
+<td>时间型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>入库数量</strong></td>
+<td>图书相关</td>
+<td>整型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>遗失数量</strong></td>
+<td>图书相关</td>
+<td>整型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>出借数量</strong></td>
+<td>图书相关</td>
+<td>整型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>出借日期</strong></td>
+<td>借书相关</td>
+<td>时间型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>是否遗失</strong></td>
+<td>借书相关</td>
+<td>布尔型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>归还时间</strong></td>
+<td>借书相关</td>
+<td>时间型</td>
+<td></td>
+<td>归还时间为1970年1月1日表示没有归还</td>
+</tr>
+<tr>
+<td><strong>最长借书天数</strong></td>
+<td>级别相关</td>
+<td>整型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>最多借书册数</strong></td>
+<td>级别相关</td>
+<td>整型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>会费</strong></td>
+<td>级别相关</td>
+<td>整型</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>挂失日期</strong></td>
+<td>挂失相关</td>
+<td>时间型</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据存储结构"><a href="#数据存储结构" class="headerlink" title="数据存储结构"></a>数据存储结构</h3><table>
+<thead>
+<tr>
+<th>名 称</th>
+<th><strong>含 义</strong></th>
+<th><strong>组 成</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>读者信息</strong></td>
+<td>定义读者的基本信息</td>
+<td>读者登录id、姓名、性别、生日、电话号、手机号、级别、办证日期、邮箱、是否丢失、余额</td>
+</tr>
+<tr>
+<td><strong>图书信息</strong></td>
+<td>定义图书的基本信息</td>
+<td>图书编号、图书名称、作者、出版社、图书类别编号、价格、入库时间、入库数量、借出数量、丢失数量</td>
+</tr>
+<tr>
+<td><strong>借阅信息</strong></td>
+<td>定义读者的借阅信息</td>
+<td>读者编号、图书编号、借书日期、归还日期、是否丢失</td>
+</tr>
+<tr>
+<td><strong>会员级别</strong></td>
+<td>反应读者不同的级别</td>
+<td>级别名称、最长借书数、最多借书册数、会费</td>
+</tr>
+<tr>
+<td><strong>图书类别</strong></td>
+<td>反应图书的不同类型</td>
+<td>类别编号、类别名称</td>
+</tr>
+<tr>
+<td><strong>图书丢失</strong></td>
+<td>反应图书丢失的状态</td>
+<td>读者编号、图书编号、挂失时间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><table>
+<thead>
+<tr>
+<th><strong>数据流</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>来源</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>图书信息查询</strong></td>
+<td>根据条件进行组合查询</td>
+<td>读者或管理员</td>
+</tr>
+<tr>
+<td><strong>借阅信息查询</strong></td>
+<td>进行图书借阅</td>
+<td>管理员、书籍、查询结果</td>
+</tr>
+<tr>
+<td><strong>借阅归还登记</strong></td>
+<td>将借阅情况进行记录</td>
+<td>借阅、归还图书信息</td>
+</tr>
+<tr>
+<td><strong>读者信息查询</strong></td>
+<td>列出读者个人信息</td>
+<td>管理员</td>
+</tr>
+<tr>
+<td><strong>借书证挂失</strong></td>
+<td>读者挂失借书证</td>
+<td>管理员</td>
+</tr>
+<tr>
+<td><strong>借书证办理</strong></td>
+<td>根据读者信息进行数据录入</td>
+<td>管理员</td>
+</tr>
+</tbody>
+</table>
+<h3 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h3><table>
+<thead>
+<tr>
+<th><strong>处理过程</strong></th>
+<th><strong>说 明</strong></th>
+<th><strong>输 入</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>图书借阅</strong></td>
+<td>将读者借阅的信息进行登记</td>
+<td>读者编号、图书编号</td>
+</tr>
+<tr>
+<td><strong>图书归还</strong></td>
+<td>读者借出的书籍进行归还操作</td>
+<td>读者编号、图书编号</td>
+</tr>
+<tr>
+<td><strong>图书遗失</strong></td>
+<td>读者借阅图书丢失</td>
+<td>读者编号、图书编号</td>
+</tr>
+<tr>
+<td><strong>图书入库</strong></td>
+<td>录入新书信息</td>
+<td>图书信息</td>
+</tr>
+<tr>
+<td><strong>借书证办理</strong></td>
+<td>读者办理借书证</td>
+<td>读者详细信息</td>
+</tr>
+<tr>
+<td><strong>借书证挂失</strong></td>
+<td>借书证丢失</td>
+<td>读者编号</td>
+</tr>
+</tbody>
+</table>
+<h1 id="设计概要"><a href="#设计概要" class="headerlink" title="设计概要"></a>设计概要</h1><h2 id="系统ER图"><a href="#系统ER图" class="headerlink" title="系统ER图"></a>系统ER图</h2><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image8.png" alt=""></p>
+<p>##系统功能设计</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image9.png" alt=""></p>
+<h1 id="程序系统结构"><a href="#程序系统结构" class="headerlink" title="程序系统结构"></a>程序系统结构</h1><h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="数据库逻辑结构设计"><a href="#数据库逻辑结构设计" class="headerlink" title="数据库逻辑结构设计"></a>数据库逻辑结构设计</h3><p>由于概念设计的结果是ER图，而DBMS一般采用关系模型，因此数据库的逻辑设计过程就是将ER图转化为关系模式的过程。由于关系模型所具有的优点，逻辑设计可以充分运用关系数据库规范化理论，使设计过程形式化进行，设计结果是一组关系模式的定义。</p>
+<table>
+<thead>
+<tr>
+<th>读者</th>
+<th>reader(reader_id,reader_name,sex,birthday,phone,mobile,  day,password,date_lastlogin,balance,is_loss,level,e_mail)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图书</td>
+<td>book(book_id,book_name,author,publisher,price,  date_in,num_in,num_out,numloss,category_id)</td>
+</tr>
+<tr>
+<td>图书类别</td>
+<td>boookcategory(category_id,category)</td>
+</tr>
+<tr>
+<td>挂失记录</td>
+<td>lossreport(book_id,reader_id,date_loss)</td>
+</tr>
+<tr>
+<td>借阅</td>
+<td>borrow(book_id,reader_id,  date_borrow,date_return,is_loss)</td>
+</tr>
+<tr>
+<td>级别</td>
+<td>memberlevel(level,  most_books_for_borrow,   most_days_for_borrow,  fee_for_one_year)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="系统用表"><a href="#系统用表" class="headerlink" title="系统用表"></a>系统用表</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image10.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image11.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image12.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image13.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image14.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image15.png" alt=""></p>
+<h2 id="数据库的连接"><a href="#数据库的连接" class="headerlink" title="数据库的连接"></a>数据库的连接</h2><p>由于Django框架对于MySQL支持很好，连接数据库只要在配置文件settings.py和模型文件model.py中加入相关信息即可，得到的结果如下图所示：</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image16.png" alt=""></p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image17.png" alt=""></p>
+<p>命令行运行makemigrations和migrate后，其中我创建的表名称格式为client_*</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image18.png" alt=""></p>
+<h2 id="程序文件结构"><a href="#程序文件结构" class="headerlink" title="程序文件结构"></a>程序文件结构</h2><p>最后，整个工程的目录即主要文件功能如下：</p>
+<table>
+<thead>
+<tr>
+<th>area.css, font.css, module.css, special.css</th>
+<th>网页中用到的各种样式表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background.jpg</td>
+<td>背景图片</td>
+</tr>
+<tr>
+<td>home.js, home_user.js</td>
+<td>home.html和home_user.html两个文件用到的脚本文件，主要控制子网页的显示或显示以及部分动画</td>
+</tr>
+<tr>
+<td>index.html</td>
+<td>登录界面</td>
+</tr>
+<tr>
+<td>home.html, home_user.html</td>
+<td>管理员和用户的主页</td>
+</tr>
+<tr>
+<td>book_loss.html, borrow_retutn.html  card_loss.html, card_build.html  not_return.html, not_return.html  table_search_book.html  table_search_reader.html</td>
+<td>子网页，分别实现一个或多个操作</td>
+</tr>
+<tr>
+<td>models.py</td>
+<td>定义数据库结构的文件</td>
+</tr>
+<tr>
+<td>views.py</td>
+<td>完成URL响应以及对应逻辑操作的文件</td>
+</tr>
+<tr>
+<td>settings.py</td>
+<td>项目配置文件</td>
+</tr>
+<tr>
+<td>urls.py</td>
+<td>配置url与views.py中函数的对应关系</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image19.png" alt=""></p>
+<h1 id="系统详细设计与运行界面"><a href="#系统详细设计与运行界面" class="headerlink" title="系统详细设计与运行界面"></a>系统详细设计与运行界面</h1><h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><p>用户输入用户名和密码，后台自动判别身份。登录失败，并不会发生跳转。</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image20.png" alt=""></p>
+<p>登录界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image21.png" alt=""></p>
+<p>管理员主页</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image22.png" alt=""></p>
+<p>用户主页</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image23.png" alt=""></p>
+<h2 id="读者登录"><a href="#读者登录" class="headerlink" title="读者登录"></a>读者登录</h2><p>读者登陆成功后，可以查询个人借阅历史或查询图书信息。信息的查询均为模糊查询，所有的查询在每次输入后都有即时的反馈，查询结果用表格展示，具体如下。</p>
+<h3 id="查询个人借阅历史"><a href="#查询个人借阅历史" class="headerlink" title="查询个人借阅历史"></a>查询个人借阅历史</h3><p>查询界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image24.png" alt=""></p>
+<p>查询子页面代码</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image25.png" alt=""></p>
+<p>查询逻辑响应代码，注意到由于Cookie的使用，用户并不需要另外输入用户信息</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image26.png" alt=""></p>
+<h3 id="查询图书信息"><a href="#查询图书信息" class="headerlink" title="查询图书信息"></a>查询图书信息</h3><p>查询界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image27.png" alt=""></p>
+<p>查询子页面代码</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image28.png" alt=""></p>
+<p>查询逻辑响应代码</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image29.png" alt=""></p>
+<h2 id="管理员登录"><a href="#管理员登录" class="headerlink" title="管理员登录"></a>管理员登录</h2><p>管理员登录成功后，可以办理借还图书任务，办理图书入库任务，可以查询图书信息、读者信息和所有读者的借阅历史，办理图书遗失、证件遗失、证件办新任务。具体情况如家所示。</p>
+<h3 id="图书借还"><a href="#图书借还" class="headerlink" title="图书借还"></a>图书借还</h3><p>界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image30.png" alt=""></p>
+<p>子界面代码（部分）</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image31.png" alt=""></p>
+<p>逻辑控制代码，其中针对不同的情况，例如没有剩余的数、结束量已经达到最大、用户重复借书等等，都有相应的控制，出现不正常的情况会有弹窗提示</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image32.png" alt=""></p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image33.png" alt=""></p>
+<h3 id="图书入库"><a href="#图书入库" class="headerlink" title="图书入库"></a>图书入库</h3><p>界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image34.png" alt=""></p>
+<p>子界面代码（部分）</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image35.png" alt=""></p>
+<p>逻辑控制代码</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image36.png" alt=""></p>
+<h3 id="图书信息查询"><a href="#图书信息查询" class="headerlink" title="图书信息查询"></a>图书信息查询</h3><p>和普通用户后所使用的完全一样，不做赘述</p>
+<h3 id="用户信息查询"><a href="#用户信息查询" class="headerlink" title="用户信息查询"></a>用户信息查询</h3><p>界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image37.png" alt=""></p>
+<p>子界面代码（部分）</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image38.png" alt=""></p>
+<p>逻辑控制代码</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image39.png" alt=""></p>
+<h3 id="借阅信息查询"><a href="#借阅信息查询" class="headerlink" title="借阅信息查询"></a>借阅信息查询</h3><p>和普通用户后所使用的基本一样，只是需要另外输入用户信息，不做赘述</p>
+<h3 id="图书挂失办理"><a href="#图书挂失办理" class="headerlink" title="图书挂失办理"></a>图书挂失办理</h3><p>界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image40.png" alt=""></p>
+<p>子界面代码（部分）</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image41.png" alt=""></p>
+<p>逻辑控制代码</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image42.png" alt=""></p>
+<h3 id="借书证挂失办理"><a href="#借书证挂失办理" class="headerlink" title="借书证挂失办理"></a>借书证挂失办理</h3><p>界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image43.png" alt=""></p>
+<p>子界面代码（部分）</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image44.png" alt=""></p>
+<p>逻辑控制代码，其中完成挂失后会自动给用户发送一份邮件</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image45.png" alt=""></p>
+<h3 id="借书证办新"><a href="#借书证办新" class="headerlink" title="借书证办新"></a>借书证办新</h3><p>界面</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image46.png" alt=""></p>
+<p>子界面代码（部分）</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image47.png" alt=""></p>
+<p>逻辑控制代码，其中完成挂失后会自动给用户发送一份邮件</p>
+<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image48.png" alt=""></p>
+<h1 id="系统使用说明"><a href="#系统使用说明" class="headerlink" title="系统使用说明"></a>系统使用说明</h1><h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><table>
+<thead>
+<tr>
+<th>编程语言</th>
+<th>Python3.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>框架</td>
+<td>Django</td>
+</tr>
+<tr>
+<td>操作系统</td>
+<td>Windows或Linux</td>
+</tr>
+<tr>
+<td>已兼容浏览器</td>
+<td>IE、Firefox、Edge</td>
+</tr>
+</tbody>
+</table>
+<h2 id="系统亮点"><a href="#系统亮点" class="headerlink" title="系统亮点"></a>系统亮点</h2><p>（1） 系统功能完备，完整性约束完整</p>
+<p>（2） 系统界面采用扁平化设计，辅助以响应动画，比较美观</p>
+<p>（3） 后台自动根据用户登录名判定用户身份，自动跳转到对应界面</p>
+<p>（4） 查询操作均采用模糊查询、即时查询，部分查询条件，例如日期类别，采用选择框，简化用户操作，优化用户体验</p>
+<p>（5） 用户查询时不必另外输入个人信息，这得益于cookie的使用</p>
+<h1 id="实验难点与总结改进"><a href="#实验难点与总结改进" class="headerlink" title="实验难点与总结改进"></a>实验难点与总结改进</h1><p>纵观整个实验有以下几个难点：</p>
+<p>（1） 实验平台的搭建。本来我使用的数据库是SQL Server，但最后发现Django的框架对于它的支持程度非常差，最终选择了开源的MySQL。</p>
+<p>（2） 用户界面的编写。此前我并没有上过网站开发的课程，这次相当于是边学边写，从html的到CSS再到JavaScript，遇到不会的就搜索资料，最后终于初步掌握了网站及脚本的开发。</p>
+<p>（3） 网站页面和服务器之间的参数传递。网页给服务器可以用post方法，用户信息可以使用cookie，而服务器给网页传递的参数，我使用的是Django提供的语句，它内嵌在网页中，和python语句很相似。</p>
+<p>（4） 业务逻辑的实现。整个系统对于数据库查询操作比较多，同时又要顾及完整性约束，一次写成功并不容易。我采用的是快速迭代，小步快跑的方法，每次写几个功能，写完之后再和原来的功能进行整合优化。</p>
+<p>终于完成了实验，本次课程设计实现的是高校图书借阅管理系统。</p>
+<p>总的来说，我的系统还存在着一些优化的地方。一方面是功能的完善，例如加入图片、金额系统等等，另一方面是细节的优化，例如数据库查询的速度、还有即时查询的体验等等。</p>
+<p>此次课设需要用到本学期数据库学习的几乎全部知识。除第七章数据库设计之外，还包括规范优化基本表，正确使用索引、触发器和存储过程，正确使用数据库增、删、改、查语句等等。</p>
+<p>通过动手编程，完成了对所学知识的复习与实践，并加深了自己对知识的理解。做完之后，我对整个数据库原理的掌握也更为系统和规范。此外，此次实验还用到了网站开发的界面设计，使得我初步掌握了python的云端开发。这必将各位的进一步学习带来诸多积极的影响。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/11/朝花夕拾——《数据结构》实验合集/" rel="next" title="朝花夕拾——《数据结构》实验合集">
+                <i class="fa fa-chevron-left"></i> 朝花夕拾——《数据结构》实验合集
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzU0NC8xMDEwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wang22ti</p>
+              <p class="site-description motion-element" itemprop="description">学习，日记，杂谈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wang22ti" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wang22ti@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统效果"><span class="nav-number">1.</span> <span class="nav-text">系统效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统目标"><span class="nav-number">2.1.</span> <span class="nav-text">系统目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目标概述"><span class="nav-number">2.1.1.</span> <span class="nav-text">目标概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统包含信息"><span class="nav-number">2.1.2.</span> <span class="nav-text">系统包含信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整性约束"><span class="nav-number">2.1.3.</span> <span class="nav-text">完整性约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统交互"><span class="nav-number">2.1.4.</span> <span class="nav-text">系统交互</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流图"><span class="nav-number">2.2.</span> <span class="nav-text">数据流图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层数据流图"><span class="nav-number">2.2.1.</span> <span class="nav-text">顶层数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0层数据流图"><span class="nav-number">2.2.2.</span> <span class="nav-text">0层数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（借书）"><span class="nav-number">2.2.3.</span> <span class="nav-text">1层数据流图（借书）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（还书）"><span class="nav-number">2.2.4.</span> <span class="nav-text">1层数据流图（还书）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（查询）"><span class="nav-number">2.2.5.</span> <span class="nav-text">1层数据流图（查询）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据字典"><span class="nav-number">2.3.</span> <span class="nav-text">数据字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据项"><span class="nav-number">2.3.1.</span> <span class="nav-text">数据项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据存储结构"><span class="nav-number">2.3.2.</span> <span class="nav-text">数据存储结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据流"><span class="nav-number">2.3.3.</span> <span class="nav-text">数据流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理过程"><span class="nav-number">2.3.4.</span> <span class="nav-text">处理过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计概要"><span class="nav-number">3.</span> <span class="nav-text">设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统ER图"><span class="nav-number">3.1.</span> <span class="nav-text">系统ER图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序系统结构"><span class="nav-number">4.</span> <span class="nav-text">程序系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计"><span class="nav-number">4.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库逻辑结构设计"><span class="nav-number">4.1.1.</span> <span class="nav-text">数据库逻辑结构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统用表"><span class="nav-number">4.1.2.</span> <span class="nav-text">系统用表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的连接"><span class="nav-number">4.2.</span> <span class="nav-text">数据库的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序文件结构"><span class="nav-number">4.3.</span> <span class="nav-text">程序文件结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统详细设计与运行界面"><span class="nav-number">5.</span> <span class="nav-text">系统详细设计与运行界面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#认证"><span class="nav-number">5.1.</span> <span class="nav-text">认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读者登录"><span class="nav-number">5.2.</span> <span class="nav-text">读者登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询个人借阅历史"><span class="nav-number">5.2.1.</span> <span class="nav-text">查询个人借阅历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询图书信息"><span class="nav-number">5.2.2.</span> <span class="nav-text">查询图书信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理员登录"><span class="nav-number">5.3.</span> <span class="nav-text">管理员登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图书借还"><span class="nav-number">5.3.1.</span> <span class="nav-text">图书借还</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书入库"><span class="nav-number">5.3.2.</span> <span class="nav-text">图书入库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书信息查询"><span class="nav-number">5.3.3.</span> <span class="nav-text">图书信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户信息查询"><span class="nav-number">5.3.4.</span> <span class="nav-text">用户信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借阅信息查询"><span class="nav-number">5.3.5.</span> <span class="nav-text">借阅信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书挂失办理"><span class="nav-number">5.3.6.</span> <span class="nav-text">图书挂失办理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借书证挂失办理"><span class="nav-number">5.3.7.</span> <span class="nav-text">借书证挂失办理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借书证办新"><span class="nav-number">5.3.8.</span> <span class="nav-text">借书证办新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统使用说明"><span class="nav-number">6.</span> <span class="nav-text">系统使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">6.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统亮点"><span class="nav-number">6.2.</span> <span class="nav-text">系统亮点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验难点与总结改进"><span class="nav-number">7.</span> <span class="nav-text">实验难点与总结改进</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wang22ti</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</span>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">访问人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">访问次数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
