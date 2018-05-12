@@ -88,14 +88,6 @@
 <meta property="og:site_name" content="王子泰">
 <meta property="og:description" content="绪论遗传算法（Genetic  Algorithm）是受生物净化学说和遗传学说的启发发展起来的，生物在进化的过程中不断繁殖、生存竞争、适者生存、遗传和变异。可以如下类比： 生物的遗传类比为算法中的分离规律、自由规律 生物的变异类比为算法中的基因重组、基因突变、染色体变异  研究对象各种功能非线性、多变量、多目标、复杂的自适应体用问题 基本特征 智能式搜索：依据适应度（目标函数）进行智能搜索 渐进式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/clip_image001.png">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(1">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(2">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(3">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(4">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(5">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(6">
-<meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/image003%20(7">
 <meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/1.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/2.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/3.png">
@@ -104,11 +96,11 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/6.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/7.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/8.png">
-<meta property="og:updated_time" content="2018-05-12T09:04:47.465Z">
+<meta property="og:updated_time" content="2018-05-12T09:33:57.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="朝花夕拾——遗传算法入门">
 <meta name="twitter:description" content="绪论遗传算法（Genetic  Algorithm）是受生物净化学说和遗传学说的启发发展起来的，生物在进化的过程中不断繁殖、生存竞争、适者生存、遗传和变异。可以如下类比： 生物的遗传类比为算法中的分离规律、自由规律 生物的变异类比为算法中的基因重组、基因突变、染色体变异  研究对象各种功能非线性、多变量、多目标、复杂的自适应体用问题 基本特征 智能式搜索：依据适应度（目标函数）进行智能搜索 渐进式">
-<meta name="twitter:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/clip_image001.png">
+<meta name="twitter:image" content="http://wang22ti.com/2018/05/12/朝花夕拾——遗传算法入门/1.png">
 
 
 
@@ -383,7 +375,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  8,449 字
+                  8,497 字
                 </span>
               
 
@@ -399,7 +391,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  45 分钟
+                  46 分钟
                 </span>
               
             </div>
@@ -430,10 +422,10 @@
 <li>全局最优解：采用交换和突变操作产生新个体，使得搜索得到的优化结果逼近全局最优解</li>
 <li>黑箱式结构：根据问题的特征进行编码（输入）和确定适应度（输出），只考虑输入输出关系，并不深究该关系的原因</li>
 <li>通用性强：不要求明确的数学表达式，只需要一些简单的原则要求，可以应用于解决离散问题、函数关系不明确的复杂问题。</li>
-<li><p>并行式运算：每次迭代计算都是对群体中的所有个体同时进行运算，搜索速度快</p>
-<h2 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h2></li>
-<li><p>求解Michalewicz Function </p>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/clip_image001.png" alt=""></p>
+<li>并行式运算：每次迭代计算都是对群体中的所有个体同时进行运算，搜索速度快</li>
+</ul>
+<h2 id="应用举例"><a href="#应用举例" class="headerlink" title="应用举例"></a>应用举例</h2><ul>
+<li><p>求解Michalewicz Function<br>$$<br>f(x,y) = 21.5 + xsin{4\pi x} + ysin{20\pi y}<br>$$</p>
 </li>
 <li><p>建筑学桁架结构优化问题</p>
 </li>
@@ -558,27 +550,23 @@
 <li>优点：突变时取反即可，唯一确定；交换时可精确变化，在多代循环后收敛速度较快。｛在突变的时候唯一确定（补运算），交换比十进制是最精确的，多代循环后收敛速度快。用在变量少，精选阶段，但是解码需要大量运算。｝</li>
 </ul>
 <ul>
-<li>由于符号位和小数点位的存在，使用由十进制转化而来的直接二进制码，在交换和变异的环节中容易出现问题，故使用间接二进制码，每一个二进制码均为正整数。间接码的位数公式：</li>
+<li>由于符号位和小数点位的存在，使用由十进制转化而来的直接二进制码，在交换和变异的环节中容易出现问题，故使用间接二进制码，每一个二进制码均为正整数。间接码的位数公式：<br>$$<br>2^m &lt; (U_{max} - U_{min})/d &lt;= x^{m+1}<br>$$</li>
 </ul>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (1" alt="">.png)</p>
 <p>​    其中d为问题的解的精确度，定义域为[Umin, Umax]，则码的位数为m+1。</p>
-<p>​    间接码的解码公式：</p>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (2" alt="">.png)</p>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (3" alt="">.png)</p>
-<p><strong>【格雷码（Gray Code）】</strong></p>
+<p>​    间接码的解码公式：<br>$$<br>x=U_{min} + (U_{max}-U_{min}) / (2^m-1) <em> \sum_{i=1}^{m}{b_i </em> 2 ^i-1}<br>$$<br><strong>【格雷码（Gray Code）】</strong></p>
 <ul>
 <li>增强遗传算法的局部搜索能力，便于对连续函数进行局部空间搜索。使用非常广泛。解码时，先将格雷码转化成二进制码，再将二进制码转化为十进制真实数；或直接将格雷码转化为十进制真实数。</li>
 </ul>
 <ul>
 <li>二进制码转换为格雷码</li>
 </ul>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (4" alt="">.png)</p>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (5" alt="">.png)</p>
+<p>$$<br>g_1 = b_1<br>$$</p>
+<p>$$<br>g_i = b_i -1 \oplus b_i<br>$$</p>
 <ul>
-<li>格雷码转换为二进制码</li>
+<li><p>格雷码转换为二进制码<br>$$<br>b_1 = g_1<br>$$</p>
+<p>$$<br>b_i = b_i -1 \oplus g_i<br>$$</p>
+</li>
 </ul>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (6" alt="">.png)</p>
-<p><img src="/2018/05/12/朝花夕拾——遗传算法入门/image003 (7" alt="">.png)</p>
 <p><strong>【浮点数编码（Floating-point Code）】</strong></p>
 <p><strong>【符号编码（CharacterCode）】</strong></p>
 <p>个体染色体编码串中的基因值取自一个无数值含义、而只有代码含义的符号集。常用于桥梁、机器人等的设计。</p>
