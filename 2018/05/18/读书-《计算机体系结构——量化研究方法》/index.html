@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="John Hennessy和David Patterson两位先生获得了2017年图灵奖，《计算机体系结构》课上董岚老师向我们推荐了这本书。我买到的是第5版中文版，介绍了很多比较先进的系统结构方法，课程要求很大程度上已经与之脱节，很多内容藏在附录里，包括指令集基本原理、存储器层次结构回顾、流水线的基础与中级概念。 量化设计与分析基础引言计算机性能的高速增长带来的成本优势、人们几乎不再使用汇编语言、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读书-《计算机体系结构——量化研究方法》">
 <meta property="og:url" content="http://wang22ti.com/2018/05/18/读书-《计算机体系结构——量化研究方法》/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="John Hennessy和David Patterson两位先生获得了2017年图灵奖，《计算机体系结构》课上董岚老师向我们推荐了这本书。我买到的是第5版中文版，介绍了很多比较先进的系统结构方法，课程要求很大程度上已经与之脱节，很多内容藏在附录里，包括指令集基本原理、存储器层次结构回顾、流水线的基础与中级概念。 量化设计与分析基础引言计算机性能的高速增长带来的成本优势、人们几乎不再使用汇编语言、">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T01:03:03.855Z">
+<meta property="og:updated_time" content="2018-05-18T09:05:23.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书-《计算机体系结构——量化研究方法》">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="John Hennessy和David Patterson两位先生获得了2017年图灵奖，《计算机体系结构》课上董岚老师向我们推荐了这本书。我买到的是第5版中文版，介绍了很多比较先进的系统结构方法，课程要求很大程度上已经与之脱节，很多内容藏在附录里，包括指令集基本原理、存储器层次结构回顾、流水线的基础与中级概念。 量化设计与分析基础引言计算机性能的高速增长带来的成本优势、人们几乎不再使用汇编语言、">
 
 
 
@@ -318,6 +318,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机体系结构/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机体系结构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -344,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  574 字
                 </span>
               
 
@@ -360,7 +382,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -381,7 +403,46 @@
       
 
       
-        
+        <p>John Hennessy和David Patterson两位先生获得了2017年图灵奖，《计算机体系结构》课上董岚老师向我们推荐了这本书。我买到的是第5版中文版，介绍了很多比较先进的系统结构方法，课程要求很大程度上已经与之脱节，很多内容藏在附录里，包括指令集基本原理、存储器层次结构回顾、流水线的基础与中级概念。</p>
+<h1 id="量化设计与分析基础"><a href="#量化设计与分析基础" class="headerlink" title="量化设计与分析基础"></a>量化设计与分析基础</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>计算机性能的高速增长带来的<code>成本优势</code>、人们几乎<code>不再使用汇编语言</code>、出现了独立于厂商的<code>标准化操作系统</code>，降低了引入新的计算机体系结构的成本和风险，使得人们有可能在80年代开发<code>精简指令集计算机RISC</code>，其代表包括<code>MIPS</code>和<code>ARM</code>。                                                                                                                                                                                                                                                                                                                     </p>
+<p>精简指令集主要聚焦<code>指令级并行开发</code>和<code>缓存的使用</code>，前者早期依靠<code>流水线</code>，后期依靠<code>多指令发射</code></p>
+<p>体系结构和组织方式的发展导致计算机性能飞速发展，对于计算机行业的影响：显著增强了可供用户使用的功能、导致新型计算机的出现<code>数据仓库</code>、微处理机占据主导地位、软件开发（脚本语言、解释语言、SaSS）。</p>
+<p>从2003年开始，由于<code>风冷芯片最大功耗</code>和<code>无法有效地开发更多指令集并行</code>，处理器性能从依赖指令级并行<code>ILP</code>转向数据级并行<code>DLP</code>和线程级并行<code>TLP</code>，乃至请求级并行<code>RLP</code>。</p>
+<h2 id="计算机的分类"><a href="#计算机的分类" class="headerlink" title="计算机的分类"></a>计算机的分类</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">类别</th>
+<th style="text-align:center">特点或关键因素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">个人移动设备PMD</td>
+<td style="text-align:center">成本、能耗、尺寸、实时性能</td>
+</tr>
+<tr>
+<td style="text-align:center">桌面计算</td>
+<td style="text-align:center">市场最大，性价比趋势</td>
+</tr>
+<tr>
+<td style="text-align:center">服务器</td>
+<td style="text-align:center">可用性、可扩展性、吞吐量</td>
+</tr>
+<tr>
+<td style="text-align:center">集群（仓库）级计算机（WSC）</td>
+<td style="text-align:center">集群是通过局域网从逻辑上将一组计算机以一台计算机的方式工作，最大的集群为仓库，性价比和功耗是关键</td>
+</tr>
+<tr>
+<td style="text-align:center">超级计算机</td>
+<td style="text-align:center">浮点性能、高速内部网络</td>
+</tr>
+<tr>
+<td style="text-align:center">嵌入式计算机</td>
+<td style="text-align:center">计算能力相差大、以最低的价格满足需求</td>
+</tr>
+</tbody>
+</table>
+<h2 id="并行度与并行体系结构的分类"><a href="#并行度与并行体系结构的分类" class="headerlink" title="并行度与并行体系结构的分类"></a>并行度与并行体系结构的分类</h2>
       
     </div>
     
@@ -414,6 +475,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/21/每天都写点算法18-5/" rel="prev" title="每天都写点算法18-5">
+                每天都写点算法18-5 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -470,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -486,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -497,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -554,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#量化设计与分析基础"><span class="nav-number">1.</span> <span class="nav-text">量化设计与分析基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机的分类"><span class="nav-number">1.2.</span> <span class="nav-text">计算机的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并行度与并行体系结构的分类"><span class="nav-number">1.3.</span> <span class="nav-text">并行度与并行体系结构的分类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
