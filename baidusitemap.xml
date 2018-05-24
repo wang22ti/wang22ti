@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2018/05/24/%E3%80%8A%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E3%80%8B%E5%AE%9E%E9%AA%8C4-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E5%99%A8%EF%BC%88%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E5%88%86%E6%9E%90%E6%B3%95%EF%BC%89python%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2018-05-24T16:02:52.631Z</lastmod>
+    <data>
+        <display>
+        <title>《编译原理》实验4-语法分析器（算符优先分析法）python实现</title>
+        <pubTime>2018-05-24T00:47:45.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="编译原理" url="http://wang22ti.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2018/05/01/%E6%97%A5%E8%AE%B018-5/</loc>
+    <lastmod>2018-05-24T03:56:02.611Z</lastmod>
+    <data>
+        <display>
+        <title>日记18-5</title>
+        <pubTime>2018-05-01T09:35:51.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="日记" url="http://wang22ti.com/categories/%E6%97%A5%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2018/05/22/mooc-%E7%89%9B%E6%B4%A5%E5%A4%A7%E5%AD%A6xDeepMind%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2018-05-22T09:14:48.664Z</lastmod>
+    <data>
+        <display>
+        <title>mooc-牛津大学xDeepMind自然语言处理</title>
+        <pubTime>2018-05-22T09:14:37.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="自然语言处理" url="http://wang22ti.com/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2018/05/21/%E8%AF%BB%E4%B9%A6-%E3%80%8A%E7%BB%9F%E8%AE%A1%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E3%80%8B/</loc>
     <lastmod>2018-05-21T11:01:00.576Z</lastmod>
     <data>
@@ -33,24 +87,6 @@
            
              
               <breadCrumb title="算法设计" url="http://wang22ti.com/categories/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2018/05/01/%E6%97%A5%E8%AE%B018-5/</loc>
-    <lastmod>2018-05-20T13:55:49.771Z</lastmod>
-    <data>
-        <display>
-        <title>日记18-5</title>
-        <pubTime>2018-05-01T09:35:51.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="日记" url="http://wang22ti.com/categories/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>
