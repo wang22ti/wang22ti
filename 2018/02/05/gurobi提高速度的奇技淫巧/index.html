@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  347 字
+                  334 字
                 </span>
               
 
@@ -416,11 +416,13 @@
 <p>查了一下手册，相关参数如下：</p>
 <p><img src="/2018/02/05/gurobi提高速度的奇技淫巧/截图2018-02-05_12-32-42.png" alt="截图2018-02-05_12-32-42"></p>
 <h1 id="减少逻辑约束"><a href="#减少逻辑约束" class="headerlink" title="减少逻辑约束"></a>减少逻辑约束</h1><p>比如这样的一个约束</p>
-<p>$$<br>x=0 \quad or \quad a&lt;=x&lt;=b<br>$$<br>不做处理是设置一个二进制变量：</p>
+<script type="math/tex; mode=display">
+x=0 \quad or \quad a<=x<=b</script><p>不做处理是设置一个二进制变量：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = m.addVar(vtype=GRB.INTEGER, name=<span class="string">'x'</span>)</span><br><span class="line">binary = m.addVar(vtype=GRB.BINARY, name=<span class="string">'binary'</span>)</span><br><span class="line">m.addGenConstrIndicator(binary, <span class="keyword">True</span>, x==<span class="number">0</span>)</span><br><span class="line">m.addGenConstrIndicator(binary, <span class="keyword">False</span>, x&lt;=b)</span><br><span class="line">m.addGenConstrIndicator(binary, <span class="keyword">False</span>, x&gt;=a)</span><br></pre></td></tr></table></figure>
-<p>但貌似indicator方法是比较慢的，所以将<code>约束(1)</code>改写为<br>$$<br>x&lt;=b<br>$$</p>
-<p>$$<br>a<em>bin&lt;=x&lt;=bin</em>inf<br>$$</p>
-<p>其中<code>bin</code>是一个二进制变量，<code>inf</code>是一个足够大的常量，于是代码改为</p>
+<p>但貌似indicator方法是比较慢的，所以将<code>约束(1)</code>改写为</p>
+<script type="math/tex; mode=display">
+x<=b</script><script type="math/tex; mode=display">
+a*bin<=x<=bin*inf</script><p>其中<code>bin</code>是一个二进制变量，<code>inf</code>是一个足够大的常量，于是代码改为</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = m.addVar(vtype=GRB.INTEGER, name=<span class="string">'x'</span>)</span><br><span class="line">binary = m.addVar(vtype=GRB.BINARY, name=<span class="string">'binary'</span>)</span><br><span class="line">inf = int(<span class="string">'inf)</span></span><br><span class="line"><span class="string">m.addConstr(x &lt;= b)</span></span><br><span class="line"><span class="string">m.addConstr(a * binary &lt;= x &lt;= binary * inf)</span></span><br></pre></td></tr></table></figure>
 <h1 id="让足够大的数尽量小"><a href="#让足够大的数尽量小" class="headerlink" title="让足够大的数尽量小"></a>让足够大的数尽量小</h1><p>上面的代码可以进一步优化，让<code>inf</code>足够小，减小搜索空间。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = m.addVars(nodes, vtype=GRB.INTEGER, name=<span class="string">'x'</span>)</span><br><span class="line">binary = m.addVars(nodes, vtype=GRB.BINARY, name=<span class="string">'binary'</span>)</span><br><span class="line">m.addConstrs(x[node] &lt;= b[node] <span class="keyword">for</span> node <span class="keyword">in</span> nodes)</span><br><span class="line">m.addConstrs(a[node] * binary[node] &lt;= x[node] &lt;= binary[node] * max(b) <span class="keyword">for</span> node <span class="keyword">in</span> nodes)</span><br></pre></td></tr></table></figure>

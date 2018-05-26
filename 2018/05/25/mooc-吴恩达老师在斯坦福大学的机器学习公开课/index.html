@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/1.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg">
-<meta property="og:updated_time" content="2018-05-26T02:09:29.856Z">
+<meta property="og:updated_time" content="2018-05-26T05:04:12.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。 机器学习的动机和应用介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised learning），用经典的房价预测引出">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,195 字
+                  1,366 字
                 </span>
               
 
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -450,7 +450,7 @@ h(x)=\sum_{i=0}^n{\theta_i x_i}=\theta^Tx</script><p>为了使得预测与训练
 <hr>
 <p>while not converge: </p>
 <p>​    for i in [0, n]:</p>
-<p>​        $\theta_{i}=\theta_{i}- \alpha \sum_{j=1}^{m}{ (h_{\theta}(x^{(j)})-y^{(j)})x_i^{(j)}}$</p>
+<p>​            $\theta_{i}=\theta_{i}- \alpha \sum_{j=1}^{m}{ (h_{\theta}(x^{(j)})-y^{(j)})x_i^{(j)}}$</p>
 <hr>
 <p>之所以叫“批量”，是因为每次更新$\theta$用的是所有的样本，这类似于操作系统的“批处理”。</p>
 <p>你可能担心收敛的并不是全局最小解，实际上在线性回归的批量梯度下降的时候，其过程如下图所示，</p>
@@ -461,10 +461,45 @@ h(x)=\sum_{i=0}^n{\theta_i x_i}=\theta^Tx</script><p>为了使得预测与训练
 <p>while not converge:</p>
 <p>​    for j in [1, m]:</p>
 <p>​        for i in [0, n]:</p>
-<p>​            $\theta_{i}=\theta_{i}- \alpha  (h_{\theta}(x^{(j)})-y^{(j)})x_i^{(j)}$</p>
+<p>​                    $\theta_{i}=\theta_{i}- \alpha  (h_{\theta}(x^{(j)})-y^{(j)})x_i^{(j)}$</p>
 <hr>
 <p>由于单个样本是毫无回归性的，所以每次更新的方向是随机的，$j(\theta)$的值可能变大也可能变小，但是总体趋势是往下走的，同时最终并不会有稳定的收敛。</p>
-<h2 id="正规方程（Normal-equations）"><a href="#正规方程（Normal-equations）" class="headerlink" title="正规方程（Normal equations）"></a>正规方程（Normal equations）</h2><h1 id="欠拟合与过拟合"><a href="#欠拟合与过拟合" class="headerlink" title="欠拟合与过拟合"></a>欠拟合与过拟合</h1>
+<h2 id="正规方程（Normal-equations）"><a href="#正规方程（Normal-equations）" class="headerlink" title="正规方程（Normal equations）"></a>正规方程（Normal equations）</h2><h3 id="矩阵梯度概念的引入"><a href="#矩阵梯度概念的引入" class="headerlink" title="矩阵梯度概念的引入"></a>矩阵梯度概念的引入</h3><p>实际上最小二乘法求最小值的问题，有解析解，是不需要迭代的。为了推导方便，需要引入一些符号：</p>
+<script type="math/tex; mode=display">
+\nabla_\theta J= \begin{bmatrix} 
+     \dfrac{\partial J}{\partial \theta_0} \\
+     \vdots \\
+     \dfrac{\partial J}{\partial \theta_n}
+ \end{bmatrix} \in  \R ^{n+1}</script><p>所以梯度下降可以写为</p>
+<script type="math/tex; mode=display">
+\theta = \theta - \alpha \nabla_{\theta}J</script><p>更通用的，</p>
+<script type="math/tex; mode=display">
+f:\R^{m \times n} \rightarrow \R ,\ \nabla_Af(A)= \begin{bmatrix} \dfrac{\partial f}{\partial A_{11}} &  \cdots &  \dfrac{\partial f}{\partial A_{1n}} \\ \vdots & \ddots & \vdots \\ \dfrac{\partial f}{\partial A_{m1}} & \cdots & \dfrac{\partial f}{\partial A_{mn}}      \end{bmatrix}</script><h3 id="方阵迹的概念与定理"><a href="#方阵迹的概念与定理" class="headerlink" title="方阵迹的概念与定理"></a>方阵迹的概念与定理</h3><p>方阵$A$的迹，即方阵对角线元素之和，记为$tr\ A$</p>
+<script type="math/tex; mode=display">
+A=\R^{n \times n} ,\  tr\ A= \sum_{i=1}^{n}{A_{ii}}</script><p>定理 1</p>
+<script type="math/tex; mode=display">
+tr\ AB = tr\ BA \\ tr\ ABC = tr\ CAB =tr\ BCA</script><p>定理 2</p>
+<script type="math/tex; mode=display">
+f(A)=tr\ AB, \ \nabla_Atr\ AB = B^T</script><p>定理 3</p>
+<script type="math/tex; mode=display">
+tr\ A = tr\ A^T</script><p>定理 4</p>
+<script type="math/tex; mode=display">
+a\in \R, \ tr\ a = a</script><p>定理 5</p>
+<script type="math/tex; mode=display">
+\nabla_A tr\ ABA^TC = CAB + C^TAB^T</script><h3 id="最小二乘法解析解的推导"><a href="#最小二乘法解析解的推导" class="headerlink" title="最小二乘法解析解的推导"></a>最小二乘法解析解的推导</h3><p>预测值矩阵为：</p>
+<script type="math/tex; mode=display">
+X\theta = \begin{bmatrix} —— (x^{(1)})^T——  \\ —— (x^{(2)})^T—— \\ \vdots \\ —— (x^{(m)})^T——  \end{bmatrix}\theta = \begin{bmatrix} x^{(1)T}\theta \\ x^{(2)T}\theta \\ \vdots \\  x^{(m)T}\theta \end{bmatrix}= \begin{bmatrix} h_\theta (x^{(1)}) \\ h_\theta (x^{(2)}) \\ \vdots \\h_\theta (x^{(m)})\end{bmatrix}</script><p>输出值矩阵为：</p>
+<script type="math/tex; mode=display">
+y=\begin{bmatrix} y^{(1)} \\ \vdots \\ y^{(m)} \end{bmatrix}</script><p>所以</p>
+<script type="math/tex; mode=display">
+J(\theta) = \dfrac{1}{2} (X\theta -y)^T(X\theta -y)</script><p>为了求$J(\theta)$的最小值，就要求其梯度为0的$\theta$</p>
+<script type="math/tex; mode=display">
+0=\nabla_\theta J(\theta) = \nabla_\theta \dfrac{1}{2} (X\theta -y)^T(X\theta -y) \\ =  \dfrac{1}{2} \nabla_\theta (\theta^TX^TX\theta - \theta^TX^Ty - y^TX\theta + y^Ty) \\= \dfrac{1}{2} \nabla_\theta tr (\theta^TX^TX\theta - \theta^TX^Ty - y^TX\theta + y^Ty) \\ = \dfrac{1}{2} [ \nabla_\theta tr(\theta\ I\ \theta^T\ X^TX) -   \nabla_\theta tr(y^TX\theta) -  \nabla_\theta tr(y^TX\theta)] \\= X^TX \theta - X^Ty</script><p>所以令$J(\theta)$最小的$\theta$满足</p>
+<script type="math/tex; mode=display">
+X^TX \theta = X^Ty</script><p>即正规方程</p>
+<script type="math/tex; mode=display">
+\theta = (X^TX )^{-1}X^Ty</script><p>十分的漂亮！</p>
+<h1 id="欠拟合与过拟合"><a href="#欠拟合与过拟合" class="headerlink" title="欠拟合与过拟合"></a>欠拟合与过拟合</h1>
       
     </div>
     
@@ -656,7 +691,7 @@ h(x)=\sum_{i=0}^n{\theta_i x_i}=\theta^Tx</script><p>为了使得预测与训练
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习的动机和应用"><span class="nav-number">1.</span> <span class="nav-text">机器学习的动机和应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习应用，梯度下降"><span class="nav-number">2.</span> <span class="nav-text">监督学习应用，梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-regression）"><span class="nav-number">2.1.</span> <span class="nav-text">线性回归（Linear regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降（Gradient-descent）"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降（Gradient descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（batch-gradient-descent）"><span class="nav-number">2.2.1.</span> <span class="nav-text">批量梯度下降（batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent-）"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程（Normal-equations）"><span class="nav-number">2.3.</span> <span class="nav-text">正规方程（Normal equations）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#欠拟合与过拟合"><span class="nav-number">3.</span> <span class="nav-text">欠拟合与过拟合</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习的动机和应用"><span class="nav-number">1.</span> <span class="nav-text">机器学习的动机和应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#监督学习应用，梯度下降"><span class="nav-number">2.</span> <span class="nav-text">监督学习应用，梯度下降</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-regression）"><span class="nav-number">2.1.</span> <span class="nav-text">线性回归（Linear regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降（Gradient-descent）"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降（Gradient descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（batch-gradient-descent）"><span class="nav-number">2.2.1.</span> <span class="nav-text">批量梯度下降（batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent-）"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程（Normal-equations）"><span class="nav-number">2.3.</span> <span class="nav-text">正规方程（Normal equations）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵梯度概念的引入"><span class="nav-number">2.3.1.</span> <span class="nav-text">矩阵梯度概念的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方阵迹的概念与定理"><span class="nav-number">2.3.2.</span> <span class="nav-text">方阵迹的概念与定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法解析解的推导"><span class="nav-number">2.3.3.</span> <span class="nav-text">最小二乘法解析解的推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#欠拟合与过拟合"><span class="nav-number">3.</span> <span class="nav-text">欠拟合与过拟合</span></a></li></ol></div>
             
 
           </div>

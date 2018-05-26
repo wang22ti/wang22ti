@@ -477,6 +477,7 @@
 <h3 id="系统交互"><a href="#系统交互" class="headerlink" title="系统交互"></a>系统交互</h3><p>（1）  认证</p>
 <p>验证用户身份，输入用户id和密码，随后的交互取决于用户的身份。</p>
 <p>（2）  读者可进行如下交互</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -491,7 +492,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>（3）  管理员可进行如下交互</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -526,12 +529,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="数据流图"><a href="#数据流图" class="headerlink" title="数据流图"></a>数据流图</h2><h3 id="顶层数据流图"><a href="#顶层数据流图" class="headerlink" title="顶层数据流图"></a>顶层数据流图</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image3.png" alt=""></p>
 <h3 id="0层数据流图"><a href="#0层数据流图" class="headerlink" title="0层数据流图"></a>0层数据流图</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image4.png" alt=""></p>
 <h3 id="1层数据流图（借书）"><a href="#1层数据流图（借书）" class="headerlink" title="1层数据流图（借书）"></a>1层数据流图（借书）</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image5.png" alt=""></p>
 <h3 id="1层数据流图（还书）"><a href="#1层数据流图（还书）" class="headerlink" title="1层数据流图（还书）"></a>1层数据流图（还书）</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image6.png" alt=""></p>
 <h3 id="1层数据流图（查询）"><a href="#1层数据流图（查询）" class="headerlink" title="1层数据流图（查询）"></a>1层数据流图（查询）</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image7.png" alt=""></p>
-<h2 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h2><h3 id="数据项"><a href="#数据项" class="headerlink" title="数据项"></a>数据项</h3><table>
+<h2 id="数据字典"><a href="#数据字典" class="headerlink" title="数据字典"></a>数据字典</h2><h3 id="数据项"><a href="#数据项" class="headerlink" title="数据项"></a>数据项</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th><strong>数据项名</strong></th>
@@ -725,7 +730,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="数据存储结构"><a href="#数据存储结构" class="headerlink" title="数据存储结构"></a>数据存储结构</h3><table>
+</div>
+<h3 id="数据存储结构"><a href="#数据存储结构" class="headerlink" title="数据存储结构"></a>数据存储结构</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>名 称</th>
@@ -766,7 +773,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><table>
+</div>
+<h3 id="数据流"><a href="#数据流" class="headerlink" title="数据流"></a>数据流</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th><strong>数据流</strong></th>
@@ -807,7 +816,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h3><table>
+</div>
+<h3 id="处理过程"><a href="#处理过程" class="headerlink" title="处理过程"></a>处理过程</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th><strong>处理过程</strong></th>
@@ -848,10 +859,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h1 id="设计概要"><a href="#设计概要" class="headerlink" title="设计概要"></a>设计概要</h1><h2 id="系统ER图"><a href="#系统ER图" class="headerlink" title="系统ER图"></a>系统ER图</h2><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image8.png" alt=""></p>
-<p>##系统功能设计</p>
-<p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image9.png" alt=""></p>
+<h2 id="系统功能设计"><a href="#系统功能设计" class="headerlink" title="系统功能设计"></a>系统功能设计</h2><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image9.png" alt=""></p>
 <h1 id="程序系统结构"><a href="#程序系统结构" class="headerlink" title="程序系统结构"></a>程序系统结构</h1><h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="数据库逻辑结构设计"><a href="#数据库逻辑结构设计" class="headerlink" title="数据库逻辑结构设计"></a>数据库逻辑结构设计</h3><p>由于概念设计的结果是ER图，而DBMS一般采用关系模型，因此数据库的逻辑设计过程就是将ER图转化为关系模式的过程。由于关系模型所具有的优点，逻辑设计可以充分运用关系数据库规范化理论，使设计过程形式化进行，设计结果是一组关系模式的定义。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -882,6 +894,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="系统用表"><a href="#系统用表" class="headerlink" title="系统用表"></a>系统用表</h3><p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image10.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image11.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image12.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image13.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image14.png" alt=""><br><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image15.png" alt=""></p>
 <h2 id="数据库的连接"><a href="#数据库的连接" class="headerlink" title="数据库的连接"></a>数据库的连接</h2><p>由于Django框架对于MySQL支持很好，连接数据库只要在配置文件settings.py和模型文件model.py中加入相关信息即可，得到的结果如下图所示：</p>
 <p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image16.png" alt=""></p>
@@ -889,6 +902,7 @@
 <p>命令行运行makemigrations和migrate后，其中我创建的表名称格式为client_*</p>
 <p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image18.png" alt=""></p>
 <h2 id="程序文件结构"><a href="#程序文件结构" class="headerlink" title="程序文件结构"></a>程序文件结构</h2><p>最后，整个工程的目录即主要文件功能如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -935,6 +949,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image19.png" alt=""></p>
 <h1 id="系统详细设计与运行界面"><a href="#系统详细设计与运行界面" class="headerlink" title="系统详细设计与运行界面"></a>系统详细设计与运行界面</h1><h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><p>用户输入用户名和密码，后台自动判别身份。登录失败，并不会发生跳转。</p>
 <p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image20.png" alt=""></p>
@@ -997,7 +1012,8 @@
 <p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image47.png" alt=""></p>
 <p>逻辑控制代码，其中完成挂失后会自动给用户发送一份邮件</p>
 <p><img src="/2018/05/12/朝花夕拾——《数据库系统原理》课程设计/image48.png" alt=""></p>
-<h1 id="系统使用说明"><a href="#系统使用说明" class="headerlink" title="系统使用说明"></a>系统使用说明</h1><h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><table>
+<h1 id="系统使用说明"><a href="#系统使用说明" class="headerlink" title="系统使用说明"></a>系统使用说明</h1><h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>编程语言</th>
@@ -1019,6 +1035,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="系统亮点"><a href="#系统亮点" class="headerlink" title="系统亮点"></a>系统亮点</h2><p>（1） 系统功能完备，完整性约束完整</p>
 <p>（2） 系统界面采用扁平化设计，辅助以响应动画，比较美观</p>
 <p>（3） 后台自动根据用户登录名判定用户身份，自动跳转到对应界面</p>
@@ -1229,7 +1246,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统效果"><span class="nav-number">1.</span> <span class="nav-text">系统效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统目标"><span class="nav-number">2.1.</span> <span class="nav-text">系统目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目标概述"><span class="nav-number">2.1.1.</span> <span class="nav-text">目标概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统包含信息"><span class="nav-number">2.1.2.</span> <span class="nav-text">系统包含信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整性约束"><span class="nav-number">2.1.3.</span> <span class="nav-text">完整性约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统交互"><span class="nav-number">2.1.4.</span> <span class="nav-text">系统交互</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流图"><span class="nav-number">2.2.</span> <span class="nav-text">数据流图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层数据流图"><span class="nav-number">2.2.1.</span> <span class="nav-text">顶层数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0层数据流图"><span class="nav-number">2.2.2.</span> <span class="nav-text">0层数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（借书）"><span class="nav-number">2.2.3.</span> <span class="nav-text">1层数据流图（借书）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（还书）"><span class="nav-number">2.2.4.</span> <span class="nav-text">1层数据流图（还书）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（查询）"><span class="nav-number">2.2.5.</span> <span class="nav-text">1层数据流图（查询）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据字典"><span class="nav-number">2.3.</span> <span class="nav-text">数据字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据项"><span class="nav-number">2.3.1.</span> <span class="nav-text">数据项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据存储结构"><span class="nav-number">2.3.2.</span> <span class="nav-text">数据存储结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据流"><span class="nav-number">2.3.3.</span> <span class="nav-text">数据流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理过程"><span class="nav-number">2.3.4.</span> <span class="nav-text">处理过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计概要"><span class="nav-number">3.</span> <span class="nav-text">设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统ER图"><span class="nav-number">3.1.</span> <span class="nav-text">系统ER图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序系统结构"><span class="nav-number">4.</span> <span class="nav-text">程序系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计"><span class="nav-number">4.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库逻辑结构设计"><span class="nav-number">4.1.1.</span> <span class="nav-text">数据库逻辑结构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统用表"><span class="nav-number">4.1.2.</span> <span class="nav-text">系统用表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的连接"><span class="nav-number">4.2.</span> <span class="nav-text">数据库的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序文件结构"><span class="nav-number">4.3.</span> <span class="nav-text">程序文件结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统详细设计与运行界面"><span class="nav-number">5.</span> <span class="nav-text">系统详细设计与运行界面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#认证"><span class="nav-number">5.1.</span> <span class="nav-text">认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读者登录"><span class="nav-number">5.2.</span> <span class="nav-text">读者登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询个人借阅历史"><span class="nav-number">5.2.1.</span> <span class="nav-text">查询个人借阅历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询图书信息"><span class="nav-number">5.2.2.</span> <span class="nav-text">查询图书信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理员登录"><span class="nav-number">5.3.</span> <span class="nav-text">管理员登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图书借还"><span class="nav-number">5.3.1.</span> <span class="nav-text">图书借还</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书入库"><span class="nav-number">5.3.2.</span> <span class="nav-text">图书入库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书信息查询"><span class="nav-number">5.3.3.</span> <span class="nav-text">图书信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户信息查询"><span class="nav-number">5.3.4.</span> <span class="nav-text">用户信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借阅信息查询"><span class="nav-number">5.3.5.</span> <span class="nav-text">借阅信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书挂失办理"><span class="nav-number">5.3.6.</span> <span class="nav-text">图书挂失办理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借书证挂失办理"><span class="nav-number">5.3.7.</span> <span class="nav-text">借书证挂失办理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借书证办新"><span class="nav-number">5.3.8.</span> <span class="nav-text">借书证办新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统使用说明"><span class="nav-number">6.</span> <span class="nav-text">系统使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">6.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统亮点"><span class="nav-number">6.2.</span> <span class="nav-text">系统亮点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验难点与总结改进"><span class="nav-number">7.</span> <span class="nav-text">实验难点与总结改进</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#系统效果"><span class="nav-number">1.</span> <span class="nav-text">系统效果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">2.</span> <span class="nav-text">需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统目标"><span class="nav-number">2.1.</span> <span class="nav-text">系统目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目标概述"><span class="nav-number">2.1.1.</span> <span class="nav-text">目标概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统包含信息"><span class="nav-number">2.1.2.</span> <span class="nav-text">系统包含信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整性约束"><span class="nav-number">2.1.3.</span> <span class="nav-text">完整性约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统交互"><span class="nav-number">2.1.4.</span> <span class="nav-text">系统交互</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流图"><span class="nav-number">2.2.</span> <span class="nav-text">数据流图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层数据流图"><span class="nav-number">2.2.1.</span> <span class="nav-text">顶层数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0层数据流图"><span class="nav-number">2.2.2.</span> <span class="nav-text">0层数据流图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（借书）"><span class="nav-number">2.2.3.</span> <span class="nav-text">1层数据流图（借书）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（还书）"><span class="nav-number">2.2.4.</span> <span class="nav-text">1层数据流图（还书）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1层数据流图（查询）"><span class="nav-number">2.2.5.</span> <span class="nav-text">1层数据流图（查询）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据字典"><span class="nav-number">2.3.</span> <span class="nav-text">数据字典</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据项"><span class="nav-number">2.3.1.</span> <span class="nav-text">数据项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据存储结构"><span class="nav-number">2.3.2.</span> <span class="nav-text">数据存储结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据流"><span class="nav-number">2.3.3.</span> <span class="nav-text">数据流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理过程"><span class="nav-number">2.3.4.</span> <span class="nav-text">处理过程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计概要"><span class="nav-number">3.</span> <span class="nav-text">设计概要</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统ER图"><span class="nav-number">3.1.</span> <span class="nav-text">系统ER图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统功能设计"><span class="nav-number">3.2.</span> <span class="nav-text">系统功能设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序系统结构"><span class="nav-number">4.</span> <span class="nav-text">程序系统结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计"><span class="nav-number">4.1.</span> <span class="nav-text">数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库逻辑结构设计"><span class="nav-number">4.1.1.</span> <span class="nav-text">数据库逻辑结构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统用表"><span class="nav-number">4.1.2.</span> <span class="nav-text">系统用表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的连接"><span class="nav-number">4.2.</span> <span class="nav-text">数据库的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序文件结构"><span class="nav-number">4.3.</span> <span class="nav-text">程序文件结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统详细设计与运行界面"><span class="nav-number">5.</span> <span class="nav-text">系统详细设计与运行界面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#认证"><span class="nav-number">5.1.</span> <span class="nav-text">认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读者登录"><span class="nav-number">5.2.</span> <span class="nav-text">读者登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查询个人借阅历史"><span class="nav-number">5.2.1.</span> <span class="nav-text">查询个人借阅历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询图书信息"><span class="nav-number">5.2.2.</span> <span class="nav-text">查询图书信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理员登录"><span class="nav-number">5.3.</span> <span class="nav-text">管理员登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图书借还"><span class="nav-number">5.3.1.</span> <span class="nav-text">图书借还</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书入库"><span class="nav-number">5.3.2.</span> <span class="nav-text">图书入库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书信息查询"><span class="nav-number">5.3.3.</span> <span class="nav-text">图书信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户信息查询"><span class="nav-number">5.3.4.</span> <span class="nav-text">用户信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借阅信息查询"><span class="nav-number">5.3.5.</span> <span class="nav-text">借阅信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图书挂失办理"><span class="nav-number">5.3.6.</span> <span class="nav-text">图书挂失办理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借书证挂失办理"><span class="nav-number">5.3.7.</span> <span class="nav-text">借书证挂失办理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借书证办新"><span class="nav-number">5.3.8.</span> <span class="nav-text">借书证办新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统使用说明"><span class="nav-number">6.</span> <span class="nav-text">系统使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">6.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统亮点"><span class="nav-number">6.2.</span> <span class="nav-text">系统亮点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验难点与总结改进"><span class="nav-number">7.</span> <span class="nav-text">实验难点与总结改进</span></a></li></ol></div>
             
 
           </div>
