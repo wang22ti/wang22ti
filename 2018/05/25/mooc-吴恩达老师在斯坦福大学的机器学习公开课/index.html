@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/1.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg">
-<meta property="og:updated_time" content="2018-05-26T01:47:26.207Z">
+<meta property="og:updated_time" content="2018-05-26T01:55:32.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。 机器学习的动机和应用介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised learning），用经典的房价预测引出">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,299 字
+                  1,310 字
                 </span>
               
 
@@ -431,8 +431,8 @@
 <p>先初始化令<br>$$<br>\theta=\vec{0}<br>$$<br>并不停改变$\theta$以减小$J(\theta)$直到我们觉得已经是最小了，其过程如下图所示。</p>
 <p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg" alt=""></p>
 <p>我们从山顶一步一步往下走，重要的是我们会在哪里停下。由于出发点的不同，会导致选择完全不同的路径，到达了完全不同的局部最小解。为了每一步都向着最陡峭的方向前进，令<br>$$<br>\theta_{i}=\theta_{i}-\alpha \frac{\partial J(\theta)}{\partial \theta_i}<br>$$<br>直到<code>收敛（converge）</code>，其中$\alpha$表示<code>学习速度（learning rate）</code>，决定了每次迈的步子的长度，不宜过小也不宜过大，太小收敛速度慢，太大无法收敛。</p>
-<p>在线性回归中，先假设只有1个训练样本<br>$$<br>\frac{\partial J(\theta)}{\partial \theta_i}=\frac{\partial}{\partial \theta_i}\frac{1}{2}(h_{\theta}(x)-y)^2<br>= (h_{\theta}(x)-y) * \frac{\partial}{\partial \theta_i} (h_{\theta}(x)-y)<br>$$</p>
-<p>$$<br>=(h_{\theta}(x)-y) <em> \frac{\partial}{\partial \theta_i}(\theta_0x_0+\dots+\theta_nx_n-y) =(h_{\theta}(x)-y)</em> x_i<br>$$</p>
+<p>在线性回归中，先假设只有1个训练样本<br>$$<br>\frac{\partial J(\theta)}{\partial \theta_i}=\frac{\partial}{\partial \theta_i}\frac{1}{2}(h_{\theta}(x)-y)^2<br>= (h_{\theta}(x)-y) * \frac{\partial}{\partial \theta_i} (h_{\theta}(x)-y)=<br>$$</p>
+<p>$$<br>(h_{\theta}(x)-y) <em> \frac{\partial}{\partial \theta_i}(\theta_0x_0+\dots+\theta_nx_n-y) =(h_{\theta}(x)-y)</em> x_i<br>$$</p>
 <p>那么就有<br>$$<br>\theta_{i}=\theta_{i}-\alpha (h_{\theta}(x)-y)x_i<br>$$</p>
 <h3 id="批量梯度下降（batch-gradient-descent）"><a href="#批量梯度下降（batch-gradient-descent）" class="headerlink" title="批量梯度下降（batch gradient descent）"></a>批量梯度下降（batch gradient descent）</h3><p>如果有$m$个样本，每次都用所有的样本更新$\theta$，则有如下算法</p>
 <hr>
@@ -444,14 +444,14 @@
 <p>你可能担心收敛的并不是全局最小解，实际上在线性回归的批量梯度下降的时候，其过程如下图所示，</p>
 <p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg" alt=""></p>
 <p>所以总会收敛到全局最小解，最小解处梯度为0，当然收敛的检测有很多种，其中一种是比较两次迭代之间值的大小。</p>
-<h3 id="随机梯度下降（Stochastic-gradient-descent-）"><a href="#随机梯度下降（Stochastic-gradient-descent-）" class="headerlink" title="随机梯度下降（Stochastic gradient descent ）"></a>随机梯度下降（Stochastic gradient descent ）</h3><p>如果样本数量$m$很大（例如国家数据），可能即便是一次迭代也需要花费很长时间，所以提出如下算法，其基本思想是每个样本都更新一次$\theta$</p>
+<h3 id="随机梯度下降（Stochastic-gradient-descent-）"><a href="#随机梯度下降（Stochastic-gradient-descent-）" class="headerlink" title="随机梯度下降（Stochastic gradient descent ）"></a>随机梯度下降（Stochastic gradient descent ）</h3><p>如果样本数量$m$很大（例如国家数据），可能即便是一次迭代也需要花费很长时间，所以提出如下算法，其基本思想是每个样本都更新一次$\theta$，从而提高收敛的速度。</p>
 <hr>
 <p>while not converge:</p>
 <p>​    for j in [1, m]:</p>
 <p>​        for i in [0, n]:</p>
 <p>​            $\theta_{i}=\theta_{i}- \alpha  (h_{\theta}(x^{(j)})-y^{(j)})x_i^{(j)}$</p>
 <hr>
-<p>由于单个样本是毫无回归性的，所以每次更新的方向是随机的，$j_{(\theta)}$的值可能变大也可能变小，但是总体趋势是往下走的，最终并不会有稳定的收敛。</p>
+<p>由于单个样本是毫无回归性的，所以每次更新的方向是随机的，$j_{(\theta)}$的值可能变大也可能变小，但是总体趋势是往下走的，同时最终并不会有稳定的收敛。</p>
 <h2 id="正规方程（Normal-equations）"><a href="#正规方程（Normal-equations）" class="headerlink" title="正规方程（Normal equations）"></a>正规方程（Normal equations）</h2><h1 id="欠拟合与过拟合"><a href="#欠拟合与过拟合" class="headerlink" title="欠拟合与过拟合"></a>欠拟合与过拟合</h1>
       
     </div>
