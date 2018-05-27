@@ -91,7 +91,8 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/1.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg">
-<meta property="og:updated_time" content="2018-05-27T03:18:44.912Z">
+<meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/4.png">
+<meta property="og:updated_time" content="2018-05-27T06:47:04.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised learning），用经典的房价预测引出回">
@@ -370,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,550 字
+                  2,802 字
                 </span>
               
 
@@ -386,7 +387,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9 分钟
+                  10 分钟
                 </span>
               
             </div>
@@ -575,9 +576,26 @@ l(\theta)=\sum_{i=1}^m{y^{(i)}\log{h_\theta(x^{(i)})} + (1-y^{(i)})\log{(1-h_\th
 <script type="math/tex; mode=display">
 g(z) = \left \{ \begin{array}{lr} 1, & z>0 \\ 0, &z\leq0  \end{array} \right.</script><p>同样有</p>
 <script type="math/tex; mode=display">
-h_{\theta}(x)=g(\theta^Tx)</script><p>以及梯度上升公式</p>
+h_{\theta}(x)=g(\theta^Tx)</script><p>以及批量梯度上升公式</p>
 <script type="math/tex; mode=display">
-θ_j=θ_j + \alpha \sum_{i=1}^m(h_θ(x^{(i)})−y^{(i)})x_j^{(i)}</script><h1 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h1>
+θ_j=θ_j + \alpha \sum_{i=1}^m(h_θ(x^{(i)})−y^{(i)})x_j^{(i)}</script><h1 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h1><h2 id="牛顿方法（Newton’s-method）"><a href="#牛顿方法（Newton’s-method）" class="headerlink" title="牛顿方法（Newton’s method）"></a>牛顿方法（Newton’s method）</h2><p>之前一直通过梯度下降拟合并得到$\theta$，牛顿方法是另外的一种。</p>
+<p>为了找到函数的零点，即</p>
+<script type="math/tex; mode=display">
+find \ \theta  \ s.t \ f(\theta) = 0</script><p>牛顿法从初始点$(\theta_0, f(\theta_0))$不停做切线，令切线与$x$轴交点为新的$\theta$，其过程如下图所示</p>
+<p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/4.png" alt=""></p>
+<p>可以用公式表达为</p>
+<script type="math/tex; mode=display">
+\theta^{(i+1)} = \theta^{(i)} - \frac{f(\theta^{(i)})}{f^{'}(\theta^{(i)})}</script><p>其中为了方便理解，令</p>
+<script type="math/tex; mode=display">
+\Delta=\frac{f(\theta^{(i)})}{f^{'}(\theta^{(i)})} \ or \ f^{'}(\theta^{(i)})=\frac{f(\theta^{(i)})}{\Delta}</script><p>应用到逻辑回归的拟合中，就是</p>
+<script type="math/tex; mode=display">
+\theta^{(t+1)} = \theta^{(t)} - \frac{l^{'}(\theta^{(t)})}{l^{''}(\theta^{(t)})}</script><p>这个方法具有很高的收敛速度，一般在逻辑回归中只需要十几轮迭代，用术语讲是<a href="https://blog.csdn.net/robert_chen1988/article/details/53137997" target="_blank" rel="noopener">二阶收敛（quadratic conversions）</a>，当然我们想知道这个方法适用范围，但是这比算法本身复杂得多。</p>
+<p>将它推广到$n$个特征有</p>
+<script type="math/tex; mode=display">
+\theta^{(t+1)} = \theta^{(t)} - H^{-1} \nabla_\theta l</script><p>其中</p>
+<script type="math/tex; mode=display">
+H_{ij}=\frac{\partial ^2l}{\partial\theta_i \partial\theta_j}</script><p>被称为<code>Hessian矩阵（黑塞矩阵，巨难听的翻译）</code>。由于每次迭代都要求矩阵梯度与Hessian矩阵，所以比较特征数量适中的样本（比如几十到上百个）。</p>
+<h2 id="广义线性模型（Generalized-linear-models）"><a href="#广义线性模型（Generalized-linear-models）" class="headerlink" title="广义线性模型（Generalized linear models）"></a>广义线性模型（Generalized linear models）</h2>
       
     </div>
     
@@ -773,7 +791,7 @@ h_{\theta}(x)=g(\theta^Tx)</script><p>以及梯度上升公式</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-1"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-regression）"><span class="nav-number">2.1.</span> <span class="nav-text">线性回归（Linear regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降（Gradient-descent）"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降（Gradient descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（batch-gradient-descent）"><span class="nav-number">2.2.1.</span> <span class="nav-text">批量梯度下降（batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent-）"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程（Normal-equations）"><span class="nav-number">2.3.</span> <span class="nav-text">正规方程（Normal equations）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵梯度概念的引入"><span class="nav-number">2.3.1.</span> <span class="nav-text">矩阵梯度概念的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方阵迹的概念与定理"><span class="nav-number">2.3.2.</span> <span class="nav-text">方阵迹的概念与定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法解析解的推导"><span class="nav-number">2.3.3.</span> <span class="nav-text">最小二乘法解析解的推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3"><span class="nav-number">3.</span> <span class="nav-text">Lecture 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部加权回归（locally-weighted-regression）"><span class="nav-number">3.1.</span> <span class="nav-text">局部加权回归（locally weighted regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性模型的概率解释（Probabilistic-interpretation）"><span class="nav-number">3.2.</span> <span class="nav-text">线性模型的概率解释（Probabilistic interpretation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归（Logistic-regression）"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑回归（Logistic regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机算法（Perceptron-algorithm）"><span class="nav-number">3.4.</span> <span class="nav-text">感知机算法（Perceptron algorithm）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-4"><span class="nav-number">4.</span> <span class="nav-text">Lecture 4</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-1"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-regression）"><span class="nav-number">2.1.</span> <span class="nav-text">线性回归（Linear regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降（Gradient-descent）"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降（Gradient descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（batch-gradient-descent）"><span class="nav-number">2.2.1.</span> <span class="nav-text">批量梯度下降（batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent-）"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程（Normal-equations）"><span class="nav-number">2.3.</span> <span class="nav-text">正规方程（Normal equations）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵梯度概念的引入"><span class="nav-number">2.3.1.</span> <span class="nav-text">矩阵梯度概念的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方阵迹的概念与定理"><span class="nav-number">2.3.2.</span> <span class="nav-text">方阵迹的概念与定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法解析解的推导"><span class="nav-number">2.3.3.</span> <span class="nav-text">最小二乘法解析解的推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3"><span class="nav-number">3.</span> <span class="nav-text">Lecture 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部加权回归（locally-weighted-regression）"><span class="nav-number">3.1.</span> <span class="nav-text">局部加权回归（locally weighted regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性模型的概率解释（Probabilistic-interpretation）"><span class="nav-number">3.2.</span> <span class="nav-text">线性模型的概率解释（Probabilistic interpretation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归（Logistic-regression）"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑回归（Logistic regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机算法（Perceptron-algorithm）"><span class="nav-number">3.4.</span> <span class="nav-text">感知机算法（Perceptron algorithm）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-4"><span class="nav-number">4.</span> <span class="nav-text">Lecture 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿方法（Newton’s-method）"><span class="nav-number">4.1.</span> <span class="nav-text">牛顿方法（Newton’s method）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广义线性模型（Generalized-linear-models）"><span class="nav-number">4.2.</span> <span class="nav-text">广义线性模型（Generalized linear models）</span></a></li></ol></li></ol></div>
             
 
           </div>
