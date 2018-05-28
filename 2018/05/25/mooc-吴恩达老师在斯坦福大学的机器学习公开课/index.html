@@ -92,7 +92,8 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/4.png">
-<meta property="og:updated_time" content="2018-05-28T01:12:05.831Z">
+<meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/5.png">
+<meta property="og:updated_time" content="2018-05-28T01:20:00.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised learning），用经典的房价预测引出回">
@@ -371,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,552 字
+                  3,645 字
                 </span>
               
 
@@ -638,8 +639,20 @@ P(y=i)=\phi_i,i=1,2,\dots,k</script><p>由于他们之和一定为1，所以把$
 <p>在多项式分布中，$T(i)$是第$i$位为$1$的$k-1$维的<code>one hot vector</code>，而$T(0)$是全0的$k-1$维列向量。</p>
 <p>定义<code>指示函数（indicator function）</code></p>
 <script type="math/tex; mode=display">
-1\{True\}=1\\ 1\{False\}=0</script><h1 id="Lecture-5"><a href="#Lecture-5" class="headerlink" title="Lecture 5"></a>Lecture 5</h1><p>hhh</p>
-
+1\{True\}=1\\ 1\{False\}=0</script><p>所以</p>
+<script type="math/tex; mode=display">
+T(y)_i=1\{y=i\}</script><p>于是有（下面这个式子在hexo的markdown渲染有点问题）</p>
+<p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/5.png" alt=""></p>
+<p>经过类似的推导后有</p>
+<script type="math/tex; mode=display">
+\eta=\begin{bmatrix} \log(\phi_1/\phi_k) \\  \log(\phi_2/\phi_k) \\ \vdots\\ \log(\phi_{k-1}/\phi_k) \end{bmatrix} \\ a(\eta)=-\log(\phi_k) \\ b(y)=1</script><p>于是</p>
+<script type="math/tex; mode=display">
+\phi_i=\frac{e^{\eta_i}}{1+\sum_{j=1}^{k-1}e^{\eta_j}} = \frac{e^{\theta_i^Tx}}{1+\sum_{j=1}^{k-1}e^{\theta_i^Tx}}</script><p>最后</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=E[T(y)|x;\theta]=\begin{bmatrix}1\{y=1\}\\ 1\{y=2\}\\ \vdots \\ 1\{y=k-1\} \end{bmatrix}=\begin{bmatrix}\phi_1\\ \phi_2\\ \vdots \\ \phi_{k-1} \end{bmatrix}</script><p>对应最小二乘，有</p>
+<script type="math/tex; mode=display">
+\max\limits_{\theta}L(\theta)=P(\vec{y} | x;\theta) = \prod_{i=1}^m{P(y^{(i)} | x^{(i)};\theta) } =\prod_{i=1}^m{\prod_{i=1}^k{\phi_i^{1\{y=i\}}}}</script><p>所以只要确定了$y$的分布，假设$h$以及需要优化的式子就都确定了。至于拟合的方法，在softmax回归中梯度上升或牛顿方法都是不行的。</p>
+<h1 id="Lecture-5"><a href="#Lecture-5" class="headerlink" title="Lecture 5"></a>Lecture 5</h1>
       
     </div>
     
