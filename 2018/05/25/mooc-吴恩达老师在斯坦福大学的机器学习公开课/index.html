@@ -92,8 +92,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/4.png">
-<meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/5.png">
-<meta property="og:updated_time" content="2018-05-28T01:20:00.469Z">
+<meta property="og:updated_time" content="2018-05-28T01:25:32.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised learning），用经典的房价预测引出回">
@@ -642,8 +641,8 @@ P(y=i)=\phi_i,i=1,2,\dots,k</script><p>由于他们之和一定为1，所以把$
 1\{True\}=1\\ 1\{False\}=0</script><p>所以</p>
 <script type="math/tex; mode=display">
 T(y)_i=1\{y=i\}</script><p>于是有（下面这个式子在hexo的markdown渲染有点问题）</p>
-<p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/5.png" alt=""></p>
-<p>经过类似的推导后有</p>
+<script type="math/tex; mode=display">
+P(y)=\prod_{i=1}^k{\phi_i^{1\{y=i\}}}=\prod_{i=1}^k{\phi_i^{T(y)_i}}</script><p>经过类似的推导后有</p>
 <script type="math/tex; mode=display">
 \eta=\begin{bmatrix} \log(\phi_1/\phi_k) \\  \log(\phi_2/\phi_k) \\ \vdots\\ \log(\phi_{k-1}/\phi_k) \end{bmatrix} \\ a(\eta)=-\log(\phi_k) \\ b(y)=1</script><p>于是</p>
 <script type="math/tex; mode=display">
