@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title>hexo的error——Template_render</title>
+      <link href="/2018/05/28/hexo%E7%9A%84error%E2%80%94%E2%80%94Template-render/"/>
+      <content type="html"><![CDATA[<p>学了一晚上吴恩达老师的机器学习，结果一早起来post却遇到了问题<code>Template render error: expected variable end</code>：</p><p><img src="/2018/05/28/hexo的error——Template-render/Snipaste_2018-05-28_08-57-27.png" alt=""></p><p>啊，这是什么鬼啊！我什么都没动啊！</p><p>初步搜索发现是特殊符号的问题，比如<a href="https://www.jianshu.com/p/738ebe02029b" target="_blank" rel="noopener">这位兄弟</a>就提到是特殊符号没有被转义的问题，然而我搜了半天并没有找到一样的情况。最终手动用二分法查找，终于找到了万恶之源：</p><hr><p><img src="/2018/05/28/hexo的error——Template-render/1.png" alt=""></p><hr><p>自习观察上面的公式，虽然Typora渲染出来了，但是却因为多了一对大括号，hexo渲染不出来！！emmmm，气得想换一个博客，长见识了。</p><p>为了避免莫名其妙的错误，转一个大佬的博客</p><p><a href="https://blog.csdn.net/chwshuang/article/details/52350559" target="_blank" rel="noopener">Hexo在Github中搭建博客系统(6)异常处理</a></p><p>以及hexo官网对于错误的解释</p><p><a href="https://hexo.io/zh-cn/docs/troubleshooting.html" target="_blank" rel="noopener">问题解答</a></p>]]></content>
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>hexo中的markdown和tex公式渲染</title>
       <link href="/2018/05/26/hexo%E4%B8%AD%E7%9A%84markdown%E5%92%8Ctex%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93/"/>
       <content type="html"><![CDATA[<p>hexo博客的正文都是使用markdown的格式存储的，</p><p>默认使用<code>hexo-renderer-marked</code>将markdown转为html（渲染）。</p><p>但是由于markdown不是同一的标准，所以使用编辑器预览的效果和hexo实际渲染的效果并完全相同。</p><p>比如hexo要求<code>#</code>之后必须有空格才能渲染为标题。</p><p>而对于tex公式的渲染的渲染则是惨不忍睹。</p><p>还好有大神解决了问题<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在Hexo中渲染MathJax数学公式</a></p><p>改用<code>hexo-renderer-kramed</code>渲染即可。</p>]]></content>
