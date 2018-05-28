@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/3.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课/4.png">
-<meta property="og:updated_time" content="2018-05-27T06:47:04.949Z">
+<meta property="og:updated_time" content="2018-05-28T01:07:19.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised learning），用经典的房价预测引出回">
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,802 字
+                  3,420 字
                 </span>
               
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10 分钟
+                  12 分钟
                 </span>
               
             </div>
@@ -525,28 +525,28 @@ X^TX \theta = X^Ty</script><p>即正规方程</p>
 \sum_i{w^{(i)}(y^{(i)} - x^{(i)})^2}, where \ w^{(i)}=e^{-\dfrac{(x^{(i)} - x)^2}{2\tau}}</script><p>return $\theta^Tx$</p>
 <hr>
 <p>当然，如果控制不好$\tau$的大小，也会陷入过拟合或欠拟合。</p>
-<h2 id="线性模型的概率解释（Probabilistic-interpretation）"><a href="#线性模型的概率解释（Probabilistic-interpretation）" class="headerlink" title="线性模型的概率解释（Probabilistic interpretation）"></a>线性模型的概率解释（Probabilistic interpretation）</h2><p>讨论模型的概率含义时，使用的是<strong>线性回归</strong>而非局部加权回归。</p>
+<h2 id="线性回归的概率解释（Probabilistic-interpretation）"><a href="#线性回归的概率解释（Probabilistic-interpretation）" class="headerlink" title="线性回归的概率解释（Probabilistic interpretation）"></a>线性回归的概率解释（Probabilistic interpretation）</h2><p>讨论模型的概率含义时，使用的是<strong>线性回归</strong>而非局部加权回归。</p>
 <p>这部分旨在说明一个问题：可以优化的假设$h$非常多，为什么我们要使用最小二乘？这个结论是建立在一系列<code>假设（assumption，符合汉语正常含义的“假设”）</code>上的。</p>
-<p>假设1</p>
+<p><strong>假设1</strong></p>
 <script type="math/tex; mode=display">
 y^{(i)} = \theta^Tx^{(i)} + \epsilon^{(i)}</script><p>其中$\epsilon^{(i)}$是<code>误差项（error term）</code>，表示没有选择到的特征给预测值带来的偏差，或者随机变量带来的噪声，比如心情。</p>
-<p>假设2</p>
+<p><strong>假设2</strong></p>
 <script type="math/tex; mode=display">
 \epsilon^{(i)} \sim N(0, \sigma^2)</script><p>即$\epsilon^{(i)}$服从期望为0，方差为$\sigma^2$的<a href="https://baike.baidu.com/item/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83/829892?fr=aladdin" target="_blank" rel="noopener">正态分布</a>（如此假设是基于<a href="https://baike.baidu.com/item/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/829451?fr=aladdin" target="_blank" rel="noopener">中心极限定理</a>以及数学上的方便，虽然貌似假设期望为0已经默认了我们的假设是正确的，但是要意识到机器学习中的假设都不可能绝对正确，但只要足够精确即可），则有$\epsilon^{(i)}$的<code>概率密度函数（density）</code></p>
 <script type="math/tex; mode=display">
-P(\epsilon^{(i)}) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\dfrac{(\epsilon^{(i)})^2}{2\sigma}}</script><p>因此将假设1代入概率密度函数，$y^{(i)}$也将符合正态分布</p>
+P(\epsilon^{(i)}) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\dfrac{(\epsilon^{(i)})^2}{2\sigma^2}}</script><p>因此将假设1代入概率密度函数，$y^{(i)}$也将符合正态分布</p>
 <script type="math/tex; mode=display">
-P(y^{(i)} | x^{(i)};\theta) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\dfrac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma}}</script><p>注意，$x^{(i)}$和$\theta$之间用的是分号$;$而非逗号$,$，这表示这里采用的是频率学派（frequentist）的观点，即假设$\theta$是某个确定的值，只是我们暂时不知道，而确定值是不能作为条件概率的条件的，所以只能用分号。（<code>贝叶斯学派（Bayesian）</code>认为$\theta$也是随机变量，服从某个分布）。</p>
-<p>假设3</p>
+P(y^{(i)} | x^{(i)};\theta) = \frac{1}{\sqrt{2\pi}\sigma} e^{-\dfrac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma^2}}</script><p>注意，$x^{(i)}$和$\theta$之间用的是分号$;$而非逗号$,$，这表示这里采用的是频率学派（frequentist）的观点，即假设$\theta$是某个确定的值，只是我们暂时不知道，而确定值是不能作为条件概率的条件的，所以只能用分号。（<code>贝叶斯学派（Bayesian）</code>认为$\theta$也是随机变量，服从某个分布）。</p>
+<p><strong>假设3</strong></p>
 <script type="math/tex; mode=display">
 \epsilon^{(i)}s  \ are \ IID</script><p>即影响$\epsilon^{(i)},i \in [1, m]$是<code>独立同分布（independently and identically distributed ）</code>的。</p>
 <p>因为我们的目标是求$\theta$使得$y$为$y^{(i)}$的概率最大，即有</p>
 <script type="math/tex; mode=display">
 \max_\limits{\theta} L(\theta)=P(\vec{y} | x;\theta)</script><p>即将$y$的概率密度函数看作是$\theta$的<code>极大似然估计（Maximum Likelihood Estimate，MLE ）</code>函数，就有</p>
 <script type="math/tex; mode=display">
-L(\theta)=P(\vec{y} | x;\theta) = \prod_{i=1}^m{P(y^{(i)} | x^{(i)};\theta) }\\ =\prod_{i=1}^m{\frac{1}{\sqrt{2\pi}\sigma} e^{-\dfrac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma}}}</script><p>为了方便运算，令</p>
+L(\theta)=P(\vec{y} | x;\theta) = \prod_{i=1}^m{P(y^{(i)} | x^{(i)};\theta) }\\ =\prod_{i=1}^m{\frac{1}{\sqrt{2\pi}\sigma} e^{-\dfrac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma^2}}}</script><p>为了方便运算，令</p>
 <script type="math/tex; mode=display">
-l(\theta) = \log{L(\theta)} = \sum_{i=1}^m{\log{(\frac{1}{\sqrt{2\pi}\sigma})} - \dfrac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma}} \\=m \log{\frac{1}{\sqrt{2\pi}\sigma}} - \dfrac{1}{2\sigma} \sum_{i=1}^m{ (y^{(i)}-\theta^Tx^{(i)})^2}</script><p>所以我们的目标就等价于</p>
+l(\theta) = \log{L(\theta)} = \sum_{i=1}^m{\log{(\frac{1}{\sqrt{2\pi}\sigma})} - \dfrac{(y^{(i)}-\theta^Tx^{(i)})^2}{2\sigma^2}} \\=m \log{\frac{1}{\sqrt{2\pi}\sigma}} - \dfrac{1}{2\sigma^2} \sum_{i=1}^m{ (y^{(i)}-\theta^Tx^{(i)})^2}</script><p>所以我们的目标就等价于</p>
 <script type="math/tex; mode=display">
 \min_\limits{\theta}  \dfrac{1}{2} \sum_{i=1}^m{ (y^{(i)}-\theta^Tx^{(i)})^2}</script><p>这就从概率的角度解释了为什么采用最小二乘法，这是在以上假设的基础上可以推导出来的。</p>
 <p>这种解释也是为了引出第一个分类算法——逻辑回归。</p>
@@ -560,7 +560,7 @@ h_{\theta}(x) \in [0,1]</script><p>我们采用这样形式的假设（原因之
 h_{\theta}(x)=g(\theta^Tx) = \frac{1}{1+e^{-\theta^Tx}}</script><p>其中</p>
 <script type="math/tex; mode=display">
 g(z)= \frac{1}{1+e^{-z}}</script><p>被称为<code>Signoid function</code>或<code>Logistic function</code>，它可以将实数集正相关地映射到$[0,1]$。</p>
-<p>进一步地，和上面一样对逻辑回归进行概率上的解释，易知有如下两个式子</p>
+<p>进一步地，和上面一样对逻辑回归进行概率上的解释，易知由于$y$服从<code>伯努利分布Bernoulli distribution</code> 即有如下两个式子</p>
 <script type="math/tex; mode=display">
 P(y=1|x;\theta) = h_\theta(x) \\ P(y=0|x;\theta) = 1- h_\theta(x)</script><p>为了表达的简洁，写为</p>
 <script type="math/tex; mode=display">
@@ -595,7 +595,41 @@ find \ \theta  \ s.t \ f(\theta) = 0</script><p>牛顿法从初始点$(\theta_0,
 \theta^{(t+1)} = \theta^{(t)} - H^{-1} \nabla_\theta l</script><p>其中</p>
 <script type="math/tex; mode=display">
 H_{ij}=\frac{\partial ^2l}{\partial\theta_i \partial\theta_j}</script><p>被称为<code>Hessian矩阵（黑塞矩阵，巨难听的翻译）</code>。由于每次迭代都要求矩阵梯度与Hessian矩阵，所以比较特征数量适中的样本（比如几十到上百个）。</p>
-<h2 id="广义线性模型（Generalized-linear-models）"><a href="#广义线性模型（Generalized-linear-models）" class="headerlink" title="广义线性模型（Generalized linear models）"></a>广义线性模型（Generalized linear models）</h2>
+<h2 id="指数分布族（Exponential-family-distribution）"><a href="#指数分布族（Exponential-family-distribution）" class="headerlink" title="指数分布族（Exponential family distribution）"></a>指数分布族（Exponential family distribution）</h2><p>牛顿方法和梯度下降都是拟合的方法，下面不谈拟合的方法，而是说明线性回归和逻辑回归都是一个更广泛模型的特例。在此之前需要介绍<code>指数分布族（Exponential family distribution）</code>，因为高斯分布和伯努利分布实际都是他们的一个特例，它有这样的形式：</p>
+<script type="math/tex; mode=display">
+P(y;\eta) = b(y) \exp^{\eta^TT(y) -a(\eta)}</script><p>其中$T(y)$被称为<a href="https://baike.baidu.com/item/%E5%85%85%E5%88%86%E7%BB%9F%E8%AE%A1%E9%87%8F/12715941?fr=aladdin" target="_blank" rel="noopener">充分统计量（sufficient statistic）</a>，很多情况下$T(y)=y$。</p>
+<p>一旦$a$、$b$、$T$被固定了，那么指数分布族就“退化”变为某一类概率分布的集合，比如不同均值组成的高斯分布的集合、不同参数的伯努利分布的集合，它们都以$\eta$作为参数。</p>
+<h3 id="伯努利分布是指数分布族的特例"><a href="#伯努利分布是指数分布族的特例" class="headerlink" title="伯努利分布是指数分布族的特例"></a>伯努利分布是指数分布族的特例</h3><p>对于伯努利分布，有</p>
+<script type="math/tex; mode=display">
+P(j;\phi)=\phi^y(1-\phi)^{1-y} \\ =\exp{(y\log{\phi}+(1-y)\log{(1-\phi)}) }\\ =\exp{(\log{\dfrac{\phi}{1-\phi}y} +\log{(1-\phi)} )}</script><p>所以</p>
+<script type="math/tex; mode=display">
+b(y)=1 \\ \eta=\log{\dfrac{\phi}{1-\phi}} \\ T(y)=y \\ a(\eta) = -\log{(1-\phi)}</script><p>这已经说明了伯努利分布是指数分布族的一个特例，并且进一步可以得到</p>
+<script type="math/tex; mode=display">
+\phi = \frac{1}{1+e^{-\eta}} \\ a(\eta)=-\log(1- \frac{1}{1+e^{-\eta}}) = \log(1+e^\eta)</script><p>非常神奇地就得到了Logistic函数。</p>
+<h3 id="高斯分布是指数分布族的特例"><a href="#高斯分布是指数分布族的特例" class="headerlink" title="高斯分布是指数分布族的特例"></a>高斯分布是指数分布族的特例</h3><p>在线性回归的概率解释中，我们注意到高斯分布的方差$\sigma^2$对于结果并不产生影响，所以为了方便推导这里假设高斯分布的方差为1。</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2\pi}} e^{-\dfrac{(y-\mu)^2}{2}}=\frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2}}e^{\mu y-\frac{\mu^2}{2}}</script><p>所以很容易得到</p>
+<script type="math/tex; mode=display">
+b(y)=\frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2}} \\ \eta=\mu \\ T(y)=y \\ a(\eta)=\frac{\mu^2}{2}=\frac{\eta^2}{2}</script><p>同样说明了高斯分布是指数分布族的特例。</p>
+<h3 id="哪些分布是指数分布族的特例？"><a href="#哪些分布是指数分布族的特例？" class="headerlink" title="哪些分布是指数分布族的特例？"></a>哪些分布是指数分布族的特例？</h3><p>我们遇到的大多数都是，包括</p>
+<p>多元正态分布（multivariate normal distribution）（高斯分布推广）</p>
+<p>多项式分布（multinomial distribution）（伯努利分布推广）</p>
+<p>泊松分布（poisson distribution）（计数）</p>
+<p>伽马分布（gamma distribution）</p>
+<p>指数分布（exponential distribution）（间隔）</p>
+<p>还有beta distribution、Dirichlet distribution（小数，概率分布建模）、Wishart distribution（协方差矩阵分布）等等。</p>
+<h2 id="广义线性模型（Generalized-linear-models）"><a href="#广义线性模型（Generalized-linear-models）" class="headerlink" title="广义线性模型（Generalized linear models）"></a>广义线性模型（Generalized linear models）</h2><p><strong>假设1</strong> $y$服从指数分布族，即</p>
+<script type="math/tex; mode=display">
+y|x;\theta \sim ExpFamily(\eta)</script><p><strong>假设2</strong> 我们的目标是对于给定的$x$，输出$T(y)$的数学期望，即</p>
+<script type="math/tex; mode=display">
+h(x)= E[T(y)|x]</script><p><strong>假设3</strong> 这是一个线性模型，即</p>
+<script type="math/tex; mode=display">
+\eta=\theta^Tx</script><h3 id="逻辑回归是广义线性模型的特例"><a href="#逻辑回归是广义线性模型的特例" class="headerlink" title="逻辑回归是广义线性模型的特例"></a>逻辑回归是广义线性模型的特例</h3><p>由伯努利分布的结论和假设</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=E[T(y)|x]=E[y|x]=P(y=1|x;\theta)=\phi= \frac{1}{1+e^{-\eta}}= \frac{1}{1+e^{-\theta^tx}}</script><p>这已经完成了在给定伯努利分布的情况下，由广义线性模型到逻辑回归的推导，其中</p>
+<script type="math/tex; mode=display">
+g(\eta)=E[y;\eta]=\frac{1}{1+e^{-\eta}}</script><p>$g$被称为<code>正则响应函数（canonical response function）</code>，$g^{-1}$被称为<code>正则关联函数（canonical link function）</code>。这只是两个名字，记住就行。</p>
+
       
     </div>
     
@@ -791,7 +825,7 @@ H_{ij}=\frac{\partial ^2l}{\partial\theta_i \partial\theta_j}</script><p>被称�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-1"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-regression）"><span class="nav-number">2.1.</span> <span class="nav-text">线性回归（Linear regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降（Gradient-descent）"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降（Gradient descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（batch-gradient-descent）"><span class="nav-number">2.2.1.</span> <span class="nav-text">批量梯度下降（batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent-）"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程（Normal-equations）"><span class="nav-number">2.3.</span> <span class="nav-text">正规方程（Normal equations）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵梯度概念的引入"><span class="nav-number">2.3.1.</span> <span class="nav-text">矩阵梯度概念的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方阵迹的概念与定理"><span class="nav-number">2.3.2.</span> <span class="nav-text">方阵迹的概念与定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法解析解的推导"><span class="nav-number">2.3.3.</span> <span class="nav-text">最小二乘法解析解的推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3"><span class="nav-number">3.</span> <span class="nav-text">Lecture 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部加权回归（locally-weighted-regression）"><span class="nav-number">3.1.</span> <span class="nav-text">局部加权回归（locally weighted regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性模型的概率解释（Probabilistic-interpretation）"><span class="nav-number">3.2.</span> <span class="nav-text">线性模型的概率解释（Probabilistic interpretation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归（Logistic-regression）"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑回归（Logistic regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机算法（Perceptron-algorithm）"><span class="nav-number">3.4.</span> <span class="nav-text">感知机算法（Perceptron algorithm）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-4"><span class="nav-number">4.</span> <span class="nav-text">Lecture 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿方法（Newton’s-method）"><span class="nav-number">4.1.</span> <span class="nav-text">牛顿方法（Newton’s method）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广义线性模型（Generalized-linear-models）"><span class="nav-number">4.2.</span> <span class="nav-text">广义线性模型（Generalized linear models）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-1"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归（Linear-regression）"><span class="nav-number">2.1.</span> <span class="nav-text">线性回归（Linear regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降（Gradient-descent）"><span class="nav-number">2.2.</span> <span class="nav-text">梯度下降（Gradient descent）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量梯度下降（batch-gradient-descent）"><span class="nav-number">2.2.1.</span> <span class="nav-text">批量梯度下降（batch gradient descent）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机梯度下降（Stochastic-gradient-descent-）"><span class="nav-number">2.2.2.</span> <span class="nav-text">随机梯度下降（Stochastic gradient descent ）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正规方程（Normal-equations）"><span class="nav-number">2.3.</span> <span class="nav-text">正规方程（Normal equations）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵梯度概念的引入"><span class="nav-number">2.3.1.</span> <span class="nav-text">矩阵梯度概念的引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方阵迹的概念与定理"><span class="nav-number">2.3.2.</span> <span class="nav-text">方阵迹的概念与定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小二乘法解析解的推导"><span class="nav-number">2.3.3.</span> <span class="nav-text">最小二乘法解析解的推导</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3"><span class="nav-number">3.</span> <span class="nav-text">Lecture 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部加权回归（locally-weighted-regression）"><span class="nav-number">3.1.</span> <span class="nav-text">局部加权回归（locally weighted regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性回归的概率解释（Probabilistic-interpretation）"><span class="nav-number">3.2.</span> <span class="nav-text">线性回归的概率解释（Probabilistic interpretation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归（Logistic-regression）"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑回归（Logistic regression）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感知机算法（Perceptron-algorithm）"><span class="nav-number">3.4.</span> <span class="nav-text">感知机算法（Perceptron algorithm）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-4"><span class="nav-number">4.</span> <span class="nav-text">Lecture 4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#牛顿方法（Newton’s-method）"><span class="nav-number">4.1.</span> <span class="nav-text">牛顿方法（Newton’s method）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数分布族（Exponential-family-distribution）"><span class="nav-number">4.2.</span> <span class="nav-text">指数分布族（Exponential family distribution）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#伯努利分布是指数分布族的特例"><span class="nav-number">4.2.1.</span> <span class="nav-text">伯努利分布是指数分布族的特例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯分布是指数分布族的特例"><span class="nav-number">4.2.2.</span> <span class="nav-text">高斯分布是指数分布族的特例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哪些分布是指数分布族的特例？"><span class="nav-number">4.2.3.</span> <span class="nav-text">哪些分布是指数分布族的特例？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广义线性模型（Generalized-linear-models）"><span class="nav-number">4.3.</span> <span class="nav-text">广义线性模型（Generalized linear models）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑回归是广义线性模型的特例"><span class="nav-number">4.3.1.</span> <span class="nav-text">逻辑回归是广义线性模型的特例</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
