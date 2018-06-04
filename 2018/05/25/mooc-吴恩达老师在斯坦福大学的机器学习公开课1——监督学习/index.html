@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/13.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/14.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/15.png">
-<meta property="og:updated_time" content="2018-06-01T17:15:31.380Z">
+<meta property="og:updated_time" content="2018-06-02T05:06:55.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。不过会跳过关于matlab的内容。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised lear">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6,961 字
+                  7,168 字
                 </span>
               
 
@@ -398,7 +398,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  25 分钟
+                  26 分钟
                 </span>
               
             </div>
@@ -799,7 +799,7 @@ d^*\leq p^*</script><p>由于对偶优化问题更加简单且具有很多很好
 <li>$g_i(x)\leq0,g_i(x)=a_i^Tw+b_i$</li>
 <li>$g_i(x)&lt;0,g_i(x)\neq a_i^Tw+b_i$</li>
 </ol>
-<p>在上述条件下，存在$w^<em>$为原始问题的解，存在$\alpha^</em>,\beta^*$为对偶问题的解，等价于</p>
+<p>在上述条件下，存在$w^{<em>}$为原始问题的解，存在$\alpha^{</em>},\beta^{*}$为对偶问题的解，等价于</p>
 <script type="math/tex; mode=display">
 p^*=d^*=L(w^*,\alpha^*,\beta^*)</script><h3 id="支持向量机的推导"><a href="#支持向量机的推导" class="headerlink" title="支持向量机的推导"></a>支持向量机的推导</h3><p>在导出支持向量机之前，需要说明一下符号的变化。和一般化的拉格朗日乘子有两组变量$\alpha,\beta$不同，在处理支持向量机时将只有$\alpha$；和KKT中一组变量$w$不同，在支持向量机时将有两组$w,b$。</p>
 <p>对于最优间隔分类器</p>
@@ -810,7 +810,7 @@ g_i(w,b)=-y^{(i)}(w^Tx^{(i)}+b) +1\leq 0</script><p>有拉格朗日乘子：</p>
 <script type="math/tex; mode=display">
 L(w,b,\alpha)=\frac{1}{2}||w||^2+\sum_{i=1}^{m}\alpha_ig_i(w,b)=\frac{1}{2}||w||^2-\sum_{i=1}^{m}\alpha_i[y^{(i)}(w^Tx^{(i)}+b) -1]</script><p>在KKT条件中，当$\alpha_i&gt;0$时$g_i(w)=0$，即有几何间隔$\gamma=1$，如下图</p>
 <p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/15.png" alt=""></p>
-<p>落在虚线上的就是$g_i(w)=0$的样本，它们被称为<code>支持向量（support vector）</code>。实际上支持向量一定是很少的，所以在大多数情况下，$g_i(w)&lt;0$。</p>
+<p>落在虚线上的就是$g_i(w)=0$的样本，它们被称为<code>支持向量（support vector）</code>。实际上支持向量一定是很少的，所以在大多数情况下，$g_i(w)&lt;0$且有$\alpha_i=0$。</p>
 <p>显然，最优间隔分类器是满足Refined Slater条件的，所以可求解对偶问题，有</p>
 <script type="math/tex; mode=display">
 \theta_D(\alpha)=\min_{w,b}{L(w,b,\alpha)}=\min_{w,b}{\frac{1}{2}||w||^2-\sum_{i=1}^{m}\alpha_i[y^{(i)}(w^Tx^{(i)}+b) -1]}</script><p>令</p>
@@ -823,12 +823,19 @@ w=\sum_{i=1}^{m}{\alpha_iy^{(i)}x^{(i)}}</script><p>同样令</p>
 <script type="math/tex; mode=display">
 \theta_D(\alpha)=\sum_{i=1}^m{\alpha_i}-\frac{1}{2}\sum_{i=1}^m{ \sum_{j=1}^m{ y^{(i)}y^{(j)}\alpha_i\alpha_j(x^{(i)})^Tx^{(i)} } }</script><p>于是得到对偶问题，即支持向量机：</p>
 <script type="math/tex; mode=display">
-\left \{ \begin{array}{l} \max_\limits{\alpha} &W(\alpha)= \sum_{i=1}^m{\alpha_i}-\frac{1}{2}\sum_{i,j=1}^m{ y^{(i)}y^{(j)}\alpha_i\alpha_j\langle x^{(i)},x^{(i)}\rangle }  \\ s.t. & \alpha_i\geq0,i=1,2,\dots,m \\ & \sum_{i=1}^m{\alpha_iy^{(i)}}=0 \end{array} \right.</script><p>由最优解$\alpha^*$可以得到</p>
+\left \{ \begin{array}{l} \max_\limits{\alpha} &W(\alpha)= \sum_{i=1}^m{\alpha_i}-\frac{1}{2}\sum_{i,j=1}^m{ y^{(i)}y^{(j)}\alpha_i\alpha_j\langle x^{(i)},x^{(j)}\rangle }  \\ s.t. & \alpha_i\geq0,i=1,2,\dots,m \\ & \sum_{i=1}^m{\alpha_iy^{(i)}}=0 \end{array} \right.</script><p>由最优解$\alpha^*$可以得到</p>
 <script type="math/tex; mode=display">
 w^*=\sum_{i=1}^{m}{\alpha_i^*y^{(i)}x^{(i)}}</script><p>再将其代入原始模型，有</p>
 <script type="math/tex; mode=display">
 b^*=-\frac{ \max_\limits{i:y^{(i)}=-1}{w^{*T}x^{(i)} } + \min_\limits{i:y^{(i)}=1}{w^{*T}x^{(i)} } }{2}</script><p>直观的理解就是在给定超直线簇中找到距离支持向量距离相同的那一条。</p>
-<h1 id="Lecture-8"><a href="#Lecture-8" class="headerlink" title="Lecture 8"></a>Lecture 8</h1><h2 id="支持向量机（Support-vector-machine）（三）"><a href="#支持向量机（Support-vector-machine）（三）" class="headerlink" title="支持向量机（Support vector machine）（三）"></a>支持向量机（Support vector machine）（三）</h2><h3 id="核（Kernel）"><a href="#核（Kernel）" class="headerlink" title="核（Kernel）"></a>核（Kernel）</h3><p>​    </p>
+<p>于是对于预测样本</p>
+<script type="math/tex; mode=display">
+h_{w,b}(x)=g(w^{*T}x+b^*)=g((\sum_{i=1}^{m}{\alpha_i^*y^{(i)}x^{(i)}})^Tx+b^*)=g(\sum_{i=1}^{m}{\alpha_i^*y^{(i)}\langle x^{(i)},x\rangle }+b^*)</script><p>通过对支持向量机要求解的问题和对预测样本计算的观察，可以发现由于样本中支持向量很少，$\alpha_i=0$是非常常见的，所以对于维度很高的样本，只需要很少的数量的样本就可以求解问题。而且对于输入特征$x^{(i)}$也仅有内积计算$\langle x^{(i)},x\rangle $，对于它的处理，接下来介绍<code>核（kernel）</code>的概念。</p>
+<h1 id="Lecture-8"><a href="#Lecture-8" class="headerlink" title="Lecture 8"></a>Lecture 8</h1><h2 id="支持向量机（Support-vector-machine）（三）"><a href="#支持向量机（Support-vector-machine）（三）" class="headerlink" title="支持向量机（Support vector machine）（三）"></a>支持向量机（Support vector machine）（三）</h2><h3 id="核（Kernel）"><a href="#核（Kernel）" class="headerlink" title="核（Kernel）"></a>核（Kernel）</h3><p>目前版本的支持向量机还只能处理线性可分问题，首先要去掉“线性”，因此令<code>属性映射（feature mapping）</code></p>
+<script type="math/tex; mode=display">
+\phi(x)=\begin{bmatrix} x \\ x^2\\\vdots\\ x^n  \end{bmatrix}</script><p>然后将$\phi(x)$代入到之前版本的支持向量机中，于是就有大量计算$\langle \phi(x^{(i))},\phi(x^{(j)})\rangle$，将之另外记为<code>核（kernel）</code>：</p>
+<script type="math/tex; mode=display">
+K(x,z)=\phi(x)^T\phi(z)</script><p>​    </p>
 
       
     </div>
@@ -947,7 +954,7 @@ b^*=-\frac{ \max_\limits{i:y^{(i)}=-1}{w^{*T}x^{(i)} } + \min_\limits{i:y^{(i)}=
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
