@@ -4,17 +4,17 @@
 
     
   <url>
-    <loc>http://wang22ti.com/2018/06/02/%E6%97%A5%E8%AE%B018-6/</loc>
-    <lastmod>2018-06-04T00:21:42.136Z</lastmod>
+    <loc>http://wang22ti.com/2018/06/05/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE2%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</loc>
+    <lastmod>2018-06-05T15:53:04.614Z</lastmod>
     <data>
         <display>
-        <title>日记18-6</title>
-        <pubTime>2018-06-02T01:25:53.000Z</pubTime>
+        <title>mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论</title>
+        <pubTime>2018-06-05T15:52:18.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="日记" url="http://wang22ti.com/categories/%E6%97%A5%E8%AE%B0/"/>
+              <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
@@ -23,7 +23,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/05/25/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE1%E2%80%94%E2%80%94%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2018-06-02T05:06:55.452Z</lastmod>
+    <lastmod>2018-06-05T15:51:05.044Z</lastmod>
     <data>
         <display>
         <title>mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习</title>
@@ -33,6 +33,24 @@
            
              
               <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2018/06/02/%E6%97%A5%E8%AE%B018-6/</loc>
+    <lastmod>2018-06-05T12:44:57.450Z</lastmod>
+    <data>
+        <display>
+        <title>日记18-6</title>
+        <pubTime>2018-06-02T01:25:53.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="日记" url="http://wang22ti.com/categories/%E6%97%A5%E8%AE%B0/"/>
           
         </display>
     </data>
