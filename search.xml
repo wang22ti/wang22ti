@@ -3,9 +3,17 @@
   
     
     <entry>
+      <title>《计算机体系结构》实验6-cache模拟</title>
+      <link href="/2018/06/07/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E3%80%8B%E5%AE%9E%E9%AA%8C6-cache%E6%A8%A1%E6%8B%9F/"/>
+      <content type="html"><![CDATA[]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论</title>
       <link href="/2018/06/05/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE2%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/"/>
-      <content type="html"><![CDATA[<p>前置课程请移步<a href="http://wang22ti.com/2018/05/25/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE1%E2%80%94%E2%80%94%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">第一部分：监督学习</a></p><h1 id="Lecture-9"><a href="#Lecture-9" class="headerlink" title="Lecture 9"></a>Lecture 9</h1>]]></content>
+      <content type="html"><![CDATA[<p>前置课程请移步<a href="http://wang22ti.com/2018/05/25/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE1%E2%80%94%E2%80%94%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">第一部分：监督学习</a></p><p>从这里开始的3个lecture，是整个课程的第二部分：学习理论！就是如何熟练地、有效地使用在第一部分学习过的算法。</p><h1 id="Lecture-9"><a href="#Lecture-9" class="headerlink" title="Lecture 9"></a>Lecture 9</h1>]]></content>
       
       <categories>
           
@@ -33,7 +41,7 @@
     <entry>
       <title>日记18-6</title>
       <link href="/2018/06/02/%E6%97%A5%E8%AE%B018-6/"/>
-      <content type="html"><![CDATA[<h1 id="18-6-5"><a href="#18-6-5" class="headerlink" title="18-6-5"></a>18-6-5</h1><p>终于把两份材料交过去啦，</p><p>回来选课。</p><p>终于听完了机器学习的第9节，监督学习结束了！</p><p>末了继续写体系结构实验。。</p><h1 id="18-6-4"><a href="#18-6-4" class="headerlink" title="18-6-4"></a>18-6-4</h1><p>下午去了一趟京东，本以为可以交流一下机器学习、运筹优化方面的知识，</p><p>结果发现来交流的学长学姐不是做技术的。。</p><p>不过还是有收获的。</p><p>回来终于把核函数搞懂了，之后初步写了系统结构实验。</p><h1 id="18-6-3"><a href="#18-6-3" class="headerlink" title="18-6-3"></a>18-6-3</h1><p>慧洁喝多了，一早去了东区一趟，还是小孩啊，晚上又在学习部闹矛盾</p><p>买了便利贴，给材料贴上了，不能再搞混了。</p><p>下午起来把个人陈述搞定了，貌似有点超了。。</p><p>晚上学生会聚餐，终于结束啦，喝得有点多。。</p><p>回来把网上报名搞定了。</p><h1 id="18-6-2"><a href="#18-6-2" class="headerlink" title="18-6-2"></a>18-6-2</h1><p>准备了一天材料。。</p><p>我要学习。。</p><h1 id="18-6-1"><a href="#18-6-1" class="headerlink" title="18-6-1"></a>18-6-1</h1><p>哈哈，儿童节，</p><p>准备夏令营材料，终于把SVM搞懂了！</p>]]></content>
+      <content type="html"><![CDATA[<h1 id="18-6-6"><a href="#18-6-6" class="headerlink" title="18-6-6"></a>18-6-6</h1><p>一早起来终于把体系结构的代码注释完了，</p><p>这随性的变量，真教人难受。。。</p><p>中午参加了学代会监票人的第一次彩排。</p><p>晚上学习部最后一次例会，结束啦，最幸福的时刻</p><p>回来把体系结构实验搞定了</p><h1 id="18-6-5"><a href="#18-6-5" class="headerlink" title="18-6-5"></a>18-6-5</h1><p>终于把两份材料交过去啦，</p><p>回来选课。</p><p>终于听完了机器学习的第8节，监督学习结束了！</p><p>末了继续写体系结构实验。。</p><h1 id="18-6-4"><a href="#18-6-4" class="headerlink" title="18-6-4"></a>18-6-4</h1><p>下午去了一趟京东，本以为可以交流一下机器学习、运筹优化方面的知识，</p><p>结果发现来交流的学长学姐不是做技术的。。</p><p>不过还是有收获的。</p><p>回来终于把核函数搞懂了，之后初步写了系统结构实验。</p><h1 id="18-6-3"><a href="#18-6-3" class="headerlink" title="18-6-3"></a>18-6-3</h1><p>慧洁喝多了，一早去了东区一趟，还是小孩啊，晚上又在学习部闹矛盾</p><p>买了便利贴，给材料贴上了，不能再搞混了。</p><p>下午起来把个人陈述搞定了，貌似有点超了。。</p><p>晚上学生会聚餐，终于结束啦，喝得有点多。。</p><p>回来把网上报名搞定了。</p><h1 id="18-6-2"><a href="#18-6-2" class="headerlink" title="18-6-2"></a>18-6-2</h1><p>准备了一天材料。。</p><p>我要学习。。</p><h1 id="18-6-1"><a href="#18-6-1" class="headerlink" title="18-6-1"></a>18-6-1</h1><p>哈哈，儿童节，</p><p>准备夏令营材料，终于把SVM搞懂了！</p>]]></content>
       
       <categories>
           
