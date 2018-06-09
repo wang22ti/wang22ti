@@ -89,7 +89,7 @@
 <meta property="og:description" content="前置课程请移步第一部分：监督学习 从这里开始的3个lecture，是整个课程的第二部分：学习理论！就是如何熟练地、有效地使用在第一部分学习过的算法。 Lecture 9偏差方差权衡（bias variance trade-off）回到此前关于欠拟合和过拟合的描述，有如下直观的描述：  无论是左图还是右图，都存在巨大的泛化误差（generalization error），这个会在之后有形式化的定义，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/1.png">
-<meta property="og:updated_time" content="2018-06-07T16:32:21.438Z">
+<meta property="og:updated_time" content="2018-06-09T06:47:54.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论">
 <meta name="twitter:description" content="前置课程请移步第一部分：监督学习 从这里开始的3个lecture，是整个课程的第二部分：学习理论！就是如何熟练地、有效地使用在第一部分学习过的算法。 Lecture 9偏差方差权衡（bias variance trade-off）回到此前关于欠拟合和过拟合的描述，有如下直观的描述：  无论是左图还是右图，都存在巨大的泛化误差（generalization error），这个会在之后有形式化的定义，">
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  564 字
+                  1,157 字
                 </span>
               
 
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -410,14 +410,28 @@
 <h1 id="Lecture-9"><a href="#Lecture-9" class="headerlink" title="Lecture 9"></a>Lecture 9</h1><h2 id="偏差方差权衡（bias-variance-trade-off）"><a href="#偏差方差权衡（bias-variance-trade-off）" class="headerlink" title="偏差方差权衡（bias variance trade-off）"></a>偏差方差权衡（bias variance trade-off）</h2><p>回到此前关于欠拟合和过拟合的描述，有如下直观的描述：</p>
 <p><img src="/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/1.png" alt="1"></p>
 <p>无论是左图还是右图，都存在巨大的<code>泛化误差（generalization error）</code>，这个会在之后有形式化的定义，指的是模型针对新的样本而非测试集的误差。不过误差带来的原因却截然不同，因此针对欠拟合定义<code>偏差（bias）</code>，指的是即便训练了非常大（甚至是无限大）的数据之后仍然存在的泛化误差；针对过拟合定义<code>方差（variance）</code>，指的是由于训练集不够大，部分特例（比如特别贵或特别便宜的房子）导致模型存在的泛化误差。</p>
-<p>显然，欠拟合是偏差过大的表现，过拟合是方差过大的表现。往往在减小偏差还是减小方差之间，是需要做出适当的权衡的。</p>
-<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>为了学习在不同情况下如何使用学习算法，我们要解决一下问题：</p>
+<p>显然，欠拟合是偏差过大的表现，过拟合是方差过大的表现。往往在减小偏差还是减小方差之间，是需要做出适当的权衡的。为了学习在不同情况下如何使用学习算法，即如何权衡偏差与方差，我们要解决以下问题：</p>
 <ol>
 <li>如何对偏差方差权衡进行形式化的定义？（进一步可以讨论模型选择的方法，比如如何选择多项式的次数）</li>
 <li>机器学习中除了关注泛化误差，最关注的是算法是否有效地利用了训练样本，即如何将训练样本中的误差同泛化误差联系起来。</li>
 <li>学习算法可以在怎样的条件下被<strong>证明</strong>是有效的？（比如有什么条件就可以证明一个分类算法的准确率高达（99%）</li>
 </ol>
-<p>首先要介绍两个<code>引理（Lemma）</code>，一个是<code>联合上界（Union bound）</code>：</p>
+<h2 id="经验风险最小化（Empirical-risk-minimization，ERM）"><a href="#经验风险最小化（Empirical-risk-minimization，ERM）" class="headerlink" title="经验风险最小化（Empirical risk minimization，ERM）"></a>经验风险最小化（Empirical risk minimization，ERM）</h2><p>我们为什么可以使用之前的模型？实际上，之前的分类模型，比如逻辑回归、支持向量机等等，都是<code>经验风险最小化（Empirical risk minimization，ERM）</code>的特例或近似，我们将通过证明经验风险最小化模型的合理性，从而说明第一章中的分类模型是可靠的、有效的。</p>
+<h3 id="符号说明（Notation-explanation）"><a href="#符号说明（Notation-explanation）" class="headerlink" title="符号说明（Notation explanation）"></a>符号说明（Notation explanation）</h3><p>首先要说明模型中的符号：</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=g(\theta^Tx) \\ g(z)=1\{z\geq0\} \\ y\in\{0,1\} \\ S=\{(x^{(i)}, y^{(i)})\}_{i=1}^m, \ (x^{(i)}, y^{(i)})\sim_{IID}D</script><p>显然我们先假设了这是一个线性模型，其中可以认为$g$是逻辑回归的一个加强版本，而样本集$S$中的样本是独立同分布的。定义假设$h_\theta$的<code>训练误差（training error）</code>：</p>
+<script type="math/tex; mode=display">
+\hat{\epsilon}(h_\theta)=\hat{\epsilon}_S(h_\theta)=\frac{1}{m}\sum_{i=1}^m{1\{h_\theta(x^{(i)})\neq y^{(i)}\}}</script><p>由于训练误差又被称为<code>风险（risk）</code>，所以经验风险最小化就可以被定义为</p>
+<script type="math/tex; mode=display">
+\hat{\theta}=arg \min_\theta{\hat{\epsilon}_S(h_\theta)}</script><p>可以认为，由于这个原始的学习算法是一个<code>NP困难问题</code>，所以提出逻辑回归和支持向量机等凸优化问题，都是对这个非凸问题进行近似处理。实际上，为了进一步的证明，可以认为我们选择的是一个函数，而不是参数$\theta$。先定义假设的集合</p>
+<script type="math/tex; mode=display">
+H=\{h_\theta,\theta\in\R^{n+1},h_\theta:X\mapsto\{0,1\}\}</script><p>其中，$h$是通用的模型，包括神经网络或多分类等等，并不局限于线性与二分类。于是，可以将经验风险最小化模型修改为</p>
+<script type="math/tex; mode=display">
+\hat{h}=arg \min_{h\in H}{\hat{\epsilon}_S(h_\theta)}</script><p>进一步可以定义模型优化的终极目标——泛化误差：</p>
+<script type="math/tex; mode=display">
+\epsilon(h)=P_{(x,y)\sim D}(h(x)\neq y)</script><p>大多数情况下，$\hat{}$表示一个量是另外一个量的<code>估计（estimate）</code>，比如用$\hat{\epsilon}$估计（近似表示）$\epsilon$。</p>
+<p>下面，我们要证明的结论是——为什么经验风险最小化模型是合理的？即为什么$\hat{\epsilon}$可以用来估计（近似表示）$\epsilon$，或者能否由$\hat{\epsilon}$得到$\epsilon$的一个上界？注意这个问题的回答此前都是在感性的认知下默认成立的。</p>
+<h3 id="引理（Lemma）"><a href="#引理（Lemma）" class="headerlink" title="引理（Lemma）"></a>引理（Lemma）</h3><p>在此之前，需要介绍两个<code>引理（Lemma）</code>，一个是<code>联合界（Union bound）</code>：</p>
 <script type="math/tex; mode=display">
 P(A_1\cup\dots\cup A_k) \leq P(A_1)+\dots+P(A_k)</script><p>其中$P$表示事件发生的概率，用文氏图就很容易理解。</p>
 <p>另一个是<code>Hoeﬀding不等式（Hoeﬀding inequality）</code>：</p>
@@ -425,7 +439,8 @@ P(A_1\cup\dots\cup A_k) \leq P(A_1)+\dots+P(A_k)</script><p>其中$P$表示事�
 <script type="math/tex; mode=display">
 P(Z_i=1)=\phi \\ \hat{\phi}=\frac{1}{m}\sum_{i=1}^m{Z_i}</script><p>则对于任意$\gamma&gt;0$有</p>
 <script type="math/tex; mode=display">
-P(|\phi-\hat{\phi}|>\gamma) \leq 2\exp(-2\gamma^2m)</script>
+P(|\phi-\hat{\phi}|>\gamma) \leq 2\exp(-2\gamma^2m)</script><p>当增加训练样本的规模的时候，等式右边（即上界bound）的高斯分布会收窄，使得$\phi$偏离$\hat{\phi}$的概率呈指数变小。虽然很像中心极限定理，但是这个不等式在$m$很小的情况下也是成立的。</p>
+<h3 id="有限集合-H-（finite-H-）"><a href="#有限集合-H-（finite-H-）" class="headerlink" title="有限集合$H$（finite $H$）"></a>有限集合$H$（finite $H$）</h3>
       
     </div>
     
@@ -621,7 +636,7 @@ P(|\phi-\hat{\phi}|>\gamma) \leq 2\exp(-2\gamma^2m)</script>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9"><span class="nav-number">1.</span> <span class="nav-text">Lecture 9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差方差权衡（bias-variance-trade-off）"><span class="nav-number">1.1.</span> <span class="nav-text">偏差方差权衡（bias variance trade-off）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预备知识"><span class="nav-number">1.2.</span> <span class="nav-text">预备知识</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9"><span class="nav-number">1.</span> <span class="nav-text">Lecture 9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差方差权衡（bias-variance-trade-off）"><span class="nav-number">1.1.</span> <span class="nav-text">偏差方差权衡（bias variance trade-off）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化（Empirical-risk-minimization，ERM）"><span class="nav-number">1.2.</span> <span class="nav-text">经验风险最小化（Empirical risk minimization，ERM）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#符号说明（Notation-explanation）"><span class="nav-number">1.2.1.</span> <span class="nav-text">符号说明（Notation explanation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引理（Lemma）"><span class="nav-number">1.2.2.</span> <span class="nav-text">引理（Lemma）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限集合-H-（finite-H-）"><span class="nav-number">1.2.3.</span> <span class="nav-text">有限集合$H$（finite $H$）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
