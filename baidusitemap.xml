@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://wang22ti.com/2018/02/14/2018%E5%90%AF%E7%A4%BA%E5%BD%95/</loc>
-    <lastmod>2018-06-09T08:52:32.265Z</lastmod>
+    <loc>http://wang22ti.com/2018/06/02/%E6%97%A5%E8%AE%B018-6/</loc>
+    <lastmod>2018-06-11T10:26:57.088Z</lastmod>
     <data>
         <display>
-        <title>2018启示录</title>
-        <pubTime>2018-02-13T16:15:56.000Z</pubTime>
+        <title>日记18-6</title>
+        <pubTime>2018-06-02T01:25:53.000Z</pubTime>
         
          
            
@@ -22,12 +22,30 @@
 
     
   <url>
-    <loc>http://wang22ti.com/2018/06/02/%E6%97%A5%E8%AE%B018-6/</loc>
-    <lastmod>2018-06-09T07:58:45.981Z</lastmod>
+    <loc>http://wang22ti.com/2018/06/05/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE2%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</loc>
+    <lastmod>2018-06-11T10:22:45.343Z</lastmod>
     <data>
         <display>
-        <title>日记18-6</title>
-        <pubTime>2018-06-02T01:25:53.000Z</pubTime>
+        <title>mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论</title>
+        <pubTime>2018-06-05T15:52:18.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2018/02/14/2018%E5%90%AF%E7%A4%BA%E5%BD%95/</loc>
+    <lastmod>2018-06-11T10:08:33.420Z</lastmod>
+    <data>
+        <display>
+        <title>2018启示录</title>
+        <pubTime>2018-02-13T16:15:56.000Z</pubTime>
         
          
            
@@ -51,24 +69,6 @@
            
              
               <breadCrumb title="计算机体系结构" url="http://wang22ti.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2018/06/05/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE2%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/</loc>
-    <lastmod>2018-06-09T06:47:54.674Z</lastmod>
-    <data>
-        <display>
-        <title>mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论</title>
-        <pubTime>2018-06-05T15:52:18.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>
