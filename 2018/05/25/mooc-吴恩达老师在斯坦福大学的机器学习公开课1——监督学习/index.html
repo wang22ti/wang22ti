@@ -89,7 +89,7 @@
 <meta property="og:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。不过会跳过关于matlab的内容。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised lear">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/1.png">
-<meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/mooc-吴恩达老师在斯坦福大学的机器学习公开课（一）——监督学习/2.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/3.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/4.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/5.png">
@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/16.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/17.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/18.png">
-<meta property="og:updated_time" content="2018-06-05T16:05:58.491Z">
+<meta property="og:updated_time" content="2018-07-19T08:49:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。不过会跳过关于matlab的内容。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised lear">
@@ -453,7 +453,7 @@ h(x)=\sum_{i=0}^n{\theta_i x_i}=\theta^Tx</script><p>为了使得预测与训练
 <p>先初始化令</p>
 <script type="math/tex; mode=display">
 \theta=\vec{0}</script><p>并不停改变$\theta$以减小$J(\theta)$直到我们觉得已经是最小了，其过程如下图所示。</p>
-<p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/mooc-吴恩达老师在斯坦福大学的机器学习公开课（一）——监督学习/2.jpg" alt=""></p>
+<p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/2.jpg" alt=""></p>
 <p>我们从山顶一步一步往下走，重要的是我们会在哪里停下。由于出发点的不同，会导致选择完全不同的路径，到达了完全不同的局部最小解。为了每一步都向着最陡峭的方向前进，令</p>
 <script type="math/tex; mode=display">
 \theta_{i}=\theta_{i}-\alpha \frac{\partial J(\theta)}{\partial \theta_i}</script><p>直到<code>收敛（converge）</code>，其中$\alpha$表示<code>学习速度（learning rate）</code>，决定了每次迈的步子的长度，不宜过小也不宜过大，太小收敛速度慢，太大无法收敛。</p>

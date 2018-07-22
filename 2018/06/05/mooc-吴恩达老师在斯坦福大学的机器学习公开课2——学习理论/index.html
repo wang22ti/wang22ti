@@ -89,7 +89,10 @@
 <meta property="og:description" content="前置课程请移步第一部分：监督学习 从这里开始的3个lecture，是整个课程的第二部分：学习理论！就是如何熟练地、有效地使用在第一部分学习过的算法。 Lecture 9偏差方差权衡（bias variance trade-off）回到此前关于欠拟合和过拟合的描述，有如下直观的描述：  无论是左图还是右图，都存在巨大的泛化误差（generalization error），这个会在之后有形式化的定义，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/1.png">
-<meta property="og:updated_time" content="2018-06-11T10:22:45.343Z">
+<meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/2.png">
+<meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/3.png">
+<meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/4.png">
+<meta property="og:updated_time" content="2018-07-20T13:05:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论">
 <meta name="twitter:description" content="前置课程请移步第一部分：监督学习 从这里开始的3个lecture，是整个课程的第二部分：学习理论！就是如何熟练地、有效地使用在第一部分学习过的算法。 Lecture 9偏差方差权衡（bias variance trade-off）回到此前关于欠拟合和过拟合的描述，有如下直观的描述：  无论是左图还是右图，都存在巨大的泛化误差（generalization error），这个会在之后有形式化的定义，">
@@ -368,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,955 字
+                  2,613 字
                 </span>
               
 
@@ -384,7 +387,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -470,7 +473,30 @@ h^*=arg \min_{h\in H}\epsilon(h)</script><p>由误差界有</p>
 \begin{array}{} \epsilon(\hat{h})&\leq &\hat{\epsilon}(\hat{h}) + \gamma  \\ &\leq & \hat{\epsilon}(h^*) + \gamma \\ &\leq &\epsilon(h^*)+2\gamma \end{array}</script><p>于是，给定样本大小$m$和概率界$\delta$，有$1-\delta$的概率有</p>
 <script type="math/tex; mode=display">
 \epsilon(\hat{h})\leq \epsilon(h^*)+2\sqrt{\frac{1}{2m}\log{\frac{2k}{\delta}}}</script><p>假设现在用的是线性模型$H$，我们对训练得到的最优假设的泛化误差$\epsilon(\hat{h})$的上界并不满意，我们考虑使用更复杂的模型，比如二次模型$H^{‘}\supseteq H$，那么理论上的最优假设的泛化误差$\epsilon(h^<em>)$一定会减小，然而由于假设数量$k$的增加，最优假设的泛化误差$\epsilon(\hat{h})$的上界并不一定会减小，这就是偏差方差权衡的形式化表达。十分不严谨的、直观的，可以认为$\epsilon(h^</em>)$是分类问题偏差，$2\sqrt{\frac{1}{2m}\log{\frac{2k}{\delta}}}$是分类问题的方差。</p>
-<h1 id="Lecture-10"><a href="#Lecture-10" class="headerlink" title="Lecture 10"></a>Lecture 10</h1><h2 id="经验风险最小化问题（Empirical-risk-minimization，ERM）（二）"><a href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（二）" class="headerlink" title="经验风险最小化问题（Empirical risk minimization，ERM）（二）"></a>经验风险最小化问题（Empirical risk minimization，ERM）（二）</h2><h3 id="无限集合-H-（infinite-H-）"><a href="#无限集合-H-（infinite-H-）" class="headerlink" title="无限集合$H$（infinite $H$）"></a>无限集合$H$（infinite $H$）</h3>
+<h1 id="Lecture-10"><a href="#Lecture-10" class="headerlink" title="Lecture 10"></a>Lecture 10</h1><h2 id="经验风险最小化问题（Empirical-risk-minimization，ERM）（二）"><a href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（二）" class="headerlink" title="经验风险最小化问题（Empirical risk minimization，ERM）（二）"></a>经验风险最小化问题（Empirical risk minimization，ERM）（二）</h2><h3 id="无限集合-H-（infinite-H-）与VC维"><a href="#无限集合-H-（infinite-H-）与VC维" class="headerlink" title="无限集合$H$（infinite $H$）与VC维"></a>无限集合$H$（infinite $H$）与VC维</h3><p>下面要利用样本复杂度将样本复杂度推广到无限维的形式，先说一个直观的结论：</p>
+<p>$H$是以$d$个实数组成的，每个实数在计算机中都有64个bit表示，于是最多有$2^{64d}$个假设，即有$k=2^{64d}$。由样本复杂度有</p>
+<script type="math/tex; mode=display">
+m \geq O(\frac{1}{\gamma^2}\log{\frac{k}{\delta}}) = O(\frac{d}{\gamma^2}\log{\frac{1}{\delta}})</script><p>所以训练集的规模大致和参数的数量正相关。之所以说这只是一个直观的结论，是因为依赖于对浮点数是64位的假设，之后会提出更加正式的表达方式。在此之前需要介绍另外两个概念</p>
+<p>对于一个给定的集合$S={x^{i},\dots,x^{(d)}}$我们将<code>H打散（Shatter）S</code>定义为$H$能够实现任意在$S$上的标记，也就是对于任意的标记集合$\{y^{(1)},\dots,y^{(d)}\}$，都存在一个假设$h\in H$使得$\forall i=1,\dots,d, h(x^{(i)})=y^{(i)}$。对于一个假设集合$H$，定义<code>VC维</code>维可以被$H$打散的最大集合的大小，写作$VC(H)$。如果$H$可以打散任意大小的集合，那么$VC(H)=\infin$。比如对于下面的集合：</p>
+<p><img src="/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/2.png" alt=""></p>
+<p>无论是哪一种标记，都可以可以找到一个线性的假设完成标记：</p>
+<p><img src="/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/3.png" alt=""></p>
+<p>而对于任意一个大小为4的集合，线性假设都无法将之打散，所以对于线性假设集合，其在二维空间中的VC维为3。实际上$n$维线性假设集合的VC维等于$n+1$。</p>
+<p>注意到，对于下面的大小为3的集合，线性假设集合并不能加之打散，但是这并不影响VC维的值，最大集合只要有一个即可。</p>
+<p><img src="/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/4.png" alt=""></p>
+<p>有了VC维的概念，就可以有上述结论的严谨的表达方式，几乎是学习理论中最重要的结论：</p>
+<p>对于给定的假设集合$H$，令$d=VC(H)$，令事件$A$为</p>
+<script type="math/tex; mode=display">
+|\epsilon(h)-\hat{\epsilon}(h)\leq O(\sqrt{\frac{d}{m}\log{\frac{m}{d}}+\frac{1}{m}\log{\frac{1}{\delta}}})|,h\in H</script><p>则有</p>
+<script type="math/tex; mode=display">
+P(A) \geq 1-\delta</script><p>因此，令事件$B$为</p>
+<script type="math/tex; mode=display">
+\hat{\epsilon}(h)\leq \epsilon(h^*) +O(\sqrt{\frac{d}{m}\log{\frac{m}{d}}+\frac{1}{m}\log{\frac{1}{\delta}}})|,h\in H</script><p>则有</p>
+<script type="math/tex; mode=display">
+P(B) \geq 1-\delta</script><p>由于无限大小的假设集合往往也只有有限大小的VC维，因此将经验风险最小化模型的合理推广到无限维度。</p>
+<p>实际上大多数合理的假设类，VC维和模型参数的数量是成正比的（当然有一些非主流的，有着很少的参数却有着很大的VC维）</p>
+<p>上述结论的证明十分复杂（吴老师看了一周）,所以关于VC维的详细内容先占一个坑，具体参见<a href="http://open.163.com/special/opencourse/learningfromdata.html" target="_blank" rel="noopener">加州理工学院公开课：机器学习与数据挖掘</a> </p>
+
       
     </div>
     
@@ -666,7 +692,7 @@ h^*=arg \min_{h\in H}\epsilon(h)</script><p>由误差界有</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9"><span class="nav-number">1.</span> <span class="nav-text">Lecture 9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差方差权衡（bias-variance-trade-off）"><span class="nav-number">1.1.</span> <span class="nav-text">偏差方差权衡（bias variance trade-off）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（一）"><span class="nav-number">1.2.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#联合界（Union-bound）和Hoeﬀding不等式（Hoeﬀding-inequality）"><span class="nav-number">1.2.1.</span> <span class="nav-text">联合界（Union bound）和Hoeﬀding不等式（Hoeﬀding inequality）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号说明（Notation-explanation）"><span class="nav-number">1.2.2.</span> <span class="nav-text">符号说明（Notation explanation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限集合-H-（finite-H-）"><span class="nav-number">1.2.3.</span> <span class="nav-text">有限集合$H$（finite $H$）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性收敛（Uniform-convergence）"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">一致性收敛（Uniform convergence）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本复杂度（sample-complexity）"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">样本复杂度（sample complexity）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误差界（error-bound）"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">误差界（error bound）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差方差权衡的形式化表达"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">偏差方差权衡的形式化表达</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-10"><span class="nav-number">2.</span> <span class="nav-text">Lecture 10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（二）"><span class="nav-number">2.1.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无限集合-H-（infinite-H-）"><span class="nav-number">2.1.1.</span> <span class="nav-text">无限集合$H$（infinite $H$）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9"><span class="nav-number">1.</span> <span class="nav-text">Lecture 9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差方差权衡（bias-variance-trade-off）"><span class="nav-number">1.1.</span> <span class="nav-text">偏差方差权衡（bias variance trade-off）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（一）"><span class="nav-number">1.2.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#联合界（Union-bound）和Hoeﬀding不等式（Hoeﬀding-inequality）"><span class="nav-number">1.2.1.</span> <span class="nav-text">联合界（Union bound）和Hoeﬀding不等式（Hoeﬀding inequality）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号说明（Notation-explanation）"><span class="nav-number">1.2.2.</span> <span class="nav-text">符号说明（Notation explanation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限集合-H-（finite-H-）"><span class="nav-number">1.2.3.</span> <span class="nav-text">有限集合$H$（finite $H$）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性收敛（Uniform-convergence）"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">一致性收敛（Uniform convergence）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本复杂度（sample-complexity）"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">样本复杂度（sample complexity）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误差界（error-bound）"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">误差界（error bound）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差方差权衡的形式化表达"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">偏差方差权衡的形式化表达</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-10"><span class="nav-number">2.</span> <span class="nav-text">Lecture 10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（二）"><span class="nav-number">2.1.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无限集合-H-（infinite-H-）与VC维"><span class="nav-number">2.1.1.</span> <span class="nav-text">无限集合$H$（infinite $H$）与VC维</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
