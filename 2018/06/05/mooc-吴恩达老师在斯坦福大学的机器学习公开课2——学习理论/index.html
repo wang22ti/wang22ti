@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/2.png">
 <meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/3.png">
 <meta property="og:image" content="http://wang22ti.com/2018/06/05/mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论/4.png">
-<meta property="og:updated_time" content="2018-07-20T13:05:38.000Z">
+<meta property="og:updated_time" content="2018-07-25T13:48:28.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课2——学习理论">
 <meta name="twitter:description" content="前置课程请移步第一部分：监督学习 从这里开始的3个lecture，是整个课程的第二部分：学习理论！就是如何熟练地、有效地使用在第一部分学习过的算法。 Lecture 9偏差方差权衡（bias variance trade-off）回到此前关于欠拟合和过拟合的描述，有如下直观的描述：  无论是左图还是右图，都存在巨大的泛化误差（generalization error），这个会在之后有形式化的定义，">
@@ -371,7 +371,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,613 字
+                  5,687 字
                 </span>
               
 
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9 分钟
+                  21 分钟
                 </span>
               
             </div>
@@ -493,9 +493,70 @@ P(A) \geq 1-\delta</script><p>因此，令事件$B$为</p>
 <script type="math/tex; mode=display">
 \hat{\epsilon}(h)\leq \epsilon(h^*) +O(\sqrt{\frac{d}{m}\log{\frac{m}{d}}+\frac{1}{m}\log{\frac{1}{\delta}}})|,h\in H</script><p>则有</p>
 <script type="math/tex; mode=display">
-P(B) \geq 1-\delta</script><p>由于无限大小的假设集合往往也只有有限大小的VC维，因此将经验风险最小化模型的合理推广到无限维度。</p>
-<p>实际上大多数合理的假设类，VC维和模型参数的数量是成正比的（当然有一些非主流的，有着很少的参数却有着很大的VC维）</p>
-<p>上述结论的证明十分复杂（吴老师看了一周）,所以关于VC维的详细内容先占一个坑，具体参见<a href="http://open.163.com/special/opencourse/learningfromdata.html" target="_blank" rel="noopener">加州理工学院公开课：机器学习与数据挖掘</a> </p>
+P(B) \geq 1-\delta</script><p>由于无限大小的假设集合往往也只有有限大小的VC维，因此将经验风险最小化模型的合理推广到无限维度。实际上大多数合理的假设类，VC维和模型参数的数量是成正比的（当然有一些非主流的，有着很少的参数却有着很大的VC维）上述结论的证明十分复杂（吴老师看了一周）,所以关于VC维的详细内容先占一个坑，</p>
+<p>!@#$%^&amp;*()_+具体参见<a href="http://open.163.com/special/opencourse/learningfromdata.html" target="_blank" rel="noopener">加州理工学院公开课：机器学习与数据挖掘</a></p>
+<p>这是可能会好奇为啥SVM不会过拟合，因为VC为是$n+1$而$n$看起来应该是无穷大的。实际上SVM是具有比较小的VC维度的，是以距离空间零点最远的点的距离的某个常数为上界。</p>
+<p>在经验上逻辑回归需要的样本约是参数数量的10倍。</p>
+<h2 id="模型选择（model-selection）"><a href="#模型选择（model-selection）" class="headerlink" title="模型选择（model selection）"></a>模型选择（model selection）</h2><p>了解的方差-偏差权衡，我们知道不应该选择过于复杂或者或与简单的模型，所以往往要对参数进行合适的选择。一个例子是在进行逻辑回归的时候$h_\theta(x)=g(\theta_0+\theta_1x+,\dots,+\theta_kx^k)$中的$k$的取值，另一个是在进行局部加权线性回归的时候参数$\tau$，还有在软间隔SVM中的参数$C$的选取。模型选择可以自动地在方差和偏差之间完成权衡。</p>
+<h3 id="简单交叉验证（Simple-Cross-validation）"><a href="#简单交叉验证（Simple-Cross-validation）" class="headerlink" title="简单交叉验证（Simple Cross validation）"></a>简单交叉验证（Simple Cross validation）</h3><p>将可以选择的模型的集合记为$M=\{M_1, \dots,M_d\}$。有很多种模型选择的标准方法，其中一个是简单<code>交叉验证（Simple Cross validation）</code>。</p>
+<p>对于一个给定的样本集合$S$，将其随机划分为两个子集，一个是训练子集$S_{train}$（一般是70%），另一个是保留交叉验证子集$S_{cv}$（剩下的30%）。仅仅使用$S_{train}$训练模型得到假设$h_i$，用保留交叉验证子集进行测试，找到具有最小误差的$h_i$。最后可以使用100%的样本即集合$S$对选定的模型进行训练。</p>
+<h3 id="k-折交叉验证（-k-fold-cross-validation）"><a href="#k-折交叉验证（-k-fold-cross-validation）" class="headerlink" title="$k$折交叉验证（$k$-fold cross validation）"></a>$k$折交叉验证（$k$-fold cross validation）</h3><p>有时候在机器学习中样本是十分难得的，比如医学的每一项数据都代表一个不愉快的经历，使用30%的数据仅仅作为模型选择是很浪费的。所以往往使用交叉验证的变种<code>k折交叉验证（k-fold cross validation）</code>。</p>
+<p>将样本集合$S$平均划分为$k$份，每次将$k-1$份作为训练集，将剩下的一份作为测试集，如此得到的$k$个误差的平均就是当前模型的泛化误差的估计。</p>
+<p>$k$最常见的是取5、10，当$k=m$即和样本数目相同的时候，变为<code>留1交叉验证（leave-one-out cv）</code>，只用数据数据很少的时候才采用这种方法（比如15个）。</p>
+<p>虽然提高了数据的利用率，但是该方法也带来到了大量的计算。</p>
+<h2 id="特征选择（Feature-Selection）"><a href="#特征选择（Feature-Selection）" class="headerlink" title="特征选择（Feature Selection）"></a>特征选择（Feature Selection）</h2><p>特征选择是一类特殊的模型选择。以垃圾邮件分类为例，其中类似于like，a，is等词语并不能说明这是否是垃圾邮件，因此认为所有特征的集合中存在一个对于特定学习问题最为相关的子集。特征选择的目的就是找到这样的一个子集，从而减小假设类的规模，降低过拟合的风险。</p>
+<p>对于一个大小为$n$的特征集合，它有$2^n$个子集。这是一个巨大的空间，所以我们往往使用不同的启发式规则进行搜索。</p>
+<h3 id="前向搜索算法（forward-search-algorithm）"><a href="#前向搜索算法（forward-search-algorithm）" class="headerlink" title="前向搜索算法（forward search algorithm）"></a>前向搜索算法（forward search algorithm）</h3><p>前向搜索算法（forward search algorithm），又称前向选择算法（forward selection algorithm），其过程为：</p>
+<ol>
+<li>初始化特征集合$F=\empty$</li>
+<li>重复<ol>
+<li>对于不在$F$中的特征$i$，使用交叉验证评估$F_i=F\cup\{i\}$，即只是用$F_i$训练学习模型并得到泛化误差</li>
+<li>令$F$为上述$F_i$中泛化误差最小的那一个</li>
+</ol>
+</li>
+<li>得到最好的特征子集</li>
+</ol>
+<p>如果没有任何启发式算法，那么最后$F$就是所有的特征。如果根据经验需要$k$个特征就可以，那么久完成了特征选择。</p>
+<p>这个算法是<code>封装特征选择算法（wrapper model feature selection）</code>的特例，因为它在学习算法的外面又使用了一层算法，每一轮都反复执行学习算法并根据学习算法的结果进行特征选择。其一个变种是<code>后向搜索算法（backward search）</code>，即从所有特征中一个一个删除。</p>
+<h3 id="过滤特征选择算法（Filter-feature-selection）"><a href="#过滤特征选择算法（Filter-feature-selection）" class="headerlink" title="过滤特征选择算法（Filter feature selection）"></a>过滤特征选择算法（Filter feature selection）</h3><p>实际上封装特征选择算法往往表现得很好，唯一的缺点就是需要大量的计算，对于文本分类这样的问题可能就搞不定了。本质上需要计算的是某一个特征$x_i$对于$y$的影响有多大，所以使用<code>过滤特征选择算法（Filter feature selection）</code>，它使用<code>相互信息（mutual information）</code>来计算关联性：</p>
+<script type="math/tex; mode=display">
+MI(x_i,y)=\sum_{x_i\in\{0,1\}}{ \sum_{y\in\{0,1\}}{p(x_i,y)\log{\frac{p(x_i,y)}{p(x_i)p(y)}}} }</script><p>实际上这是一个标准的信息论概念</p>
+<script type="math/tex; mode=display">
+MI(x_i,y)=KL(p(x_i,y)||p(x_i)p(y))</script><p>其中KL用来衡量两个概率分布的差异。如果$x_i$和$y$是独立的，那么连个的联合分布与分布的乘积的KL距离为0。</p>
+<p>有了衡量相似度的标准之后，只要选择相关度最高的$k$个特征即可。其中$k$可以通过交叉验证决定，即每选择一个特征之后就使用交叉验证计算一下泛化误差。</p>
+<h1 id="Lecture-11"><a href="#Lecture-11" class="headerlink" title="Lecture 11"></a>Lecture 11</h1><h2 id="贝叶斯统计与正则化（Bayesian-statistics-and-regularization）"><a href="#贝叶斯统计与正则化（Bayesian-statistics-and-regularization）" class="headerlink" title="贝叶斯统计与正则化（Bayesian statistics and regularization）"></a>贝叶斯统计与正则化（Bayesian statistics and regularization）</h2><p>特征选择是一个简化模型、避免过拟合的一个方向，正则化是另外一个，它将保留所有的特征。在线性回归中，我们会最大化似然函数，有</p>
+<script type="math/tex; mode=display">
+\max_\theta{\prod_i{p(y^{(i)}|x^{(i)};\theta)}}</script><p>即认为$\theta$是一个确定的值，我们通过学习算法对其估计——这是<code>频率学派（frequentist）</code>的观点。</p>
+<p>然而<code>贝叶斯学派（Bayesian）</code>认为$\theta$也是一个变量，我们要给他一个<code>先验分布（prior distribution）</code>$P(\theta)$，比如假设$\theta\sim N(0,\tau^2I)$。对于给定的训练集合$S=\{x^{(i)},y^{(i)}\}_{i=1}^m$，我们会计算<code>后验分布（posterior distribution）</code>：</p>
+<script type="math/tex; mode=display">
+p(\theta|S)=\frac{p(S|\theta)p(\theta)}{p(S)}=\frac{(\prod_{i=1}^m{p(y^{(i)}|x^{(i)},\theta)})p(\theta)}{\int_\theta{(\prod_{i=1}^m{p(y^{(i)}|x^{(i)},\theta)}p(\theta))d\theta}}</script><p>其中$p(y^{(i)}|x^{(i)},\theta)$来自于使用的模型。比如使用贝叶斯逻辑回归的时候，$p(y^{(i)}|x^{(i)},\theta)=h_\theta(x^{(i)})^{y^{(i)}}(1-h_\theta(x^{(i)}))^{1-y^{(i)}}$，其中$h_\theta(x^{(i)})=1/(1+\exp(-\theta^Tx^{(i)}))^3$。</p>
+<p>当对测试样本进行估计的时候，</p>
+<script type="math/tex; mode=display">
+p(y|x,S)=\int_\theta{p(y|x,\theta)p(\theta|S)d\theta}</script><p>即有</p>
+<script type="math/tex; mode=display">
+E[y|x,S]=\int_yyp(y|x,S)dy</script><p>这些公式比较抽象而且非常难以求解，在大多数情况下都没有解析解，所以我们一般不会直接求解完整的后验分布，而是进行MAP估计</p>
+<script type="math/tex; mode=display">
+\theta_{MAP}=\max_\theta{P(\theta|S)}=\max_\theta{\prod_{i=1}^m{p(y^{(i)}|x^{(i)},\theta)p(\theta)}}</script><p>当我们假设$\theta\sim N(0,\tau^2I)$的时候，即假设大多数特征的参数接近0——等同于消除了这些特征。于是最优化目标变为：</p>
+<script type="math/tex; mode=display">
+\min_\theta{\sum_{i}{||y^{(i)}-\theta^Tx^{(i)}||^2}+\lambda||\theta||^2}</script><p>其中$\lambda=\frac{1}{\tau^2}$，即和之前相比加上了最后的正则化项，它能够使得拟合的结果更加平滑，降低了过拟合的风险。</p>
+<h2 id="在线学习（online-learning）"><a href="#在线学习（online-learning）" class="headerlink" title="在线学习（online learning）"></a>在线学习（online learning）</h2><p>下面简单介绍属于“安排课程时不知道放哪里的那一部分”。</p>
+<p>之前学习的算法都是<code>批学习算法（batch learning algorithm）</code>，即给定一个训练集合，在上面跑一个学习算法，之后在测试集合上测试。此外还有一类学习算法称为<code>在线学习（online learning）</code>，即使在学习的过程中也要进行预测。</p>
+<p>在这个过程中我们关注的是<code>总的在线误差（total online error）</code>，即</p>
+<script type="math/tex; mode=display">
+\sum_i{1\{\hat{y}^{(i)}\neq y^{(i)}\}}</script><p>之前的大多数算法都可以应用于这个形式，随机梯度下降可能就更好，比如应用在感知机中。可以证明的是，即使$x^{(i)}\in \R^\infin$，只要正负样本是可以完全被分开的，感知机在有限个样本之后是一定可以收敛的。这个结论比较复杂且不是重点，因此只是先占一个坑：</p>
+<p>!@#$%^&amp;*()_+</p>
+<h2 id="机器学习应用的一些建议"><a href="#机器学习应用的一些建议" class="headerlink" title="机器学习应用的一些建议"></a>机器学习应用的一些建议</h2><h3 id="调试诊断法（diagnostics-for-debugging-learning-algorithm）"><a href="#调试诊断法（diagnostics-for-debugging-learning-algorithm）" class="headerlink" title="调试诊断法（diagnostics for debugging learning algorithm）"></a>调试诊断法（diagnostics for debugging learning algorithm）</h3><p>当我们使用一个学习算法但是没有取得预期的效果的时候，需要改进的地方在哪里呢？我们一定要避免<code>过早统计优化（premature statistical optimization）</code>，即将大量时间放在某一不重要的地方。这时候我们首先需要设定一些指标，找出一下两个问题的答案，针对性地解决。指标因问题而异，一旦找到问题的所在，一方面可以节约时间，另一方面可以对问题的本质认识更加深入，方便进一步的研究和阐述研究成果。</p>
+<h4 id="方差过大还是偏差过大？"><a href="#方差过大还是偏差过大？" class="headerlink" title="方差过大还是偏差过大？"></a>方差过大还是偏差过大？</h4><p>如果随着样本数量的增加测试误差仍然在减小，而训练误差在缓慢增长，他们之间有较大的差距，说明具有较大的方差，需要进一步增加样本数量或者减小特征的数量；反之如果测试误差不变了，同时训练误差和测试误差相近，说明具有较大的偏差，需要增加特征的数量或者使用更好的特征。</p>
+<h4 id="是优化算法不好还是优化目标不好？"><a href="#是优化算法不好还是优化目标不好？" class="headerlink" title="是优化算法不好还是优化目标不好？"></a>是优化算法不好还是优化目标不好？</h4><p>比如在进行垃圾邮箱分类的时候，使用贝叶斯逻辑回归对垃圾和正常邮件均有2%的错误率，而SVM对垃圾邮件有10%和对正常邮件有0.01%的错误率，显然贝叶斯逻辑回归是不能忍受的。此刻我们可以对测试结果定义个加权评估函数$\alpha$，如果$\alpha_{SVM}&gt;\alpha_{BLR},J_{SVM}&gt;J_{BLR}$，那么说明优化目标和预期结果是一致的，逻辑回归使用的优化方法还没有收敛，可以优化更多代数或者使用别的优化方法比如牛顿下降等等；反之说明优化目标的设置不合理，优化目标的最值并不是预期的分类结果，所以要修正优化目标比如改用不同的正则化参数$\lambda$或者采用SVM。</p>
+<h3 id="误差分析和销蚀分析（error-analyses-and-ablative-analysis）"><a href="#误差分析和销蚀分析（error-analyses-and-ablative-analysis）" class="headerlink" title="误差分析和销蚀分析（error analyses and ablative analysis）"></a>误差分析和销蚀分析（error analyses and ablative analysis）</h3><p>很多机器学习系统是一个很长的流水线，如果能够分析出误差来自于哪些组件，将是十分有意义的。误差分析的过程是逐渐用<code>基准值（ground-true value）</code>代替每一个组件并观察<code>准确率（accuracy）</code>的变化，这类似于软件工程中的一些方法。</p>
+<p>误差分析是将现有的系统和完美的系统进行对比，而销蚀分析则用来解释当前系统和一些性能很差的系统<code>底线系统baseline system</code>之间的差距来自哪里。则将现有系统的组件逐个替换为底线系统的，并观察准确率的变化。</p>
+<p>当然，无论是误差分析还是销蚀分析，组件替换的顺序会导致不同的结果，往往是将所有顺序都尝试一下，有一些看起来很自然的顺序并不OK。</p>
+<h3 id="解决一个机器学习问题如何起步"><a href="#解决一个机器学习问题如何起步" class="headerlink" title="解决一个机器学习问题如何起步"></a>解决一个机器学习问题如何起步</h3><p>解决问题有两种路径，一个是仔细设计系统，提取正确的特征，收集正确的数据，设计正确的算法结构，之后实现它；好处是可以得到新的优雅、<code>伸缩性（scalable）</code>更好的算法，对问题进行深入的思考并机器学习的基础研究做出贡献，这也是解决问题的正确方式。</p>
+<p>另一种方法是“创建-修改”方法，先建立一个简陋的模型，之后使用调试诊断或者误差分析这一类方法看看哪里有问题并修改。好处是可以快速地建立系统，比如在公司中获胜的往往并不是最好的产品而是最早占有市场的产品。这类似于软件工程中的快速原型模式。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>开发应用的时候倾向于使用确信和应用存在关联的理论，而不是道听途说。如果不能确定，可以回去钻研理论，但不要轻易相信钻研的理论和应用之间存在关联。</li>
+<li>花在诊断方法上的时间是有价值的，通常要发出才智才能发明优秀的诊断方法（吴老师是1/3到一半）。</li>
+</ol>
 
       
     </div>
@@ -614,7 +675,7 @@ P(B) \geq 1-\delta</script><p>由于无限大小的假设集合往往也只有�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -692,7 +753,7 @@ P(B) \geq 1-\delta</script><p>由于无限大小的假设集合往往也只有�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9"><span class="nav-number">1.</span> <span class="nav-text">Lecture 9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差方差权衡（bias-variance-trade-off）"><span class="nav-number">1.1.</span> <span class="nav-text">偏差方差权衡（bias variance trade-off）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（一）"><span class="nav-number">1.2.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#联合界（Union-bound）和Hoeﬀding不等式（Hoeﬀding-inequality）"><span class="nav-number">1.2.1.</span> <span class="nav-text">联合界（Union bound）和Hoeﬀding不等式（Hoeﬀding inequality）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号说明（Notation-explanation）"><span class="nav-number">1.2.2.</span> <span class="nav-text">符号说明（Notation explanation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限集合-H-（finite-H-）"><span class="nav-number">1.2.3.</span> <span class="nav-text">有限集合$H$（finite $H$）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性收敛（Uniform-convergence）"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">一致性收敛（Uniform convergence）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本复杂度（sample-complexity）"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">样本复杂度（sample complexity）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误差界（error-bound）"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">误差界（error bound）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差方差权衡的形式化表达"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">偏差方差权衡的形式化表达</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-10"><span class="nav-number">2.</span> <span class="nav-text">Lecture 10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（二）"><span class="nav-number">2.1.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无限集合-H-（infinite-H-）与VC维"><span class="nav-number">2.1.1.</span> <span class="nav-text">无限集合$H$（infinite $H$）与VC维</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-9"><span class="nav-number">1.</span> <span class="nav-text">Lecture 9</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差方差权衡（bias-variance-trade-off）"><span class="nav-number">1.1.</span> <span class="nav-text">偏差方差权衡（bias variance trade-off）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（一）"><span class="nav-number">1.2.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#联合界（Union-bound）和Hoeﬀding不等式（Hoeﬀding-inequality）"><span class="nav-number">1.2.1.</span> <span class="nav-text">联合界（Union bound）和Hoeﬀding不等式（Hoeﬀding inequality）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#符号说明（Notation-explanation）"><span class="nav-number">1.2.2.</span> <span class="nav-text">符号说明（Notation explanation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限集合-H-（finite-H-）"><span class="nav-number">1.2.3.</span> <span class="nav-text">有限集合$H$（finite $H$）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一致性收敛（Uniform-convergence）"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">一致性收敛（Uniform convergence）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本复杂度（sample-complexity）"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">样本复杂度（sample complexity）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#误差界（error-bound）"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">误差界（error bound）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差方差权衡的形式化表达"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">偏差方差权衡的形式化表达</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-10"><span class="nav-number">2.</span> <span class="nav-text">Lecture 10</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经验风险最小化问题（Empirical-risk-minimization，ERM）（二）"><span class="nav-number">2.1.</span> <span class="nav-text">经验风险最小化问题（Empirical risk minimization，ERM）（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无限集合-H-（infinite-H-）与VC维"><span class="nav-number">2.1.1.</span> <span class="nav-text">无限集合$H$（infinite $H$）与VC维</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型选择（model-selection）"><span class="nav-number">2.2.</span> <span class="nav-text">模型选择（model selection）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单交叉验证（Simple-Cross-validation）"><span class="nav-number">2.2.1.</span> <span class="nav-text">简单交叉验证（Simple Cross validation）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-折交叉验证（-k-fold-cross-validation）"><span class="nav-number">2.2.2.</span> <span class="nav-text">$k$折交叉验证（$k$-fold cross validation）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征选择（Feature-Selection）"><span class="nav-number">2.3.</span> <span class="nav-text">特征选择（Feature Selection）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前向搜索算法（forward-search-algorithm）"><span class="nav-number">2.3.1.</span> <span class="nav-text">前向搜索算法（forward search algorithm）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤特征选择算法（Filter-feature-selection）"><span class="nav-number">2.3.2.</span> <span class="nav-text">过滤特征选择算法（Filter feature selection）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-11"><span class="nav-number">3.</span> <span class="nav-text">Lecture 11</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#贝叶斯统计与正则化（Bayesian-statistics-and-regularization）"><span class="nav-number">3.1.</span> <span class="nav-text">贝叶斯统计与正则化（Bayesian statistics and regularization）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线学习（online-learning）"><span class="nav-number">3.2.</span> <span class="nav-text">在线学习（online learning）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习应用的一些建议"><span class="nav-number">3.3.</span> <span class="nav-text">机器学习应用的一些建议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调试诊断法（diagnostics-for-debugging-learning-algorithm）"><span class="nav-number">3.3.1.</span> <span class="nav-text">调试诊断法（diagnostics for debugging learning algorithm）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方差过大还是偏差过大？"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">方差过大还是偏差过大？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#是优化算法不好还是优化目标不好？"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">是优化算法不好还是优化目标不好？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差分析和销蚀分析（error-analyses-and-ablative-analysis）"><span class="nav-number">3.3.2.</span> <span class="nav-text">误差分析和销蚀分析（error analyses and ablative analysis）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决一个机器学习问题如何起步"><span class="nav-number">3.3.3.</span> <span class="nav-text">解决一个机器学习问题如何起步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.3.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
