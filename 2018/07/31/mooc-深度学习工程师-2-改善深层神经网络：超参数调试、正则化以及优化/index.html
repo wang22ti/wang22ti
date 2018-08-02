@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="深度学习的实用层面训练/开发/测试集">
+<meta name="description" content="深度学习的实用层面训练/开发/测试集通常将所有的数据分为训练/开发/测试（train/development/test）三个集合，其中在传统的机器学习中占比为60/20/20，在大数据时代占比可以达到98/1/1，甚至是99.5/0.4/0.1。 有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化">
 <meta property="og:url" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="深度学习的实用层面训练/开发/测试集">
+<meta property="og:description" content="深度学习的实用层面训练/开发/测试集通常将所有的数据分为训练/开发/测试（train/development/test）三个集合，其中在传统的机器学习中占比为60/20/20，在大数据时代占比可以达到98/1/1，甚至是99.5/0.4/0.1。 有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-31T12:17:05.366Z">
+<meta property="og:updated_time" content="2018-07-31T13:16:42.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化">
-<meta name="twitter:description" content="深度学习的实用层面训练/开发/测试集">
+<meta name="twitter:description" content="深度学习的实用层面训练/开发/测试集通常将所有的数据分为训练/开发/测试（train/development/test）三个集合，其中在传统的机器学习中占比为60/20/20，在大数据时代占比可以达到98/1/1，甚至是99.5/0.4/0.1。 有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  16 字
+                  328 字
                 </span>
               
 
@@ -403,7 +403,12 @@
       
 
       
-        <h1 id="深度学习的实用层面"><a href="#深度学习的实用层面" class="headerlink" title="深度学习的实用层面"></a>深度学习的实用层面</h1><h2 id="训练-开发-测试集"><a href="#训练-开发-测试集" class="headerlink" title="训练/开发/测试集"></a>训练/开发/测试集</h2>
+        <h1 id="深度学习的实用层面"><a href="#深度学习的实用层面" class="headerlink" title="深度学习的实用层面"></a>深度学习的实用层面</h1><h2 id="训练-开发-测试集"><a href="#训练-开发-测试集" class="headerlink" title="训练/开发/测试集"></a>训练/开发/测试集</h2><p>通常将所有的数据分为训练/开发/测试（train/development/test）三个集合，其中在传统的机器学习中占比为60/20/20，在大数据时代占比可以达到98/1/1，甚至是99.5/0.4/0.1。</p>
+<p>有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作精良的专业的而后者很随意很模糊。但无论如何开发集的数据要来自同一分布。</p>
+<p>此外，如果不需要获得无偏误差，是可以不需要测试集的。</p>
+<h2 id="偏差-方差"><a href="#偏差-方差" class="headerlink" title="偏差/方差"></a>偏差/方差</h2><p>几乎所有机器学习的从业人员都希望深刻理解偏差与方差，但它们易学难精，尤其是在深度学习中很少考虑偏差-方差权衡。在机器学习的基础上，该部分引入了最优误差（贝叶斯误差），提出了先偏差后方差的思路，此外不做赘述。</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>当怀疑过拟合的时候，首先想到的应该是正则化。</p>
+
       
     </div>
     
@@ -599,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习的实用层面"><span class="nav-number">1.</span> <span class="nav-text">深度学习的实用层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练-开发-测试集"><span class="nav-number">1.1.</span> <span class="nav-text">训练/开发/测试集</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习的实用层面"><span class="nav-number">1.</span> <span class="nav-text">深度学习的实用层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练-开发-测试集"><span class="nav-number">1.1.</span> <span class="nav-text">训练/开发/测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差-方差"><span class="nav-number">1.2.</span> <span class="nav-text">偏差/方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">1.3.</span> <span class="nav-text">正则化</span></a></li></ol></li></ol></div>
             
 
           </div>
