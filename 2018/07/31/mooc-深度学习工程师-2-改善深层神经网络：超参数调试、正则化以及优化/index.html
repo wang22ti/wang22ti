@@ -88,10 +88,23 @@
 <meta property="og:site_name" content="王子泰">
 <meta property="og:description" content="深度学习的实用层面训练/开发/测试集通常将所有的数据分为训练/开发/测试（train/development/test）三个集合，其中在传统的机器学习中占比为60/20/20，在大数据时代占比可以达到98/1/1，甚至是99.5/0.4/0.1。 有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-02T15:40:21.245Z">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/1.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/2.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/3.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/4.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/5.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/6.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/7.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/8.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/9.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/10.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/11.png">
+<meta property="og:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/12.png">
+<meta property="og:updated_time" content="2018-08-06T14:09:56.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化">
 <meta name="twitter:description" content="深度学习的实用层面训练/开发/测试集通常将所有的数据分为训练/开发/测试（train/development/test）三个集合，其中在传统的机器学习中占比为60/20/20，在大数据时代占比可以达到98/1/1，甚至是99.5/0.4/0.1。 有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作">
+<meta name="twitter:image" content="http://wang22ti.com/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/1.png">
 
 
 
@@ -366,7 +379,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  656 字
+                  4,288 字
                 </span>
               
 
@@ -382,7 +395,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  15 分钟
                 </span>
               
             </div>
@@ -407,7 +420,7 @@
 <p>有时候为了获得更大的数据集，可能导致训练集和开发测试集的分布并不相同。例如在识别猫的任务中训练集来自网络爬去，开发测试集来自网友上传，很有可能前者是制作精良的专业的而后者很随意很模糊。但无论如何开发集的数据要来自同一分布。</p>
 <p>此外，如果不需要获得无偏误差，是可以不需要测试集的。</p>
 <h2 id="偏差-方差"><a href="#偏差-方差" class="headerlink" title="偏差/方差"></a>偏差/方差</h2><p>几乎所有机器学习的从业人员都希望深刻理解偏差与方差，但它们易学难精，尤其是在深度学习中很少考虑偏差-方差权衡。在机器学习的基础上，该部分引入了最优误差（贝叶斯误差），提出了先偏差后方差的思路，此外不做赘述。</p>
-<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p>当怀疑过拟合的时候，首先想到的应该是正则化，在逻辑回归中很常见的L2正则化：</p>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h3 id="L2正则化"><a href="#L2正则化" class="headerlink" title="L2正则化"></a>L2正则化</h3><p>当怀疑过拟合的时候，首先想到的应该是正则化，在逻辑回归中很常见的L2正则化：</p>
 <script type="math/tex; mode=display">
 J(w,b) = \frac{1}{m}\sum_{i=1}^m{l(\hat{y}^{(i)},y^{(i)})}+\frac{\lambda}{2m}||w||_2^2</script><p>其中$||w||_2^2=\sum_{j=1}^{n_x}w_j^2=w^Tw$。不加上$b$的正则化项只是因为考虑到$w$已经是一个高位向量了，完全也可以加上。另外一个正则化的方法是L1正则化：</p>
 <script type="math/tex; mode=display">
@@ -418,7 +431,110 @@ J(w^{[1]},b^{[1]},\dots,w^{[l]}, b^{[l]})=\frac{1}{m}\sum_{i=1}^m{l(\hat{y}^{(i)
 <p>于是就有反向传播：</p>
 <script type="math/tex; mode=display">
 dw^{[l]}=(from \ back \ propgation) + \frac{\lambda}{m}{w^{[l]}}</script><p>因此弗罗贝尼乌斯范数有时被称为<code>权重衰减参数</code>，即它会占用原来反向传播的权重。吴老师在这门课对于正则化的有效性的解释也来自于此，即将模型像线性化的方向转变，从而了降低方差。</p>
-<h2 id="Dropout正则化"><a href="#Dropout正则化" class="headerlink" title="Dropout正则化"></a>Dropout正则化</h2><p>还有一个非常实用的正则化——<code>Dropout（随机失活）正则化</code>，</p>
+<h3 id="Dropout正则化"><a href="#Dropout正则化" class="headerlink" title="Dropout正则化"></a>Dropout正则化</h3><p>还有一个非常实用的正则化——<code>Dropout（随机失活）正则化</code>，其基本思想是在训练每一个样本过程中随机令某些神经元失效，如下图所示：</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/1.png" alt="1"></p>
+<p>常见gropout的实现方法是<code>反向随机失活inverted dropout</code>，以3层神经网络为例其基本过程为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d3 = np.random.rand(a3.shape[<span class="number">0</span>], a3.shape[<span class="number">1</span>]) &lt; keep_prob</span><br><span class="line">a3 = np.multiply(a3, d3)</span><br><span class="line">a3 /= keep_prob</span><br></pre></td></tr></table></figure>
+<p>之所以有最后一行是为了确保a3的期望不发生变化，这在测试阶段是很重要的，由于我们不希望输出是随机的，所以此时也不会有dropout。当然，keep_prob的设置完全可以根据每一层神经元的数量而不同，在神经元较多的层中较低，反之则较高甚至是1.</p>
+<p>为什么dropout正则化是有效的？因为它使得神经网络的权重不会集中于某个参数，相当于起到了收缩权重的效果，这和L2正则化是类似的。</p>
+<p>dropout正则化的缺点是训练过程中的损失函数$J$是难以表达的。一个处理方法是先将所有的keep_prob设置为1，确保此时的损失函数是单调减的，然后再设置为期望的值。</p>
+<h3 id="其他正则化方法"><a href="#其他正则化方法" class="headerlink" title="其他正则化方法"></a>其他正则化方法</h3><p><code>数据扩增（data augmentation）</code>：在处理图片的时候，可以通过反转、裁剪、扭曲等操作扩大训练集，不过这不如新的图片。</p>
+<p><code>early stopping</code>：在训练过程中同时计算training error和dev error，会发现有曲线</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/2.jpg" alt="1"></p>
+<p>在紫色点的时候有着中等大小的佛罗贝尼乌斯范数，停止训练即可。这种方法的缺点是不能独立的处理优化损失函数和防止过拟合两个过程，于是需要考虑的东西更加复杂。不过和L2正则化相比只需要进行一次梯度下降，不需要对超参数$\lambda$进行搜索。吴老师还是倾向于使用L2正则化的。</p>
+<h2 id="正则化输入（Normalizing-inputs）"><a href="#正则化输入（Normalizing-inputs）" class="headerlink" title="正则化输入（Normalizing inputs）"></a>正则化输入（Normalizing inputs）</h2><p>正则化输入可以加快训练速度，它分为两步，第一步是零均值化：</p>
+<script type="math/tex; mode=display">
+\mu=\frac{1}{m}\sum_{i=1}^m{x^{(i)}} \\ x=x-\mu</script><p>第二步是方差归一化：</p>
+<script type="math/tex; mode=display">
+\sigma^2=\frac{1}{m}\sum_{i=1}^m{x^{(i)}}^2 \\ x =x/ \sigma^2</script><p>注意的是这个过程是在整个数据集上完成的。为什么这是有效的呢？直观的理解如下图所示</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/3.jpg" alt="1"></p>
+<p>通过输入正则化，将样本空间从扁平状变为圆形，即将特征束缚在相似的范围中，因此就可以设置较大的学习率以提高训练速度。由于正则化并不会带来什么危害，所以吴老师经常不管特征差距如何也进行一次输入正则化操作。</p>
+<h2 id="梯度爆炸与梯度消失"><a href="#梯度爆炸与梯度消失" class="headerlink" title="梯度爆炸与梯度消失"></a>梯度爆炸与梯度消失</h2><p>训练神经网络遇到的一个重要问题是<code>梯度爆炸与梯度消失（vanishing/exploding gradients）</code>，是指梯度在训练的过程中快速变大或变小，甚至以指数的方式。这也是此前神经网络无法向深层发展的重要原因。以最简单的例子说明，假设神经网络的每层仅有2个神经元，激活函数均为恒等函数，$b^{[l]}=0$。故有</p>
+<script type="math/tex; mode=display">
+\hat{y}=w^{[l]}w^{[l-1]}\dots w^{[2]}w^{[1]}x</script><p>当初始化$w^{[l]}=1.5I$时有</p>
+<script type="math/tex; mode=display">
+\hat{y}=w^{[l]}(1.5I)^{l-1}x</script><p>若L很大，则发生梯度爆炸。反之若$w^{[l]}=0.5I$，则发生梯度消失。</p>
+<p>为了尽量避免梯度爆炸与梯度消失，有一种初始化的方法叫<code>Xavier初始化</code>，它令每一层$w$的方差初始化为输入特征数量的倒数。比如如果激活函数为Relu，则有</p>
+<script type="math/tex; mode=display">
+w^{[l]}=np.randon.randn(shape) * np.sqrt(\frac{2}{n^{[l-1]}})</script><p>如果是tanh函数，则有</p>
+<script type="math/tex; mode=display">
+w^{[l]}=np.randon.randn(shape) * np.sqrt(\frac{1}{n^{[l-1]}})</script><p>还有方法如下，但是吴老师并不常用：</p>
+<script type="math/tex; mode=display">
+w^{[l]}=np.randon.randn(shape) * np.sqrt(\frac{2}{n^{[l-1]}+n^{[l]}})</script><p>其他参数都不如$w$重要。</p>
+<h2 id="梯度检验"><a href="#梯度检验" class="headerlink" title="梯度检验"></a>梯度检验</h2><p>在进行反向传播的时候，如果不确定偏导$g(\theta)$是否正确，可以使用</p>
+<script type="math/tex; mode=display">
+\frac{f(\theta+\epsilon)+f(\theta-\epsilon)}{2\epsilon}-g(\theta)</script><p>来检验，这实际是简单的微积分知识。实际操作中将所有的参数$w,b$联接为一个超大的向量$\theta$，于是有</p>
+<script type="math/tex; mode=display">
+for\ each \ i: \\ d\theta_{approx}=\frac{J(\theta_1,\theta_2,\dots,\theta_i+\epsilon,\dots)+J(\theta_1,\theta_2,\dots,\theta_i-\epsilon,\dots)}{2\epsilon}</script><p>之后计算</p>
+<script type="math/tex; mode=display">
+\frac{||d\theta_{approx}-d\theta||_2}{||d\theta_{approx}||_2+||d\theta||_2}</script><p>当$\epsilon=10^{-7}$时，若结果$<10^{-7}$，那就比较稳；如果$>10^{-3}$，就很不稳了。</10^{-7}$，那就比较稳；如果$></p>
+<p>梯度检验很慢，只能用于debug的时候，在训练的时候需要关掉；在发现问题的时候，仔细检查是在哪个$i$；不要与dropout同时使用；使用的时候记得正则化项。</p>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><p>这个部分的重点在于如何提高训练的速度。</p>
+<h2 id="mini-batch"><a href="#mini-batch" class="headerlink" title="mini-batch"></a>mini-batch</h2><p>向量化使得一次性可以计算全部样本，可是当训练样本很大，比如5,000,000的时候，一次计算要花的时间也不少，却也只能进行一次梯度下降，所以一次使用$m$个样本进行训练，将之视为一个mini-batch并记为$x^{\{1\}}$。每一次梯度下降称为一个<code>iterator</code>，每一次完全遍历样本集称为一个<code>epoch</code>。</p>
+<p>当使用mini-batch进行训练的时候，损失函数是抖动下降的</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/4.png" alt="1"></p>
+<p>和随机梯度下降相比由于每次考虑了较多的样本，所以梯度的方向比较稳定。下图中蓝色表示batch梯度下降，紫色表示随机梯度下降，绿色表示mini-batch梯度下降。</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/5.png" alt="1"></p>
+<p>通常，当样本数量大于2000的时候考虑使用mini-batch梯度下降，每个mini-batch的大小取2的整数幂为佳，一般不超过1024。</p>
+<h2 id="指数加权平均"><a href="#指数加权平均" class="headerlink" title="指数加权平均"></a>指数加权平均</h2><p><code>指数加权平均（exponentially weighted average）</code>是很多优化算法的基础，从最基本的对气温的处理来看，设$\theta_t$为1年中第$t$天的气温，则使用</p>
+<script type="math/tex; mode=display">
+v_0=0 \\ v_t=\beta v_{t-1}+(1-\beta)\theta_t</script><p>得到的向量$v_\theta$可以看作是对气温进行$\frac{1}{1-\beta}$天的平均，如下图所示，其中蓝色的点为原始气温数据，黄色线$\beta=0.5$，红色线$\beta=0.9$，绿色线$\beta=0.98$。</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/6.png" alt="1"></p>
+<p>之所以名字中带有“指数”，是因为将递推式展开后较早数据的权重是以指数的方式递减的。虽然这种方法的精度不如滑动窗口平均，但是有着极小的内存开销和极快的速度，因此在机器学习中更常用。</p>
+<p>实际上，由于初期有$v_0=0$，所以导致初期的数据较小，比如$\beta=0.98$时绿色线在初期应该很低。所以要使用如下公式进行<code>偏差修正（bias correction）</code>：</p>
+<script type="math/tex; mode=display">
+v_t=\frac{v_t}{1-\beta^t}</script><p>从而才能真正得到上图绿色的线。</p>
+<h2 id="动量梯度下降法"><a href="#动量梯度下降法" class="headerlink" title="动量梯度下降法"></a>动量梯度下降法</h2><p><code>动量（momentum）梯度下降算法</code>的速度总是快于标准的梯度下降，其基本思想时对梯度做指数加权平均，并用平均梯度做梯度下降。在进行mini-batch梯度下降的过程中，梯度总会沿着某个方向抖动，因此在做平均后可以在一定程度上消除这种抖动，减少无谓的下降，进而可以采用更大的学习率。如下图的三维图所示，蓝色是标准的梯度下降过程，红色是经过指数平均后的梯度下降过程，可见减少了$z$方向的抖动，增加了$xy$平面上每步的距离。</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/7.png" alt="1"></p>
+<p>具体的实现为初始化$v_{dW}=v_{db}=\vec{0}$，之后在每轮迭代中有</p>
+<script type="math/tex; mode=display">
+v_{dW}=\beta v_{dW}+(1-\beta)dW \\ v_{db}=\beta v_{db}+(1-\beta)db \\ W=W-\alpha v_{dW},b=b-v_{db}</script><p>其中$\beta=0.9$是一个健壮性很好的超参数。由于在10轮迭代之后就没有多少偏差了，所以一般不需要对其修正。</p>
+<h2 id="RMSprop算法"><a href="#RMSprop算法" class="headerlink" title="RMSprop算法"></a>RMSprop算法</h2><p><code>root mean square prop, RMSprop算法</code>也可以加快梯度下降的速度，其基本过程和动量梯度下降很像，也是为了减小非重要方向上的梯度从而提高学习率：</p>
+<script type="math/tex; mode=display">
+S_{dW}=\beta S_{dW}+(1-\beta)(dW)^2 \\ S_{db}=\beta S_{db}+(1-\beta)(db)^2 \\ W=W-\alpha\frac{dW}{\sqrt{S_{dW}+\epsilon}},b=b-\alpha\frac{db}{\sqrt{S_{db}+\epsilon}}</script><p>其中$\epsilon$是一个比较小的常数例如$10^{-8}$，为了避免$S_{dW}$过小。</p>
+<h2 id="Adam算法"><a href="#Adam算法" class="headerlink" title="Adam算法"></a>Adam算法</h2><p>在深度学习领域，大佬们提出过很多优化算法，但是很快被证明没有足够的泛化能力，不能应用在多种模型中。而<code>Adam，Adaptive Moment Estimation算法</code>和RMSprop算法算是在动量梯度算法之后的特例，前者的基本思想是将动量梯度下降和RMSprop算法结合起来。</p>
+<p>首先初始化$v_{dW}=S_{dW}=v_{db}=S_{db}=\vec{0}$，有了此前的铺垫，很容易理解有</p>
+<script type="math/tex; mode=display">
+v_{dW}=\beta_1 v_{dW}+(1-\beta_1)dW , v_{db}=\beta_1 v_{db}+(1-\beta_1)db  \\ S_{dW}=\beta_2 S_{dW}+(1-\beta_2)(dW)^2 ,S_{db}=\beta_2 S_{db}+(1-\beta_2)(db)^2 \\ v_{dW}^{corrected}=\frac{v_{dW}}{1-\beta_1^t}, v_{db}^{corrected}=\frac{v_{db}}{1-\beta_1^t} \\ S_{dW}^{corrected}=\frac{S_{dW}}{1-\beta_2^t}, S_{db}^{corrected}=\frac{S_{db}}{1-\beta_2^t} \\ W=W-\alpha\frac{v_{dW}^{corrected}}{\sqrt{S_{dW}^{corrected}}+\epsilon},b=b-\alpha\frac{v_{db}^{corrected}}{\sqrt{S_{db}^{corrected}}+\epsilon}</script><p>其中$\beta_1=0.9,\beta_2=0.999,\epsilon=10^{-8}$是一个比较常见的设置，一般只调整$\alpha$。</p>
+<h2 id="学习率衰减"><a href="#学习率衰减" class="headerlink" title="学习率衰减"></a>学习率衰减</h2><p>一个加快神经网络训练速度的方法是随着时间慢慢减少学习率，即<code>学习率衰减（learning rate decay）</code>，其基本思路是将学习率设置为epoch的函数，比如</p>
+<script type="math/tex; mode=display">
+\alpha=\frac{1}{1+\#epoch *decay \ rate}</script><p>或者</p>
+<script type="math/tex; mode=display">
+\alpha = 0.95^{\#epoch}\alpha_0 \\ \alpha=\frac{k}{\sqrt{\#epoch}}\alpha_0</script><p>或者手动设置的分段函数。</p>
+<h2 id="局部最优的问题"><a href="#局部最优的问题" class="headerlink" title="局部最优的问题"></a>局部最优的问题</h2><p>和直觉不同，实际上在具有很多特征的神经网络中遇到局部最小点的概率是非常非常小的，往往遇到的都是鞍点。当然这里必须贴出吴老师讲鞍点的图片。</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/8.png" alt="1"></p>
+<p>真正麻烦的是梯度很小的<code>平台（plateaus）</code>，这也是此前优化算法所解决的问题。</p>
+<h1 id="超参数调试、Batch正则化和程序框架"><a href="#超参数调试、Batch正则化和程序框架" class="headerlink" title="超参数调试、Batch正则化和程序框架"></a>超参数调试、Batch正则化和程序框架</h1><h2 id="超参数调试"><a href="#超参数调试" class="headerlink" title="超参数调试"></a>超参数调试</h2><h3 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h3><p>上面一堆加快训练速度的方法也带来了很多超参数，如下图所示</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/9.png" alt="1"></p>
+<p>其中在吴老师看来，学习率是最重要的，打黄色框次之，紫色框又次之，没打框的几乎不<code>调试（tune）</code>。怎么调试呢？总体的思路是<code>随机生成，由粗糙到精细</code>。不使用网格（grid）是由于无法提前得知哪个参数最重要，因此可以试验多个独立的参数。</p>
+<h3 id="超参数范围"><a href="#超参数范围" class="headerlink" title="超参数范围"></a>超参数范围</h3><p>在对$\alpha$的调试中，往往采用对数坐标轴：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = <span class="number">-4</span> * np.random.rand()</span><br><span class="line">alpha = <span class="number">10</span> ** r</span><br></pre></td></tr></table></figure>
+<p>而对于$\beta$的调试，由于其集中于0.9到0.99999，往往对$1-\beta$采用对数坐标轴。</p>
+<h3 id="超参数训练实践：pandas-vs-caviar"><a href="#超参数训练实践：pandas-vs-caviar" class="headerlink" title="超参数训练实践：pandas vs caviar"></a>超参数训练实践：pandas vs caviar</h3><p>当硬件资源有限的时候，我们只能盯着一个模型并观察其运行状况，每隔一段时间对超参数进行改变；当有很多硬件资源的时候，我们可以同时跑多个模型。前者的行为像熊猫，后者的行为像鱼类，当然在硬件充分的情况下当然使用后一种方法。</p>
+<h2 id="Batch-归一化"><a href="#Batch-归一化" class="headerlink" title="Batch 归一化"></a>Batch 归一化</h2><p>batch归一化可以使得参数搜索更加容易，从而更方便地训练大型网络。</p>
+<h3 id="归一化的过程"><a href="#归一化的过程" class="headerlink" title="归一化的过程"></a>归一化的过程</h3><p>此前讨论过正则化输入，如果可以应用在隐藏层，岂不是更好？一个版本是对$a$操作，另一个版本是对$z^{<a href="i">l</a>}$操作，也是吴老师默认的方法，以下的公式省略了层数信息：</p>
+<script type="math/tex; mode=display">
+\mu=\frac{1}{m}\sum_i{z^{(i)}} \\ \sigma^2=\frac{1}{m}\sum_i(z_i-\mu)^2 \\ z_{norm}^{(i)}=\frac{z^{(i)}-\mu}{\sqrt{\sigma^2+\epsilon}} \\ \tilde{z}^{(i)}=\gamma z_{norm}^{(i)}+\beta</script><p>其中$\gamma$和$\beta$是和$w$、$b$地位等同的学习变量，会用$\tilde{z}^{<a href="i">l</a>}$代替$z^{<a href="i">l</a>}$的计算如下图所示，（又增加了很多参数）在tensorflow中使用函数<code>tf.nn.batch_normalization</code>完成这些操作。</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/10.png" alt="1"></p>
+<p>要注意的是这里的$\beta$和优化算法中的没有任何关系，易知其维度为$(n^{[l]}, 1)$。另外，由于均值会被归一化为0，所以此时参数$b$根本不起作用，完全可以去掉：</p>
+<script type="math/tex; mode=display">
+z^{[l]}=w^{[l]}z^{[l-1]}\\ \dots\\ \tilde{z}^{[l]}=\gamma^{[l]} z_{norm}^{[l]}+\beta^{[l]}</script><h3 id="归一化有效性的解释"><a href="#归一化有效性的解释" class="headerlink" title="归一化有效性的解释"></a>归一化有效性的解释</h3><p>为什么归一化可以加快训练速度呢？直观来看是将正则化输入的过程加在了所有的隐藏层上。</p>
+<p>更深层的第一个原因要结合<code>covariate shift</code>，即如何已经学习到了映射$x\to y$，如果$x$的分布发生了变化，那么需要重新进行学习。在神经网络中，中间层$l$可以看作是映射，前$l-1$层的输出可以看作是$x$，在训练的过程中$x$是不停改变的，所以$l$层也会不停变化。而batch的作用是限制了$x$的变化，即$z^{[l]}$的均值始终为0，方差始终为1，因此它减弱了前后层的关联，使得每一层的学习更加独立，这有助于训练的加速——当然这也很感性了。</p>
+<p>另外一个原因是在mini-batch中输入本来就是有噪声的，加入归一化后又增加了一部分噪声，这和dropout很相似，因此微微加入了正则化的功能。不过这种正则化是很微弱的，如果想要正则化还是要和dropout一起用。此外，对于dropout来说mini-batch越大，其正则化效果就越弱，这是个有趣的性质。</p>
+<h3 id="测试阶段的处理"><a href="#测试阶段的处理" class="headerlink" title="测试阶段的处理"></a>测试阶段的处理</h3><p>由于在测试阶段没有mini-batch的概念，所以要通过别的方法获得对测试样本归一化的$\mu,\sigma$。一种方法是考虑到网络一旦训练完毕，参数都是固定的，这个时候即使是每批训练样本进入网络，那么BN层计算的均值标准差都是固定不变的。我们可以采用这些数值来作为测试样本所需要的均值、标准差。</p>
+<script type="math/tex; mode=display">
+E[x]:E_B[\mu_B] \\ Var[x]:\frac{m}{m-1}E_B[\sigma_B^2] \\ y=\frac{\gamma}{\sqrt{Var[x]+\epsilon}}x+(\beta-\frac{\gamma E[x]}{\sqrt{Var[x]+\epsilon}})</script><p>emmm，这部分实际参考的是<a href="https://blog.csdn.net/hjimce/article/details/50866313" target="_blank" rel="noopener">CSDN</a>。</p>
+<h2 id="softmax回归"><a href="#softmax回归" class="headerlink" title="softmax回归"></a>softmax回归</h2><p>多分类问题中用$C$表示分类的数量，在神经网络中则有$n^{[l]}=C$，输出特征$y$的每一维表示分类的概率。由于概率之和必须为1，所以需要再加上一个softmax层，计算方法为</p>
+<script type="math/tex; mode=display">
+t = \exp(z^{[l]}) \\ a^{[l]}=\frac{t}{\sum_{i=1}^4{t_i}}</script><p>softmax是相对与hardmax的，可以看作是逻辑回归的推广，后者会输出一个one-hot向量。没有隐藏层的softmax分类器的作用如下图所示</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/11.png" alt="1"></p>
+<p>其损失函数为</p>
+<script type="math/tex; mode=display">
+L(\hat{y}, y)=-\sum_{j=1}^Cy_j\log\hat{y}_j \\ J(W,b)=\frac{1}{m}\sum_{i=1}^m{L(\hat{y}^{(i)}, y^{(i)})}</script><p>要注意的是在向量化的表示中$Y,\hat{Y}$的维度均为$(C,m)$。反向传播的公式为</p>
+<script type="math/tex; mode=display">
+dz^{[l]}=\hat{y}-y</script><h2 id="深度学习框架tensorflow"><a href="#深度学习框架tensorflow" class="headerlink" title="深度学习框架tensorflow"></a>深度学习框架tensorflow</h2><p>用numpy实现CNN、RNN或者交大规模神经网络并不现实，这时需要借助各种优秀的程序框架，这和知道矩阵乘法的过程但是仍然调用numpy一样，由于深度学习已经成熟了，所以可以提高工作的效率。常见的框架即选择标准如下所示，他们每个月都在进化，所以优劣在此不赘述。</p>
+<p><img src="/2018/07/31/mooc-深度学习工程师-2-改善深层神经网络：超参数调试、正则化以及优化/12.png" alt="1"></p>
+<p>当然，吴老师介绍的是tensorflow，其作用只要需要用内置函数完成前向传播后可以自动得到反向传播，同时提供了大量优化函数。需要注意的是tensorflow的计算图和吴老师课程使用的并不一样，其他就不赘述了，参见我的博客<a href="http://wang22ti.com/2018/07/25/tensorflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">tensorflow学习笔记</a>。</p>
 
       
     </div>
@@ -537,7 +653,7 @@ dw^{[l]}=(from \ back \ propgation) + \frac{\lambda}{m}{w^{[l]}}</script><p>因�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -615,7 +731,7 @@ dw^{[l]}=(from \ back \ propgation) + \frac{\lambda}{m}{w^{[l]}}</script><p>因�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习的实用层面"><span class="nav-number">1.</span> <span class="nav-text">深度学习的实用层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练-开发-测试集"><span class="nav-number">1.1.</span> <span class="nav-text">训练/开发/测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差-方差"><span class="nav-number">1.2.</span> <span class="nav-text">偏差/方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">1.3.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout正则化"><span class="nav-number">1.4.</span> <span class="nav-text">Dropout正则化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深度学习的实用层面"><span class="nav-number">1.</span> <span class="nav-text">深度学习的实用层面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练-开发-测试集"><span class="nav-number">1.1.</span> <span class="nav-text">训练/开发/测试集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏差-方差"><span class="nav-number">1.2.</span> <span class="nav-text">偏差/方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">1.3.</span> <span class="nav-text">正则化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#L2正则化"><span class="nav-number">1.3.1.</span> <span class="nav-text">L2正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dropout正则化"><span class="nav-number">1.3.2.</span> <span class="nav-text">Dropout正则化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他正则化方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">其他正则化方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化输入（Normalizing-inputs）"><span class="nav-number">1.4.</span> <span class="nav-text">正则化输入（Normalizing inputs）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度爆炸与梯度消失"><span class="nav-number">1.5.</span> <span class="nav-text">梯度爆炸与梯度消失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度检验"><span class="nav-number">1.6.</span> <span class="nav-text">梯度检验</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化算法"><span class="nav-number">2.</span> <span class="nav-text">优化算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mini-batch"><span class="nav-number">2.1.</span> <span class="nav-text">mini-batch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指数加权平均"><span class="nav-number">2.2.</span> <span class="nav-text">指数加权平均</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动量梯度下降法"><span class="nav-number">2.3.</span> <span class="nav-text">动量梯度下降法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RMSprop算法"><span class="nav-number">2.4.</span> <span class="nav-text">RMSprop算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adam算法"><span class="nav-number">2.5.</span> <span class="nav-text">Adam算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习率衰减"><span class="nav-number">2.6.</span> <span class="nav-text">学习率衰减</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局部最优的问题"><span class="nav-number">2.7.</span> <span class="nav-text">局部最优的问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#超参数调试、Batch正则化和程序框架"><span class="nav-number">3.</span> <span class="nav-text">超参数调试、Batch正则化和程序框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#超参数调试"><span class="nav-number">3.1.</span> <span class="nav-text">超参数调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总体思路"><span class="nav-number">3.1.1.</span> <span class="nav-text">总体思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超参数范围"><span class="nav-number">3.1.2.</span> <span class="nav-text">超参数范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超参数训练实践：pandas-vs-caviar"><span class="nav-number">3.1.3.</span> <span class="nav-text">超参数训练实践：pandas vs caviar</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Batch-归一化"><span class="nav-number">3.2.</span> <span class="nav-text">Batch 归一化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化的过程"><span class="nav-number">3.2.1.</span> <span class="nav-text">归一化的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化有效性的解释"><span class="nav-number">3.2.2.</span> <span class="nav-text">归一化有效性的解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试阶段的处理"><span class="nav-number">3.2.3.</span> <span class="nav-text">测试阶段的处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#softmax回归"><span class="nav-number">3.3.</span> <span class="nav-text">softmax回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习框架tensorflow"><span class="nav-number">3.4.</span> <span class="nav-text">深度学习框架tensorflow</span></a></li></ol></li></ol></div>
             
 
           </div>
