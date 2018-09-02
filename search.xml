@@ -3,13 +3,49 @@
   
     
     <entry>
-      <title>联想miix5pro连接技嘉GamingBox1080</title>
-      <link href="/2018/08/28/%E8%81%94%E6%83%B3miix5pro%E8%BF%9E%E6%8E%A5%E6%8A%80%E5%98%89GamingBox1080/"/>
-      <content type="html"><![CDATA[<h1 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h1><p>想用GPU加速机器学习任务，但是买1060及以上的笔记本又大又重，而且很多钱花在144Hz的屏幕、机械键盘等零件上；如果买台式机也得1万多，而且宿舍没有什么地方放，毫无便携的可能，思前想后，想起来miix5pro是有一个满血的雷电3接口，有着40Gbps的吞吐率，正好买一个外接显卡。</p><p>主要考虑<a href="https://item.jd.com/5685757.html?dist=jd" target="_blank" rel="noopener">惠普的外接盒子</a>和<a href="https://detail.tmall.com/item.htm?id=559309220532&amp;ns=1&amp;abbucket=14" target="_blank" rel="noopener">技嘉的Gaming box</a>（还有<a href="http://cn.razerzone.com/razer-core-v2" target="_blank" rel="noopener">雷蛇的盒子</a>但是太贵了）。两者价格差不多，技嘉的优势在于1080、便携、送雷电3数据线和鼠标，惠普的优势在于盒子和接口的扩展性。于是查了不少相关的测评：</p><p><a href="https://www.bilibili.com/video/av12205290?from=search&amp;seid=12560254674047576198" target="_blank" rel="noopener">【开箱拆解】史上最小外置显卡盒AORUS GTX 1070 GAMING BOX全网首发开箱拆解，评测稍后发~</a></p><p><a href="https://www.zhihu.com/question/63245941" target="_blank" rel="noopener">如何评价技嘉的gaming box显卡拓展？</a></p><p><a href="https://www.zhihu.com/question/39218012" target="_blank" rel="noopener">如何评价雷蛇的外置显卡Razer Core？</a></p><p><a href="https://post.smzdm.com/p/724215/" target="_blank" rel="noopener">HP 惠普 GA1-1007cl OMEN 暗影精灵 显卡扩展坞简单开箱</a></p><p><a href="https://www.chiphell.com/forum.php?mod=viewthread&amp;tid=1837389&amp;page=1#pid38624312" target="_blank" rel="noopener">【MacBook Pro 2016外接 GTX 1080显卡】- 技嘉 AORUS GTX 1080 Gaming Box</a></p><p><a href="https://zhuanlan.zhihu.com/p/33071814" target="_blank" rel="noopener">MacbookPro搭配技嘉外置显卡拓展坞AORUS GTX 1070 GamingBox使用感受，神经网络训练和简明安装教程</a></p><p>另外一个评论总结比较到位</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/6.png" alt=""></p><p>正纠结着，又看到一个评论</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/1.png" alt=""></p><p>嗯……那就买技嘉的吧，已经1080了，2、3年内并不会不够用。</p><h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/2.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/3.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/4.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/5.jpg" alt=""></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于重装过系统，所以直接插上并不能识别，所以要先安装雷电3的驱动，这是<a href="http://driverdl.lenovo.com.cn/lenovo/DriverFilesUploadFloder/52684/ThunderboltDriver-CZME06AF.exe" target="_blank" rel="noopener">miix5pro的</a>。</p><p>之后就可是识别雷电3啦，但是要识别显卡，还去<a href="https://www.nvidia.com/zh-cn/geforce/geforce-experience/" target="_blank" rel="noopener">英伟达官网</a>下载GEFORCE EXPERIENCE软件，它会提示安装对应的驱动并保持更新。</p><p>注意不要安装技嘉的软件！！！我也不知道为什么，总之安装了之后，不仅设置显卡很慢，还会经常掉盘，体验极差，emmmmm</p><p>为了跑tensorflow，又折腾了一会，见<a href="http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/">tensorflow的笔记</a>。</p><h1 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h1><p>懒得跑分了，直接开了一局守望先锋，在极高的画质下人比较少时稳定在55帧以上，人很多很混乱的时候在45帧以上，作为二合一的本子，这样的性能已经让人很满意了，有着质的飞跃。</p><p>当然，由于低压CPU的限制，GPU图形部分并没有能够跑满，大概60-70%吧。此外如果作为鼠标的拓展坞，似乎流畅度不如直接插在电脑上。</p><p>装上CUDA之后跑tensorflow也没有问题，速度有明显的提高，没有亏本。</p>]]></content>
+      <title>笔记-《数学之美》</title>
+      <link href="/2018/09/02/%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E3%80%8B/"/>
+      <content type="html"><![CDATA[<p>本来买这本书只是因为名字——“数学是美的！是有趣的！”袁岚峰老师在讲蓝眼睛岛问题（<a href="https://www.bilibili.com/video/av29527174" target="_blank" rel="noopener">上</a>）（<a href="https://www.bilibili.com/video/av30113899" target="_blank" rel="noopener">下</a>）的时候就这么呼吁。翻了翻目录，却是讲自然语言处理的，而且几乎以Google作为模板，然而这并不服算妨碍啦！</p><h1 id="文字和语言vs数字和信息"><a href="#文字和语言vs数字和信息" class="headerlink" title="文字和语言vs数字和信息"></a>文字和语言vs数字和信息</h1><blockquote><p>语言和数学的产生都是为了记录和传播信息，但是直到香农提出信息论，人们才将两者自觉的联系起来。</p></blockquote><h1 id="自然语言处理——从规则到统计"><a href="#自然语言处理——从规则到统计" class="headerlink" title="自然语言处理——从规则到统计"></a>自然语言处理——从规则到统计</h1><h1 id="统计语言模型"><a href="#统计语言模型" class="headerlink" title="统计语言模型"></a>统计语言模型</h1><h1 id="谈谈分词"><a href="#谈谈分词" class="headerlink" title="谈谈分词"></a>谈谈分词</h1><h1 id="隐含马尔可夫模型"><a href="#隐含马尔可夫模型" class="headerlink" title="隐含马尔可夫模型"></a>隐含马尔可夫模型</h1><h1 id="信息的度量和作用"><a href="#信息的度量和作用" class="headerlink" title="信息的度量和作用"></a>信息的度量和作用</h1><h1 id="贾里尼克和现代语言处理"><a href="#贾里尼克和现代语言处理" class="headerlink" title="贾里尼克和现代语言处理"></a>贾里尼克和现代语言处理</h1><h1 id="简单之美——布尔代数和搜索引擎"><a href="#简单之美——布尔代数和搜索引擎" class="headerlink" title="简单之美——布尔代数和搜索引擎"></a>简单之美——布尔代数和搜索引擎</h1><h1 id="图论和网络爬虫"><a href="#图论和网络爬虫" class="headerlink" title="图论和网络爬虫"></a>图论和网络爬虫</h1><h1 id="PageRank——Google的民主表决式网页排名技术"><a href="#PageRank——Google的民主表决式网页排名技术" class="headerlink" title="PageRank——Google的民主表决式网页排名技术"></a>PageRank——Google的民主表决式网页排名技术</h1><h1 id="如何确定网页和查询的相关性"><a href="#如何确定网页和查询的相关性" class="headerlink" title="如何确定网页和查询的相关性"></a>如何确定网页和查询的相关性</h1><h1 id="有限状态机和动态规划——地图与本地搜索的核心技术"><a href="#有限状态机和动态规划——地图与本地搜索的核心技术" class="headerlink" title="有限状态机和动态规划——地图与本地搜索的核心技术"></a>有限状态机和动态规划——地图与本地搜索的核心技术</h1><h1 id="Google-AK-47的设计者——阿米特·辛格博士"><a href="#Google-AK-47的设计者——阿米特·辛格博士" class="headerlink" title="Google AK-47的设计者——阿米特·辛格博士"></a>Google AK-47的设计者——阿米特·辛格博士</h1><h1 id="余弦定理与新闻分类"><a href="#余弦定理与新闻分类" class="headerlink" title="余弦定理与新闻分类"></a>余弦定理与新闻分类</h1><h1 id="矩阵运算和文本处理中的两个分类问题"><a href="#矩阵运算和文本处理中的两个分类问题" class="headerlink" title="矩阵运算和文本处理中的两个分类问题"></a>矩阵运算和文本处理中的两个分类问题</h1><h1 id="信息指纹及其应用"><a href="#信息指纹及其应用" class="headerlink" title="信息指纹及其应用"></a>信息指纹及其应用</h1><h1 id="由电视剧《暗算》所想到的——谈谈密码学的数学原理"><a href="#由电视剧《暗算》所想到的——谈谈密码学的数学原理" class="headerlink" title="由电视剧《暗算》所想到的——谈谈密码学的数学原理"></a>由电视剧《暗算》所想到的——谈谈密码学的数学原理</h1><h1 id="闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"><a href="#闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题" class="headerlink" title="闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"></a>闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题</h1><h1 id="谈谈数学模型的重要性"><a href="#谈谈数学模型的重要性" class="headerlink" title="谈谈数学模型的重要性"></a>谈谈数学模型的重要性</h1><h1 id="不要把鸡蛋装在一个笼子里——谈谈最大熵模型"><a href="#不要把鸡蛋装在一个笼子里——谈谈最大熵模型" class="headerlink" title="不要把鸡蛋装在一个笼子里——谈谈最大熵模型"></a>不要把鸡蛋装在一个笼子里——谈谈最大熵模型</h1><h1 id="拼音输入法的数学原理"><a href="#拼音输入法的数学原理" class="headerlink" title="拼音输入法的数学原理"></a>拼音输入法的数学原理</h1><h1 id="自然语言处理的教父马库斯和他的优秀弟子们"><a href="#自然语言处理的教父马库斯和他的优秀弟子们" class="headerlink" title="自然语言处理的教父马库斯和他的优秀弟子们"></a>自然语言处理的教父马库斯和他的优秀弟子们</h1><h1 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h1><h1 id="马尔可夫链的扩展——贝叶斯网络"><a href="#马尔可夫链的扩展——贝叶斯网络" class="headerlink" title="马尔可夫链的扩展——贝叶斯网络"></a>马尔可夫链的扩展——贝叶斯网络</h1><h1 id="条件随机场、文法分析和其他"><a href="#条件随机场、文法分析和其他" class="headerlink" title="条件随机场、文法分析和其他"></a>条件随机场、文法分析和其他</h1><h1 id="维比特和他的维比特算法"><a href="#维比特和他的维比特算法" class="headerlink" title="维比特和他的维比特算法"></a>维比特和他的维比特算法</h1><h1 id="上帝的算法——期望最大化算法"><a href="#上帝的算法——期望最大化算法" class="headerlink" title="上帝的算法——期望最大化算法"></a>上帝的算法——期望最大化算法</h1><h1 id="逻辑回归和搜索广告"><a href="#逻辑回归和搜索广告" class="headerlink" title="逻辑回归和搜索广告"></a>逻辑回归和搜索广告</h1><h1 id="各个击破算法和Google云计算基础"><a href="#各个击破算法和Google云计算基础" class="headerlink" title="各个击破算法和Google云计算基础"></a>各个击破算法和Google云计算基础</h1><h1 id="Google大脑和人工神经网络"><a href="#Google大脑和人工神经网络" class="headerlink" title="Google大脑和人工神经网络"></a>Google大脑和人工神经网络</h1><h1 id="大数据的威力——谈谈数据的重要性"><a href="#大数据的威力——谈谈数据的重要性" class="headerlink" title="大数据的威力——谈谈数据的重要性"></a>大数据的威力——谈谈数据的重要性</h1>]]></content>
       
       <categories>
           
-          <category> 数码 </category>
+          <category> 自然语言处理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>关于保研的一些总结</title>
+      <link href="/2018/09/02/%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/"/>
+      <content type="html"><![CDATA[<blockquote><p>北京交通大学计算机与信息技术学院2015级</p></blockquote><p><a href="https://www.zhihu.com/question/23679630/answer/233282268" target="_blank" rel="noopener">求详细介绍下院士、长江、百人、千人、万人、青千、杰青、各类学者人才计划等等？</a></p><p><a href="https://www.zhihu.com/question/66251104/answer/239964441" target="_blank" rel="noopener">现在科研项目中的重点项目、重大项目、重大研究计划项目，重点研发计划有什么区别和联系？</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 杂记 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>笔记-python报错合集</title>
+      <link href="/2018/09/01/%E7%AC%94%E8%AE%B0-python%E6%8A%A5%E9%94%99%E5%90%88%E9%9B%86/"/>
+      <content type="html"><![CDATA[]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>联想miix5pro连接技嘉GamingBox1080</title>
+      <link href="/2018/08/28/%E8%81%94%E6%83%B3miix5pro%E8%BF%9E%E6%8E%A5%E6%8A%80%E5%98%89GamingBox1080/"/>
+      <content type="html"><![CDATA[<h1 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h1><p>想用GPU加速机器学习任务，但是买1060及以上的笔记本又大又重，而且很多钱花在144Hz的屏幕、机械键盘等零件上；如果买台式机也得1万多，而且宿舍没有什么地方放，毫无便携的可能，思前想后，想起来miix5pro是有一个满血的雷电3接口，有着40Gbps的吞吐率，正好买一个外接显卡。</p><p>主要考虑<a href="https://item.jd.com/5685757.html?dist=jd" target="_blank" rel="noopener">惠普的外接盒子</a>和<a href="https://detail.tmall.com/item.htm?id=559309220532&amp;ns=1&amp;abbucket=14" target="_blank" rel="noopener">技嘉的Gaming box</a>（还有<a href="http://cn.razerzone.com/razer-core-v2" target="_blank" rel="noopener">雷蛇的盒子</a>但是太贵了）。两者价格差不多，技嘉的优势在于1080、便携、送雷电3数据线和鼠标，惠普的优势在于盒子和接口的扩展性。于是查了不少相关的测评：</p><p><a href="https://www.bilibili.com/video/av12205290?from=search&amp;seid=12560254674047576198" target="_blank" rel="noopener">【开箱拆解】史上最小外置显卡盒AORUS GTX 1070 GAMING BOX全网首发开箱拆解，评测稍后发~</a></p><p><a href="https://www.zhihu.com/question/63245941" target="_blank" rel="noopener">如何评价技嘉的gaming box显卡拓展？</a></p><p><a href="https://www.zhihu.com/question/39218012" target="_blank" rel="noopener">如何评价雷蛇的外置显卡Razer Core？</a></p><p><a href="https://post.smzdm.com/p/724215/" target="_blank" rel="noopener">HP 惠普 GA1-1007cl OMEN 暗影精灵 显卡扩展坞简单开箱</a></p><p><a href="https://www.chiphell.com/forum.php?mod=viewthread&amp;tid=1837389&amp;page=1#pid38624312" target="_blank" rel="noopener">【MacBook Pro 2016外接 GTX 1080显卡】- 技嘉 AORUS GTX 1080 Gaming Box</a></p><p><a href="https://zhuanlan.zhihu.com/p/33071814" target="_blank" rel="noopener">MacbookPro搭配技嘉外置显卡拓展坞AORUS GTX 1070 GamingBox使用感受，神经网络训练和简明安装教程</a></p><p>另外一个评论总结比较到位</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/6.png" alt=""></p><p>正纠结着，又看到一个评论</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/1.png" alt=""></p><p>嗯……那就买技嘉的吧，已经1080了，2、3年内并不会不够用。</p><h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/2.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/3.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/4.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/5.jpg" alt=""></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于重装过系统，所以直接插上并不能识别，所以要先安装雷电3的驱动，这是<a href="http://driverdl.lenovo.com.cn/lenovo/DriverFilesUploadFloder/52684/ThunderboltDriver-CZME06AF.exe" target="_blank" rel="noopener">miix5pro的</a>。实际上还有一个更好的方案更新所有驱动，就是安装<a href="https://downloadcenter.intel.com/" target="_blank" rel="noopener">Intel的升级助手</a></p><p>之后就可是识别雷电3啦，但是要识别显卡，还去<a href="https://www.nvidia.com/zh-cn/geforce/geforce-experience/" target="_blank" rel="noopener">英伟达官网</a>下载GEFORCE EXPERIENCE软件，它会提示安装对应的驱动并保持更新。安装之后可以使用控制面板设置在1080上跑的程序：</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/7.png" alt=""></p><p>注意不要安装技嘉的软件！！！我也不知道为什么，总之安装了之后，不仅设置显卡很慢，还会经常掉盘，体验极差，emmmmm</p><p>为了跑tensorflow，又折腾了一会，见<a href="http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/">tensorflow的笔记</a>。</p><h1 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h1><p>懒得跑分了，直接开了一局守望先锋，在极高的画质下人比较少时稳定在55帧以上，人很多很混乱的时候在45帧以上，作为二合一的本子，这样的性能已经让人很满意了，有着质的飞跃。</p><p>当然，由于低压CPU的限制，GPU图形部分并没有能够跑满，大概60-70%吧。此外如果作为鼠标的拓展坞，似乎流畅度不如直接插在电脑上。</p><p>装上CUDA之后跑tensorflow也没有问题，速度有明显的提高，没有亏本。</p><h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>不知道是显卡还是电脑的问题，主要出现了三个问题：</p><ol><li>连接上显卡后经常掉盘，即使是在跑神经网络的时候</li><li>有时连接不上显示器</li><li>鼠标接在显卡上会间歇性卡顿</li></ol><p>很扎心，于是联系客服寄过去修了。</p>]]></content>
+      
+      <categories>
+          
+          <category> 杂记 </category>
           
       </categories>
       
@@ -591,7 +627,7 @@
       
       <categories>
           
-          <category> 数码 </category>
+          <category> 杂记 </category>
           
       </categories>
       
@@ -647,7 +683,7 @@
       
       <categories>
           
-          <category> 数码 </category>
+          <category> 杂记 </category>
           
       </categories>
       
@@ -675,7 +711,7 @@
       
       <categories>
           
-          <category> 论文 </category>
+          <category> 杂记 </category>
           
       </categories>
       
@@ -717,7 +753,7 @@
       
       <categories>
           
-          <category> markdown </category>
+          <category> 杂记 </category>
           
       </categories>
       
@@ -731,7 +767,7 @@
       
       <categories>
           
-          <category> 班助 </category>
+          <category> 杂记 </category>
           
       </categories>
       
