@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="提高速度的奇技淫巧适当降低精度gurobi默认的优化精度为1e-4 然而实际工程中可能并不需要 为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。">
+<meta name="description" content="提高速度的奇技淫巧适当降低精度gurobi默认的优化精度为1e-4 然而实际工程中可能并不需要 为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。 例如在一个MIP模型中，通过语句 123m = Model()m.Params.MIPGap = 0.1 就可以将精度设置为1e-1。 查了一下手册，相关参数如下：  减少逻辑约束比如这样的一个约束  x=0 \quad o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记-gurobi">
 <meta property="og:url" content="http://wang22ti.com/2018/02/05/笔记-gurobi/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="提高速度的奇技淫巧适当降低精度gurobi默认的优化精度为1e-4 然而实际工程中可能并不需要 为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。">
+<meta property="og:description" content="提高速度的奇技淫巧适当降低精度gurobi默认的优化精度为1e-4 然而实际工程中可能并不需要 为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。 例如在一个MIP模型中，通过语句 123m = Model()m.Params.MIPGap = 0.1 就可以将精度设置为1e-1。 查了一下手册，相关参数如下：  减少逻辑约束比如这样的一个约束  x=0 \quad o">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wang22ti.com/2018/02/05/笔记-gurobi/截图2018-02-05_12-32-42.png">
-<meta property="og:updated_time" content="2018-08-13T03:17:03.459Z">
+<meta property="og:updated_time" content="2018-10-19T11:45:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-gurobi">
-<meta name="twitter:description" content="提高速度的奇技淫巧适当降低精度gurobi默认的优化精度为1e-4 然而实际工程中可能并不需要 为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。">
+<meta name="twitter:description" content="提高速度的奇技淫巧适当降低精度gurobi默认的优化精度为1e-4 然而实际工程中可能并不需要 为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。 例如在一个MIP模型中，通过语句 123m = Model()m.Params.MIPGap = 0.1 就可以将精度设置为1e-1。 查了一下手册，相关参数如下：  减少逻辑约束比如这样的一个约束  x=0 \quad o">
 <meta name="twitter:image" content="http://wang22ti.com/2018/02/05/笔记-gurobi/截图2018-02-05_12-32-42.png">
 
 
@@ -408,7 +408,6 @@
         <h1 id="提高速度的奇技淫巧"><a href="#提高速度的奇技淫巧" class="headerlink" title="提高速度的奇技淫巧"></a>提高速度的奇技淫巧</h1><h2 id="适当降低精度"><a href="#适当降低精度" class="headerlink" title="适当降低精度"></a>适当降低精度</h2><p>gurobi默认的优化精度为1e-4</p>
 <p>然而实际工程中可能并不需要</p>
 <p>为了大幅减少优化时间，可以通过设置以tolerance为关键词的参数减少精度。</p>
-<a id="more"></a>
 <p>例如在一个MIP模型中，通过语句</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = Model()</span><br><span class="line"></span><br><span class="line">m.Params.MIPGap = <span class="number">0.1</span></span><br></pre></td></tr></table></figure>
 <p>就可以将精度设置为1e-1。</p>
@@ -543,7 +542,7 @@ a*bin<=x<=bin*inf</script><p>其中<code>bin</code>是一个二进制变量，<c
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -554,7 +553,7 @@ a*bin<=x<=bin*inf</script><p>其中<code>bin</code>是一个二进制变量，<c
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

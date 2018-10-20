@@ -81,17 +81,23 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开anaconda navigator要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。 在浙大实习的时候，学长告诉我：有一些环境（即运行某些程序配套的程序）是相互冲突的，而anaconda采用沙盒的机制，即anaconda中的环境在不激活的情况下是不会被系统检测到的（即不会添加">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记-Anaconda">
 <meta property="og:url" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开anaconda navigator要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。 在浙大实习的时候，学长告诉我：有一些环境（即运行某些程序配套的程序）是相互冲突的，而anaconda采用沙盒的机制，即anaconda中的环境在不激活的情况下是不会被系统检测到的（即不会添加">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-25T15:53:06.350Z">
+<meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/0.png">
+<meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/1.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/2.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/3.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/4.jpg">
+<meta property="og:updated_time" content="2018-10-20T02:41:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-Anaconda">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开anaconda navigator要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。 在浙大实习的时候，学长告诉我：有一些环境（即运行某些程序配套的程序）是相互冲突的，而anaconda采用沙盒的机制，即anaconda中的环境在不激活的情况下是不会被系统检测到的（即不会添加">
+<meta name="twitter:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/0.png">
 
 
 
@@ -318,6 +324,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/anaconda/" itemprop="url" rel="index">
+                    <span itemprop="name">anaconda</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -344,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  823 字
                 </span>
               
 
@@ -360,7 +388,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -381,7 +409,39 @@
       
 
       
-        
+        <p>最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开<code>anaconda navigator</code>要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。</p>
+<p>在浙大实习的时候，学长告诉我：有一些环境（即运行某些程序配套的程序）是相互冲突的，而anaconda采用沙盒的机制，即anaconda中的环境在不激活的情况下是不会被系统检测到的（即不会添加到环境变量），所以可以同时存在多个环境而又不冲突。</p>
+<p>同时，anaconda不仅可以方便地切换环境，还可以对一个环境的python包进行很方便的管理，比如安装、更新、卸载等等。</p>
+<p>嗯，真香！</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>就上<a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">官网</a>咯，值得注意的是，python3和python2对应的anaconda的版本也是不一样的。</p>
+<p>一路默认配置安装。唯一要注意的是，第一个勾是是否把Anaconda加入环境变量，这涉及到能否直接在cmd中使用conda、jupyter、ipython等命令，推荐打勾，如果不打勾话问题也不大，可以在之后使用Anaconda提供的命令行工具进行操作。</p>
+<p><img src="/2018/09/25/笔记-Anaconda/0.png" alt=""></p>
+<h1 id="对包的管理"><a href="#对包的管理" class="headerlink" title="对包的管理"></a>对包的管理</h1><p>安装好了之后，会在文件夹<code>Anaconda3</code>下面出现若干个软件，其中<code>Anaconda Prompt</code>是本体，一个命令行窗口；<code>Anaconda Navigtoer</code>是本体的图形化界面；其他的不用管，都是附带的IDE，而我一直觉得Pycharm是最好用的，也支持Anaconda的环境。</p>
+<p>打开<code>Anaconda Prompt</code>后，会发现和普通的命令行相比，用户目录前面多了一个<code>base</code>，这就是在提示用户：你现在用的python环境叫做base！</p>
+<p><img src="/2018/09/25/笔记-Anaconda/1.jpg" alt=""></p>
+<p>base是anaconda默认配置的python环境，里面已经又很多包可以用了，使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+<p>就可以查看有哪些。当然，以下的命令想来不需要解释了：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="在Pycharm中使用Anaconda的环境"><a href="#在Pycharm中使用Anaconda的环境" class="headerlink" title="在Pycharm中使用Anaconda的环境"></a>在Pycharm中使用Anaconda的环境</h1><p>在Pycharm工具栏<code>File-Settings for new project-Project Interpreter</code>界面点击<code>齿轮</code>按钮，再点击<code>Add</code>按钮会出现如下界面：</p>
+<p><img src="/2018/09/25/笔记-Anaconda/2.jpg" alt=""></p>
+<p>此时点击<code>Conda Environment</code>就会看到</p>
+<p><img src="/2018/09/25/笔记-Anaconda/3.jpg" alt=""></p>
+<p>要选择<code>Existing Environment</code>，并点击<code>...</code>，再选择编译器所在的位置就好啦，默认如下：</p>
+<p><img src="/2018/09/25/笔记-Anaconda/4.jpg" alt=""></p>
+<p>之后在Pycharm中新建的Project的编译器就是Anaconda默认的那个了~</p>
+<h1 id="对环境的管理"><a href="#对环境的管理" class="headerlink" title="对环境的管理"></a>对环境的管理</h1><p>这个功能有什么用？为什么要安装多个python环境？首先，某些包可能在某些特定的python版本才存在；其次，某些包会相互冲突，比如CPU版本和GPU版本的tensorflow；最后，别人的代码可能需要某特定的环境才能运行。</p>
+<p>第一步当然是新建一个环境：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n 环境名称 [必备包的列表] [python=版本号]</span><br></pre></td></tr></table></figure>
+<p>之后是激活环境，成功后base会变成新的环境名：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash"> windows</span></span><br><span class="line">activate 环境名</span><br><span class="line"><span class="meta">%</span><span class="bash"> Linux</span></span><br><span class="line">source activate 环境名</span><br></pre></td></tr></table></figure>
+<p>离开环境也是很类似：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash"> windows</span></span><br><span class="line">deactivate</span><br><span class="line"><span class="meta">%</span><span class="bash"> Linux</span></span><br><span class="line">source deactivate</span><br></pre></td></tr></table></figure>
+<p>这两个不需要解释：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">conda env remove -n 环境名</span><br></pre></td></tr></table></figure>
+<p>此外，环境可以导出和读取，从而确保项目在其他电脑上一定能跑：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda env export &gt; 文件名.yaml</span><br><span class="line">conda env create -f 文件名.yaml</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -405,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/笔记-python标准包常见错误/" rel="next" title="笔记-python标准包常见错误">
-                <i class="fa fa-chevron-left"></i> 笔记-python标准包常见错误
+              <a href="/2018/09/02/笔记-《数学之美》/" rel="next" title="笔记-《数学之美》">
+                <i class="fa fa-chevron-left"></i> 笔记-《数学之美》
               </a>
             
           </div>
@@ -474,8 +534,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -490,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -501,7 +570,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -549,6 +618,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对包的管理"><span class="nav-number">2.</span> <span class="nav-text">对包的管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在Pycharm中使用Anaconda的环境"><span class="nav-number">3.</span> <span class="nav-text">在Pycharm中使用Anaconda的环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对环境的管理"><span class="nav-number">4.</span> <span class="nav-text">对环境的管理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

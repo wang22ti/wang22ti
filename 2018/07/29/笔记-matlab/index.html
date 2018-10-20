@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="本准备完全自学的，正好《模式识别》和《人工智能》这两门课的首选语言都是Matlab，就提前学一下吧！ 安装最新版（2018a，即2018年上半年版本）的安装参考博客MATLAB2018a 64安装。">
+<meta name="description" content="《模式识别》和《人工智能》这两门课的首选语言都是Matlab！ 安装最新版（2018a，即2018年上半年版本）的安装参考博客MATLAB2018a 64安装。 界面说明 入门须知 在命令行用语句help 函数可以查看帮助 语句以;结束，Matlab只执行而不显示结果，否则会显示结果 在命令行中，行尾加...表示续行 一些标识符已经被定义过了，比如pi，Inf，NaN 复数是可以直接用的，比如a=">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记-matlab">
 <meta property="og:url" content="http://wang22ti.com/2018/07/29/笔记-matlab/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="本准备完全自学的，正好《模式识别》和《人工智能》这两门课的首选语言都是Matlab，就提前学一下吧！ 安装最新版（2018a，即2018年上半年版本）的安装参考博客MATLAB2018a 64安装。">
+<meta property="og:description" content="《模式识别》和《人工智能》这两门课的首选语言都是Matlab！ 安装最新版（2018a，即2018年上半年版本）的安装参考博客MATLAB2018a 64安装。 界面说明 入门须知 在命令行用语句help 函数可以查看帮助 语句以;结束，Matlab只执行而不显示结果，否则会显示结果 在命令行中，行尾加...表示续行 一些标识符已经被定义过了，比如pi，Inf，NaN 复数是可以直接用的，比如a=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T13:56:27.736Z">
+<meta property="og:image" content="http://wang22ti.com/2018/07/29/笔记-matlab/0.jpg">
+<meta property="og:image" content="http://wang22ti.com/2018/07/29/笔记-matlab/1.jpg">
+<meta property="og:updated_time" content="2018-10-19T11:44:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-matlab">
-<meta name="twitter:description" content="本准备完全自学的，正好《模式识别》和《人工智能》这两门课的首选语言都是Matlab，就提前学一下吧！ 安装最新版（2018a，即2018年上半年版本）的安装参考博客MATLAB2018a 64安装。">
+<meta name="twitter:description" content="《模式识别》和《人工智能》这两门课的首选语言都是Matlab！ 安装最新版（2018a，即2018年上半年版本）的安装参考博客MATLAB2018a 64安装。 界面说明 入门须知 在命令行用语句help 函数可以查看帮助 语句以;结束，Matlab只执行而不显示结果，否则会显示结果 在命令行中，行尾加...表示续行 一些标识符已经被定义过了，比如pi，Inf，NaN 复数是可以直接用的，比如a=">
+<meta name="twitter:image" content="http://wang22ti.com/2018/07/29/笔记-matlab/0.jpg">
 
 
 
@@ -366,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  63 字
+                  975 字
                 </span>
               
 
@@ -382,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -403,8 +406,46 @@
       
 
       
-        <p>本准备完全自学的，正好《模式识别》和《人工智能》这两门课的首选语言都是Matlab，就提前学一下吧！</p>
+        <p>《模式识别》和《人工智能》这两门课的首选语言都是Matlab！</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>最新版（2018a，即2018年上半年版本）的安装参考博客<a href="https://blog.csdn.net/josslyn/article/details/79898261" target="_blank" rel="noopener">MATLAB2018a 64安装</a>。</p>
+<h1 id="界面说明"><a href="#界面说明" class="headerlink" title="界面说明"></a>界面说明</h1><p><img src="/2018/07/29/笔记-matlab/0.jpg" alt=""></p>
+<h1 id="入门须知"><a href="#入门须知" class="headerlink" title="入门须知"></a>入门须知</h1><ol>
+<li>在命令行用语句<code>help 函数</code>可以查看帮助</li>
+<li>语句以<code>;</code>结束，Matlab只执行而不显示结果，否则会显示结果</li>
+<li>在命令行中，行尾加<code>...</code>表示续行</li>
+<li>一些标识符已经被定义过了，比如<code>pi</code>，<code>Inf</code>，<code>NaN</code></li>
+<li>复数是可以直接用的，比如<code>a=3+2j</code></li>
+<li><code>clear all</code>用来清除所有变量，<code>clc</code>用来清除输入输出，一般在程序开始使用</li>
+</ol>
+<h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>同一行的各元素之间用空格或逗号分隔，不同行的元素之间用分号分隔，比如</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">16</span>  <span class="number">3</span>  <span class="number">2</span>  <span class="number">13</span>;  <span class="number">5</span>  <span class="number">10</span>  <span class="number">11</span>  <span class="number">8</span>; <span class="number">9</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">12</span>;  <span class="number">4</span>  <span class="number">15</span>  <span class="number">14</span>  <span class="number">1</span>];</span><br><span class="line">B = <span class="number">1</span>:<span class="number">2</span>:<span class="number">10</span>; <span class="comment">%1     3     5     7     9</span></span><br></pre></td></tr></table></figure>
+<p>创建矩阵还可以使用以下函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%ones、rand也可以</span></span><br><span class="line"><span class="built_in">zeros</span>(m);</span><br><span class="line"><span class="built_in">zeros</span>(m, n);</span><br><span class="line"><span class="built_in">zeros</span>(<span class="built_in">size</span>(A));</span><br><span class="line"></span><br><span class="line"><span class="built_in">linspace</span>(<span class="number">-3</span>, <span class="number">3</span>, <span class="number">100</span>); </span><br><span class="line">normpdf(A, <span class="number">0</span>, <span class="number">1</span>); <span class="comment">%正态分布</span></span><br></pre></td></tr></table></figure>
+<p>此外的常用函数有</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">reshape</span>(A, m, n);</span><br><span class="line">sum(A);</span><br><span class="line">mean(A);</span><br><span class="line">any(A);</span><br><span class="line">all(A);</span><br><span class="line"><span class="built_in">numel</span>(A); <span class="comment">% 返回元素个数</span></span><br></pre></td></tr></table></figure>
+<p>矩阵的索引方法和python很类似，不过用的是<code>()</code>，同时是<strong>闭区间</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="built_in">i</span>:<span class="built_in">i</span>+m,k:k+m);</span><br><span class="line">A(:,<span class="number">2</span>)=[];</span><br><span class="line">w12(:, A&lt;<span class="number">0</span>);</span><br><span class="line">C = [A, zeros(size(A)); ones(size(A)), A]；<span class="comment">%矩阵拼接的骚操作</span></span><br></pre></td></tr></table></figure>
+<p>矩阵的算术运算包括：＋(加)、－(减)、*(乘)、/(右除)、(左除)、^(乘方)、’(转置)，在前面加<code>.</code>表示对应元素如此运算。逻辑运算包括：&amp;(与)、|(或)、～(非)、xor(异或)。</p>
+<h1 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h1><h2 id="2D"><a href="#2D" class="headerlink" title="2D"></a>2D</h2><p>很粗暴，直接用plot、scatter函数绘制2维图形。如果用多个plot在一个图像上绘图，要使用<code>hold on</code>命令。</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = (<span class="number">0</span> : <span class="built_in">pi</span>/<span class="number">100</span> : <span class="number">2</span>*<span class="built_in">pi</span>)';</span><br><span class="line">y1 = <span class="number">2</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x)*[<span class="number">1</span>,<span class="number">-1</span>];</span><br><span class="line">y2 = <span class="number">2</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x).*<span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*x);</span><br><span class="line">x1 = (<span class="number">0</span>:<span class="number">12</span>)/<span class="number">2</span>;</span><br><span class="line">y3 = <span class="number">2</span>*<span class="built_in">exp</span>(<span class="number">-0.5</span>*x1).*<span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*x1);</span><br><span class="line">plot(x, y1, <span class="string">'g:'</span>, x, y2, <span class="string">'b--'</span>, x1, y3, <span class="string">'rp'</span>);</span><br></pre></td></tr></table></figure>
+<p>其中样式的选择如下图所示：</p>
+<p><img src="/2018/07/29/笔记-matlab/1.jpg" alt=""></p>
+<p>图形标注可以使用以下函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title(图形名称);</span><br><span class="line">xlabel(x轴说明);</span><br><span class="line">ylabel(y轴说明);</span><br><span class="line">text(x,y,图形说明);</span><br><span class="line">legend(图例<span class="number">1</span>,图例<span class="number">2</span>,…);</span><br></pre></td></tr></table></figure>
+<p>对于坐标的控制可以使用以下函数（命令）：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">axis([xmin xmax ymin ymax zmin zmax]);</span><br><span class="line">axis equal;    <span class="comment">%纵、横坐标轴采用等长刻度</span></span><br><span class="line">axis square;   <span class="comment">%产生正方形坐标系(缺省为矩形)</span></span><br><span class="line">axis auto;     <span class="comment">%使用缺省设置</span></span><br><span class="line">axis off/on;   <span class="comment">%取消/显示坐标轴</span></span><br><span class="line">grid on/off;   <span class="comment">%控制是画还是不画网格线，不带参数的grid命令在两种状态之间进行切换。</span></span><br><span class="line">box on/off;    <span class="comment">%控制是加还是不加边框线，不带参数的box命令在两种状态之间进行切换。</span></span><br></pre></td></tr></table></figure>
+<p>多图和子图和python很类似：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">figure(n);</span><br><span class="line">suplot(m, n, p);</span><br></pre></td></tr></table></figure>
+<h2 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h2><p>绘制空间曲线可以使用参数方程：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">0</span>:<span class="built_in">pi</span>/<span class="number">50</span>:<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line">x = <span class="number">8</span>*<span class="built_in">cos</span>(t);  </span><br><span class="line">y = <span class="number">4</span>*<span class="built_in">sqrt</span>(<span class="number">2</span>)*<span class="built_in">sin</span>(t);  </span><br><span class="line">z = <span class="number">-4</span>*<span class="built_in">sqrt</span>(<span class="number">2</span>)*<span class="built_in">sin</span>(t);</span><br><span class="line">figure; </span><br><span class="line">plot3(x, y, z, <span class="string">'b'</span>);</span><br><span class="line">title(<span class="string">'Line in 3-D Space'</span>); </span><br><span class="line">xlabel(<span class="string">'X'</span>),  ylabel(<span class="string">'Y'</span>), zlabel(<span class="string">'Z'</span>);  </span><br><span class="line">grid;</span><br></pre></td></tr></table></figure>
+<p>绘制曲面，要用meshgrid函数：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">0</span>:<span class="number">0.1</span>:<span class="number">2</span>*<span class="built_in">pi</span>;  </span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(x);  </span><br><span class="line">z=<span class="built_in">sin</span>(y).*<span class="built_in">cos</span>(x);</span><br><span class="line">mesh(x,y,z);  <span class="comment">% surf和plot3也行</span></span><br><span class="line">xlabel(<span class="string">'x-axis'</span>),  ylabel(<span class="string">'y-axis'</span>),  zlabel(<span class="string">'z-axis'</span>); title(<span class="string">'mesh'</span>);</span><br></pre></td></tr></table></figure>
+<p>可以使用<code>view</code>函数设置视角。</p>
+<h1 id="逻辑控制"><a href="#逻辑控制" class="headerlink" title="逻辑控制"></a>逻辑控制</h1><p>自然就是条件和循环啦，主要是记得<code>end</code>：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> 条件</span><br><span class="line">	语句</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	语句</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k=<span class="number">0</span>:<span class="number">5</span></span><br><span class="line">	语句</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> 条件</span><br><span class="line">	语句</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h1 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h1><p>这就比较特殊了：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[返回变量列表]</span> = 函数名<span class="params">(参数列表)</span></span></span><br><span class="line">	函数体</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>值得注意的是，函数要单独写在一个文件中，和主文件放在一个文件夹中，直接使用即可，不需要import。</p>
 
       
     </div>
@@ -523,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">61</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -534,7 +575,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -592,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#界面说明"><span class="nav-number">2.</span> <span class="nav-text">界面说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入门须知"><span class="nav-number">3.</span> <span class="nav-text">入门须知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵"><span class="nav-number">4.</span> <span class="nav-text">矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绘图"><span class="nav-number">5.</span> <span class="nav-text">绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D"><span class="nav-number">5.1.</span> <span class="nav-text">2D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D"><span class="nav-number">5.2.</span> <span class="nav-text">3D</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑控制"><span class="nav-number">6.</span> <span class="nav-text">逻辑控制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义函数"><span class="nav-number">7.</span> <span class="nav-text">定义函数</span></a></li></ol></div>
             
 
           </div>
