@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/2.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/3.jpg">
 <meta property="og:image" content="http://wang22ti.com/2018/09/25/笔记-Anaconda/4.jpg">
-<meta property="og:updated_time" content="2018-10-20T02:41:53.000Z">
+<meta property="og:updated_time" content="2018-11-11T02:36:28.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-Anaconda">
 <meta name="twitter:description" content="最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开anaconda navigator要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。 在浙大实习的时候，学长告诉我：有一些环境（即运行某些程序配套的程序）是相互冲突的，而anaconda采用沙盒的机制，即anaconda中的环境在不激活的情况下是不会被系统检测到的（即不会添加">
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  823 字
+                  867 字
                 </span>
               
 
@@ -422,7 +422,7 @@
 <p>base是anaconda默认配置的python环境，里面已经又很多包可以用了，使用</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
 <p>就可以查看有哪些。当然，以下的命令想来不需要解释了：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda remove 包名</span><br><span class="line">conda update 包名</span><br><span class="line">conda env export &gt; environment.yaml // 导出当前环境的包信息</span><br><span class="line">conda env create -f environment.yaml // 用配置文件创建新的虚拟环境</span><br></pre></td></tr></table></figure>
 <h1 id="在Pycharm中使用Anaconda的环境"><a href="#在Pycharm中使用Anaconda的环境" class="headerlink" title="在Pycharm中使用Anaconda的环境"></a>在Pycharm中使用Anaconda的环境</h1><p>在Pycharm工具栏<code>File-Settings for new project-Project Interpreter</code>界面点击<code>齿轮</code>按钮，再点击<code>Add</code>按钮会出现如下界面：</p>
 <p><img src="/2018/09/25/笔记-Anaconda/2.jpg" alt=""></p>
 <p>此时点击<code>Conda Environment</code>就会看到</p>
@@ -559,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
