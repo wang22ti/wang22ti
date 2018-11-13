@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="实验目的 了解人工神经网络的生物学基础  掌握神经网络网络的前向传播和反向传播的数学原理  用matlab实现一个简单的全连接神经网络   实验原理​        可以参见我的个人博客wang22ti.com，其中博文《mooc-深度学习工程师-1-神经网络和深度学习》对神经网络的数学原理有详细的介绍。 ​        MATLAB软件包含MATLAB神经网络工具箱。它是以人工神经网络理论为基">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《模式识别》实验6-BP神经网络">
 <meta property="og:url" content="http://wang22ti.com/2018/11/11/《模式识别》实验6-BP神经网络/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="实验目的 了解人工神经网络的生物学基础  掌握神经网络网络的前向传播和反向传播的数学原理  用matlab实现一个简单的全连接神经网络   实验原理​        可以参见我的个人博客wang22ti.com，其中博文《mooc-深度学习工程师-1-神经网络和深度学习》对神经网络的数学原理有详细的介绍。 ​        MATLAB软件包含MATLAB神经网络工具箱。它是以人工神经网络理论为基">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-11T02:30:57.797Z">
+<meta property="og:image" content="http://wang22ti.com/2018/11/11/《模式识别》实验6-BP神经网络/《模式识别》实验5-最近邻与k近邻/1.png">
+<meta property="og:image" content="http://wang22ti.com/2018/11/11/《模式识别》实验6-BP神经网络/《模式识别》实验5-最近邻与k近邻/2.png">
+<meta property="og:updated_time" content="2018-11-13T02:57:14.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《模式识别》实验6-BP神经网络">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="实验目的 了解人工神经网络的生物学基础  掌握神经网络网络的前向传播和反向传播的数学原理  用matlab实现一个简单的全连接神经网络   实验原理​        可以参见我的个人博客wang22ti.com，其中博文《mooc-深度学习工程师-1-神经网络和深度学习》对神经网络的数学原理有详细的介绍。 ​        MATLAB软件包含MATLAB神经网络工具箱。它是以人工神经网络理论为基">
+<meta name="twitter:image" content="http://wang22ti.com/2018/11/11/《模式识别》实验6-BP神经网络/《模式识别》实验5-最近邻与k近邻/1.png">
 
 
 
@@ -366,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1,366 字
                 </span>
               
 
@@ -382,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  6 分钟
                 </span>
               
             </div>
@@ -403,7 +406,36 @@
       
 
       
-        
+        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
+<li><p>了解人工神经网络的生物学基础</p>
+</li>
+<li><p>掌握神经网络网络的前向传播和反向传播的数学原理</p>
+</li>
+<li><p>用matlab实现一个简单的全连接神经网络</p>
+</li>
+</ol>
+<h1 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h1><p>​        可以参见我的个人博客wang22ti.com，其中博文《<a href="http://wang22ti.com/2018/07/31/mooc-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B7%A5%E7%A8%8B%E5%B8%88-1-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%92%8C%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">mooc-深度学习工程师-1-神经网络和深度学习</a>》对神经网络的数学原理有详细的介绍。</p>
+<p>​        MATLAB软件包含MATLAB神经网络工具箱。它是以人工神经网络理论为基础，用MATLAB语言构造出了该理论所涉及的公式运算、矩阵操作和方程求解等大部分子程序以用于神经网络的设计和训练。用户只需要根据自己的需要调用相关的子程序，即可以完成包括网络结构设计、权值初始化、网络训练及结果输出等在内的一系列工作，免除编写复杂庞大程序的困扰。BP神经网络主要用到newff，sim和train3个神经网络函数：</p>
+<ol>
+<li><p>net=Newff (P, T, S, TF, BTF, BLF, PF, IPF, OPE, DDE)</p>
+<p>创建一个BP神经网络，其中P为输入数据矩阵；T为输出数据矩阵；S为隐含层节点的数组；TF为节点的激活函数，比如logsig、purelin；BTF为训练函数，比如动态反向传播和动态自适应学习率的梯度下降算法traingdx；BLF为网络学习函数，比如BP学习规则learned。一般手动设置前6个参数，后面4个采用系统默认。</p>
+</li>
+<li><p>[net,tr]=train(NET, X, T, Pi, Ai)</p>
+<p>用训练数据训练BP神经网络，其中NET为待训练网络；X为输入数据矩阵；T为输出数据矩阵；Pi为初始化输入层条件；Ai为初始化输出层条件；net为训练好的神经网络；tr为训练过程记录。一般手动设置前面3个参数。</p>
+</li>
+<li><p>y=sim(net, x)</p>
+<p>用训练好的BP神经网络预测函数输出。其中net是训练好的神经网络；x为输入数据；y为网络预测数据。</p>
+</li>
+</ol>
+<h1 id="实验内容与步骤"><a href="#实验内容与步骤" class="headerlink" title="实验内容与步骤"></a>实验内容与步骤</h1><p>​        有一批Iris花，已知这批Iris花可分为3个品种，现需要对其进行分类。不同品种的Iris花的花萼长度、花萼宽度、花瓣长度、花瓣宽度会有差异。我们现有一批已知品种的Iris花的花萼长度、花萼宽度、花瓣长度、花瓣宽度的数据。用已有的数据训练一个神经网络用作分类器。实验代码如下所示，前者是训练代码，后者是测试代码。</p>
+<h2 id="train"><a href="#train" class="headerlink" title="train"></a>train</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%将Iris数据集分为2组，每组各75个样本，每组中每种花各有25个样本。</span></span><br><span class="line"><span class="comment">%其中一组作为以上程序的训练样本，另外一组作为检验样本。</span></span><br><span class="line"><span class="comment">%为了方便训练，将3类花分别编号为1，2，3 。</span></span><br><span class="line"><span class="comment">%使用这些数据训练一个4输入（分别对应4个特征），3输出（分别对应该样本属于某一品种的可能性大小）的前向网络。</span></span><br><span class="line"></span><br><span class="line">clear all;</span><br><span class="line"><span class="comment">%读取训练数据</span></span><br><span class="line">[f1,f2,f3,f4,class] = textread(<span class="string">'trainData.txt'</span>,<span class="string">'%f%f%f%f%s'</span>,<span class="number">75</span>);</span><br><span class="line"><span class="comment">%特征值归一化</span></span><br><span class="line"><span class="comment">%构造输出矩阵</span></span><br><span class="line">[input,minI,maxI] = premnmx( [f1 , f2 , f3 , f4 ]')  ;</span><br><span class="line">s=<span class="built_in">length</span>(class);</span><br><span class="line">output=<span class="built_in">zeros</span>(s,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : s </span><br><span class="line">    <span class="keyword">if</span> strcmp(class(<span class="built_in">i</span>),<span class="string">'Isetosa'</span>)</span><br><span class="line">        output( <span class="built_in">i</span> , <span class="number">1</span>) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> strcmp(class(<span class="built_in">i</span>),<span class="string">'Iversicolor'</span>)</span><br><span class="line">        output( <span class="built_in">i</span> , <span class="number">2</span>) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        output( <span class="built_in">i</span> , <span class="number">3</span> ) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%创建神经网络</span></span><br><span class="line">net = newff(minmax(input), [<span class="number">10</span>, <span class="number">3</span>], &#123;<span class="string">'logsig'</span>, <span class="string">'purelin'</span>&#125;, <span class="string">'traingdx'</span>) ; </span><br><span class="line"><span class="comment">%设置训练参数</span></span><br><span class="line">net.trainparam.show = <span class="number">50</span> ;          <span class="comment">%显示中间结果的周期；</span></span><br><span class="line">net.trainparam.epochs = <span class="number">1000</span> ;     	<span class="comment">%最大的迭代次数；</span></span><br><span class="line">net.trainparam.goal = <span class="number">0.01</span>;          <span class="comment">%神经网络的训练的目标误差；</span></span><br><span class="line">net.trainParam.lr = <span class="number">0.005</span> ;           <span class="comment">%学习率；</span></span><br><span class="line"><span class="comment">%开始训练 </span></span><br><span class="line">[net, tr] = train( net, input , output' ) ;</span><br></pre></td></tr></table></figure>
+<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%读取测试数据</span></span><br><span class="line">[t1, t2, t3, t4, c] = textread(<span class="string">'testData.txt'</span> , <span class="string">'%f%f%f%f%s'</span>,<span class="number">75</span>);</span><br><span class="line"><span class="comment">%测试数据归一化</span></span><br><span class="line">testInput = tramnmx ( [t1,t2,t3,t4]' , minI, maxI ) ;</span><br><span class="line"><span class="comment">%仿真</span></span><br><span class="line">Y = sim( net , testInput );</span><br><span class="line"><span class="comment">%补充程序4</span></span><br><span class="line">s=<span class="built_in">length</span>(c);</span><br><span class="line">output1=<span class="built_in">zeros</span>(s,<span class="number">3</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : s </span><br><span class="line">    <span class="keyword">if</span> strcmp(c(<span class="built_in">i</span>),<span class="string">'Isetosa'</span>)</span><br><span class="line">        output1( <span class="built_in">i</span> , <span class="number">1</span> ) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> strcmp(c(<span class="built_in">i</span>),<span class="string">'Iversicolor'</span>)</span><br><span class="line">        output1( <span class="built_in">i</span> , <span class="number">2</span>  ) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        output1( <span class="built_in">i</span> , <span class="number">3</span>  ) = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%统计识别正确率</span></span><br><span class="line">[s1 , s2] = <span class="built_in">size</span>( Y ) ;</span><br><span class="line">hitNum = <span class="number">0</span> ;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span> : s2</span><br><span class="line">    [m , Index] = max( Y( : ,  <span class="built_in">i</span> ) ) ;</span><br><span class="line">    <span class="keyword">if</span>( output1(<span class="built_in">i</span>,Index) == <span class="number">1</span>   ) </span><br><span class="line">        hitNum = hitNum + <span class="number">1</span> ; </span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">sprintf(<span class="string">'识别率是 %3.3f%%'</span>,<span class="number">100</span> * hitNum / s2 )</span><br></pre></td></tr></table></figure>
+<h1 id="实验结果与讨论"><a href="#实验结果与讨论" class="headerlink" title="实验结果与讨论"></a>实验结果与讨论</h1><p>​        运行训练代码会出现如下图所示的UI，可以实时查看神经网络的结构，训练过程中的数据，比如代数、时间、梯度、损失等等，十分简单易用。</p>
+<p><img src="/2018/11/11/《模式识别》实验6-BP神经网络/《模式识别》实验5-最近邻与k近邻/1.png" alt=""></p>
+<p>运行测试代码，得到在测试集上的识别率为96.000%，还是一个比较理想的结果。</p>
+<p><img src="/2018/11/11/《模式识别》实验6-BP神经网络/《模式识别》实验5-最近邻与k近邻/2.png" alt=""></p>
+<h1 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h1><p>​        本次实验聚焦于神经网络的原理分析与设计。神经网络是当前模式识别领域最火热的方法，在计算机视觉、自然语言处理等领域每天都有新的神经网络模型被提出。此前我一直使用python和tensorflow，这是我第一次使用matlab搭建神经网络，取得了意想不到的收获。相信这次实验对于我今后的科研工作会带来很大的帮助。</p>
+
       
     </div>
     
@@ -496,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -523,7 +564,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -571,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验原理"><span class="nav-number">2.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容与步骤"><span class="nav-number">3.</span> <span class="nav-text">实验内容与步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#train"><span class="nav-number">3.1.</span> <span class="nav-text">train</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">3.2.</span> <span class="nav-text">test</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果与讨论"><span class="nav-number">4.</span> <span class="nav-text">实验结果与讨论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验总结"><span class="nav-number">5.</span> <span class="nav-text">实验总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

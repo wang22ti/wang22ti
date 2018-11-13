@@ -81,17 +81,20 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="实验目的 掌握最近邻分类算法。  掌握k近邻分类算法。   实验原理 最近邻法将与测试样本最近邻样本的类别作为决策的结果，对于一个C类的问题，每类有$N_i$个样本，则第$i$类$W_i$的判别函数为   g _ { i } ( x ) = \min _ { k } \left\| x - x _ { i } ^ { k } \right\| , k = 1 , \dots , N _ { i }">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《模式识别》实验5-最近邻与k近邻">
 <meta property="og:url" content="http://wang22ti.com/2018/11/11/《模式识别》实验5-最近邻与k近邻/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="实验目的 掌握最近邻分类算法。  掌握k近邻分类算法。   实验原理 最近邻法将与测试样本最近邻样本的类别作为决策的结果，对于一个C类的问题，每类有$N_i$个样本，则第$i$类$W_i$的判别函数为   g _ { i } ( x ) = \min _ { k } \left\| x - x _ { i } ^ { k } \right\| , k = 1 , \dots , N _ { i }">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-11T02:30:50.250Z">
+<meta property="og:image" content="http://wang22ti.com/2018/11/11/《模式识别》实验5-最近邻与k近邻/1.png">
+<meta property="og:image" content="http://wang22ti.com/2018/11/11/《模式识别》实验5-最近邻与k近邻/2.png">
+<meta property="og:updated_time" content="2018-11-13T02:53:19.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《模式识别》实验5-最近邻与k近邻">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="实验目的 掌握最近邻分类算法。  掌握k近邻分类算法。   实验原理 最近邻法将与测试样本最近邻样本的类别作为决策的结果，对于一个C类的问题，每类有$N_i$个样本，则第$i$类$W_i$的判别函数为   g _ { i } ( x ) = \min _ { k } \left\| x - x _ { i } ^ { k } \right\| , k = 1 , \dots , N _ { i }">
+<meta name="twitter:image" content="http://wang22ti.com/2018/11/11/《模式识别》实验5-最近邻与k近邻/1.png">
 
 
 
@@ -366,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1,696 字
                 </span>
               
 
@@ -382,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  8 分钟
                 </span>
               
             </div>
@@ -403,7 +406,46 @@
       
 
       
-        
+        <h1 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h1><ol>
+<li><p>掌握最近邻分类算法。</p>
+</li>
+<li><p>掌握k近邻分类算法。</p>
+</li>
+</ol>
+<h1 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h1><ol>
+<li>最近邻法将与测试样本最近邻样本的类别作为决策的结果，对于一个C类的问题，每类有$N_i$个样本，则第$i$类$W_i$的判别函数为</li>
+</ol>
+<script type="math/tex; mode=display">
+g _ { i } ( x ) = \min _ { k } \left\| x - x _ { i } ^ { k } \right\| , k = 1 , \dots , N _ { i }</script><p>​        其中$| \cdot |$表示某种距离的度量，通常使用欧式距离。</p>
+<ol>
+<li>K近邻法是最近邻法的扩展，其基本规则是在所有$N$个样本中找到与测试样本的$k$个最近邻者，其中各类别所占个数表示为$\mathrm { k } _ { \mathrm { i } } , i = 1 , \dots , c$，定义判别函数为：</li>
+</ol>
+<script type="math/tex; mode=display">
+\mathrm { g } _ { \mathrm { i } } ( x ) = k _ { i } , i = 1,2 , \ldots , c</script><p>​    决策规则为</p>
+<script type="math/tex; mode=display">
+\mathrm { j } = \operatorname { argmax } _ { i } g _ { i } ( x ) , i = 1 , \ldots , c</script><p>​        其中$k$一般采用奇数，避免因为票数相等而难以决策</p>
+<h1 id="实验内容与步骤"><a href="#实验内容与步骤" class="headerlink" title="实验内容与步骤"></a>实验内容与步骤</h1><ol>
+<li><p>每类产生50个样本作为训练样本；每类产生100个样本作为考试样本</p>
+</li>
+<li><p>按最近邻法用训练样本对考试样本分类，计算平均错误率</p>
+</li>
+<li><p>按最k近邻法（k=21）用训练样本对考试样本分类，计算平均错误率</p>
+</li>
+<li><p>标注错分点。</p>
+</li>
+</ol>
+<h2 id="最近邻"><a href="#最近邻" class="headerlink" title="最近邻"></a>最近邻</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 最近邻</span></span><br><span class="line">clear all;</span><br><span class="line">close all;</span><br><span class="line">clc;</span><br><span class="line">warning off</span><br><span class="line">mu1=[<span class="number">-2</span> <span class="number">-2</span>];    <span class="comment">%均值向量</span></span><br><span class="line">mu2=[<span class="number">2</span> <span class="number">2</span>];</span><br><span class="line">sigma1=[<span class="number">1</span> <span class="number">0</span>;<span class="number">0</span> <span class="number">1</span>];    <span class="comment">%协方差矩阵</span></span><br><span class="line">sigma2=[<span class="number">1</span> <span class="number">0</span>;<span class="number">0</span> <span class="number">4</span>];</span><br><span class="line">N1=<span class="number">50</span>;  <span class="comment">%每一类50个训练样本</span></span><br><span class="line">N2=<span class="number">100</span>; <span class="comment">%每一类100个考试样本</span></span><br><span class="line">train1=mvnrnd(mu1,sigma1,N1);   <span class="comment">%产生多维正态随机数</span></span><br><span class="line">train2=mvnrnd(mu2,sigma2,N1);</span><br><span class="line">test1=mvnrnd(mu1,sigma1,N2);</span><br><span class="line">test2=mvnrnd(mu2,sigma2,N2);</span><br><span class="line">train=[train1;train2];  <span class="comment">%训练样本，前50行为第一类，后50行为第二类</span></span><br><span class="line">dist1=<span class="built_in">zeros</span>(N2,<span class="number">2</span>*N1); <span class="comment">%考试点到第一类训练点的距离矩阵</span></span><br><span class="line">dist2=<span class="built_in">zeros</span>(N2,<span class="number">2</span>*N1); <span class="comment">%考试点到第二类训练点的距离矩阵</span></span><br><span class="line">t1=<span class="number">1</span>;</span><br><span class="line">t2=<span class="number">1</span>;</span><br><span class="line">err_index1=[];</span><br><span class="line">err_index2=[];</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N2 <span class="comment">%遍历所有考试点</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">2</span>*N1 <span class="comment">%遍历所有训练点</span></span><br><span class="line">        <span class="comment">%补充程序1  （第一类）考试点到所有训练点的距离</span></span><br><span class="line">        dist1(<span class="built_in">i</span>, <span class="built_in">j</span>) = ((test1(<span class="built_in">i</span>, <span class="number">1</span>) - train(<span class="built_in">j</span>, <span class="number">1</span>))^<span class="number">2</span> + (test1(<span class="built_in">i</span>, <span class="number">2</span>) - train(<span class="built_in">j</span>, <span class="number">2</span>))^<span class="number">2</span>)^<span class="number">0.5</span>;</span><br><span class="line">        <span class="comment">%补充程序2  （第二类）考试点到所有训练点的距离</span></span><br><span class="line">        dist2(<span class="built_in">i</span>, <span class="built_in">j</span>) = ((test2(<span class="built_in">i</span>, <span class="number">1</span>) - train(<span class="built_in">j</span>, <span class="number">1</span>))^<span class="number">2</span> + (test2(<span class="built_in">i</span>, <span class="number">2</span>) - train(<span class="built_in">j</span>, <span class="number">2</span>))^<span class="number">2</span>)^<span class="number">0.5</span>;       </span><br><span class="line">    <span class="keyword">end</span> <span class="comment">%计算每个考试点到所有训练点的欧式距离</span></span><br><span class="line">    col1=<span class="built_in">find</span>(dist1(<span class="built_in">i</span>,:)==min(dist1(<span class="built_in">i</span>,:)));   <span class="comment">%发现（第一类）考试点到两类训练点距离最小值的列号</span></span><br><span class="line">    <span class="keyword">if</span> col1&gt;N1<span class="comment">%补充程序3 （第一类）考试点到第二类训练点的距离最小</span></span><br><span class="line">        err_index1(t1)=<span class="built_in">i</span>;   <span class="comment">%（第一类）考试点错分为第二类的索引</span></span><br><span class="line">        t1=t1+<span class="number">1</span>;    <span class="comment">%（第一类）考试点错分数加1</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    col2=<span class="built_in">find</span>(dist2(<span class="built_in">i</span>,:)==min(dist2(<span class="built_in">i</span>,:)));   <span class="comment">%发现（第二类）考试点到两类训练点距离最小值的列号</span></span><br><span class="line">    <span class="keyword">if</span> col2&lt;=N1<span class="comment">%补充程序4（第二类）考试点到第一类训练点的距离最小</span></span><br><span class="line">        err_index2(t2)=<span class="built_in">i</span>;   <span class="comment">%（第二类）考试点错分为第一类的索引</span></span><br><span class="line">        t2=t2+<span class="number">1</span>;    <span class="comment">%（第二类）考试点错分数加1</span></span><br><span class="line">    <span class="keyword">end</span> <span class="comment">%找到距离该考试点最近的训练点，判断是否错分</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">pe1=<span class="built_in">size</span>(err_index1,<span class="number">2</span>)/N2;</span><br><span class="line">pe2=<span class="built_in">size</span>(err_index2,<span class="number">2</span>)/N2;</span><br><span class="line">pe=<span class="number">0.5</span>*(pe1+pe2); <span class="comment">%计算错误率</span></span><br><span class="line">figure(<span class="number">1</span>)</span><br><span class="line">hold on</span><br><span class="line">grid on</span><br><span class="line">plot(train1(:,<span class="number">1</span>),train1(:,<span class="number">2</span>),<span class="string">'*y'</span>);</span><br><span class="line">plot(train2(:,<span class="number">1</span>),train2(:,<span class="number">2</span>),<span class="string">'+g'</span>);</span><br><span class="line">plot(test1(:,<span class="number">1</span>),test1(:,<span class="number">2</span>),<span class="string">'*r'</span>);</span><br><span class="line">plot(test2(:,<span class="number">1</span>),test2(:,<span class="number">2</span>),<span class="string">'+b'</span>);</span><br><span class="line">plot(test1(err_index1,<span class="number">1</span>),test1(err_index1,<span class="number">2</span>),<span class="string">'or'</span>,<span class="string">'MarkerSize'</span>,<span class="number">12</span>);</span><br><span class="line">plot(test2(err_index2,<span class="number">1</span>),test2(err_index2,<span class="number">2</span>),<span class="string">'sb'</span>,<span class="string">'MarkerSize'</span>,<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="k近邻"><a href="#k近邻" class="headerlink" title="k近邻"></a>k近邻</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% K近邻</span></span><br><span class="line">clear all;</span><br><span class="line">close all;</span><br><span class="line">clear all;</span><br><span class="line">close all;</span><br><span class="line">clc;</span><br><span class="line">warning off</span><br><span class="line">mu1=[<span class="number">-2</span> <span class="number">-2</span>];    <span class="comment">%均值向量</span></span><br><span class="line">mu2=[<span class="number">2</span> <span class="number">2</span>];</span><br><span class="line">sigma1=[<span class="number">1</span> <span class="number">0</span>;<span class="number">0</span> <span class="number">1</span>];    <span class="comment">%协方差矩阵</span></span><br><span class="line">sigma2=[<span class="number">1</span> <span class="number">0</span>;<span class="number">0</span> <span class="number">4</span>];</span><br><span class="line">N1=<span class="number">50</span>;  <span class="comment">%每一类50个训练样本</span></span><br><span class="line">N2=<span class="number">100</span>; <span class="comment">%每一类100个考试样本</span></span><br><span class="line">train1=mvnrnd(mu1,sigma1,N1);   <span class="comment">%产生多维正态随机数</span></span><br><span class="line">train2=mvnrnd(mu2,sigma2,N1);</span><br><span class="line">test1=mvnrnd(mu1,sigma1,N2);</span><br><span class="line">test2=mvnrnd(mu2,sigma2,N2);</span><br><span class="line">train=[train1;train2];  <span class="comment">%训练样本，前50行为第一类，后50行为第二类</span></span><br><span class="line">dist1=<span class="built_in">zeros</span>(N2,<span class="number">2</span>*N1); <span class="comment">%考试点到第一类训练点的距离矩阵</span></span><br><span class="line">dist2=<span class="built_in">zeros</span>(N2,<span class="number">2</span>*N1); <span class="comment">%考试点到第二类训练点的距离矩阵</span></span><br><span class="line">t1=<span class="number">1</span>;</span><br><span class="line">t2=<span class="number">1</span>;</span><br><span class="line">err_index1=[];</span><br><span class="line">err_index2=[];</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N2  <span class="comment">%遍历所有考试点</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">j</span>=<span class="number">1</span>:<span class="number">2</span>*N1 <span class="comment">%遍历所有训练点</span></span><br><span class="line">        dist1(<span class="built_in">i</span>,<span class="built_in">j</span>)=<span class="built_in">sqrt</span>((test1(<span class="built_in">i</span>,<span class="number">1</span>)-train(<span class="built_in">j</span>,<span class="number">1</span>))^<span class="number">2</span>+(test1(<span class="built_in">i</span>,<span class="number">2</span>)-train(<span class="built_in">j</span>,<span class="number">2</span>))^<span class="number">2</span>);  <span class="comment">%（第一类）考试点到所有训练点的距离</span></span><br><span class="line">        dist2(<span class="built_in">i</span>,<span class="built_in">j</span>)=<span class="built_in">sqrt</span>((test2(<span class="built_in">i</span>,<span class="number">1</span>)-train(<span class="built_in">j</span>,<span class="number">1</span>))^<span class="number">2</span>+(test2(<span class="built_in">i</span>,<span class="number">2</span>)-train(<span class="built_in">j</span>,<span class="number">2</span>))^<span class="number">2</span>);  <span class="comment">%（第二类）考试点到所有训练点的距离</span></span><br><span class="line">    <span class="keyword">end</span> <span class="comment">%计算每个考试点到所有训练点的欧式距离</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">%k近邻（k=21）</span></span><br><span class="line">k=<span class="number">21</span>;</span><br><span class="line">thr=<span class="built_in">ceil</span>(k/<span class="number">2</span>);  <span class="comment">%向正方向取整</span></span><br><span class="line"><span class="comment">%补充程序1  对于每一行，将所有列按升序排列</span></span><br><span class="line">[sort_dist1, sort_index1] = sort(dist1, <span class="number">2</span>);</span><br><span class="line">[sort_dist2, sort_index2] = sort(dist2, <span class="number">2</span>);</span><br><span class="line"><span class="comment">%补充程序2   %先将得到的考试点与样本点的距离排序，同时记录排序的标号</span></span><br><span class="line"></span><br><span class="line">t1=<span class="number">1</span>;</span><br><span class="line">t2=<span class="number">1</span>;</span><br><span class="line">k_err_index1=[];</span><br><span class="line">k_err_index2=[];</span><br><span class="line">err_num1=<span class="built_in">size</span>(<span class="built_in">find</span>(sort_index1(<span class="built_in">i</span>,<span class="number">1</span>:k)&gt;N1),<span class="number">2</span>); </span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:N2 <span class="comment">%遍历所有考试点</span></span><br><span class="line">    err_num1=<span class="built_in">size</span>(<span class="built_in">find</span>(sort_index1(<span class="built_in">i</span>,<span class="number">1</span>:k)&gt;N1),<span class="number">2</span>);  <span class="comment">%找前k个最近值中分错了几个</span></span><br><span class="line">    <span class="keyword">if</span> err_num1 &gt; thr<span class="comment">%补充程序3 如果错分数目过半</span></span><br><span class="line">        k_err_index1(t1)=<span class="built_in">i</span>;</span><br><span class="line">        t1=t1+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    err_num2=<span class="built_in">size</span>(<span class="built_in">find</span>(sort_index2(<span class="built_in">i</span>,<span class="number">1</span>:k)&lt;=N1),<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> err_num2 &gt; thr<span class="comment">%补充程序4</span></span><br><span class="line">        k_err_index2(t2)=<span class="built_in">i</span>;</span><br><span class="line">        t2=t2+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="comment">%取前k个最小距离，看其标号中来自哪一类的训练样本点较多，判断是否错分</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">k_pe1=<span class="built_in">size</span>(k_err_index1,<span class="number">2</span>)/N2;</span><br><span class="line">k_pe2=<span class="built_in">size</span>(k_err_index2,<span class="number">2</span>)/N2;</span><br><span class="line">k_pe=<span class="number">0.5</span>*(k_pe1+k_pe2); <span class="comment">%计算错误率</span></span><br><span class="line">figure(<span class="number">1</span>)</span><br><span class="line">hold on</span><br><span class="line">grid on</span><br><span class="line">plot(train1(:,<span class="number">1</span>),train1(:,<span class="number">2</span>),<span class="string">'*y'</span>);</span><br><span class="line">plot(train2(:,<span class="number">1</span>),train2(:,<span class="number">2</span>),<span class="string">'+g'</span>);</span><br><span class="line">plot(test1(:,<span class="number">1</span>),test1(:,<span class="number">2</span>),<span class="string">'*r'</span>);</span><br><span class="line">plot(test2(:,<span class="number">1</span>),test2(:,<span class="number">2</span>),<span class="string">'+b'</span>);</span><br><span class="line">plot(test1(k_err_index1,<span class="number">1</span>),test1(k_err_index1,<span class="number">2</span>),<span class="string">'or'</span>,<span class="string">'MarkerSize'</span>,<span class="number">12</span>);</span><br><span class="line">plot(test2(k_err_index2,<span class="number">1</span>),test2(k_err_index2,<span class="number">2</span>),<span class="string">'sb'</span>,<span class="string">'MarkerSize'</span>,<span class="number">12</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="实验结果与讨论"><a href="#实验结果与讨论" class="headerlink" title="实验结果与讨论"></a>实验结果与讨论</h1><ol>
+<li><p>最近邻的实验结果如下图所示，可见大多数样本被正确标记，只有临界区的几个出现了错误。</p>
+<p><img src="/2018/11/11/《模式识别》实验5-最近邻与k近邻/1.png" alt=""></p>
+</li>
+<li><p>K近邻的实验结果如下图所示，与最近邻的实验现象相仿。</p>
+<p><img src="/2018/11/11/《模式识别》实验5-最近邻与k近邻/2.png" alt=""></p>
+</li>
+</ol>
+<h1 id="实验总结"><a href="#实验总结" class="headerlink" title="实验总结"></a>实验总结</h1><p>​        本次实验聚焦于最近邻和K近邻两种分类器的设计。通过实验，我掌握了这两个同为一类的分类器的原理及其实现过程。这两个分类器都是无监督的分类，即便是在今后的科研学习中，只要合理定义“距离”，仍然十分有效。相信通过这次的学习，会对我今后的科研以及课程下一阶段的学习带来帮助。</p>
+
       
     </div>
     
@@ -496,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -523,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -571,6 +622,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验目的"><span class="nav-number">1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验原理"><span class="nav-number">2.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验内容与步骤"><span class="nav-number">3.</span> <span class="nav-text">实验内容与步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近邻"><span class="nav-number">3.1.</span> <span class="nav-text">最近邻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k近邻"><span class="nav-number">3.2.</span> <span class="nav-text">k近邻</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果与讨论"><span class="nav-number">4.</span> <span class="nav-text">实验结果与讨论</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验总结"><span class="nav-number">5.</span> <span class="nav-text">实验总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

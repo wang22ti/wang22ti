@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="实验复现首先是git一波 1git clone https://github.com/hexiangnan/neural_collaborative_filtering.git 看一下Read Me，环境用的是   Keras version:  ‘1.0.7’ Theano version: ‘0.8.0’   于是用anaconda新建一个环境，就叫ncf吧，结果运行起来就报了个错：   Va">
 <meta property="og:type" content="article">
 <meta property="og:title" content="论文阅读-Neural_Collaborative_Filtering">
 <meta property="og:url" content="http://wang22ti.com/2018/11/11/论文阅读-Neural-Collaborative-Filtering/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="实验复现首先是git一波 1git clone https://github.com/hexiangnan/neural_collaborative_filtering.git 看一下Read Me，环境用的是   Keras version:  ‘1.0.7’ Theano version: ‘0.8.0’   于是用anaconda新建一个环境，就叫ncf吧，结果运行起来就报了个错：   Va">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-11T02:38:10.634Z">
+<meta property="og:updated_time" content="2018-11-11T10:12:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文阅读-Neural_Collaborative_Filtering">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="实验复现首先是git一波 1git clone https://github.com/hexiangnan/neural_collaborative_filtering.git 看一下Read Me，环境用的是   Keras version:  ‘1.0.7’ Theano version: ‘0.8.0’   于是用anaconda新建一个环境，就叫ncf吧，结果运行起来就报了个错：   Va">
 
 
 
@@ -318,6 +318,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -344,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  293 字
                 </span>
               
 
@@ -381,7 +403,39 @@
       
 
       
-        
+        <h1 id="实验复现"><a href="#实验复现" class="headerlink" title="实验复现"></a>实验复现</h1><p>首先是git一波</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/hexiangnan/neural_collaborative_filtering.git</span><br></pre></td></tr></table></figure>
+<p>看一下Read Me，环境用的是</p>
+<blockquote>
+<ul>
+<li>Keras version:  ‘1.0.7’</li>
+<li>Theano version: ‘0.8.0’</li>
+</ul>
+</blockquote>
+<p>于是用anaconda新建一个环境，就叫ncf吧，结果运行起来就报了个错：</p>
+<blockquote>
+<p> ValueError: Only call sigmoid_cross_entropy_with_logits with named arguments (labels=…, logits=…, …)</p>
+</blockquote>
+<p>原因是它并没有告诉我安装什么版本的tensorflow，，还好issue里有<a href="https://github.com/hexiangnan/neural_collaborative_filtering/issues/15" target="_blank" rel="noopener">解答</a>（我的环境是tensorflow=1.8.0, python=3.6）。接着还会报一个</p>
+<blockquote>
+<p>ImportError: cannot import name ‘control_flow_ops’</p>
+</blockquote>
+<p>的错误，还好还是有<a href="https://github.com/tensorflow/tensorflow/issues/7020" target="_blank" rel="noopener">大神</a>能搞定。</p>
+<p>至此，GMF.py终于跑起来了，然而跑MLP.py的时候又报了新的错：</p>
+<blockquote>
+<p>TypeError: Expected int32, got list containing Tensors of type ‘_Message’ instead.</p>
+</blockquote>
+<p>emmmm，还是新的tensorflow的api出现的了问题，<a href="https://github.com/carpedm20/DCGAN-tensorflow/issues/99" target="_blank" rel="noopener">大神</a>已经指出了直接调用tensorflow的情况。在keras中，还需要根据报错路径修改文件<code>tensorflow_backend.py</code>中的<code>concatenate</code>函数：</p>
+<blockquote>
+<p>from </p>
+<p><code>return tf.concat(as, tensors)</code></p>
+<p>to</p>
+<p><code>return tf.concat(tensors, ax)</code></p>
+</blockquote>
+<p>实际上，有这样问题的不止一处，但是这样已经跑起来了！</p>
+<p>NeuMF.py是上面两个网络的综合，所以并没有出现新的错误。</p>
+<p>事实证明，应该先看一下issue，用python2.7的，，，</p>
+
       
     </div>
     
@@ -470,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -497,7 +560,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -545,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实验复现"><span class="nav-number">1.</span> <span class="nav-text">实验复现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
