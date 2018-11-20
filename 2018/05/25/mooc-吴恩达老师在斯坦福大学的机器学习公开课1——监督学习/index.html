@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/16.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/17.png">
 <meta property="og:image" content="http://wang22ti.com/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/18.png">
-<meta property="og:updated_time" content="2018-08-11T07:40:25.603Z">
+<meta property="og:updated_time" content="2018-11-13T07:16:57.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习">
 <meta name="twitter:description" content="据说这是入门机器学习必不可少的经典教程啦，还可以顺便练一下英语听力。 虽然之前在各个渠道，包括TensorFlow与深度学习、MOOC《python机器学习应用》以及知行论坛里或多或少地学过机器学习与神经网络的相关知识，但是觉得还是有必要再认真学习一下经典教程。不过会跳过关于matlab的内容。 Lecture 1介绍了课程的一些情况，该课程分为四个部分  监督学习（supervised lear">
@@ -672,7 +672,7 @@ Given \ P(x|y) \ and \ P(y) ,\\ P(y=1|x)=\frac{P(x|y=1) P(y=1)}{P(x)}=\frac{P(x|
 <script type="math/tex; mode=display">
 P(x|y) \sim N(\vec{\mu},\Sigma)</script><p>即服从<code>多元高斯分布</code>，具有如下概率密度公式</p>
 <script type="math/tex; mode=display">
-P(x;\mu,\Sigma)=\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp{-\frac{1}{2}(x-\mu)^T\Sigma(x-\mu)}</script><p>为了理解高斯判别分析的原理，先以二元为例说明参数对于概率分布的影响。</p>
+P(x;\mu,\Sigma)=\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\{-\frac{1}{2}(x-\mu)^T\Sigma(x-\mu)\}</script><p>为了理解高斯判别分析的原理，先以二元为例说明参数对于概率分布的影响。</p>
 <p>协方差矩阵$\Sigma$主对角线影响高度，左图标准二元高斯分布（$\Sigma=I$），中图$\Sigma=0.6I$，右图$\Sigma=2I$。</p>
 <p><img src="/2018/05/25/mooc-吴恩达老师在斯坦福大学的机器学习公开课1——监督学习/5.png" alt=""></p>
 <p>协方差矩阵$\Sigma$其他元素会使得图形以最高点为中心沿着某个方向变旋转边被挤压：</p>

@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="在听完学习理论之后，为了应付保研，我便开始学深度学习。现在尘埃落定，终于可以继续学习经典课程啦。前置课程请移步第二部分：学习理论。 Lecture 12K-means聚类（clustering）是无监督学习的一个任务，对于给定的训练集$\left\{ x ^ { ( 1 ) } , \ldots , x ^ { ( m ) } \right\}$，需要将数据分到几个簇（clusters）。它有很多">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mooc-吴恩达老师在斯坦福大学的机器学习机器学习公开课3——无监督学习">
 <meta property="og:url" content="http://wang22ti.com/2018/07/26/mooc-吴恩达老师在斯坦福大学的机器学习机器学习公开课3——无监督学习/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="在听完学习理论之后，为了应付保研，我便开始学深度学习。现在尘埃落定，终于可以继续学习经典课程啦。前置课程请移步第二部分：学习理论。 Lecture 12K-means聚类（clustering）是无监督学习的一个任务，对于给定的训练集$\left\{ x ^ { ( 1 ) } , \ldots , x ^ { ( m ) } \right\}$，需要将数据分到几个簇（clusters）。它有很多">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-26T09:27:15.604Z">
+<meta property="og:updated_time" content="2018-11-13T06:57:41.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-吴恩达老师在斯坦福大学的机器学习机器学习公开课3——无监督学习">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="在听完学习理论之后，为了应付保研，我便开始学深度学习。现在尘埃落定，终于可以继续学习经典课程啦。前置课程请移步第二部分：学习理论。 Lecture 12K-means聚类（clustering）是无监督学习的一个任务，对于给定的训练集$\left\{ x ^ { ( 1 ) } , \ldots , x ^ { ( m ) } \right\}$，需要将数据分到几个簇（clusters）。它有很多">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  530 字
                 </span>
               
 
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -403,7 +403,26 @@
       
 
       
-        
+        <p>在听完学习理论之后，为了应付保研，我便开始学深度学习。现在尘埃落定，终于可以继续学习经典课程啦。前置课程请移步<a href="http://wang22ti.com/2018/06/05/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE2%E2%80%94%E2%80%94%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/">第二部分：学习理论</a>。</p>
+<h1 id="Lecture-12"><a href="#Lecture-12" class="headerlink" title="Lecture 12"></a>Lecture 12</h1><h2 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h2><p><code>聚类（clustering）</code>是无监督学习的一个任务，对于给定的训练集$\left\{ x ^ { ( 1 ) } , \ldots , x ^ { ( m ) } \right\}$，需要将数据分到几个<code>簇（clusters）</code>。它有很多应用，比如对于DNA的聚类、对于新闻的聚类、图片分割中的像素聚类等等。<code>k-means算法</code>是其中一个代表，其过程如下：</p>
+<ol>
+<li><p>随机初始化<code>聚类中心（cluser centroids）</code>$\mu _ { 1 } , \mu _ { 2 } , \ldots , \mu _ { k } \in \mathbb { R } ^ { n }$</p>
+</li>
+<li><p>重复直到收敛 {</p>
+<p>​    对于每一个$i$，设置</p>
+<script type="math/tex; mode=display">
+c ^ { ( i ) } : = \arg \min _ { j } \left\| x ^ { ( i ) } - \mu _ { j } \right\| ^ { 2 }</script><p>​    对于每一个$j$，设置</p>
+<script type="math/tex; mode=display">
+\mu _ { j } : = \frac { \sum _ { i = 1 } ^ { m } 1 \left\{ c ^ { ( i ) } = j \right\} x ^ { ( i ) } } { \sum _ { i = 1 } ^ { m } 1 \left\{ c ^ { ( i ) } = j \right\} }</script><p>}</p>
+</li>
+</ol>
+<h3 id="一定会收敛吗？"><a href="#一定会收敛吗？" class="headerlink" title="一定会收敛吗？"></a>一定会收敛吗？</h3><p>一定会的，实际上可以定义<code>失真函数（distortion function）</code>：</p>
+<script type="math/tex; mode=display">
+J ( c , \mu ) = \sum _ { i = 1 } ^ { m } \left\| x ^ { ( i ) } - \mu _ { c ^ { ( i ) } } \right\| ^ { 2 }</script><p>可以证明k-means算法实际上是$J$的坐标上升的过程，所以一定会收敛。不过，由于这并不是一个凸优化问题，所以并不一定收敛到全局最优解。</p>
+<h3 id="如何选择k？"><a href="#如何选择k？" class="headerlink" title="如何选择k？"></a>如何选择k？</h3><p>有一些自动选择的方法，但是吴老师在操作的时候一般会随机选择一些，因为他认为在聚类过程中“簇”这个概念是模糊的，对于同一份数据，有些人会认为是2个簇，而有些人会认为是3个或者4个。</p>
+<p>在聚类的时候，甚至会出现有些簇没有任何一个点，这时要么重新初始化，要么减少k的数量。</p>
+<h2 id="密度估计（Density-estimation）"><a href="#密度估计（Density-estimation）" class="headerlink" title="密度估计（Density estimation）"></a>密度估计（Density estimation）</h2><p>比如在航空领域对新生产的发动机进行一系列测试，得到了一堆关于各个属性的数据，比如发热、震动等等，我们希望根据已有的数据估算出概率密度函数，从而得到新的样本是正常的概率。显然，大多数情况下概率密度函数并不会是教科书上标准的形式，所以该如何对概率密度进行估计呢？这</p>
+
       
     </div>
     
@@ -496,8 +515,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -571,6 +599,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-12"><span class="nav-number">1.</span> <span class="nav-text">Lecture 12</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#K-means"><span class="nav-number">1.1.</span> <span class="nav-text">K-means</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一定会收敛吗？"><span class="nav-number">1.1.1.</span> <span class="nav-text">一定会收敛吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何选择k？"><span class="nav-number">1.1.2.</span> <span class="nav-text">如何选择k？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密度估计（Density-estimation）"><span class="nav-number">1.2.</span> <span class="nav-text">密度估计（Density estimation）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
