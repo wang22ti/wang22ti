@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/1516813084208.png">
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/Snipaste_2018-05-28_08-57-27.png">
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/1.png">
-<meta property="og:updated_time" content="2018-10-19T11:45:17.000Z">
+<meta property="og:updated_time" content="2018-11-23T15:18:57.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-hexo">
 <meta name="twitter:description" content="搭建hexo+github怀着好奇心，想看看大神们究竟在干些什么，于是跟着教程，搭出现在的博客。虽然遇到些问题，但是还算顺利，一共三个小时吧，按照步骤来就行~以下是链接：简书教程 以下是遇到的“坑”：  “localhost:4000/”本地地址需要在“Git Bash”上输入“hexo s”（服务）后才能访问，且只有自己能看到。 “uername.github.io”是托管在Github上的网站">
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,051 字
+                  2,137 字
                 </span>
               
 
@@ -448,6 +448,16 @@
 <p><code>pv</code>有一次就会计算一次，<code>uv</code>同一个用户访问多次只记录一次。</p>
 <p><img src="/2018/01/30/笔记-hexo/1516807006820.png" alt=""></p>
 <p>不过如果用本地服务器登录，站点的访问次数会很高，大概是不蒜子的服务器没有区分吧。提交到GitHub后通过互联网访问就正常了。</p>
+<p>在2018年某个时间，我发现不蒜子访问不正常了，实际上是因为换了域名，在配置文件<code>/theme/next/layout/_third-party/analytics/busuanzi-counter.swig</code>里面，将</p>
+<blockquote>
+<async src="******************">
+
+</async></blockquote>
+<p>替换为</p>
+<blockquote>
+<p><a href="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" target="_blank" rel="noopener">https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js</a></p>
+</blockquote>
+<p>即可。</p>
 <h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>嗯，这里面的坑实在大。</p>
 <p><code>多说</code>和<code>网易云</code>跟帖已经停止服务了。</p>
 <p><code>畅言</code>需要备案，很复杂的样子。``</p>
@@ -486,6 +496,9 @@
 <p><a href="https://blog.csdn.net/chwshuang/article/details/52350559" target="_blank" rel="noopener">Hexo在Github中搭建博客系统(6)异常处理</a></p>
 <p>以及hexo官网对于错误的解释</p>
 <p><a href="https://hexo.io/zh-cn/docs/troubleshooting.html" target="_blank" rel="noopener">问题解答</a></p>
+<h1 id="TypeError-pna-nextTick-is-not-a-function"><a href="#TypeError-pna-nextTick-is-not-a-function" class="headerlink" title="TypeError: pna.nextTick is not a function"></a>TypeError: pna.nextTick is not a function</h1><p>针对这个问题，只要执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm</span><br></pre></td></tr></table></figure>
+<p>就行。</p>
 
       
     </div>
@@ -615,7 +628,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -657,6 +670,20 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.wchhlbt.cn/" title="王楚涵" target="_blank">王楚涵</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -673,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建hexo-github"><span class="nav-number">1.</span> <span class="nav-text">搭建hexo+github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个性化——next"><span class="nav-number">2.</span> <span class="nav-text">个性化——next</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">2.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加分类标签"><span class="nav-number">2.2.</span> <span class="nav-text">添加分类标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计文章字数"><span class="nav-number">2.3.</span> <span class="nav-text">统计文章字数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计访问次数"><span class="nav-number">2.4.</span> <span class="nav-text">统计访问次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论系统"><span class="nav-number">2.5.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名和被百度搜索到"><span class="nav-number">2.6.</span> <span class="nav-text">绑定域名和被百度搜索到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown和tex渲染问题"><span class="nav-number">3.</span> <span class="nav-text">markdown和tex渲染问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#template-error"><span class="nav-number">4.</span> <span class="nav-text">template_error</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建hexo-github"><span class="nav-number">1.</span> <span class="nav-text">搭建hexo+github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个性化——next"><span class="nav-number">2.</span> <span class="nav-text">个性化——next</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">2.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加分类标签"><span class="nav-number">2.2.</span> <span class="nav-text">添加分类标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计文章字数"><span class="nav-number">2.3.</span> <span class="nav-text">统计文章字数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计访问次数"><span class="nav-number">2.4.</span> <span class="nav-text">统计访问次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论系统"><span class="nav-number">2.5.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名和被百度搜索到"><span class="nav-number">2.6.</span> <span class="nav-text">绑定域名和被百度搜索到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown和tex渲染问题"><span class="nav-number">3.</span> <span class="nav-text">markdown和tex渲染问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#template-error"><span class="nav-number">4.</span> <span class="nav-text">template_error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeError-pna-nextTick-is-not-a-function"><span class="nav-number">5.</span> <span class="nav-text">TypeError: pna.nextTick is not a function</span></a></li></ol></div>
             
 
           </div>
