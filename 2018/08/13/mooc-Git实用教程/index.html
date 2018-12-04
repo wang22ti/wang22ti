@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://wang22ti.com/2018/08/13/mooc-Git实用教程/9.png">
 <meta property="og:image" content="http://wang22ti.com/2018/08/13/mooc-Git实用教程/10.png">
 <meta property="og:image" content="http://wang22ti.com/2018/08/13/mooc-Git实用教程/11.png">
-<meta property="og:updated_time" content="2018-11-24T09:41:23.000Z">
+<meta property="og:updated_time" content="2018-11-25T02:32:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-Git实用教程">
 <meta name="twitter:description" content="注册GitHub有一段时间了，一直用它托管博客，觉得还是应该学一下git的原理，至少是最基础的部分吧！看的是小甲鱼的教程，哔哩哔哩和网易云课堂都有。 git是个什么玩意讲了什么是版本管理，git的历史，不做赘述 git理论基础git的安装Windows/mac去官网下载，ubuntu使用 1sudo apt-get install git git全局初始化git使用之前需要配置，让它知道主人是谁，">
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,460 字
+                  2,541 字
                 </span>
               
 
@@ -541,6 +541,19 @@
 <p>这时回到自己的主页就发现多了一个仓库，这个仓库是对于原来仓库的深拷贝，修改它并不会对原来的造成影响。如果想要对原来的项目做出贡献，需要<code>git clone</code>自己页面上的仓库，然后本地修改一波并<code>git push</code>到GitHub。最后，就可以在复制的仓库中点击下面的按钮<code>New pull request</code>并完成相关操作发起合并请求啦</p>
 <p><img src="/2018/08/13/mooc-Git实用教程/11.png" alt=""></p>
 <p>如果对方同意了，就可以在原始项目中看到刚刚提交的内容了。</p>
+<h1 id="error-unable-to-create-file-Invalid-argument"><a href="#error-unable-to-create-file-Invalid-argument" class="headerlink" title="error: unable to create file: Invalid argument"></a>error: unable to create file: Invalid argument</h1><p>一下引用自<a href="http://school1024.com/git-error-unable-to-create-file-jdbuy-20180807-jpeg-invalid-argument.html" target="_blank" rel="noopener">Git 错误：error: unable to create file jdbuy-2018:08:07.jpeg: Invalid argument</a></p>
+<p>导致这个异常的原因是Windows文件系统不允许文件名使用冒号<code>:</code>，同时以下这些也不允许使用</p>
+<ul>
+<li>&lt; (less than)</li>
+<li>> (greater than)</li>
+<li>: (colon)</li>
+<li>” (double quote)</li>
+<li>/ (forward slash)</li>
+<li>\ (backslash)</li>
+<li>| (vertical bar or pipe)</li>
+<li>? (question mark)</li>
+<li>* (asterisk)</li>
+</ul>
 
       
     </div>
@@ -742,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git是个什么玩意"><span class="nav-number">1.</span> <span class="nav-text">git是个什么玩意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git理论基础"><span class="nav-number">2.</span> <span class="nav-text">git理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装"><span class="nav-number">2.1.</span> <span class="nav-text">git的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git全局初始化"><span class="nav-number">2.2.</span> <span class="nav-text">git全局初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git记录的是什么"><span class="nav-number">2.3.</span> <span class="nav-text">git记录的是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git局部初始化"><span class="nav-number">2.4.</span> <span class="nav-text">git局部初始化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看工作状态和历史提交"><span class="nav-number">3.</span> <span class="nav-text">查看工作状态和历史提交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回到过去"><span class="nav-number">4.</span> <span class="nav-text">回到过去</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本对比"><span class="nav-number">5.</span> <span class="nav-text">版本对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改最后一次提交、删除重命名文件"><span class="nav-number">6.</span> <span class="nav-text">修改最后一次提交、删除重命名文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建和切换分支"><span class="nav-number">7.</span> <span class="nav-text">创建和切换分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并和删除分支"><span class="nav-number">8.</span> <span class="nav-text">合并和删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名分支与checkout"><span class="nav-number">9.</span> <span class="nav-text">匿名分支与checkout</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建GitHub账户"><span class="nav-number">10.</span> <span class="nav-text">创建GitHub账户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fork-amp-pull-requests"><span class="nav-number">11.</span> <span class="nav-text">fork&amp;pull requests</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git是个什么玩意"><span class="nav-number">1.</span> <span class="nav-text">git是个什么玩意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git理论基础"><span class="nav-number">2.</span> <span class="nav-text">git理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git的安装"><span class="nav-number">2.1.</span> <span class="nav-text">git的安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git全局初始化"><span class="nav-number">2.2.</span> <span class="nav-text">git全局初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git记录的是什么"><span class="nav-number">2.3.</span> <span class="nav-text">git记录的是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git局部初始化"><span class="nav-number">2.4.</span> <span class="nav-text">git局部初始化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看工作状态和历史提交"><span class="nav-number">3.</span> <span class="nav-text">查看工作状态和历史提交</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回到过去"><span class="nav-number">4.</span> <span class="nav-text">回到过去</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本对比"><span class="nav-number">5.</span> <span class="nav-text">版本对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改最后一次提交、删除重命名文件"><span class="nav-number">6.</span> <span class="nav-text">修改最后一次提交、删除重命名文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建和切换分支"><span class="nav-number">7.</span> <span class="nav-text">创建和切换分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并和删除分支"><span class="nav-number">8.</span> <span class="nav-text">合并和删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名分支与checkout"><span class="nav-number">9.</span> <span class="nav-text">匿名分支与checkout</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建GitHub账户"><span class="nav-number">10.</span> <span class="nav-text">创建GitHub账户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fork-amp-pull-requests"><span class="nav-number">11.</span> <span class="nav-text">fork&amp;pull requests</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#error-unable-to-create-file-Invalid-argument"><span class="nav-number">12.</span> <span class="nav-text">error: unable to create file: Invalid argument</span></a></li></ol></div>
             
 
           </div>
