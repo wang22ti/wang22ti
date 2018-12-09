@@ -91,9 +91,12 @@
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/1516807006820.png">
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/1516812886623.png">
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/1516813084208.png">
+<meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/Snipaste_2018-12-09_22-46-14.png">
+<meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/Snipaste_2018-12-09_22-47-34.png">
+<meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/Snipaste_2018-12-09_22-49-14.png">
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/Snipaste_2018-05-28_08-57-27.png">
 <meta property="og:image" content="http://wang22ti.com/2018/01/30/笔记-hexo/1.png">
-<meta property="og:updated_time" content="2018-11-23T15:18:57.000Z">
+<meta property="og:updated_time" content="2018-12-09T14:49:28.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-hexo">
 <meta name="twitter:description" content="搭建hexo+github怀着好奇心，想看看大神们究竟在干些什么，于是跟着教程，搭出现在的博客。虽然遇到些问题，但是还算顺利，一共三个小时吧，按照步骤来就行~以下是链接：简书教程 以下是遇到的“坑”：  “localhost:4000/”本地地址需要在“Git Bash”上输入“hexo s”（服务）后才能访问，且只有自己能看到。 “uername.github.io”是托管在Github上的网站">
@@ -372,7 +375,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,137 字
+                  2,244 字
                 </span>
               
 
@@ -477,7 +480,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Support for LiveRe comments system.</span><br><span class="line"># You can get your uid from https://livere.com/insight/myCode (General web site)</span><br><span class="line">livere_uid: *****************</span><br></pre></td></tr></table></figure>
 <p>还可以再登录官网管理评论，就不赘述了，要关掉其他的评论插件。</p>
 <h2 id="绑定域名和被百度搜索到"><a href="#绑定域名和被百度搜索到" class="headerlink" title="绑定域名和被百度搜索到"></a>绑定域名和被百度搜索到</h2><p>!@#$%^&amp;*()_+</p>
-<h1 id="markdown和tex渲染问题"><a href="#markdown和tex渲染问题" class="headerlink" title="markdown和tex渲染问题"></a>markdown和tex渲染问题</h1><p>hexo博客的正文都是使用markdown的格式存储的，</p>
+<h2 id="添加并修改打赏系统"><a href="#添加并修改打赏系统" class="headerlink" title="添加并修改打赏系统"></a>添加并修改打赏系统</h2><p>基础的添加见<a href="http://theme-next.iissnan.com/theme-settings.html#author-sites" target="_blank" rel="noopener">官方教程</a>，图片添加的路径是<code>themes\next\source\images</code>，如何修改为自己想要的字呢？找到文件<code>themes\next\layout\_macro\reward.swig</code>，讲第4行替换掉如下：</p>
+<p><img src="/2018/01/30/笔记-hexo/Snipaste_2018-12-09_22-46-14.png" alt=""></p>
+<p>但是直接预览会发现：</p>
+<p><img src="/2018/01/30/笔记-hexo/Snipaste_2018-12-09_22-47-34.png" alt=""></p>
+<p>哇，太尴尬了，还好只要修改文件<code>themes\next\source\css\_common\components\post\post-reward.styl</code>中<code>#rewardButton span</code>的样式就行了：</p>
+<p><img src="/2018/01/30/笔记-hexo/Snipaste_2018-12-09_22-49-14.png" alt=""></p>
+<h1 id="问题合集"><a href="#问题合集" class="headerlink" title="问题合集"></a>问题合集</h1><h2 id="markdown和tex渲染问题"><a href="#markdown和tex渲染问题" class="headerlink" title="markdown和tex渲染问题"></a>markdown和tex渲染问题</h2><p>hexo博客的正文都是使用markdown的格式存储的，</p>
 <p>默认使用<code>hexo-renderer-marked</code>将markdown转为html（渲染）。</p>
 <p>但是由于markdown不是同一的标准，所以使用编辑器预览的效果和hexo实际渲染的效果并完全相同。</p>
 <p>比如hexo要求<code>#</code>之后必须有空格才能渲染为标题。</p>
@@ -485,7 +494,7 @@
 <p>不能换行，有些符号无法渲染</p>
 <p>还好有大神解决了问题<a href="https://www.jianshu.com/p/7ab21c7f0674" target="_blank" rel="noopener">在Hexo中渲染MathJax数学公式</a></p>
 <p>改用<code>hexo-renderer-kramed</code>渲染即可。</p>
-<h1 id="template-error"><a href="#template-error" class="headerlink" title="template_error"></a>template_error</h1><p>学了一晚上吴恩达老师的机器学习，结果一早起来post却遇到了问题<code>Template render error: expected variable end</code>：</p>
+<h2 id="template-error"><a href="#template-error" class="headerlink" title="template_error"></a>template_error</h2><p>学了一晚上吴恩达老师的机器学习，结果一早起来post却遇到了问题<code>Template render error: expected variable end</code>：</p>
 <p><img src="/2018/01/30/笔记-hexo/Snipaste_2018-05-28_08-57-27.png" alt=""></p>
 <p>啊，这是什么鬼啊！我什么都没动啊！</p>
 <p>初步搜索发现是特殊符号的问题，比如<a href="https://www.jianshu.com/p/738ebe02029b" target="_blank" rel="noopener">这位兄弟</a>就提到是特殊符号没有被转义的问题，然而我搜了半天并没有找到一样的情况。最终手动用二分法查找，终于找到了万恶之源：</p>
@@ -496,7 +505,7 @@
 <p><a href="https://blog.csdn.net/chwshuang/article/details/52350559" target="_blank" rel="noopener">Hexo在Github中搭建博客系统(6)异常处理</a></p>
 <p>以及hexo官网对于错误的解释</p>
 <p><a href="https://hexo.io/zh-cn/docs/troubleshooting.html" target="_blank" rel="noopener">问题解答</a></p>
-<h1 id="TypeError-pna-nextTick-is-not-a-function"><a href="#TypeError-pna-nextTick-is-not-a-function" class="headerlink" title="TypeError: pna.nextTick is not a function"></a>TypeError: pna.nextTick is not a function</h1><p>针对这个问题，只要执行</p>
+<h2 id="TypeError-pna-nextTick-is-not-a-function"><a href="#TypeError-pna-nextTick-is-not-a-function" class="headerlink" title="TypeError: pna.nextTick is not a function"></a>TypeError: pna.nextTick is not a function</h2><p>针对这个问题，只要执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npm</span><br></pre></td></tr></table></figure>
 <p>就行。</p>
 
@@ -508,6 +517,35 @@
 
     
 
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>觉得好的话，就给点零花钱嘛~</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wang22ti 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wang22ti 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
     
 
     
@@ -678,6 +716,10 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
+                    <a href="https://qmhuang-ucas.github.io/" title="黄庆明教授" target="_blank">黄庆明教授</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
                     <a href="https://www.wchhlbt.cn/" title="王楚涵" target="_blank">王楚涵</a>
                   </li>
                 
@@ -700,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建hexo-github"><span class="nav-number">1.</span> <span class="nav-text">搭建hexo+github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个性化——next"><span class="nav-number">2.</span> <span class="nav-text">个性化——next</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">2.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加分类标签"><span class="nav-number">2.2.</span> <span class="nav-text">添加分类标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计文章字数"><span class="nav-number">2.3.</span> <span class="nav-text">统计文章字数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计访问次数"><span class="nav-number">2.4.</span> <span class="nav-text">统计访问次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论系统"><span class="nav-number">2.5.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名和被百度搜索到"><span class="nav-number">2.6.</span> <span class="nav-text">绑定域名和被百度搜索到</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown和tex渲染问题"><span class="nav-number">3.</span> <span class="nav-text">markdown和tex渲染问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#template-error"><span class="nav-number">4.</span> <span class="nav-text">template_error</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeError-pna-nextTick-is-not-a-function"><span class="nav-number">5.</span> <span class="nav-text">TypeError: pna.nextTick is not a function</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建hexo-github"><span class="nav-number">1.</span> <span class="nav-text">搭建hexo+github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#个性化——next"><span class="nav-number">2.</span> <span class="nav-text">个性化——next</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">2.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加分类标签"><span class="nav-number">2.2.</span> <span class="nav-text">添加分类标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计文章字数"><span class="nav-number">2.3.</span> <span class="nav-text">统计文章字数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计访问次数"><span class="nav-number">2.4.</span> <span class="nav-text">统计访问次数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评论系统"><span class="nav-number">2.5.</span> <span class="nav-text">评论系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名和被百度搜索到"><span class="nav-number">2.6.</span> <span class="nav-text">绑定域名和被百度搜索到</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加并修改打赏系统"><span class="nav-number">2.7.</span> <span class="nav-text">添加并修改打赏系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题合集"><span class="nav-number">3.</span> <span class="nav-text">问题合集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown和tex渲染问题"><span class="nav-number">3.1.</span> <span class="nav-text">markdown和tex渲染问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#template-error"><span class="nav-number">3.2.</span> <span class="nav-text">template_error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeError-pna-nextTick-is-not-a-function"><span class="nav-number">3.3.</span> <span class="nav-text">TypeError: pna.nextTick is not a function</span></a></li></ol></li></ol></div>
             
 
           </div>

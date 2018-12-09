@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2018/01/30/%E7%AC%94%E8%AE%B0-hexo/</loc>
+    <lastmod>2018-12-09T14:49:28.649Z</lastmod>
+    <data>
+        <display>
+        <title>笔记-hexo</title>
+        <pubTime>2018-01-30T13:32:28.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="hexo" url="http://wang22ti.com/categories/hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2018/12/04/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/</loc>
     <lastmod>2018-12-09T14:10:08.826Z</lastmod>
     <data>
@@ -105,24 +123,6 @@
            
              
               <breadCrumb title="latex" url="http://wang22ti.com/categories/latex/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2018/01/30/%E7%AC%94%E8%AE%B0-hexo/</loc>
-    <lastmod>2018-11-23T15:18:57.000Z</lastmod>
-    <data>
-        <display>
-        <title>笔记-hexo</title>
-        <pubTime>2018-01-30T13:32:28.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="hexo" url="http://wang22ti.com/categories/hexo/"/>
           
         </display>
     </data>
