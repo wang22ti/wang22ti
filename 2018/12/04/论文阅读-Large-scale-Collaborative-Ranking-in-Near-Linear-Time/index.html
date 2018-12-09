@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="王子泰" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="参考文献两篇文献都是关于Collaborative Ranking，第一篇偏重数学推导，是第二篇的基础。 Preference Completion: Large-scale Collaborative Ranking from Pairwise Comparisons Large-scale Collaborative Ranking in Near-Linear Time 关键问题 研究对象？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读-Large_scale_Collaborative_Ranking_in_Near-Linear_Time">
+<meta property="og:url" content="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/index.html">
+<meta property="og:site_name" content="王子泰">
+<meta property="og:description" content="参考文献两篇文献都是关于Collaborative Ranking，第一篇偏重数学推导，是第二篇的基础。 Preference Completion: Large-scale Collaborative Ranking from Pairwise Comparisons Large-scale Collaborative Ranking in Near-Linear Time 关键问题 研究对象？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/1.png">
+<meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/2.png">
+<meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/3.png">
+<meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/4.png">
+<meta property="og:updated_time" content="2018-12-06T11:49:28.933Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="论文阅读-Large_scale_Collaborative_Ranking_in_Near-Linear_Time">
+<meta name="twitter:description" content="参考文献两篇文献都是关于Collaborative Ranking，第一篇偏重数学推导，是第二篇的基础。 Preference Completion: Large-scale Collaborative Ranking from Pairwise Comparisons Large-scale Collaborative Ranking in Near-Linear Time 关键问题 研究对象？">
+<meta name="twitter:image" content="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/"/>
+
+
+
+
+
+  <title>论文阅读-Large_scale_Collaborative_Ranking_in_Near-Linear_Time | 王子泰</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王子泰</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">哭也欢乐，悲也潇洒</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wang22ti.com/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang22ti">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王子泰">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">论文阅读-Large_scale_Collaborative_Ranking_in_Near-Linear_Time</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-04T19:47:16+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐算法/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">阅读次数:</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  684 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>两篇文献都是关于Collaborative Ranking，第一篇偏重数学推导，是第二篇的基础。</p>
+<p><a href="https://arxiv.org/pdf/1507.04457.pdf" target="_blank" rel="noopener">Preference Completion: Large-scale Collaborative Ranking from Pairwise Comparisons</a></p>
+<p><a href="http://www.stat.ucdavis.edu/~chohsieh/rf/KDD_Collaborative_Ranking.pdf" target="_blank" rel="noopener">Large-scale Collaborative Ranking in Near-Linear Time</a></p>
+<h1 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h1><ol>
+<li><p>研究对象？</p>
+<p>输入为用户$i$对于物品$j$和物品$k$的偏好程度</p>
+<script type="math/tex; mode=display">
+Y _ { i j k } = \left\{ \begin{array} { c l } { 1 , } & { \text { user i prefers item j better than item } k } \\ { - 1 , } & { \text { user i prefers item } k \text { better than item } j } \end{array} \right.</script><p>和CF不一样，CR输出的是用户$i$对物品$j$的偏好程度的矩阵，即</p>
+<script type="math/tex; mode=display">
+X \in R ^ { d _ { 1 } \times d _ { 2 } }</script><p>其中$d_1$和$d_2$分别为用户数量和物品数量。</p>
+</li>
+<li><p>最直接的方法应该怎么做？为什么不这么做？怎么处理？</p>
+<p>可以优化下面的损失函数：</p>
+<script type="math/tex; mode=display">
+\min _ { X } \sum _ { ( i , j , k ) \in \Omega } \mathcal { L } \left( Y _ { i j k } \left( X _ { i j } - X _ { i k } \right) \right) + \lambda \| X \| _ { * }</script><p>其中$\mathcal{L}$是损失函数，常常用<a href="https://blog.csdn.net/u010976453/article/details/78488279" target="_blank" rel="noopener">$\mathcal{L}_2$-hinge loss</a>；而$| X | _ { * }$是<a href="https://en.wikipedia.org/wiki/Matrix_norm" target="_blank" rel="noopener">核正则化项</a>，其作用为保证$X$是低<a href="https://www.zhihu.com/question/21605094" target="_blank" rel="noopener">秩</a>的，这样假设的理由是</p>
+<blockquote>
+<p>We propose (as have others) that $X$ is low-rank or close to low-rank, the intuition being that each user bases their preferences on a small set of features that are common among all the items.</p>
+</blockquote>
+<p>这是个很好的凸优化问题，但是由于在大规模问题中算法复杂度过大，所以利用低秩这条假设，令</p>
+<script type="math/tex; mode=display">
+X = U V ^ { T },U\in\R^{d_1\times r},V\in\R^{r\times d_2}</script><p>其中$r$为矩阵的秩，则损失函数转化为</p>
+<script type="math/tex; mode=display">
+\min _ { U , V } \sum _ { ( i , j , k ) \in \Omega } \mathcal { L } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) + \frac { \lambda } { 2 } \left( \| U \| _ { F } ^ { 2 } + \| V \| _ { F } ^ { 2 } \right)</script></li>
+</ol>
+<ol>
+<li><p>怎么优化上述的非凸问题？</p>
+<p>总体思路是坐标下降法，在固定一个参数的情况下优化另一个。</p>
+<p><img src="/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/1.png" alt=""></p>
+<p>而算法2如下图所示</p>
+<p><img src="/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/2.png" alt=""></p>
+<p>其中</p>
+<script type="math/tex; mode=display">
+V = \underset { V \in \mathbb { R } ^ { r \times d _ { 2 } } } { \operatorname { argmin } } \left\{ \frac { \lambda } { 2 } \| V \| _ { F } ^ { 2 } + \sum _ { ( i , j , k ) \in \Omega } \mathcal { L } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) \right\} : = f ( V )\\
+U = \underset { U \in \mathbb { R } ^ { r \times d _ { 2 } } } { \operatorname { argmin } } \left\{ \frac { \lambda } { 2 } \| U \| _ { F } ^ { 2 } + \sum _ { i = 1 } ^ { d _ { 1 } } \sum _ { ( j , k ) \in \overline { d } _ { 2 } ( i ) } \mathcal { L } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) \right\}</script><p>由于假设$U$相对独立，所以有</p>
+<script type="math/tex; mode=display">
+u _ { i } = \underset { u \in \mathbb { R } ^ { r } } { \operatorname { argmin } } \frac { \lambda } { 2 } \| u \| _ { 2 } ^ { 2 } + \sum _ { ( j , k ) \in \overline { d } _ { 2 } ( i ) } \mathcal { L } \left( Y _ { i j k } \cdot u ^ { T } \left( v _ { j } - v _ { k } \right) \right) : = h ( u )</script><p>即在并行计算的情况下优化$U$并不困难，关键是优化$V$。</p>
+</li>
+<li><p>怎么理解算法2？</p>
+<p><code>牛顿方法（Newton&#39;s Method）</code>是求解函数零点的一种方法，具体参加<a href="http://wang22ti.com/2018/05/25/mooc-%E5%90%B4%E6%81%A9%E8%BE%BE%E8%80%81%E5%B8%88%E5%9C%A8%E6%96%AF%E5%9D%A6%E7%A6%8F%E5%A4%A7%E5%AD%A6%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%AC%E5%BC%80%E8%AF%BE1%E2%80%94%E2%80%94%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">我的博客</a>，在优化问题中的表达式为：</p>
+<script type="math/tex; mode=display">
+x \leftarrow x - \left( \nabla ^ { 2 } f ( x ) \right) ^ { - 1 } \nabla f ( x )</script><p>然而在大规模优化问题中，海森矩阵$H,\nabla ^ { 2 } f ( x )$的逆矩阵的求解过于复杂，因此使将两者乘积的值记为$a$，转而求解方程</p>
+<script type="math/tex; mode=display">
+\nabla ^ { 2 } f ( x ) a = \nabla f ( x )</script><p>的近似解，求解方法就是<code>共轭梯度法（Linear Conjugate Gradient）</code>，复杂的过程在算法2中有，也可以参照<a href="https://en.wikipedia.org/wiki/Conjugate_gradient_method" target="_blank" rel="noopener">维基百科</a>或<a href="https://keson96.github.io/2016/11/27/2016-11-27-Conjugate-Gradient-Method/" target="_blank" rel="noopener">大神的博客</a>，其基本思想是将方程组求解问题转化为优化问题：</p>
+<script type="math/tex; mode=display">
+A x = b \Leftrightarrow \min \phi ( x ) = \frac { 1 } { 2 } x ^ { T } A x - b ^ { T } x</script><p>所以现在的问题是——</p>
+</li>
+<li><p>如何快速求解海森矩阵和梯度矩阵？</p>
+<p>以优化$V$为例，先写出梯度的表达式为</p>
+<script type="math/tex; mode=display">
+\nabla f ( V ) = \sum _ { i = 1 } ^ { d _ { 1 } } \sum _ { ( j , k ) \in \Omega _ { i } } \mathcal { L } ^ { \prime } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) \left( u _ { i } e _ { j } ^ { T } - u _ { i } e _ { k } ^ { T } \right) Y _ { i j k } + \lambda V</script><p>注意到其中有大量的矩阵计算，且除了$u_ie^T$外均是常熟，所以上式部分可以采用如下的表达形式：</p>
+<script type="math/tex; mode=display">
+\sum _ { ( j , k ) \in \Omega _ { i } } \mathcal { L } ^ { \prime } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) \left( u _ { i } e _ { j } ^ { T } - u _ { i } e _ { k } ^ { T } \right) Y _ { i j k } = \sum _ { j \in \overline { d } _ { 2 } ( i ) } t _ { j } u _ { i } e _ { j } ^ { T }</script><p>即提前算好所有的矩阵乘法，然后计算每一个$(i, j)$的时候直接加到对应的$u_i$即可，如下图所示</p>
+<p><img src="/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/3.png" alt=""></p>
+<p>对于海森矩阵的求解，也有类似的思路，先写出表达式：</p>
+<script type="math/tex; mode=display">
+\begin{array} { l } { \nabla _ { j , k } ^ { 2 } f ( V ) = } \\ {  \sum _ { i : ( j , k ) \in \overline { d } _ { 2 } ( i ) } \mathcal { L } ^ { \prime \prime } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) \left( - u _ { i } u _ { i } ^ { T } \right)  } & { \text { if } j \neq k } \\ { \sum _ { i : j \in \overline { d } _ { 2 } ( i ) } \sum _ { k \in \overline { d } _ { 2 } ( i ) , k \neq j } \mathcal { L } ^ { \prime \prime } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) u _ { i } u _ { i } ^ { T } + \lambda I _ { r \times r } } & { \text { if } j = k } \end{array}</script><p>进一步有</p>
+<script type="math/tex; mode=display">
+\begin{array} { l } { H \cdot a = \sum _ { j } E _ { j } ( H \cdot a ) _ { j } } \\ { = \lambda a + \sum _ { i } \sum _ { j \in \overline { d } _ { 2 } ( i ) } E _ { j } u _ { i } \sum _ { k \in \tilde { d } _ { 2 } ( i ), k \neq j } \mathcal { L } ^ { \prime \prime } \left( Y _ { i j k } \cdot u _ { i } ^ { T } \left( v _ { j } - v _ { k } \right) \right) \left( u _ { i } ^ { T } a _ { j } - u _ { i } ^ { T } a _ { k } \right) } \end{array}</script><p>类似有：</p>
+<p><img src="/2018/12/04/论文阅读-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/4.png" alt=""></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/11/论文阅读-Neural-Collaborative-Filtering/" rel="next" title="论文阅读-Neural_Collaborative_Filtering">
+                <i class="fa fa-chevron-left"></i> 论文阅读-Neural_Collaborative_Filtering
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/" rel="prev" title="论文阅读-IRGAN_A_Minimax_Game_for_Unifying_Generative_and_Discriminative_Information_Retrieval_Models">
+                论文阅读-IRGAN_A_Minimax_Game_for_Unifying_Generative_and_Discriminative_Information_Retrieval_Models <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzU0NC8xMDEwMA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wang22ti</p>
+              <p class="site-description motion-element" itemprop="description">学习，日记，杂谈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wang22ti" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:wang22ti@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.wchhlbt.cn/" title="王楚涵" target="_blank">王楚涵</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键问题"><span class="nav-number">2.</span> <span class="nav-text">关键问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wang22ti</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+<span>
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</span>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">访问人数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">访问次数:</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

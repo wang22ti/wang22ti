@@ -81,18 +81,24 @@
 
 
 
-<meta name="description" content="循环序列模型什么是序列数据 符号说明用$T_x^{(i)}$表示第$i$个样本的长度，$x^{(i)}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。 循环网络模型为什么不使用标准的神经网络呢？因为  不同序列的长度不一定相同，即便使用填充的方法，这显然不是一个好的编码方法 无法共享在不同位置提取的特征，参数数量">
+<meta name="description" content="循环序列模型什么是序列数据 符号说明用$T_x^{(i)}$表示第$i$个输入样本的长度，用$T_y^{(i)}$表示第$i$个输出样本的长度，$x^{(i)}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。对于没出现过的单词，需要设置一个统一的标记。 循环网络模型结构为什么不使用标准的全连接神经网络呢？因为">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mooc-深度学习工程师-5-序列模型">
 <meta property="og:url" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="循环序列模型什么是序列数据 符号说明用$T_x^{(i)}$表示第$i$个样本的长度，$x^{(i)}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。 循环网络模型为什么不使用标准的神经网络呢？因为  不同序列的长度不一定相同，即便使用填充的方法，这显然不是一个好的编码方法 无法共享在不同位置提取的特征，参数数量">
+<meta property="og:description" content="循环序列模型什么是序列数据 符号说明用$T_x^{(i)}$表示第$i$个输入样本的长度，用$T_y^{(i)}$表示第$i$个输出样本的长度，$x^{(i)}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。对于没出现过的单词，需要设置一个统一的标记。 循环网络模型结构为什么不使用标准的全连接神经网络呢？因为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/1.png">
-<meta property="og:updated_time" content="2018-08-25T07:43:51.411Z">
+<meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/2.png">
+<meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/3.png">
+<meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/4.png">
+<meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/5.png">
+<meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/6.png">
+<meta property="og:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/7.png">
+<meta property="og:updated_time" content="2018-12-05T09:39:29.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mooc-深度学习工程师-5-序列模型">
-<meta name="twitter:description" content="循环序列模型什么是序列数据 符号说明用$T_x^{(i)}$表示第$i$个样本的长度，$x^{(i)}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。 循环网络模型为什么不使用标准的神经网络呢？因为  不同序列的长度不一定相同，即便使用填充的方法，这显然不是一个好的编码方法 无法共享在不同位置提取的特征，参数数量">
+<meta name="twitter:description" content="循环序列模型什么是序列数据 符号说明用$T_x^{(i)}$表示第$i$个输入样本的长度，用$T_y^{(i)}$表示第$i$个输出样本的长度，$x^{(i)}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。对于没出现过的单词，需要设置一个统一的标记。 循环网络模型结构为什么不使用标准的全连接神经网络呢？因为">
 <meta name="twitter:image" content="http://wang22ti.com/2018/08/12/mooc-深度学习工程师-5-序列模型/1.png">
 
 
@@ -368,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  171 字
+                  839 字
                 </span>
               
 
@@ -384,7 +390,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -406,13 +412,35 @@
 
       
         <h1 id="循环序列模型"><a href="#循环序列模型" class="headerlink" title="循环序列模型"></a>循环序列模型</h1><h2 id="什么是序列数据"><a href="#什么是序列数据" class="headerlink" title="什么是序列数据"></a>什么是序列数据</h2><p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/1.png" alt=""></p>
-<h2 id="符号说明"><a href="#符号说明" class="headerlink" title="符号说明"></a>符号说明</h2><p>用$T_x^{(i)}$表示第$i$个样本的长度，$x^{(i)<t>}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。</t></p>
-<h2 id="循环网络模型"><a href="#循环网络模型" class="headerlink" title="循环网络模型"></a>循环网络模型</h2><p>为什么不使用标准的神经网络呢？因为</p>
+<h2 id="符号说明"><a href="#符号说明" class="headerlink" title="符号说明"></a>符号说明</h2><p>用$T_x^{(i)}$表示第$i$个输入样本的长度，用$T_y^{(i)}$表示第$i$个输出样本的长度，$x^{(i)<t>}$表示第$i$个序列中的第$t$个单元。对于一个句子，首先用所有的单词制作一个一维词典，之后对于每一个词采用one-hot的方式编码。对于没出现过的单词，需要设置一个统一的标记。</t></p>
+<h2 id="循环网络模型结构"><a href="#循环网络模型结构" class="headerlink" title="循环网络模型结构"></a>循环网络模型结构</h2><p>为什么不使用标准的全连接神经网络呢？因为</p>
 <ol>
-<li>不同序列的长度不一定相同，即便使用填充的方法，这显然不是一个好的编码方法</li>
+<li>在不同的样本中输入输出的长度可能不同，即便使用填充的方法，这显然不是一个好的编码方法</li>
 <li>无法共享在不同位置提取的特征，参数数量过多</li>
 </ol>
-<p>RNN解决了这个问题，</p>
+<p>RNN解决了这个问题，其结构如下图所示</p>
+<p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/2.png" alt=""></p>
+<p>其中的网络是重复使用的，也可以画成一个带有循环输入输出的形式。标准的RNN只使用了上一次输出的信息，然而很多情况下还会用到后一个输出的信息，可以使用<code>双向循环神经网络（bidirectional RNN）</code>来解决这个问题。不过我们先得学会这个简单的RNN的数学表达：</p>
+<script type="math/tex; mode=display">
+\begin{array} { l } { a ^ { < t > } = g_1 \left( W _ { a a } a ^ { < t - 1 > } + W _ { a x } x ^ { < t > } + b _ { a } \right) } \\ { \hat { y } ^ { < t > } = g_2 \left( W _ { y a } a ^ { < t > } + b _ { y } \right) } \end{array}</script><p>其中参数$W$的第一个下标表示输出参数，第二个参数表示与之计算的参数，$g_1$往往是tanh函数，$g_2$往往是sigmoid函数。当然，上述表达式可以进一步简化：</p>
+<script type="math/tex; mode=display">
+\begin{array} { l } { a ^ { < t > } = g_1 \left( W _ { a } [a ^ { < t - 1 > },  x ^ { < t > }] + b _ { a } \right) } \\ { \hat { y } ^ { < t > } = g_2 \left( W _ { y } a ^ { < t > } + b _ { y } \right) } \end{array}</script><h2 id="损失函数和反向传播"><a href="#损失函数和反向传播" class="headerlink" title="损失函数和反向传播"></a>损失函数和反向传播</h2><p>首先先定义一个损失函数，比如在判断命名实体过程中，会使用如下的element-wise损失：</p>
+<script type="math/tex; mode=display">
+\mathcal { L } ^ { < t > } \left( \hat { y } ^ { < t > } , y ^ { < t > } \right) = - y ^{<t>}\log{\hat{y}^{<t>}}- (1-y ^{<t>})\log{(1-\hat{y}^{<t>})} \\
+\mathcal{L} (\hat{y}, y)=\sum_{t=1}^{T_x}\mathcal { L } ^ { < t > } \left( \hat { y } ^ { < t > } , y ^ { < t > } \right)</script><p>之后和前向传播相反，反向传播逆着”时间$t$”进行。由于现有的框架完全完成了这个过程，所以在此不做赘述。</p>
+<h2 id="各种结构的循环神经网络"><a href="#各种结构的循环神经网络" class="headerlink" title="各种结构的循环神经网络"></a>各种结构的循环神经网络</h2><p>RNN中输入和输出的长度并不一定相同，上面的可以认为是<code>many-to-many</code>的例子，而情感分类问题就是<code>many-to-one</code>的情况（<code>one-to-one</code>就是标准的神经网络）：</p>
+<p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/3.png" alt=""></p>
+<p>在音乐生成问题中就是<code>one-to-many</code>：</p>
+<p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/4.png" alt=""></p>
+<p>还有一种<code>many-to-many</code>的情况，比如在机器翻译中输入输出的长度并不一样：</p>
+<p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/5.png" alt=""></p>
+<p>它可以被认为是一个编码器和一个解码器组成。还有一种<code>基于注意力（attention base）</code>的结构，但是现在还不好说明，在之后会讲到。综上，有如下的几种结构：</p>
+<p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/6.png" alt=""></p>
+<h2 id="语言模型和序列生成"><a href="#语言模型和序列生成" class="headerlink" title="语言模型和序列生成"></a>语言模型和序列生成</h2><p>序列生成的关键是计算一定条件下下一个单词出现的概率。如果已经有了巨大的语料库，首先要将每一个句子符号化（tokenize）——字典中出现的单词用one-hot编码，没出现的单词用<code>UWK</code>的符号标记，句子的结尾用<code>EOS</code>标记。然后通过如下图所示的网络生成一个句子：</p>
+<p><img src="/2018/08/12/mooc-深度学习工程师-5-序列模型/7.png" alt=""></p>
+<p>其中每一个方框的作用是通过softmax计算下一个词是训练样本中那个词的条件概率。损失函数的形式为：</p>
+<script type="math/tex; mode=display">
+\begin{array} { l } { \mathcal { L } \left( \hat { y } ^ { < t > } , y ^ { < t > } \right) = - \sum _ { i } y _ { i } ^ { < t > } \log \hat { y } _ { i } ^ { < t > } } \\ { \mathcal { L } = \sum _ { t } \mathcal { L } ^ { < t > } \left( \hat { y } ^ { < t > } , y ^ { < t > } \right) } \end{array}</script><p>训练好了之后就可以通过这样的网络输出给定若干单词后，每个单词是下一个输出的可能性了。</p>
 
       
     </div>
@@ -531,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -614,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#循环序列模型"><span class="nav-number">1.</span> <span class="nav-text">循环序列模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是序列数据"><span class="nav-number">1.1.</span> <span class="nav-text">什么是序列数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号说明"><span class="nav-number">1.2.</span> <span class="nav-text">符号说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环网络模型"><span class="nav-number">1.3.</span> <span class="nav-text">循环网络模型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#循环序列模型"><span class="nav-number">1.</span> <span class="nav-text">循环序列模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是序列数据"><span class="nav-number">1.1.</span> <span class="nav-text">什么是序列数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#符号说明"><span class="nav-number">1.2.</span> <span class="nav-text">符号说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环网络模型结构"><span class="nav-number">1.3.</span> <span class="nav-text">循环网络模型结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数和反向传播"><span class="nav-number">1.4.</span> <span class="nav-text">损失函数和反向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各种结构的循环神经网络"><span class="nav-number">1.5.</span> <span class="nav-text">各种结构的循环神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言模型和序列生成"><span class="nav-number">1.6.</span> <span class="nav-text">语言模型和序列生成</span></a></li></ol></li></ol></div>
             
 
           </div>
