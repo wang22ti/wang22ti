@@ -2,23 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wang22ti.com/2018/01/30/%E7%AC%94%E8%AE%B0-hexo/</loc>
+    <loc>http://wang22ti.com/2018/10/08/%E3%80%8A%E8%BD%AF%E4%BB%B6%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E3%80%8B%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E9%BE%99%E8%8A%AF%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84C%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/</loc>
     
-    <lastmod>2018-12-09T14:49:28.649Z</lastmod>
+    <lastmod>2019-01-11T02:50:08.152Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wang22ti.com/2018/12/04/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/</loc>
     
-    <lastmod>2018-12-09T14:10:08.826Z</lastmod>
+    <lastmod>2018-12-14T03:19:50.625Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wang22ti.com/2018/11/08/%E5%8D%8E%E4%B8%BAMate20Pro%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
+    
+    <lastmod>2018-12-13T06:03:57.429Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/</loc>
+    
+    <lastmod>2018-12-13T04:01:30.532Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://wang22ti.com/2018/12/09/%E5%9C%A8%E6%A0%A1%E5%A4%96%E9%80%9A%E8%BF%87VPN%E4%BD%BF%E7%94%A8%E5%BE%AE%E8%BD%AF%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E6%A0%A1%E5%86%85%E4%B8%BB%E6%9C%BA%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
     
-    <lastmod>2018-12-09T12:07:03.000Z</lastmod>
+    <lastmod>2018-12-10T09:57:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wang22ti.com/2018/01/30/%E7%AC%94%E8%AE%B0-hexo/</loc>
+    
+    <lastmod>2018-12-09T14:49:28.649Z</lastmod>
     
   </url>
   
@@ -54,13 +75,6 @@
     <loc>http://wang22ti.com/2018/11/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Neural-Collaborative-Filtering/</loc>
     
     <lastmod>2018-11-22T13:06:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wang22ti.com/2018/10/08/%E3%80%8A%E8%BD%AF%E4%BB%B6%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E3%80%8B%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E9%BE%99%E8%8A%AF%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84C%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/</loc>
-    
-    <lastmod>2018-11-21T15:33:40.000Z</lastmod>
     
   </url>
   
@@ -138,20 +152,6 @@
     <loc>http://wang22ti.com/2018/09/25/%E7%AC%94%E8%AE%B0-Anaconda/</loc>
     
     <lastmod>2018-11-11T02:36:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wang22ti.com/2018/11/08/%E5%8D%8E%E4%B8%BAMate20Pro%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
-    
-    <lastmod>2018-11-08T16:54:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/</loc>
-    
-    <lastmod>2018-10-20T03:14:32.000Z</lastmod>
     
   </url>
   

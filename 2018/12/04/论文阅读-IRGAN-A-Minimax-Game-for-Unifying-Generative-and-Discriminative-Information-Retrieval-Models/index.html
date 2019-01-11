@@ -93,7 +93,8 @@
 <meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/3.png">
 <meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/4.png">
 <meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/5.png">
-<meta property="og:updated_time" content="2018-12-09T14:10:08.826Z">
+<meta property="og:image" content="http://wang22ti.com/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/6.png">
+<meta property="og:updated_time" content="2018-12-14T03:19:50.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文阅读-IRGAN_A_Minimax_Game_for_Unifying_Generative_and_Discriminative_Information_Retrieval_Models">
 <meta name="twitter:description" content="参考文献IRGAN: A Minimax Game for Unifying Generative and Discriminative Information Retrieval Models Information retrieval GAN 再读IRGAN，聊聊Code与Formulation的差异 IRGAN SIGIR paper experimental code 关键问题 研究对象？">
@@ -372,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  396 字
+                  644 字
                 </span>
               
 
@@ -388,7 +389,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -452,6 +453,12 @@
 <p><img src="/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/5.png" alt=""></p>
 </li>
 </ol>
+<h1 id="实验复现（1）"><a href="#实验复现（1）" class="headerlink" title="实验复现（1）"></a>实验复现（1）</h1><p>实验的环境很奇怪，用的是python2的语法和tensorflow，这让我这个新时代的程序员很为难，因为tensorflow是和python3兼容的。改了一圈两者不兼容的地方，一个是<code>print</code>函数的使用，一个是把<code>dict.key()</code>对象转化为<code>list</code>对象，还有一个是<code>sort</code>函数的使用，然而还是卡住了，，卡住的原因是之前训练好的生成器参数用<code>pkl</code>的格式存储的，怎么读取都出错，换了各种打开和编码方式，，，求大佬指导啊</p>
+<p><img src="/2018/12/04/论文阅读-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/6.png" alt=""></p>
+<p>目前的解决方案是去掉参数读取，把用到的地方换为<code>None</code>，然而跑了一天一夜，限于调参的水平，NDCG只跑到了二十几，，，</p>
+<h1 id="实验复现（2）"><a href="#实验复现（2）" class="headerlink" title="实验复现（2）"></a>实验复现（2）</h1><p>经过幸运的尝试,终于解决了上面的问题，代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">param = pickle.load(</span><br><span class="line">    	open(os.path.join(workdir, <span class="string">"model_dns_ori.pkl"</span>), <span class="string">'rb'</span>),</span><br><span class="line">    	encoding=<span class="string">'latin1'</span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<p>最后基本达到了论文中的结果！</p>
 
       
     </div>
@@ -660,7 +667,27 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://qmhuang-ucas.github.io/" title="黄庆明教授" target="_blank">黄庆明教授</a>
+                    <a href="https://qmhuang-ucas.github.io/" title="黄庆明" target="_blank">黄庆明</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://qianqianxu010.github.io/" title="许倩倩" target="_blank">许倩倩</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://alphaprime.github.io/" title="马柯" target="_blank">马柯</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://joshuaas.github.io/" title="杨智勇" target="_blank">杨智勇</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jiangyangby.github.io/" title="姜阳邦彦" target="_blank">姜阳邦彦</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://statusrank.xyz/" title="包世龙" target="_blank">包世龙</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
@@ -686,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键问题"><span class="nav-number">2.</span> <span class="nav-text">关键问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">1.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键问题"><span class="nav-number">2.</span> <span class="nav-text">关键问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验复现（1）"><span class="nav-number">3.</span> <span class="nav-text">实验复现（1）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验复现（2）"><span class="nav-number">4.</span> <span class="nav-text">实验复现（2）</span></a></li></ol></div>
             
 
           </div>
@@ -713,7 +740,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

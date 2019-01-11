@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="王子泰">
 <meta property="og:description" content="嗯……本来是想写一个超详细的说明的，但是发现细节实在是太多了，所以选一些重要的说一下吧。 干了啥？老师给了我们一款板子，上面有龙芯处理器。我们要做的是，在箱子外面写一个编译器，把C语言代码转化为可执行文件，然后传输到板子上，在板子上执行那个可执行文件。 整个工作分为PC和板子的通信、编译器、汇编器、链接器，我和楚涵一起完成了汇编器的部分，就是将MIPS汇编代码翻译为Linux下可执行的ELF文件。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-21T15:33:40.000Z">
+<meta property="og:updated_time" content="2019-01-11T02:50:08.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《软件综合实践》课程设计-基于龙芯处理器的C语言编译系统的设计与实现">
 <meta name="twitter:description" content="嗯……本来是想写一个超详细的说明的，但是发现细节实在是太多了，所以选一些重要的说一下吧。 干了啥？老师给了我们一款板子，上面有龙芯处理器。我们要做的是，在箱子外面写一个编译器，把C语言代码转化为可执行文件，然后传输到板子上，在板子上执行那个可执行文件。 整个工作分为PC和板子的通信、编译器、汇编器、链接器，我和楚涵一起完成了汇编器的部分，就是将MIPS汇编代码翻译为Linux下可执行的ELF文件。">
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,260 字
+                  1,266 字
                 </span>
               
 
@@ -440,7 +440,8 @@
 <li>pyelftools，python阅读elf文件的包，通过以下代码可以输出每个段的具体内容：</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> elftools.elf.elffile</span><br><span class="line"></span><br><span class="line">file_name = <span class="string">'**********'</span></span><br><span class="line">stream = open(file_name+<span class="string">'.o'</span>, <span class="string">'rb'</span>)</span><br><span class="line"></span><br><span class="line">elf_file = elftools.elf.elffile.ELFFile(stream)</span><br><span class="line">num_of_section = elf_file.num_sections()</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">1</span>, num_of_section):</span><br><span class="line">    section = elf_file.get_section(n)</span><br><span class="line">    print(n, section.name, section.header.sh_size)</span><br><span class="line">    data = section.data()</span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure>
-<h1 id="源码链接"><a href="#源码链接" class="headerlink" title="源码链接"></a>源码链接</h1>
+<h1 id="Github链接"><a href="#Github链接" class="headerlink" title="Github链接"></a>Github链接</h1><p><a href="https://github.com/wang22ti/Assembly-For-MIPS" target="_blank" rel="noopener">https://github.com/wang22ti/Assembly-For-MIPS</a></p>
+
       
     </div>
     
@@ -648,7 +649,27 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://qmhuang-ucas.github.io/" title="黄庆明教授" target="_blank">黄庆明教授</a>
+                    <a href="https://qmhuang-ucas.github.io/" title="黄庆明" target="_blank">黄庆明</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://qianqianxu010.github.io/" title="许倩倩" target="_blank">许倩倩</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://alphaprime.github.io/" title="马柯" target="_blank">马柯</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://joshuaas.github.io/" title="杨智勇" target="_blank">杨智勇</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jiangyangby.github.io/" title="姜阳邦彦" target="_blank">姜阳邦彦</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://statusrank.xyz/" title="包世龙" target="_blank">包世龙</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
@@ -674,7 +695,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#干了啥？"><span class="nav-number">1.</span> <span class="nav-text">干了啥？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键问题"><span class="nav-number">2.</span> <span class="nav-text">关键问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配套软件"><span class="nav-number">4.</span> <span class="nav-text">配套软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码链接"><span class="nav-number">5.</span> <span class="nav-text">源码链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#干了啥？"><span class="nav-number">1.</span> <span class="nav-text">干了啥？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关键问题"><span class="nav-number">2.</span> <span class="nav-text">关键问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配套软件"><span class="nav-number">4.</span> <span class="nav-text">配套软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github链接"><span class="nav-number">5.</span> <span class="nav-text">Github链接</span></a></li></ol></div>
             
 
           </div>
@@ -701,7 +722,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
