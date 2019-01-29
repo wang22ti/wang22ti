@@ -4,6 +4,60 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2019/01/29/%E5%9C%A8Ubuntu%E4%B8%8A%E7%94%A8VSCode%E9%85%8D%E7%BD%AETexlive/</loc>
+    <lastmod>2019-01-29T04:49:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>在Ubuntu上用VSCode配置Texlive</title>
+        <pubTime>2019-01-29T10:59:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="latex" url="http://wang22ti.com/categories/latex/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2019/01/29/%E8%A7%A3%E5%86%B3Ubuntu%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2019-01-29T02:48:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>解决Ubuntu根目录空间不足的方法</title>
+        <pubTime>2019-01-29T09:48:10.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="linux" url="http://wang22ti.com/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2019/01/29/Github%E6%8F%90%E4%BA%A4100M%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%A4%A7%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2019-01-29T01:47:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>Github提交100M以上的大文件</title>
+        <pubTime>2019-01-29T09:32:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2019/01/14/%E7%AC%94%E8%AE%B0-latex-4-%E5%B9%BB%E7%81%AF%E7%89%87%E6%BC%94%E7%A4%BA/</loc>
     <lastmod>2019-01-14T09:44:47.738Z</lastmod>
     <data>

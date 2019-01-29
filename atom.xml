@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wang22ti.com/"/>
-  <updated>2019-01-14T09:44:47.738Z</updated>
+  <updated>2019-01-29T04:49:35.000Z</updated>
   <id>http://wang22ti.com/</id>
   
   <author>
@@ -15,6 +15,80 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在Ubuntu上用VSCode配置Texlive</title>
+    <link href="http://wang22ti.com/2019/01/29/%E5%9C%A8Ubuntu%E4%B8%8A%E7%94%A8VSCode%E9%85%8D%E7%BD%AETexlive/"/>
+    <id>http://wang22ti.com/2019/01/29/在Ubuntu上用VSCode配置Texlive/</id>
+    <published>2019-01-29T10:59:01.000Z</published>
+    <updated>2019-01-29T04:49:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>安装和配置见博文<a href="https://blog.csdn.net/engreal/article/details/80704755" target="_blank" rel="noopener">Ubuntu下 TeX Live 2018 的安装与配置</a>和<a href="https://www.jianshu.com/p/63a6873cc6a9" target="_blank" rel="noopener">Latex编辑器-TexLive-Ubuntu16.04安装指南</a>中环境变量的配置，需要注意一下TexLive的版本修改对应的文件夹</li><li>配置VSCode插件见博文<a href="https://www.jianshu.com/p/47c456572e87" target="_blank" rel="noopener">(1)Win10+TeXLive2018+VSCode+LaTexWorkshop+支持中文</a></li></ol><p>不过为了显示我不是复读机，需要指出第2布中<code>latex-workshop.latex.clean.fileTypes</code>下面的<code>&quot;*.gz&quot;</code>最好不要删去，因为这是latex源码和pdf文件之间映射关系的文件，保留它可以通过<code>Ctrl+Alt+J</code>从源码跳转到pdf对应位置，通过<code>Ctrl+左击</code>从pdf跳转到源码，十分方便。此外，<code>latex-workshop.latex.recipes</code>下面指明了默认的编译顺序，基本只用到前两个。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;安装和配置见博文&lt;a href=&quot;https://blog.csdn.net/engreal/article/details/80704755&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ubuntu下 TeX Live 2018 的安装与配
+      
+    
+    </summary>
+    
+      <category term="latex" scheme="http://wang22ti.com/categories/latex/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解决Ubuntu根目录空间不足的方法</title>
+    <link href="http://wang22ti.com/2019/01/29/%E8%A7%A3%E5%86%B3Ubuntu%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%A9%BA%E9%97%B4%E4%B8%8D%E8%B6%B3%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://wang22ti.com/2019/01/29/解决Ubuntu根目录空间不足的方法/</id>
+    <published>2019-01-29T09:48:10.000Z</published>
+    <updated>2019-01-29T02:48:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>装系统的时候图省事，就用了默认的分区设置，结果安装了一个texlive，才十几个G就通知根目录的空间不足啦，新建文件不给，重启后连图形界面都进不去，，， 正以为要重装系统呢，结果发现还是有很好的解决方案的：</p><ol><li>执行<code>sudo apt-get install gparted</code>安装硬盘分区管理器，并执行<code>sudo gparted</code>打开软件</li><li>调整<code>\home</code>分区的大小，比如压缩100G，可以看到在最后有100G分区没有分配</li><li>挨个把根目录<code>\</code>后分区拖动到最后，即把未分配区间移动到根目录的后面</li><li>调整根目录大小，将未分配空间分配给它</li><li>点击绿色的<code>√</code>确定操作</li></ol><p>嗯，就如此简单！事实证明，在Linux上跑对内存要求比较高的程序的时候，是需要更大一些的<code>swap</code>空间的，我用的是3T的机械硬盘，机器的内存是32G，这是最后的分区：</p><ol><li>默认的<code>\boot</code>分区，大概1G</li><li>根目录<code>\</code>分区，200多G</li><li>交换<code>\swap</code>分区，150多G</li><li>主分区，剩下的都是</li></ol><p>程序快多了！</p><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/Lo_Bamboo/article/details/79443599" target="_blank" rel="noopener">ubantu利用GParted分区编辑器调整根目录分区大小</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;装系统的时候图省事，就用了默认的分区设置，结果安装了一个texlive，才十几个G就通知根目录的空间不足啦，新建文件不给，重启后连图形界面都进不去，，， 正以为要重装系统呢，结果发现还是有很好的解决方案的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;执行&lt;code&gt;sudo apt-get
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="http://wang22ti.com/categories/linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Github提交100M以上的大文件</title>
+    <link href="http://wang22ti.com/2019/01/29/Github%E6%8F%90%E4%BA%A4100M%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%A4%A7%E6%96%87%E4%BB%B6/"/>
+    <id>http://wang22ti.com/2019/01/29/Github提交100M以上的大文件/</id>
+    <published>2019-01-29T09:32:58.000Z</published>
+    <updated>2019-01-29T01:47:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：</p><ol><li>根据指导<a href="https://github.com/git-lfs/git-lfs/wiki/Installation" target="_blank" rel="noopener">安装git-lfs</a></li><li>执行指令</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find ./ -size +100M | xargs git lfs track</span><br></pre></td></tr></table></figure><p>之后就和正常提交完全一致了：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">"this is a test"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://blog.csdn.net/qq_35842626/article/details/80014325" target="_blank" rel="noopener">解决git上传单个大文件的限制，亲测有效！</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据指导&lt;a href=&quot;https:
+      
+    
+    </summary>
+    
+      <category term="git" scheme="http://wang22ti.com/categories/git/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>笔记-latex-4-幻灯片演示</title>
@@ -426,81 +500,6 @@
     </summary>
     
       <category term="anaconda" scheme="http://wang22ti.com/categories/anaconda/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>笔记-《数学之美》</title>
-    <link href="http://wang22ti.com/2018/09/02/%E7%AC%94%E8%AE%B0-%E3%80%8A%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E%E3%80%8B/"/>
-    <id>http://wang22ti.com/2018/09/02/笔记-《数学之美》/</id>
-    <published>2018-09-02T00:34:30.000Z</published>
-    <updated>2018-09-02T02:43:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>本来买这本书只是因为名字——“数学是美的！是有趣的！”袁岚峰老师在讲蓝眼睛岛问题（<a href="https://www.bilibili.com/video/av29527174" target="_blank" rel="noopener">上</a>）（<a href="https://www.bilibili.com/video/av30113899" target="_blank" rel="noopener">下</a>）的时候就这么呼吁。翻了翻目录，却是讲自然语言处理的，而且几乎以Google作为模板，然而这并不服算妨碍啦！</p><h1 id="文字和语言vs数字和信息"><a href="#文字和语言vs数字和信息" class="headerlink" title="文字和语言vs数字和信息"></a>文字和语言vs数字和信息</h1><blockquote><p>语言和数学的产生都是为了记录和传播信息，但是直到香农提出信息论，人们才将两者自觉的联系起来。</p></blockquote><h1 id="自然语言处理——从规则到统计"><a href="#自然语言处理——从规则到统计" class="headerlink" title="自然语言处理——从规则到统计"></a>自然语言处理——从规则到统计</h1><h1 id="统计语言模型"><a href="#统计语言模型" class="headerlink" title="统计语言模型"></a>统计语言模型</h1><h1 id="谈谈分词"><a href="#谈谈分词" class="headerlink" title="谈谈分词"></a>谈谈分词</h1><h1 id="隐含马尔可夫模型"><a href="#隐含马尔可夫模型" class="headerlink" title="隐含马尔可夫模型"></a>隐含马尔可夫模型</h1><h1 id="信息的度量和作用"><a href="#信息的度量和作用" class="headerlink" title="信息的度量和作用"></a>信息的度量和作用</h1><h1 id="贾里尼克和现代语言处理"><a href="#贾里尼克和现代语言处理" class="headerlink" title="贾里尼克和现代语言处理"></a>贾里尼克和现代语言处理</h1><h1 id="简单之美——布尔代数和搜索引擎"><a href="#简单之美——布尔代数和搜索引擎" class="headerlink" title="简单之美——布尔代数和搜索引擎"></a>简单之美——布尔代数和搜索引擎</h1><h1 id="图论和网络爬虫"><a href="#图论和网络爬虫" class="headerlink" title="图论和网络爬虫"></a>图论和网络爬虫</h1><h1 id="PageRank——Google的民主表决式网页排名技术"><a href="#PageRank——Google的民主表决式网页排名技术" class="headerlink" title="PageRank——Google的民主表决式网页排名技术"></a>PageRank——Google的民主表决式网页排名技术</h1><h1 id="如何确定网页和查询的相关性"><a href="#如何确定网页和查询的相关性" class="headerlink" title="如何确定网页和查询的相关性"></a>如何确定网页和查询的相关性</h1><h1 id="有限状态机和动态规划——地图与本地搜索的核心技术"><a href="#有限状态机和动态规划——地图与本地搜索的核心技术" class="headerlink" title="有限状态机和动态规划——地图与本地搜索的核心技术"></a>有限状态机和动态规划——地图与本地搜索的核心技术</h1><h1 id="Google-AK-47的设计者——阿米特·辛格博士"><a href="#Google-AK-47的设计者——阿米特·辛格博士" class="headerlink" title="Google AK-47的设计者——阿米特·辛格博士"></a>Google AK-47的设计者——阿米特·辛格博士</h1><h1 id="余弦定理与新闻分类"><a href="#余弦定理与新闻分类" class="headerlink" title="余弦定理与新闻分类"></a>余弦定理与新闻分类</h1><h1 id="矩阵运算和文本处理中的两个分类问题"><a href="#矩阵运算和文本处理中的两个分类问题" class="headerlink" title="矩阵运算和文本处理中的两个分类问题"></a>矩阵运算和文本处理中的两个分类问题</h1><h1 id="信息指纹及其应用"><a href="#信息指纹及其应用" class="headerlink" title="信息指纹及其应用"></a>信息指纹及其应用</h1><h1 id="由电视剧《暗算》所想到的——谈谈密码学的数学原理"><a href="#由电视剧《暗算》所想到的——谈谈密码学的数学原理" class="headerlink" title="由电视剧《暗算》所想到的——谈谈密码学的数学原理"></a>由电视剧《暗算》所想到的——谈谈密码学的数学原理</h1><h1 id="闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"><a href="#闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题" class="headerlink" title="闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题"></a>闪光的不一定是金子——谈谈搜索引擎反作弊问题和搜索结果的权威性问题</h1><h1 id="谈谈数学模型的重要性"><a href="#谈谈数学模型的重要性" class="headerlink" title="谈谈数学模型的重要性"></a>谈谈数学模型的重要性</h1><h1 id="不要把鸡蛋装在一个笼子里——谈谈最大熵模型"><a href="#不要把鸡蛋装在一个笼子里——谈谈最大熵模型" class="headerlink" title="不要把鸡蛋装在一个笼子里——谈谈最大熵模型"></a>不要把鸡蛋装在一个笼子里——谈谈最大熵模型</h1><h1 id="拼音输入法的数学原理"><a href="#拼音输入法的数学原理" class="headerlink" title="拼音输入法的数学原理"></a>拼音输入法的数学原理</h1><h1 id="自然语言处理的教父马库斯和他的优秀弟子们"><a href="#自然语言处理的教父马库斯和他的优秀弟子们" class="headerlink" title="自然语言处理的教父马库斯和他的优秀弟子们"></a>自然语言处理的教父马库斯和他的优秀弟子们</h1><h1 id="布隆过滤器"><a href="#布隆过滤器" class="headerlink" title="布隆过滤器"></a>布隆过滤器</h1><h1 id="马尔可夫链的扩展——贝叶斯网络"><a href="#马尔可夫链的扩展——贝叶斯网络" class="headerlink" title="马尔可夫链的扩展——贝叶斯网络"></a>马尔可夫链的扩展——贝叶斯网络</h1><h1 id="条件随机场、文法分析和其他"><a href="#条件随机场、文法分析和其他" class="headerlink" title="条件随机场、文法分析和其他"></a>条件随机场、文法分析和其他</h1><h1 id="维比特和他的维比特算法"><a href="#维比特和他的维比特算法" class="headerlink" title="维比特和他的维比特算法"></a>维比特和他的维比特算法</h1><h1 id="上帝的算法——期望最大化算法"><a href="#上帝的算法——期望最大化算法" class="headerlink" title="上帝的算法——期望最大化算法"></a>上帝的算法——期望最大化算法</h1><h1 id="逻辑回归和搜索广告"><a href="#逻辑回归和搜索广告" class="headerlink" title="逻辑回归和搜索广告"></a>逻辑回归和搜索广告</h1><h1 id="各个击破算法和Google云计算基础"><a href="#各个击破算法和Google云计算基础" class="headerlink" title="各个击破算法和Google云计算基础"></a>各个击破算法和Google云计算基础</h1><h1 id="Google大脑和人工神经网络"><a href="#Google大脑和人工神经网络" class="headerlink" title="Google大脑和人工神经网络"></a>Google大脑和人工神经网络</h1><h1 id="大数据的威力——谈谈数据的重要性"><a href="#大数据的威力——谈谈数据的重要性" class="headerlink" title="大数据的威力——谈谈数据的重要性"></a>大数据的威力——谈谈数据的重要性</h1>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;本来买这本书只是因为名字——“数学是美的！是有趣的！”袁岚峰老师在讲蓝眼睛岛问题（&lt;a href=&quot;https://www.bilibili.com/video/av29527174&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;上&lt;/a&gt;）（&lt;a hre
-      
-    
-    </summary>
-    
-      <category term="自然语言处理" scheme="http://wang22ti.com/categories/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>关于保研的一些总结</title>
-    <link href="http://wang22ti.com/2018/09/02/%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/"/>
-    <id>http://wang22ti.com/2018/09/02/关于保研的一些总结/</id>
-    <published>2018-09-02T00:34:07.000Z</published>
-    <updated>2018-10-12T15:49:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>北京交通大学计算机与信息技术学院2015级</p><p>2年半排名11/198，保研排名3/198，六级526</p><p>无国奖，美赛H奖，一堆校级奖项，</p><p>做过几个项目，一篇EI在投</p></blockquote><p>转眼已经是2018年10月12日，一切早已在9月28日尘埃落定，我也终于安下心情，记录一下这段时光。如果想了解一些细节，尽管找我吧。</p><h1 id="未名湖"><a href="#未名湖" class="headerlink" title="未名湖"></a>未名湖</h1><p>5月，我忽然意识到要联系老师了。</p><p>现在来看，那时已经很迟了，很多同学不经意间已经实习了很久。托徐老师的福，我很幸运的联系到了北大计算所的冯老师，专业也是我一直很感兴趣的自然语言处理。然而这之后就犯了一个战略性的大错误。</p><p>咨询过学长学姐（感谢何、吴、苏、才、顼、由、宋、高、叶几位学长学姐），要机试要面试，却盯着第11不放，一直死扣几门课程的大作业。</p><p>很快审判日到了，经过期末考试后几天的仓促准备（感谢佳丽），北大叉院的机试仅仅做出3题（poj难度），虽然勉勉强强进了50%，但是面试又是一塌糊涂，关于自然语言处理的最基本问题都无法回答，自然就GG了。其中凌晨3点发的面试通知邮件，几乎一宿没睡，内心的挣扎在此不述（后来才知道一般来说做出来1道就可以进）。</p><p>很惨淡的是，虽然进了软件所的夏令营，但是和北大信科又冲突了。虽然知道没什么机会，但是还是没有打开那心结，挣扎着身心，又去数媒组试了一下。马老师是我在北大见过少数慈善的老师，但是后来才知道，没有提前联系老师的我，实力不够强劲的我，在硕士名额减少60%的北大，是没有什么机会的。</p><p>忽然有一种理想幻灭的感觉。</p><h1 id="桑基韬"><a href="#桑基韬" class="headerlink" title="桑基韬"></a>桑基韬</h1><p>完全失去了夏令营的机会，我开始考虑本校，第一次认真的了解一些基本常识。</p><p><a href="https://www.zhihu.com/question/23679630/answer/233282268" target="_blank" rel="noopener">求详细介绍下院士、长江、百人、千人、万人、青千、杰青、各类学者人才计划等等？</a></p><p><a href="https://www.zhihu.com/question/66251104/answer/239964441" target="_blank" rel="noopener">现在科研项目中的重点项目、重大项目、重大研究计划项目，重点研发计划有什么区别和联系？</a></p><p>意外地发现了使我成为迷弟的桑老师。85年的教授，高高瘦瘦的，给我一种意气风发的学长的感觉。他很开心的告诉我是一个“相信眼缘的人”。其实我也是，要不是父母对于平台的要求，以及后来的际遇，我真的不愿意离开他。</p><h1 id="紫金港"><a href="#紫金港" class="headerlink" title="紫金港"></a>紫金港</h1><p>没几天，我就踏上了前往浙大实习的路，这只是当时偶然的报名。</p><p>一个月的时间，学到了很多东西，也认识了很多好朋友（舍友兼知己倪、一同实习的李、谢、金、宁、赵），当然也很感谢刘新国老师的指导（还有学长学姐们的帮助）。当然，还有友鑫的款待。</p><p>老师推荐我和金参加实习直博面试。英语口语一直是我的弱项，对实习项目的介绍当然是很糟糕了，还有自我介绍部分，完全俗套，没有足够的突出综合素质。总之，老师只能招收一个人，我怀着极端复杂的心情回了趟家。</p><p>垓下一战的感觉。</p><h1 id="九推"><a href="#九推" class="headerlink" title="九推"></a>九推</h1><p>第一天上午，计算所VIPL笔试，90%的淘汰率让大家望而生畏，一共就来了20人。但是数学是真的全忘了，，</p><p>下午，机试，虽然vs环境很麻烦，但幸好题目难度并不是很大，马马虎虎吧</p><p>晚上，做面试ppt，真的很匆忙，，</p><p>第二天上午，参加计算所体检</p><p>下午面试，这次总结了前几次的教训，突出个人品质并结合实例说明，，</p><p>王树徽老师和我开玩笑：照片那么精神，为啥真人那么憔悴？（那可是99元的照片啊）</p><p>之傍晚火急火燎地赶上去杭州的火车，终于在12点半躺在湿漉漉的青旅床单上。</p><p>中途收到卿老师的电话，问我去不去国科大计算机学院。</p><p>第三天上午，准备面试；下午倒是比较顺利，选的2个英文题目应该还算可以，对老师的方向也很了解，不过课程相关的问题依旧一塌糊涂。</p><p>下午又火急火燎地回到北京，京城初秋的午夜真是冷冷清清。</p><p>第4填上午，去校医院体检。心想，应该结束了吧？</p><h1 id="转机"><a href="#转机" class="headerlink" title="转机"></a>转机</h1><p>吃完午饭准备上楼睡觉，许老师忽然打电话：</p><p>黄老师在信工所有一个名额，不过以后都是在计算所学习，你来不来？</p><p>当然！火急火燎地前往香山，火急火燎地面试，火急火燎地见黄老师，</p><p>大佬的笑容，慈祥的神色，可能这就是期待已久的场景吧。</p><p>无心插柳柳成荫。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;北京交通大学计算机与信息技术学院2015级&lt;/p&gt;
-&lt;p&gt;2年半排名11/198，保研排名3/198，六级526&lt;/p&gt;
-&lt;p&gt;无国奖，美赛H奖，一堆校级奖项，&lt;/p&gt;
-&lt;p&gt;做过几个项目，一篇EI在投&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;转
-      
-    
-    </summary>
-    
-      <category term="杂记" scheme="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>联想miix5pro连接技嘉GamingBox1080</title>
-    <link href="http://wang22ti.com/2018/08/28/%E8%81%94%E6%83%B3miix5pro%E8%BF%9E%E6%8E%A5%E6%8A%80%E5%98%89GamingBox1080/"/>
-    <id>http://wang22ti.com/2018/08/28/联想miix5pro连接技嘉GamingBox1080/</id>
-    <published>2018-08-28T12:30:50.000Z</published>
-    <updated>2018-09-02T02:49:01.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h1><p>想用GPU加速机器学习任务，但是买1060及以上的笔记本又大又重，而且很多钱花在144Hz的屏幕、机械键盘等零件上；如果买台式机也得1万多，而且宿舍没有什么地方放，毫无便携的可能，思前想后，想起来miix5pro是有一个满血的雷电3接口，有着40Gbps的吞吐率，正好买一个外接显卡。</p><p>主要考虑<a href="https://item.jd.com/5685757.html?dist=jd" target="_blank" rel="noopener">惠普的外接盒子</a>和<a href="https://detail.tmall.com/item.htm?id=559309220532&amp;ns=1&amp;abbucket=14" target="_blank" rel="noopener">技嘉的Gaming box</a>（还有<a href="http://cn.razerzone.com/razer-core-v2" target="_blank" rel="noopener">雷蛇的盒子</a>但是太贵了）。两者价格差不多，技嘉的优势在于1080、便携、送雷电3数据线和鼠标，惠普的优势在于盒子和接口的扩展性。于是查了不少相关的测评：</p><p><a href="https://www.bilibili.com/video/av12205290?from=search&amp;seid=12560254674047576198" target="_blank" rel="noopener">【开箱拆解】史上最小外置显卡盒AORUS GTX 1070 GAMING BOX全网首发开箱拆解，评测稍后发~</a></p><p><a href="https://www.zhihu.com/question/63245941" target="_blank" rel="noopener">如何评价技嘉的gaming box显卡拓展？</a></p><p><a href="https://www.zhihu.com/question/39218012" target="_blank" rel="noopener">如何评价雷蛇的外置显卡Razer Core？</a></p><p><a href="https://post.smzdm.com/p/724215/" target="_blank" rel="noopener">HP 惠普 GA1-1007cl OMEN 暗影精灵 显卡扩展坞简单开箱</a></p><p><a href="https://www.chiphell.com/forum.php?mod=viewthread&amp;tid=1837389&amp;page=1#pid38624312" target="_blank" rel="noopener">【MacBook Pro 2016外接 GTX 1080显卡】- 技嘉 AORUS GTX 1080 Gaming Box</a></p><p><a href="https://zhuanlan.zhihu.com/p/33071814" target="_blank" rel="noopener">MacbookPro搭配技嘉外置显卡拓展坞AORUS GTX 1070 GamingBox使用感受，神经网络训练和简明安装教程</a></p><p>另外一个评论总结比较到位</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/6.png" alt=""></p><p>正纠结着，又看到一个评论</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/1.png" alt=""></p><p>嗯……那就买技嘉的吧，已经1080了，2、3年内并不会不够用。</p><h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/2.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/3.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/4.jpg" alt=""><br><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/5.jpg" alt=""></p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>由于重装过系统，所以直接插上并不能识别，所以要先安装雷电3的驱动，这是<a href="http://driverdl.lenovo.com.cn/lenovo/DriverFilesUploadFloder/52684/ThunderboltDriver-CZME06AF.exe" target="_blank" rel="noopener">miix5pro的</a>。实际上还有一个更好的方案更新所有驱动，就是安装<a href="https://downloadcenter.intel.com/" target="_blank" rel="noopener">Intel的升级助手</a></p><p>之后就可是识别雷电3啦，但是要识别显卡，还去<a href="https://www.nvidia.com/zh-cn/geforce/geforce-experience/" target="_blank" rel="noopener">英伟达官网</a>下载GEFORCE EXPERIENCE软件，它会提示安装对应的驱动并保持更新。安装之后可以使用控制面板设置在1080上跑的程序：</p><p><img src="/2018/08/28/联想miix5pro连接技嘉GamingBox1080/7.png" alt=""></p><p>注意不要安装技嘉的软件！！！我也不知道为什么，总之安装了之后，不仅设置显卡很慢，还会经常掉盘，体验极差，emmmmm</p><p>为了跑tensorflow，又折腾了一会，见<a href="http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/">tensorflow的笔记</a>。</p><h1 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h1><p>懒得跑分了，直接开了一局守望先锋，在极高的画质下人比较少时稳定在55帧以上，人很多很混乱的时候在45帧以上，作为二合一的本子，这样的性能已经让人很满意了，有着质的飞跃。</p><p>当然，由于低压CPU的限制，GPU图形部分并没有能够跑满，大概60-70%吧。此外如果作为鼠标的拓展坞，似乎流畅度不如直接插在电脑上。</p><p>装上CUDA之后跑tensorflow也没有问题，速度有明显的提高，没有亏本。</p><h1 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h1><p>不知道是显卡还是电脑的问题，主要出现了三个问题：</p><ol><li>连接上显卡后经常掉盘，即使是在跑神经网络的时候</li><li>有时连接不上显示器</li><li>鼠标接在显卡上会间歇性卡顿</li></ol><p>很扎心，于是联系客服寄过去修了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;购买&quot;&gt;&lt;a href=&quot;#购买&quot; class=&quot;headerlink&quot; title=&quot;购买&quot;&gt;&lt;/a&gt;购买&lt;/h1&gt;&lt;p&gt;想用GPU加速机器学习任务，但是买1060及以上的笔记本又大又重，而且很多钱花在144Hz的屏幕、机械键盘等零件上；如果买台式机也得1万多，
-      
-    
-    </summary>
-    
-      <category term="杂记" scheme="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
   </entry>
