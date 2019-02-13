@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wang22ti.com/"/>
-  <updated>2019-01-29T04:49:35.000Z</updated>
+  <updated>2019-02-13T04:46:38.800Z</updated>
   <id>http://wang22ti.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java处理StackOverflow的错误</title>
+    <link href="http://wang22ti.com/2019/02/13/Java%E5%A4%84%E7%90%86StackOverflow%E7%9A%84%E9%94%99%E8%AF%AF/"/>
+    <id>http://wang22ti.com/2019/02/13/Java处理StackOverflow的错误/</id>
+    <published>2019-02-13T04:37:49.000Z</published>
+    <updated>2019-02-13T04:46:38.800Z</updated>
+    
+    <content type="html"><![CDATA[<p>跑实验的时候第二个数据集比较大，在跑递归算法时报出了<code>StackOverflow</code>d 错误，原因无非是：</p><ol><li>代码错了，无限递归</li><li>系统的栈容量不够大，爆了</li></ol><p>考虑到第一个数据集正常运行，那肯定是第2个问题了，在Eclipse的<code>Run Configurations</code>如下图增加容量即可</p><p><img src="/2019/02/13/Java处理StackOverflow的错误/1.png" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;跑实验的时候第二个数据集比较大，在跑递归算法时报出了&lt;code&gt;StackOverflow&lt;/code&gt;d 错误，原因无非是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;代码错了，无限递归&lt;/li&gt;
+&lt;li&gt;系统的栈容量不够大，爆了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;考虑到第一个数据集正常运行，
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wang22ti.com/categories/Java/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在Ubuntu上用VSCode配置Texlive</title>
@@ -476,30 +504,6 @@
     </summary>
     
       <category term="模式识别" scheme="http://wang22ti.com/categories/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>笔记-Anaconda</title>
-    <link href="http://wang22ti.com/2018/09/25/%E7%AC%94%E8%AE%B0-Anaconda/"/>
-    <id>http://wang22ti.com/2018/09/25/笔记-Anaconda/</id>
-    <published>2018-09-25T15:53:06.000Z</published>
-    <updated>2018-11-11T02:36:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开<code>anaconda navigator</code>要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。</p><p>在浙大实习的时候，学长告诉我：有一些环境（即运行某些程序配套的程序）是相互冲突的，而anaconda采用沙盒的机制，即anaconda中的环境在不激活的情况下是不会被系统检测到的（即不会添加到环境变量），所以可以同时存在多个环境而又不冲突。</p><p>同时，anaconda不仅可以方便地切换环境，还可以对一个环境的python包进行很方便的管理，比如安装、更新、卸载等等。</p><p>嗯，真香！</p><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>就上<a href="https://www.anaconda.com/download/" target="_blank" rel="noopener">官网</a>咯，值得注意的是，python3和python2对应的anaconda的版本也是不一样的。</p><p>一路默认配置安装。唯一要注意的是，第一个勾是是否把Anaconda加入环境变量，这涉及到能否直接在cmd中使用conda、jupyter、ipython等命令，推荐打勾，如果不打勾话问题也不大，可以在之后使用Anaconda提供的命令行工具进行操作。</p><p><img src="/2018/09/25/笔记-Anaconda/0.png" alt=""></p><h1 id="对包的管理"><a href="#对包的管理" class="headerlink" title="对包的管理"></a>对包的管理</h1><p>安装好了之后，会在文件夹<code>Anaconda3</code>下面出现若干个软件，其中<code>Anaconda Prompt</code>是本体，一个命令行窗口；<code>Anaconda Navigtoer</code>是本体的图形化界面；其他的不用管，都是附带的IDE，而我一直觉得Pycharm是最好用的，也支持Anaconda的环境。</p><p>打开<code>Anaconda Prompt</code>后，会发现和普通的命令行相比，用户目录前面多了一个<code>base</code>，这就是在提示用户：你现在用的python环境叫做base！</p><p><img src="/2018/09/25/笔记-Anaconda/1.jpg" alt=""></p><p>base是anaconda默认配置的python环境，里面已经又很多包可以用了，使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure><p>就可以查看有哪些。当然，以下的命令想来不需要解释了：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">conda remove 包名</span><br><span class="line">conda update 包名</span><br><span class="line">conda env export &gt; environment.yaml // 导出当前环境的包信息</span><br><span class="line">conda env create -f environment.yaml // 用配置文件创建新的虚拟环境</span><br></pre></td></tr></table></figure><h1 id="在Pycharm中使用Anaconda的环境"><a href="#在Pycharm中使用Anaconda的环境" class="headerlink" title="在Pycharm中使用Anaconda的环境"></a>在Pycharm中使用Anaconda的环境</h1><p>在Pycharm工具栏<code>File-Settings for new project-Project Interpreter</code>界面点击<code>齿轮</code>按钮，再点击<code>Add</code>按钮会出现如下界面：</p><p><img src="/2018/09/25/笔记-Anaconda/2.jpg" alt=""></p><p>此时点击<code>Conda Environment</code>就会看到</p><p><img src="/2018/09/25/笔记-Anaconda/3.jpg" alt=""></p><p>要选择<code>Existing Environment</code>，并点击<code>...</code>，再选择编译器所在的位置就好啦，默认如下：</p><p><img src="/2018/09/25/笔记-Anaconda/4.jpg" alt=""></p><p>之后在Pycharm中新建的Project的编译器就是Anaconda默认的那个了~</p><h1 id="对环境的管理"><a href="#对环境的管理" class="headerlink" title="对环境的管理"></a>对环境的管理</h1><p>这个功能有什么用？为什么要安装多个python环境？首先，某些包可能在某些特定的python版本才存在；其次，某些包会相互冲突，比如CPU版本和GPU版本的tensorflow；最后，别人的代码可能需要某特定的环境才能运行。</p><p>第一步当然是新建一个环境：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n 环境名称 [必备包的列表] [python=版本号]</span><br></pre></td></tr></table></figure><p>之后是激活环境，成功后base会变成新的环境名：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash"> windows</span></span><br><span class="line">activate 环境名</span><br><span class="line"><span class="meta">%</span><span class="bash"> Linux</span></span><br><span class="line">source activate 环境名</span><br></pre></td></tr></table></figure><p>离开环境也是很类似：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">%</span><span class="bash"> windows</span></span><br><span class="line">deactivate</span><br><span class="line"><span class="meta">%</span><span class="bash"> Linux</span></span><br><span class="line">source deactivate</span><br></pre></td></tr></table></figure><p>这两个不需要解释：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">conda env remove -n 环境名</span><br></pre></td></tr></table></figure><p>此外，环境可以导出和读取，从而确保项目在其他电脑上一定能跑：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda env export &gt; 文件名.yaml</span><br><span class="line">conda env create -f 文件名.yaml</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;最早学python的时候，他们都说用anaconda配置环境十分方便，适合初学者。然而那时我的电脑辣鸡，打开&lt;code&gt;anaconda navigator&lt;/code&gt;要花很长时间 ，而且个人对于“环境”的理解又很糟糕，于是放弃了。&lt;/p&gt;
-&lt;p&gt;在浙大实习的时候，学长告
-      
-    
-    </summary>
-    
-      <category term="anaconda" scheme="http://wang22ti.com/categories/anaconda/"/>
     
     
   </entry>
