@@ -4,8 +4,98 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2019/01/29/%E5%9C%A8Ubuntu%E4%B8%8A%E7%94%A8VSCode%E9%85%8D%E7%BD%AETexlive/</loc>
+    <lastmod>2019-03-01T02:25:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>在Ubuntu上用VSCode配置Texlive</title>
+        <pubTime>2019-01-29T10:59:01.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="latex" url="http://wang22ti.com/categories/latex/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2019/01/29/Github%E6%8F%90%E4%BA%A4100M%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%A4%A7%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2019-02-15T04:01:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>Github提交100M以上的大文件</title>
+        <pubTime>2019-01-29T09:32:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2019/02/15/Git%E5%9C%A8Ubuntu%E4%B8%8B%E4%BF%9D%E5%AD%98%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2019-02-15T03:59:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git在Ubuntu下保存用户名和密码</title>
+        <pubTime>2019-02-15T03:40:19.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2018/08/13/mooc-Git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2019-02-15T03:55:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>mooc-Git实用教程</title>
+        <pubTime>2018-08-13T06:02:27.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2019/02/15/git-error-unable-to-create-file-Invalid-argument/</loc>
+    <lastmod>2019-02-15T03:55:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>git error unable to create file Invalid argument</title>
+        <pubTime>2019-02-15T03:53:59.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2019/02/13/Java%E5%A4%84%E7%90%86StackOverflow%E7%9A%84%E9%94%99%E8%AF%AF/</loc>
-    <lastmod>2019-02-13T04:46:38.800Z</lastmod>
+    <lastmod>2019-02-13T04:46:38.000Z</lastmod>
     <data>
         <display>
         <title>Java处理StackOverflow的错误</title>
@@ -23,7 +113,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/09/02/%E5%85%B3%E4%BA%8E%E4%BF%9D%E7%A0%94%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2019-02-08T14:15:26.279Z</lastmod>
+    <lastmod>2019-02-08T14:15:26.000Z</lastmod>
     <data>
         <display>
         <title>关于保研的一些总结</title>
@@ -33,24 +123,6 @@
            
              
               <breadCrumb title="杂记" url="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2019/01/29/%E5%9C%A8Ubuntu%E4%B8%8A%E7%94%A8VSCode%E9%85%8D%E7%BD%AETexlive/</loc>
-    <lastmod>2019-01-29T04:49:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>在Ubuntu上用VSCode配置Texlive</title>
-        <pubTime>2019-01-29T10:59:01.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="latex" url="http://wang22ti.com/categories/latex/"/>
           
         </display>
     </data>
@@ -76,26 +148,8 @@
 
     
   <url>
-    <loc>http://wang22ti.com/2019/01/29/Github%E6%8F%90%E4%BA%A4100M%E4%BB%A5%E4%B8%8A%E7%9A%84%E5%A4%A7%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2019-01-29T01:47:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>Github提交100M以上的大文件</title>
-        <pubTime>2019-01-29T09:32:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://wang22ti.com/2019/01/14/%E7%AC%94%E8%AE%B0-latex-4-%E5%B9%BB%E7%81%AF%E7%89%87%E6%BC%94%E7%A4%BA/</loc>
-    <lastmod>2019-01-14T09:44:47.738Z</lastmod>
+    <lastmod>2019-01-14T09:44:47.000Z</lastmod>
     <data>
         <display>
         <title>笔记-latex-4-幻灯片演示</title>
@@ -113,7 +167,7 @@
     
   <url>
     <loc>http://wang22ti.com/2019/01/14/%E7%AC%94%E8%AE%B0-latex-3-%E8%A1%A8%E6%A0%BC/</loc>
-    <lastmod>2019-01-14T09:19:29.690Z</lastmod>
+    <lastmod>2019-01-14T09:19:29.000Z</lastmod>
     <data>
         <display>
         <title>笔记-latex-3-表格</title>
@@ -131,7 +185,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/05/13/%E7%AC%94%E8%AE%B0-latex-2-%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</loc>
-    <lastmod>2019-01-14T06:45:49.780Z</lastmod>
+    <lastmod>2019-01-14T06:45:49.000Z</lastmod>
     <data>
         <display>
         <title>笔记-latex-2-数学公式</title>
@@ -149,7 +203,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/10/08/%E3%80%8A%E8%BD%AF%E4%BB%B6%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E3%80%8B%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E9%BE%99%E8%8A%AF%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84C%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2019-01-11T02:50:08.152Z</lastmod>
+    <lastmod>2019-01-11T02:50:08.000Z</lastmod>
     <data>
         <display>
         <title>《软件综合实践》课程设计-基于龙芯处理器的C语言编译系统的设计与实现</title>
@@ -167,7 +221,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/12/04/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-IRGAN-A-Minimax-Game-for-Unifying-Generative-and-Discriminative-Information-Retrieval-Models/</loc>
-    <lastmod>2018-12-14T03:19:50.625Z</lastmod>
+    <lastmod>2018-12-14T03:19:50.000Z</lastmod>
     <data>
         <display>
         <title>论文阅读-IRGAN_A_Minimax_Game_for_Unifying_Generative_and_Discriminative_Information_Retrieval_Models</title>
@@ -185,7 +239,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/11/08/%E5%8D%8E%E4%B8%BAMate20Pro%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2018-12-13T06:03:57.429Z</lastmod>
+    <lastmod>2018-12-13T06:03:57.000Z</lastmod>
     <data>
         <display>
         <title>华为Mate20Pro的使用总结</title>
@@ -203,7 +257,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/</loc>
-    <lastmod>2018-12-13T04:01:30.532Z</lastmod>
+    <lastmod>2018-12-13T04:01:30.000Z</lastmod>
     <data>
         <display>
         <title>笔记-tensorflow</title>
@@ -239,7 +293,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/01/30/%E7%AC%94%E8%AE%B0-hexo/</loc>
-    <lastmod>2018-12-09T14:49:28.649Z</lastmod>
+    <lastmod>2018-12-09T14:49:28.000Z</lastmod>
     <data>
         <display>
         <title>笔记-hexo</title>
@@ -257,7 +311,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/12/04/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Large-scale-Collaborative-Ranking-in-Near-Linear-Time/</loc>
-    <lastmod>2018-12-06T11:49:28.933Z</lastmod>
+    <lastmod>2018-12-06T11:49:28.000Z</lastmod>
     <data>
         <display>
         <title>论文阅读-Large_scale_Collaborative_Ranking_in_Near-Linear_Time</title>
@@ -275,7 +329,7 @@
     
   <url>
     <loc>http://wang22ti.com/2018/08/12/mooc-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B7%A5%E7%A8%8B%E5%B8%88-5-%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2018-12-05T09:39:29.057Z</lastmod>
+    <lastmod>2018-12-05T09:39:29.000Z</lastmod>
     <data>
         <display>
         <title>mooc-深度学习工程师-5-序列模型</title>
@@ -285,24 +339,6 @@
            
              
               <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2018/08/13/mooc-Git%E5%AE%9E%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2018-11-25T02:32:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>mooc-Git实用教程</title>
-        <pubTime>2018-08-13T06:02:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="git" url="http://wang22ti.com/categories/git/"/>
           
         </display>
     </data>

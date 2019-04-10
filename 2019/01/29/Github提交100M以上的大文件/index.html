@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：  根据指导安装git-lfs 执行指令  1find ./ -size +100M | xargs git lfs track 之后就和正常提交完全一致了： 123git add *git">
+<meta name="description" content="喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：  如果已经commit过，需要备份文件后执行git reset --hard HEAD~1恢复提交记录 根据指导安装git-lfs 执行指令  1find ./ -size +100M |">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github提交100M以上的大文件">
 <meta property="og:url" content="http://wang22ti.com/2019/01/29/Github提交100M以上的大文件/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：  根据指导安装git-lfs 执行指令  1find ./ -size +100M | xargs git lfs track 之后就和正常提交完全一致了： 123git add *git">
+<meta property="og:description" content="喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：  如果已经commit过，需要备份文件后执行git reset --hard HEAD~1恢复提交记录 根据指导安装git-lfs 执行指令  1find ./ -size +100M |">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-29T01:47:16.000Z">
+<meta property="og:updated_time" content="2019-02-15T04:01:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github提交100M以上的大文件">
-<meta name="twitter:description" content="喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：  根据指导安装git-lfs 执行指令  1find ./ -size +100M | xargs git lfs track 之后就和正常提交完全一致了： 123git add *git">
+<meta name="twitter:description" content="喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：  如果已经commit过，需要备份文件后执行git reset --hard HEAD~1恢复提交记录 根据指导安装git-lfs 执行指令  1find ./ -size +100M |">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  150 字
+                  177 字
                 </span>
               
 
@@ -405,6 +405,7 @@
       
         <p>喜大普奔，喜大普奔，GitHub于2019年1月8日宣布私有仓库免费了！这意味着几乎可以把GitHub当作云盘来用了啊！但是当我试图提交生成的数据集的时候，报了单个文件大小限制的错误。还好，有官方的解决方案：</p>
 <ol>
+<li>如果已经commit过，需要备份文件后执行<code>git reset --hard HEAD~1</code>恢复提交记录</li>
 <li>根据指导<a href="https://github.com/git-lfs/git-lfs/wiki/Installation" target="_blank" rel="noopener">安装git-lfs</a></li>
 <li>执行指令</li>
 </ol>
@@ -559,7 +560,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
