@@ -3,6 +3,14 @@
   
     
     <entry>
+      <title>笔记-会议投稿-MM</title>
+      <link href="/2019/04/10/%E7%AC%94%E8%AE%B0-%E4%BC%9A%E8%AE%AE%E6%8A%95%E7%A8%BF-MM/"/>
+      <content type="html"><![CDATA[]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>git error unable to create file Invalid argument</title>
       <link href="/2019/02/15/git-error-unable-to-create-file-Invalid-argument/"/>
       <content type="html"><![CDATA[<p>导致这个异常的原因是Windows文件系统不允许文件名使用冒号<code>:</code>，同时以下这些也不允许使用</p><ul><li>&lt; (less than)</li><li>> (greater than)</li><li>: (colon)</li><li>” (double quote)</li><li>/ (forward slash)</li><li>\ (backslash)</li><li>| (vertical bar or pipe)</li><li>? (question mark)</li><li>* (asterisk)</li></ul>]]></content>
