@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wang22ti.com/"/>
-  <updated>2019-04-17T11:44:32.894Z</updated>
+  <updated>2019-04-17T11:43:37.932Z</updated>
   <id>http://wang22ti.com/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>笔记-论文写作</title>
-    <link href="http://wang22ti.com/2019/04/17/%E7%AC%94%E8%AE%B0-%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/"/>
-    <id>http://wang22ti.com/2019/04/17/笔记-论文写作/</id>
-    <published>2019-04-17T11:44:32.000Z</published>
-    <updated>2019-04-17T11:44:32.894Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>笔记-latex</title>
@@ -500,6 +486,30 @@
     </summary>
     
       <category term="人工智能" scheme="http://wang22ti.com/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《软件综合实践》课程设计-基于龙芯处理器的C语言编译系统的设计与实现</title>
+    <link href="http://wang22ti.com/2018/10/08/%E3%80%8A%E8%BD%AF%E4%BB%B6%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5%E3%80%8B%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1-%E5%9F%BA%E4%BA%8E%E9%BE%99%E8%8A%AF%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84C%E8%AF%AD%E8%A8%80%E7%BC%96%E8%AF%91%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://wang22ti.com/2018/10/08/《软件综合实践》课程设计-基于龙芯处理器的C语言编译系统的设计与实现/</id>
+    <published>2018-10-08T03:32:54.000Z</published>
+    <updated>2019-01-11T02:50:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>嗯……本来是想写一个超详细的说明的，但是发现细节实在是太多了，所以选一些重要的说一下吧。</p><h1 id="干了啥？"><a href="#干了啥？" class="headerlink" title="干了啥？"></a>干了啥？</h1><p>老师给了我们一款板子，上面有龙芯处理器。我们要做的是，在箱子外面写一个编译器，把C语言代码转化为可执行文件，然后传输到板子上，在板子上执行那个可执行文件。</p><p>整个工作分为PC和板子的通信、编译器、汇编器、链接器，我和<a href="https://www.wchhlbt.cn/" target="_blank" rel="noopener">楚涵</a>一起完成了汇编器的部分，就是将MIPS汇编代码翻译为Linux下可执行的ELF文件。</p><h1 id="关键问题"><a href="#关键问题" class="headerlink" title="关键问题"></a>关键问题</h1><ol><li><p>ELF文件长啥样？</p><p>在干这个项目之前，我以为只要参照MIPS指令的手册，粗暴地把指令翻译为二进制的格式并写到文件里面就行。但实际上，二进制可执行文件里面除了指令以外，还有很多的信息，比如文件一开始有一堆关于文件信息的描述，后面是表头，再后面才是各个具体的表。详细在此不赘述，可以参见参考文献。</p><p>由于不同部分之间存在很多交叉引用，尤其是地址的引用，这给我们带来了很大的困难。</p></li><li><p>MIPS汇编文件的宏指令？</p><p>在看了由标准GCC生成的汇编文件后，我们发现除了标准的MIPS指令，还存在大量其他内容。一个是宏指令，比如<code>li</code>和<code>la</code>，即将多条标准指令封装为一条宏指令，根据参数的不同由汇编器选择具体的指令；另外一种是由标准指令扩展的失灵，比如<code>mov</code>，既可以用<code>or</code>扩展，也可以用<code>addiu</code>来扩展；还有一种是以点开头的指令，比如<code>.set noreorder</code>，是对于汇编器的设置。</p><p>要搞清这三类指令的具体含义并转化为代码，并不是一个小工作。</p></li><li><p>怎么写二进制文件？</p><p>由于x86和龙芯MIPS都是小端机，所以直接将要写的数据结构传入函数<code>fwrite</code>即可，C语言会把其中的数据项以二进制的方式顺次写到文件中。需要注意的是，文件打开的模式一定要使用<code>wb</code>；因为在windows下如果模式是<code>w</code>，会在写<code>0x0A</code>的时候自动添加一个<code>0x0D</code>。一开始没注意这个问题，被耽误了一些时间。</p></li><li><p>怎么实现输入输出？</p><p>本来以为需要从头写，用一些系统调用，但实际上Linux系统存在很多动态连接库，他们具有<code>地址无关性</code>，只要在代码中传入恰当的参数并调用即可。当然，生成调用的汇编代码并不是我们的工作，我们的工作是把这些信息写到ELF文件中，这涉及到多个段表的填写，所以还是有点复杂的。</p></li><li><p>开发的环境？</p><p>由于最后的软件是在Linux上跑，汇编器又是涉及操作系统的部分，很多数据结构已经在Linux库函数里面有了定义，比如<code>elf.h</code>中就对于elf文件中各个段的数据结构有了定义，所以至少汇编器和链接器的开发要在Linux上进行。</p></li></ol><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>相比我们有些拙劣的代码，这些参考文献还是更有价值的：</p><ol><li>《自己动手构造编译系统++编译、汇编与链接》。关于x86和Linux环境下的MIPS编译器，中文且非常详细，对我们的工作有启发价值。此外，该书的配套代码已经在<a href="https://github.com/fanzhidongyzby/cit/tree/x86" target="_blank" rel="noopener">GitHub</a>上开源了，十分良心了。</li><li>·《See MIPS Run》。中英文都有，对于MIPS指令及其编码、函数调用等方面讲解非常详细，和我们工作最相关的是第2、8、9、11、16章。</li><li>《ELF_Format》。中英文都有，对于ELF文件各个段的讲解十分详细，对于文献1是一种有益的补充。</li></ol><h1 id="配套软件"><a href="#配套软件" class="headerlink" title="配套软件"></a>配套软件</h1><p>要理解汇编到ELF的翻译工作，离不开对于ELF文件的直接阅读，自然不能少了很多工具：</p><ol><li>readelf，Linux自带的读取ELF头信息的命令</li><li>BinaryViewer，可以轻松以各种方式查看二进制文件</li><li>IDA_PRO，以更高级的方式阅读ELF文件，比如指出某段数据是哪一个段的，不过阅读方式不如BinaryViewer灵活多样。</li><li>Snipaste，一个优秀的截图贴图软件，可以方便的依靠贴图在各个文件之间比对。</li><li>pyelftools，python阅读elf文件的包，通过以下代码可以输出每个段的具体内容：</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> elftools.elf.elffile</span><br><span class="line"></span><br><span class="line">file_name = <span class="string">'**********'</span></span><br><span class="line">stream = open(file_name+<span class="string">'.o'</span>, <span class="string">'rb'</span>)</span><br><span class="line"></span><br><span class="line">elf_file = elftools.elf.elffile.ELFFile(stream)</span><br><span class="line">num_of_section = elf_file.num_sections()</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">1</span>, num_of_section):</span><br><span class="line">    section = elf_file.get_section(n)</span><br><span class="line">    print(n, section.name, section.header.sh_size)</span><br><span class="line">    data = section.data()</span><br><span class="line">    print(data)</span><br></pre></td></tr></table></figure><h1 id="Github链接"><a href="#Github链接" class="headerlink" title="Github链接"></a>Github链接</h1><p><a href="https://github.com/wang22ti/Assembly-For-MIPS" target="_blank" rel="noopener">https://github.com/wang22ti/Assembly-For-MIPS</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;嗯……本来是想写一个超详细的说明的，但是发现细节实在是太多了，所以选一些重要的说一下吧。&lt;/p&gt;
+&lt;h1 id=&quot;干了啥？&quot;&gt;&lt;a href=&quot;#干了啥？&quot; class=&quot;headerlink&quot; title=&quot;干了啥？&quot;&gt;&lt;/a&gt;干了啥？&lt;/h1&gt;&lt;p&gt;老师给了我们一款板子
+      
+    
+    </summary>
+    
+      <category term="软件综合实践" scheme="http://wang22ti.com/categories/%E8%BD%AF%E4%BB%B6%E7%BB%BC%E5%90%88%E5%AE%9E%E8%B7%B5/"/>
     
     
   </entry>
