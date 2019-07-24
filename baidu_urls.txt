@@ -1,4 +1,6 @@
-http://wang22ti.com/2019/07/08/笔记-搭建虚拟个人服务器VPS/
+http://wang22ti.com/2019/07/09/文石BooxNotePro使用总结/
+http://wang22ti.com/2019/07/09/将gitbash和conda集成到VSCode/
+http://wang22ti.com/2019/07/08/搭建虚拟个人服务器VPS/
 http://wang22ti.com/2019/04/17/笔记-latex/
 http://wang22ti.com/2019/04/10/笔记-会议投稿-MM/
 http://wang22ti.com/2019/02/15/git-error-unable-to-create-file-Invalid-argument/
