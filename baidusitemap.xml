@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2019/07/09/%E5%B0%86gitbash%E5%92%8Cconda%E9%9B%86%E6%88%90%E5%88%B0VSCode/</loc>
+    <lastmod>2019-07-29T10:57:28.986Z</lastmod>
+    <data>
+        <display>
+        <title>将gitbash和conda集成到VSCode</title>
+        <pubTime>2019-07-09T08:25:50.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="VSCode" url="http://wang22ti.com/categories/VSCode/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2018/01/30/%E7%AC%94%E8%AE%B0-hexo/</loc>
     <lastmod>2019-07-29T03:30:00.748Z</lastmod>
     <data>
@@ -69,24 +87,6 @@
            
              
               <breadCrumb title="杂记" url="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2019/07/09/%E5%B0%86gitbash%E5%92%8Cconda%E9%9B%86%E6%88%90%E5%88%B0VSCode/</loc>
-    <lastmod>2019-07-09T08:35:04.792Z</lastmod>
-    <data>
-        <display>
-        <title>将gitbash和conda集成到VSCode</title>
-        <pubTime>2019-07-09T08:25:50.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="VSCode" url="http://wang22ti.com/categories/VSCode/"/>
           
         </display>
     </data>

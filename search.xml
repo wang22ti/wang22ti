@@ -19,7 +19,7 @@
     <entry>
       <title>将gitbash和conda集成到VSCode</title>
       <link href="/2019/07/09/%E5%B0%86gitbash%E5%92%8Cconda%E9%9B%86%E6%88%90%E5%88%B0VSCode/"/>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<p>在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考<a href="https://www.imooc.com/article/272367?block_id=tuijian_wz" target="_blank" rel="noopener">VSCode Python开发环境配置</a>高级调试配置之前的内容。</p><p>需要指出的是，脚本状态下的别名是没有开启的，详情参见<a href="https://gohom.win/2015/08/15/Bash_Alias_Shopt/" target="_blank" rel="noopener">在shell脚本中使用alias(shopt)</a>，所以在文件<em>bash.bashrc</em>中添加的应该是</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fixup git-bash in non login env</span></span><br><span class="line"><span class="built_in">shopt</span> -q login_shell || . /etc/profile.d/git-prompt.sh</span><br><span class="line"><span class="built_in">alias</span> activate=<span class="string">". <span class="variable">$(which activate)</span>"</span></span><br><span class="line"><span class="built_in">alias</span> deactivate=<span class="string">". <span class="variable">$(which deactivate)</span>"</span></span><br></pre></td></tr></table></figure>]]></content>
       
       <categories>
           

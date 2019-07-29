@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。 需要指出的是，脚本状态下的别名是没有开启的，详情参见在shell脚本中使用alias(shopt)，所以在文件bash.bashrc中添加的应该是 1234">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将gitbash和conda集成到VSCode">
 <meta property="og:url" content="http://wang22ti.com/2019/07/09/将gitbash和conda集成到VSCode/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。 需要指出的是，脚本状态下的别名是没有开启的，详情参见在shell脚本中使用alias(shopt)，所以在文件bash.bashrc中添加的应该是 1234">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-09T08:35:04.792Z">
+<meta property="og:updated_time" content="2019-07-29T10:57:28.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将gitbash和conda集成到VSCode">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。 需要指出的是，脚本状态下的别名是没有开启的，详情参见在shell脚本中使用alias(shopt)，所以在文件bash.bashrc中添加的应该是 1234">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  132 字
                 </span>
               
 
@@ -403,7 +403,10 @@
       
 
       
-        
+        <p>在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考<a href="https://www.imooc.com/article/272367?block_id=tuijian_wz" target="_blank" rel="noopener">VSCode Python开发环境配置</a>高级调试配置之前的内容。</p>
+<p>需要指出的是，脚本状态下的别名是没有开启的，详情参见<a href="https://gohom.win/2015/08/15/Bash_Alias_Shopt/" target="_blank" rel="noopener">在shell脚本中使用alias(shopt)</a>，所以在文件<em>bash.bashrc</em>中添加的应该是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fixup git-bash in non login env</span></span><br><span class="line"><span class="built_in">shopt</span> -q login_shell || . /etc/profile.d/git-prompt.sh</span><br><span class="line"><span class="built_in">alias</span> activate=<span class="string">". <span class="variable">$(which activate)</span>"</span></span><br><span class="line"><span class="built_in">alias</span> deactivate=<span class="string">". <span class="variable">$(which deactivate)</span>"</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
