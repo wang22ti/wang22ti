@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。 需要指出的是，脚本状态下的别名是没有开启的，详情参见在shell脚本中使用alias(shopt)，所以在文件bash.bashrc中添加的应该是 1234">
+<meta name="description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。在VSCode中添加的个人设置应该是 123&quot;terminal.integrated.shell.windows&quot;: &quot;C:/Program Files/Gi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将gitbash和conda集成到VSCode">
 <meta property="og:url" content="http://wang22ti.com/2019/07/09/将gitbash和conda集成到VSCode/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。 需要指出的是，脚本状态下的别名是没有开启的，详情参见在shell脚本中使用alias(shopt)，所以在文件bash.bashrc中添加的应该是 1234">
+<meta property="og:description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。在VSCode中添加的个人设置应该是 123&quot;terminal.integrated.shell.windows&quot;: &quot;C:/Program Files/Gi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T10:57:28.986Z">
+<meta property="og:updated_time" content="2019-08-25T08:00:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将gitbash和conda集成到VSCode">
-<meta name="twitter:description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。 需要指出的是，脚本状态下的别名是没有开启的，详情参见在shell脚本中使用alias(shopt)，所以在文件bash.bashrc中添加的应该是 1234">
+<meta name="twitter:description" content="在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考VSCode Python开发环境配置高级调试配置之前的内容。在VSCode中添加的个人设置应该是 123&quot;terminal.integrated.shell.windows&quot;: &quot;C:/Program Files/Gi">
 
 
 
@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  132 字
+                  188 字
                 </span>
               
 
@@ -403,9 +403,10 @@
       
 
       
-        <p>在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考<a href="https://www.imooc.com/article/272367?block_id=tuijian_wz" target="_blank" rel="noopener">VSCode Python开发环境配置</a>高级调试配置之前的内容。</p>
+        <p>在Windows时，总怀念Linux好用的bash，尤其是在VSCode中直接无缝调用bash的快感。如何在Windows中将gitbash和conda集成到VSCode？可以参考<a href="https://www.imooc.com/article/272367?block_id=tuijian_wz" target="_blank" rel="noopener">VSCode Python开发环境配置</a>高级调试配置之前的内容。在VSCode中添加的个人设置应该是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"terminal.integrated.shell.windows": "C:/Program Files/Git/bin/bash.exe",</span><br><span class="line">"terminal.integrated.shellArgs.windows": ["-l"], </span><br><span class="line">"terminal.integrated.env.windows": &#123;"python_env":"base"&#125;,</span><br></pre></td></tr></table></figure>
 <p>需要指出的是，脚本状态下的别名是没有开启的，详情参见<a href="https://gohom.win/2015/08/15/Bash_Alias_Shopt/" target="_blank" rel="noopener">在shell脚本中使用alias(shopt)</a>，所以在文件<em>bash.bashrc</em>中添加的应该是</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fixup git-bash in non login env</span></span><br><span class="line"><span class="built_in">shopt</span> -q login_shell || . /etc/profile.d/git-prompt.sh</span><br><span class="line"><span class="built_in">alias</span> activate=<span class="string">". <span class="variable">$(which activate)</span>"</span></span><br><span class="line"><span class="built_in">alias</span> deactivate=<span class="string">". <span class="variable">$(which deactivate)</span>"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Fixup git-bash in non login env</span></span><br><span class="line"><span class="built_in">shopt</span> -q login_shell || . /etc/profile.d/git-prompt.sh</span><br><span class="line"><span class="built_in">alias</span> activate=<span class="string">". <span class="variable">$(which activate)</span>"</span></span><br><span class="line"><span class="built_in">alias</span> deactivate=<span class="string">". <span class="variable">$(which deactivate)</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$python_env</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">source</span> activate <span class="variable">$python_env</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'python_env NOT SET'</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -544,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

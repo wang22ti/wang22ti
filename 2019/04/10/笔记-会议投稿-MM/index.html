@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://wang22ti.com/2019/04/10/笔记-会议投稿-MM/1.png">
 <meta property="og:image" content="http://wang22ti.com/2019/04/10/笔记-会议投稿-MM/3.png">
 <meta property="og:image" content="http://wang22ti.com/2019/04/10/笔记-会议投稿-MM/2.png">
-<meta property="og:updated_time" content="2019-04-17T11:22:14.376Z">
+<meta property="og:updated_time" content="2019-08-30T12:51:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-会议投稿-MM">
 <meta name="twitter:description" content="截止日期要注意important dates，比如  其中时差可以从Anywhere on Earth中查看。 论文模板这是ACM的各种latex模板链接，投MM的话需要将以下文件放在一个文件夹中：  sample-sigconf系列文件 acmart.cls 定义了很多命令 ACM-Reference-Format.bst定义了参考文献的格式  仅有这几个文件会报错，是因为没有复制示例文件里面的">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  476 字
+                  937 字
                 </span>
               
 
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -432,14 +432,37 @@
 <li><code>@article</code>需保留<code>author</code>、<code>title</code>、<code>journal</code>、<code>volume</code>、<code>number</code>、<code>pages</code>、<code>year</code></li>
 </ul>
 <p>其中<code>booktitle</code>只需要机构和会议全称，关键词首字母大写。如果出现意料之外的自动缩写，用<code>{}</code>禁用。如果没有页码等信息，下载原文手动添加。</p>
-<h1 id="排版tips"><a href="#排版tips" class="headerlink" title="排版tips"></a>排版tips</h1><p>自由调整图片长宽：</p>
+<h1 id="Latex-Tips"><a href="#Latex-Tips" class="headerlink" title="Latex Tips"></a>Latex Tips</h1><p>调整图片大小：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;</span><br><span class="line">  \includegraphics[width=\columnwidth]&#123;***.png&#125;</span><br><span class="line">  \caption&#123;***&#125;</span><br><span class="line">  \label&#123;***&#125;</span><br><span class="line">\end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
-<p>自由调整表格长宽：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;table&#125;[]</span><br><span class="line">  \center</span><br><span class="line">  \caption&#123;***&#125;</span><br><span class="line">  \label&#123;***&#125;</span><br><span class="line">  \renewcommand&#123;\arraystretch&#125;&#123;1.3&#125; % 行距</span><br><span class="line">  \resizebox&#123;\columnwidth&#125;&#123;!&#125;&#123;		% 表格整体长宽</span><br><span class="line">    \begin&#123;tabular&#125;&#123;***&#125;</span><br><span class="line">      \toprule</span><br><span class="line">      ***</span><br><span class="line">      \midrule</span><br><span class="line">      ***</span><br><span class="line">      \bottomrule</span><br><span class="line">    \end&#123;tabular&#125;</span><br><span class="line">  &#125;</span><br><span class="line">\end&#123;table&#125;</span><br></pre></td></tr></table></figure>
+<p>优雅的引用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Figure~\ref&#123;fig:***&#125;</span><br></pre></td></tr></table></figure>
+<p>调整表格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;table&#125;[]</span><br><span class="line">  \setlength&#123;\abovecaptionskip&#125;&#123;0pt&#125; // 调整caption上方缩进</span><br><span class="line">  \setlength&#123;\belowcaptionskip&#125;&#123;0pt&#125; // 调整caption下方缩进</span><br><span class="line">  \center</span><br><span class="line">  \caption&#123;***&#125;</span><br><span class="line">  \label&#123;***&#125;</span><br><span class="line">  \renewcommand&#123;\arraystretch&#125;&#123;1.1&#125; // 调整行距</span><br><span class="line">  \resizebox&#123;\columnwidth&#125;&#123;!&#125;&#123; // 调整整个表格的宽度</span><br><span class="line">    \begin&#123;tabular&#125;&#123;***&#125;</span><br><span class="line">      \toprule</span><br><span class="line">      *** \\</span><br><span class="line">      \midrule</span><br><span class="line">      *** \\</span><br><span class="line">      \hline\hline</span><br><span class="line">      *** \\</span><br><span class="line">      \bottomrule</span><br><span class="line">    \end&#123;tabular&#125;</span><br><span class="line">  &#125;</span><br><span class="line">\end&#123;table&#125;</span><br></pre></td></tr></table></figure>
 <p>为了确保参考文献另起一页，可以在参考文献之前加上：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\clearpage </span><br><span class="line">\bibliographystyle&#123;ACM-Reference-Format&#125;</span><br><span class="line">\bibliography&#123;sample-base&#125;</span><br></pre></td></tr></table></figure>
 <p>为了让枚举不缩进：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;enumitem&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;itemize&#125;[leftmargin=*]</span><br><span class="line">  \item ***</span><br><span class="line">  \item ***</span><br><span class="line">  \item ***</span><br><span class="line">\end&#123;itemize&#125;</span><br></pre></td></tr></table></figure>
+<p>一种比较紧凑的作者排版：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\author&#123;***$^&#123;1, 2&#125;$, ***$^3$, ***$^&#123;3,4,5&#125;$&#125;</span><br><span class="line">\authornote&#123;Corresponding author.&#125;</span><br><span class="line">\affiliation&#123;%</span><br><span class="line"> \institution&#123;$^1$*****&#125;</span><br><span class="line"> \institution&#123;$^2$*****&#125;</span><br><span class="line"> \institution&#123;$^3$*****&#125;</span><br><span class="line"> \institution&#123;$^4$*****&#125;</span><br><span class="line">&#125;</span><br><span class="line">\email&#123;***@***.**, &#123;***, ***, ***&#125;@***.**, ***@***.**&#125;</span><br></pre></td></tr></table></figure>
+<p>不过这会导致ACM Reference Format也有角标，所以暴力解决：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\maketitle</span><br><span class="line">\textbf&#123;ACM Reference Format:&#125;\\</span><br><span class="line">Authors. 2019. Title. In \textit&#123;MM &apos;19: 2019 ACM Multimedia Conference, Oct. page1 - page2, 2019, Nice, France&#125;. ACM, New York, NY, USA. 9 pages. https://doi.org/**.****/*****.*****</span><br></pre></td></tr></table></figure>
+<p>一些设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\renewcommand&#123;\algorithmicrequire&#125;&#123;\textbf&#123;Input:&#125;&#125; </span><br><span class="line">\renewcommand&#123;\algorithmicensure&#125;&#123;\textbf&#123;Output:&#125;&#125;</span><br><span class="line"></span><br><span class="line">\settopmatter&#123;</span><br><span class="line">  printacmref=false, </span><br><span class="line">  printccs=false,</span><br><span class="line">  printfolios=false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\fancyhead&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Rebuttal-注意"><a href="#Rebuttal-注意" class="headerlink" title="Rebuttal 注意"></a>Rebuttal 注意</h1><p>Rebuttal就是回复审稿人意见，MM2019要求使用纯文本格式，且不得超过500 words。为了节约字数，表格可以采用如下格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---------------------------------------------------------------</span><br><span class="line">      Dataset|AA----|B-----|CCCC-|DDD---|EEE---|FFF---|GG</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line">   Model1[1]|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|00</span><br><span class="line">   Model2[2]|------|0.000-|0.000-|------|------|0.000-|0</span><br><span class="line">---------------------------------------------------------------</span><br><span class="line">         Our|0.0000|0.0000|0.0000|0.0000|0.0000|0.0000|00</span><br><span class="line">---------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+<h1 id="Camera-ready"><a href="#Camera-ready" class="headerlink" title="Camera ready"></a>Camera ready</h1><p>很有幸能够走到这个流程，再次感谢导师、师兄师姐的帮助，这里大致记录一下干了些啥，。</p>
+<ol>
+<li>通讯作者接收到接收信息</li>
+<li>按照Rebuttal中审稿人的意见修改处最后版本</li>
+<li>通讯作者收到确认版权信息的邮件，提交其中表单后下载pdf，里面有位于第一页左下角的版权信息</li>
+<li>所有作者都会收到提交最终版的邮件，其中会对最终版格式做详细要求</li>
+<li>收到最终版已经提交的确认邮箱</li>
+</ol>
+<p>注意：</p>
+<ol>
+<li>最终提交时机构和部门要分开写</li>
+<li>附录和正文是放在两个pdf中的，附录一般要到1页，不需要提交源码</li>
+</ol>
 
       
     </div>
@@ -587,7 +610,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -694,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#截止日期"><span class="nav-number">1.</span> <span class="nav-text">截止日期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#论文模板"><span class="nav-number">2.</span> <span class="nav-text">论文模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CCS-Concept"><span class="nav-number">3.</span> <span class="nav-text">CCS Concept</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名性与ID"><span class="nav-number">4.</span> <span class="nav-text">匿名性与ID</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排版tips"><span class="nav-number">6.</span> <span class="nav-text">排版tips</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#截止日期"><span class="nav-number">1.</span> <span class="nav-text">截止日期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#论文模板"><span class="nav-number">2.</span> <span class="nav-text">论文模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CCS-Concept"><span class="nav-number">3.</span> <span class="nav-text">CCS Concept</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名性与ID"><span class="nav-number">4.</span> <span class="nav-text">匿名性与ID</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Latex-Tips"><span class="nav-number">6.</span> <span class="nav-text">Latex Tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rebuttal-注意"><span class="nav-number">7.</span> <span class="nav-text">Rebuttal 注意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Camera-ready"><span class="nav-number">8.</span> <span class="nav-text">Camera ready</span></a></li></ol></div>
             
 
           </div>
