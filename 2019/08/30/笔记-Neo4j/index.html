@@ -81,17 +81,19 @@
 
 
 
-<meta name="description" content="学习，日记，杂谈">
+<meta name="description" content="本科学习的是关系数据库，而Neo4j是图数据库，直接存储图的Node和Edge及其属性。 安装在window上安装Neo4j可以参考博文Neo4j的安装和启动。 不过其中Java安装教程似乎不是很好，可以参考博文JDK下载与安装教程。 将Neo4j设置为服务可以参考博文Neo4j 第一篇：在Windows环境中安装Neo4j的第四章，这样就不需要每次启动了。 不过，我使用Neo4j Desktop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记-Neo4j">
 <meta property="og:url" content="http://wang22ti.com/2019/08/30/笔记-Neo4j/index.html">
 <meta property="og:site_name" content="王子泰">
-<meta property="og:description" content="学习，日记，杂谈">
+<meta property="og:description" content="本科学习的是关系数据库，而Neo4j是图数据库，直接存储图的Node和Edge及其属性。 安装在window上安装Neo4j可以参考博文Neo4j的安装和启动。 不过其中Java安装教程似乎不是很好，可以参考博文JDK下载与安装教程。 将Neo4j设置为服务可以参考博文Neo4j 第一篇：在Windows环境中安装Neo4j的第四章，这样就不需要每次启动了。 不过，我使用Neo4j Desktop">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-30T02:03:43.121Z">
+<meta property="og:image" content="http://wang22ti.com/2019/08/30/笔记-Neo4j/style_sheet_grass.png">
+<meta property="og:updated_time" content="2019-08-31T03:22:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-Neo4j">
-<meta name="twitter:description" content="学习，日记，杂谈">
+<meta name="twitter:description" content="本科学习的是关系数据库，而Neo4j是图数据库，直接存储图的Node和Edge及其属性。 安装在window上安装Neo4j可以参考博文Neo4j的安装和启动。 不过其中Java安装教程似乎不是很好，可以参考博文JDK下载与安装教程。 将Neo4j设置为服务可以参考博文Neo4j 第一篇：在Windows环境中安装Neo4j的第四章，这样就不需要每次启动了。 不过，我使用Neo4j Desktop">
+<meta name="twitter:image" content="http://wang22ti.com/2019/08/30/笔记-Neo4j/style_sheet_grass.png">
 
 
 
@@ -318,6 +320,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -344,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  555 字
                 </span>
               
 
@@ -360,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -381,7 +405,19 @@
       
 
       
-        
+        <p>本科学习的是关系数据库，而Neo4j是图数据库，直接存储图的Node和Edge及其属性。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在window上安装Neo4j可以参考博文<a href="https://zhuanlan.zhihu.com/p/79413962" target="_blank" rel="noopener">Neo4j的安装和启动</a>。</p>
+<p>不过其中Java安装教程似乎不是很好，可以参考博文<a href="https://blog.csdn.net/u012934325/article/details/73441617" target="_blank" rel="noopener">JDK下载与安装教程</a>。</p>
+<p>将Neo4j设置为服务可以参考博文<a href="https://www.cnblogs.com/ljhdo/p/5521577.html" target="_blank" rel="noopener">Neo4j 第一篇：在Windows环境中安装Neo4j</a>的第四章，这样就不需要每次启动了。</p>
+<p>不过，我使用Neo4j Desktop的浏览器连接数据库的时候，修改默认密码始终失败，，，结果用chrome连接就OK了，玄学，，</p>
+<h1 id="CQL的使用"><a href="#CQL的使用" class="headerlink" title="CQL的使用"></a>CQL的使用</h1><p>使用原生的命令操纵Neo4j可以参考<a href="https://www.cnblogs.com/yueshutong/p/11071932.html" target="_blank" rel="noopener">Neo4j图数据库从入门到精通</a>。</p>
+<p>python的py2neo可以操纵Neo4j，参考<a href="https://www.jianshu.com/p/067e9471919a" target="_blank" rel="noopener">python使用py2neo操作Neo4j</a>和<a href="https://www.jianshu.com/p/febe8a248582" target="_blank" rel="noopener">py2neo 使用教程</a>，另外附上我的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> py2neo <span class="keyword">import</span> Graph, Node, Relationship, Subgraph</span><br><span class="line">graph = Graph(<span class="string">"http://localhost:7474"</span>, username=<span class="string">"neo4j"</span>, password=<span class="string">'*****'</span>)</span><br><span class="line">graph.delete_all()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nodes = dict()</span><br><span class="line"><span class="keyword">for</span> node <span class="keyword">in</span> data.get_nodes():</span><br><span class="line">    <span class="comment"># Node的第一个属性是其label，具有相同label的Node在Neo4j自带的可视化工具中样式相同</span></span><br><span class="line">    new_node = Node(<span class="string">'character'</span>) </span><br><span class="line">    new_node[<span class="string">'name'</span>] = node.name</span><br><span class="line">    new_node[<span class="string">'gender'</span>] = node.gender</span><br><span class="line">    new_node[<span class="string">'age'</span>] = node.age</span><br><span class="line">    nodes[node.name] = new_node</span><br><span class="line"></span><br><span class="line">relations = list()</span><br><span class="line"><span class="keyword">for</span> relation <span class="keyword">in</span> data.get_relations():</span><br><span class="line">    l_node = nodes[relation.l_node]</span><br><span class="line">    r_node = nodes[relation.r_node] </span><br><span class="line">    <span class="comment"># eo4j自带的可视化工具默认显示Relation的category</span></span><br><span class="line">    new_relation = Relationship(l_node, relation.category, r_node)</span><br><span class="line">    new_relation[<span class="string">'when'</span>] = relation.when</span><br><span class="line">    new_relation[<span class="string">'why'</span>] = relation.why</span><br><span class="line">    relations.append(new_relation)</span><br><span class="line"></span><br><span class="line">s = Subgraph(relationships=relations) <span class="comment"># 用list建图的方法</span></span><br><span class="line">graph.create(s)</span><br></pre></td></tr></table></figure>
+<h1 id="Neo4j自带的可视化工具的使用"><a href="#Neo4j自带的可视化工具的使用" class="headerlink" title="Neo4j自带的可视化工具的使用"></a>Neo4j自带的可视化工具的使用</h1><p>自带的可视化工具可以通过GUI手动调节Node的颜色、大小、Caption，参见<a href="http://neo4j.com.cn/topic/5b06148a9662eee704f31d46" target="_blank" rel="noopener">Neo4j web控制台 节点 上显示指定属性值 ，自定义颜色，自定义大小</a></p>
+<p>此外，更优雅的方式是使用图表样式表（GRASS），和网页中的CSS样式表十分相近。在Neo4j自带命令行中输入<strong>:style</strong>就可以查看当前的样式表，也可以如下图所示加载自己编写的样式表。</p>
+<p><img src="/2019/08/30/笔记-Neo4j/style_sheet_grass.png" alt="style sheet grass"></p>
+<p>样式表中可以设置的项目，除了上图还可以参考<a href="https://stackoverflow.com/questions/21409282/edit-or-create-graph-style-sheets-for-webadmin" target="_blank" rel="noopener">Edit or Create Graph Style Sheets for WebAdmin</a>。注意，可以根据不同的label设置不同的样式。</p>
+<h1 id="第三方可视化工具的使用"><a href="#第三方可视化工具的使用" class="headerlink" title="第三方可视化工具的使用"></a>第三方可视化工具的使用</h1>
       
     </div>
     
@@ -499,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -526,7 +571,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -612,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CQL的使用"><span class="nav-number">2.</span> <span class="nav-text">CQL的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Neo4j自带的可视化工具的使用"><span class="nav-number">3.</span> <span class="nav-text">Neo4j自带的可视化工具的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三方可视化工具的使用"><span class="nav-number">4.</span> <span class="nav-text">第三方可视化工具的使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
