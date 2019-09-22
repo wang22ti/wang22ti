@@ -4,6 +4,42 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2019/04/17/%E7%AC%94%E8%AE%B0-latex/</loc>
+    <lastmod>2019-09-22T03:27:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>笔记-latex</title>
+        <pubTime>2019-04-17T11:36:44.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="latex" url="http://wang22ti.com/categories/latex/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2019/04/10/%E7%AC%94%E8%AE%B0-%E4%BC%9A%E8%AE%AE%E6%8A%95%E7%A8%BF-MM/</loc>
+    <lastmod>2019-09-22T03:26:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>笔记-会议投稿-MM</title>
+        <pubTime>2019-04-10T12:54:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="科研" url="http://wang22ti.com/categories/%E7%A7%91%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2019/09/22/%E7%AC%94%E8%AE%B0-matplotlib%E7%94%BB%E5%9B%BE/</loc>
     <lastmod>2019-09-22T02:40:58.607Z</lastmod>
     <data>
@@ -102,24 +138,6 @@
            
              
               <breadCrumb title="数据库" url="http://wang22ti.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2019/04/10/%E7%AC%94%E8%AE%B0-%E4%BC%9A%E8%AE%AE%E6%8A%95%E7%A8%BF-MM/</loc>
-    <lastmod>2019-08-30T12:51:22.000Z</lastmod>
-    <data>
-        <display>
-        <title>笔记-会议投稿-MM</title>
-        <pubTime>2019-04-10T12:54:06.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="科研" url="http://wang22ti.com/categories/%E7%A7%91%E7%A0%94/"/>
           
         </display>
     </data>
@@ -246,24 +264,6 @@
            
              
               <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2019/04/17/%E7%AC%94%E8%AE%B0-latex/</loc>
-    <lastmod>2019-04-17T11:43:37.932Z</lastmod>
-    <data>
-        <display>
-        <title>笔记-latex</title>
-        <pubTime>2019-04-17T11:36:44.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="latex" url="http://wang22ti.com/categories/latex/"/>
           
         </display>
     </data>
