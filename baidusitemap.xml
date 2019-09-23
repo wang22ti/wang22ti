@@ -4,8 +4,44 @@
 
     
   <url>
+    <loc>http://wang22ti.com/2019/09/22/%E7%AC%94%E8%AE%B0-%E7%A7%91%E7%A0%94%E7%94%BB%E5%9B%BE/</loc>
+    <lastmod>2019-09-23T03:55:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>笔记-科研画图</title>
+        <pubTime>2019-09-22T02:40:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="科研" url="http://wang22ti.com/categories/%E7%A7%91%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/</loc>
+    <lastmod>2019-09-23T03:53:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>笔记-tensorflow</title>
+        <pubTime>2018-07-25T01:40:44.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wang22ti.com/2019/04/17/%E7%AC%94%E8%AE%B0-latex/</loc>
-    <lastmod>2019-09-22T03:27:33.000Z</lastmod>
+    <lastmod>2019-09-22T03:59:38.000Z</lastmod>
     <data>
         <display>
         <title>笔记-latex</title>
@@ -23,7 +59,7 @@
     
   <url>
     <loc>http://wang22ti.com/2019/04/10/%E7%AC%94%E8%AE%B0-%E4%BC%9A%E8%AE%AE%E6%8A%95%E7%A8%BF-MM/</loc>
-    <lastmod>2019-09-22T03:26:10.000Z</lastmod>
+    <lastmod>2019-09-22T03:32:56.000Z</lastmod>
     <data>
         <display>
         <title>笔记-会议投稿-MM</title>
@@ -34,21 +70,6 @@
              
               <breadCrumb title="科研" url="http://wang22ti.com/categories/%E7%A7%91%E7%A0%94/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2019/09/22/%E7%AC%94%E8%AE%B0-matplotlib%E7%94%BB%E5%9B%BE/</loc>
-    <lastmod>2019-09-22T02:40:58.607Z</lastmod>
-    <data>
-        <display>
-        <title>笔记-matplotlib画图</title>
-        <pubTime>2019-09-22T02:40:58.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -462,24 +483,6 @@
            
              
               <breadCrumb title="杂记" url="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wang22ti.com/2018/07/25/%E7%AC%94%E8%AE%B0-tensorflow/</loc>
-    <lastmod>2018-12-13T04:01:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>笔记-tensorflow</title>
-        <pubTime>2018-07-25T01:40:44.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="机器学习" url="http://wang22ti.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>

@@ -1,4 +1,4 @@
-http://wang22ti.com/2019/09/22/笔记-matplotlib画图/
+http://wang22ti.com/2019/09/22/笔记-科研画图/
 http://wang22ti.com/2019/08/30/笔记-Neo4j/
 http://wang22ti.com/2019/07/09/文石BooxNotePro使用总结/
 http://wang22ti.com/2019/07/09/将gitbash和conda集成到VSCode/
