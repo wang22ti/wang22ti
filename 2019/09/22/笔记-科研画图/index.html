@@ -94,7 +94,8 @@
 <meta property="og:image" content="http://wang22ti.com/2019/09/22/笔记-科研画图/4.png">
 <meta property="og:image" content="http://wang22ti.com/2019/09/22/笔记-科研画图/5.png">
 <meta property="og:image" content="http://wang22ti.com/2019/09/22/笔记-科研画图/6.png">
-<meta property="og:updated_time" content="2019-09-29T02:19:13.000Z">
+<meta property="og:image" content="http://wang22ti.com/2019/09/22/笔记-科研画图/7.png">
+<meta property="og:updated_time" content="2020-04-10T13:59:27.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔记-科研画图">
 <meta name="twitter:description" content="画图是难以避免的事情啊，很多时候都大费周章，算是造了几个小轮子，以后就在这里更新咯，先放个教程：  Matplotlib可视化最有价值的50个图表（附完整Python源代码）  （原）python中matplotlib的颜色及线条控制   MM2019笔记热力图 12345678910111213141516171819202122232425262728293031323334353637383">
@@ -373,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,340 字
+                  1,368 字
                 </span>
               
 
@@ -429,6 +430,9 @@
 <p><img src="/2019/09/22/笔记-科研画图/6.png" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> joypy</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> cm</span><br><span class="line"><span class="keyword">import</span> matplotlib.colors <span class="keyword">as</span> colors</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_cm</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># color_list = ['#FF8C00', '#FFDEAD']</span></span><br><span class="line">    color_list = [<span class="string">'#1E90FF'</span>, <span class="string">'#66E2DF'</span>]</span><br><span class="line">    <span class="keyword">return</span> colors.LinearSegmentedColormap.from_list(<span class="string">'cmap'</span>, color_list, <span class="number">32</span>)</span><br><span class="line"></span><br><span class="line">len_epochs = <span class="number">10</span></span><br><span class="line">epochs = [i * <span class="number">30</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(len_epochs)]</span><br><span class="line">data = pd.DataFrame(np.random.normal(<span class="number">0</span>, <span class="number">0.7</span>, size=[<span class="number">100</span>, len_epochs]) + np.random.uniform(<span class="number">-2.5</span>, <span class="number">2.5</span>, size=[<span class="number">100</span>, len_epochs])</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fig, axes = joypy.joyplot(data, <span class="comment">#kind="normalized_counts",</span></span><br><span class="line">    bins=<span class="number">30</span>, range_style=<span class="string">'all'</span>, overlap=<span class="number">1</span>, linewidth=<span class="number">1</span>, colormap=new_cm(), fade=<span class="keyword">True</span>, grid=<span class="keyword">False</span>, ylabelsize=<span class="number">0</span>,linecolor=<span class="string">'black'</span>, figsize=(<span class="number">4</span>, <span class="number">5</span>), x_range=[<span class="number">-5</span>, <span class="number">5</span>])</span><br><span class="line"><span class="comment"># plt.show()</span></span><br><span class="line">plt.savefig(<span class="string">'distribution.png'</span>, dpi=<span class="number">500</span>)</span><br></pre></td></tr></table></figure>
 <p>这个也可以用tensorflow画，不过不推荐，参见<a href="http://wang22ti.com/2018/07/25/笔记-tensorflow/">笔记-tensorflow</a></p>
+<h1 id="网络结构图"><a href="#网络结构图" class="headerlink" title="网络结构图"></a>网络结构图</h1><p>推荐一个画网络结构图的网站，太爽啦：</p>
+<p><a href="http://alexlenail.me/NN-SVG/LeNet.html#" target="_blank" rel="noopener">http://alexlenail.me/NN-SVG/LeNet.html#</a></p>
+<p><img src="/2019/09/22/笔记-科研画图/7.png" alt=""></p>
 
       
     </div>
@@ -679,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MM2019笔记"><span class="nav-number">1.</span> <span class="nav-text">MM2019笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#热力图"><span class="nav-number">1.1.</span> <span class="nav-text">热力图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#折线图上的异常点"><span class="nav-number">1.2.</span> <span class="nav-text">折线图上的异常点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seaborn柱状图，根据值指定颜色"><span class="nav-number">1.3.</span> <span class="nav-text">seaborn柱状图，根据值指定颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多折线图，单legend"><span class="nav-number">1.4.</span> <span class="nav-text">多折线图，单legend</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Joypy画分布变化图"><span class="nav-number">2.</span> <span class="nav-text">Joypy画分布变化图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MM2019笔记"><span class="nav-number">1.</span> <span class="nav-text">MM2019笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#热力图"><span class="nav-number">1.1.</span> <span class="nav-text">热力图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#折线图上的异常点"><span class="nav-number">1.2.</span> <span class="nav-text">折线图上的异常点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#seaborn柱状图，根据值指定颜色"><span class="nav-number">1.3.</span> <span class="nav-text">seaborn柱状图，根据值指定颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多折线图，单legend"><span class="nav-number">1.4.</span> <span class="nav-text">多折线图，单legend</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Joypy画分布变化图"><span class="nav-number">2.</span> <span class="nav-text">Joypy画分布变化图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络结构图"><span class="nav-number">3.</span> <span class="nav-text">网络结构图</span></a></li></ol></div>
             
 
           </div>
@@ -706,7 +710,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
