@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wang22ti.com/"/>
-  <updated>2020-04-10T13:59:27.063Z</updated>
+  <updated>2020-04-27T10:36:25.000Z</updated>
   <id>http://wang22ti.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为多屏协同</title>
+    <link href="http://wang22ti.com/2020/04/27/%E5%8D%8E%E4%B8%BA%E5%A4%9A%E5%B1%8F%E5%8D%8F%E5%90%8C/"/>
+    <id>http://wang22ti.com/2020/04/27/华为多屏协同/</id>
+    <published>2020-04-27T10:17:55.000Z</published>
+    <updated>2020-04-27T10:36:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2-0-破解"><a href="#2-0-破解" class="headerlink" title="2.0 破解"></a>2.0 破解</h1><h2 id="2020年4月27日更新"><a href="#2020年4月27日更新" class="headerlink" title="2020年4月27日更新"></a>2020年4月27日更新</h2><ol><li><p>官方正版体验请参见：<a href="https://www.bilibili.com/video/BV1vz411b7XU/" target="_blank" rel="noopener">【MDT】变绿了，和手机的联系更密了 — 华为 MateBook X Pro 2020 测评</a></p></li><li><p>适用于American Megatrends Inc.（AMI）BIOS的主板的教程：<a href="https://cn.club.vmall.com/thread-23515740-1-1.html" target="_blank" rel="noopener">[玩机技巧] 非华为电脑最简单的破解多屏协同2.0教程</a>。华硕B450+锐龙3700X亲测有效。</p></li><li><p>无脑安装教程：<a href="https://mp.weixin.qq.com/s?__biz=MzI1NTUzMjUzMQ==&amp;mid=100000551&amp;idx=1&amp;sn=bb0a2a87bb8823196be385e69d86fdb7&amp;chksm=6a35cfbb5d4246ad6cede338892f99e9f9dadc7c18e6fdc40c59c93a93f9184a55b473f5b922&amp;scene=20&amp;xtrack=1&amp;key=01c54b219d203ed3b42f8d54ef63f0a59e12d9c234e85bd17f27ea14ad99078a2e4df06e27c618896e90a441efce5210538cf881527b9d39f11ae5b09bc9f5656f2194845d8ad1d24335f8ad93d28923&amp;ascene=1&amp;uin=MjkwMTcwOTMzMA%3D%3D&amp;devicetype=Windows+10+x64&amp;version=62090070&amp;lang=zh_CN&amp;exportkey=AUzl0mndpeK%2Fux4qp7k5WgQ%3D&amp;pass_ticket=gTTTYe0z1Qyw0v5iR79YIYnRFE%2BRl%2F4eciItK0sLaguhfq0TlO4%2FryLfzuC4LM3n" target="_blank" rel="noopener">华为多屏协同</a>。缺点是体验不完全，貌似无法直接在电脑上打开手机的文件，像这样：</p><p><img src="/2020/04/27/华为多屏协同/1.jpeg" alt=""></p></li><li><p>1.0中破解的一碰传失效了，且已写入的标签无法写入新的内容</p></li></ol><h1 id="1-0-破解"><a href="#1-0-破解" class="headerlink" title="1.0 破解"></a>1.0 破解</h1><p>连接参见：<a href="https://zhuanlan.zhihu.com/p/108624024" target="_blank" rel="noopener">非华为电脑实现多屏协同的方法</a></p><p>一碰传参见：<a href="https://zhuanlan.zhihu.com/p/108622582" target="_blank" rel="noopener">华为一碰传 NFC 标签破解</a></p><p>我在台式机上默认网络不是很稳定，需要需改WiFi频率，参见：<a href="https://www.zhihu.com/question/35029288" target="_blank" rel="noopener">Windows电脑如何设置WiFi选择5Ghz频带的信号？</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;2-0-破解&quot;&gt;&lt;a href=&quot;#2-0-破解&quot; class=&quot;headerlink&quot; title=&quot;2.0 破解&quot;&gt;&lt;/a&gt;2.0 破解&lt;/h1&gt;&lt;h2 id=&quot;2020年4月27日更新&quot;&gt;&lt;a href=&quot;#2020年4月27日更新&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="杂记" scheme="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>笔记-科研画图</title>
@@ -482,30 +505,6 @@
     </summary>
     
       <category term="模式识别" scheme="http://wang22ti.com/categories/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>华为Mate20Pro的使用总结</title>
-    <link href="http://wang22ti.com/2018/11/08/%E5%8D%8E%E4%B8%BAMate20Pro%E7%9A%84%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/"/>
-    <id>http://wang22ti.com/2018/11/08/华为Mate20Pro的使用总结/</id>
-    <published>2018-11-08T07:21:17.000Z</published>
-    <updated>2018-12-13T06:03:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>讲道理的话，本不应该换手机的，米6用起来还是不错的。但是遇到了mate20pro这一部国产真旗舰，还是不由地高呼“真香”，于是入手了8+128G蓝色版本。详细的测评就不写了，网上铺天盖地，就写一些比较独特的吧。</p><h1 id="关于绿屏"><a href="#关于绿屏" class="headerlink" title="关于绿屏"></a>关于绿屏</h1><p>入手之前很担心这个问题，还好是京东方的屏幕，只要百度软件<code>device info hw</code>就可以看啦：</p><p><img src="/2018/11/08/华为Mate20Pro的使用总结/1.jpg" alt=""></p><p>在<code>Touchscreen</code>中BOE就是京东方啦。屏幕素质很不错，不过和三星的比还是略有差距，显示白色背景的时候曲面还是有一点点绿，无大碍，微信扫一扫没有翻车。有趣的是分辨率是智能调节的，比如图中显示的就是1080p。</p><h1 id="关于SIM卡槽"><a href="#关于SIM卡槽" class="headerlink" title="关于SIM卡槽"></a>关于SIM卡槽</h1><p>为了压缩空间，mate20pro的两张sim卡是背靠背放在一起的！这还是我第一次见，太刺激了~</p><h1 id="关于窗口小部件"><a href="#关于窗口小部件" class="headerlink" title="关于窗口小部件"></a>关于窗口小部件</h1><p>使用了邮箱和备忘录小部件之后，半天都没有刷新，贴吧上也有人有一样的情况：</p><p><a href="http://tieba.baidu.com/p/5322839441" target="_blank" rel="noopener">p10plus 备忘录 小部件不显示内容</a></p><p>实际上重启一下就好啦~不过还是软件做得不好</p><h1 id="关于隐藏应用"><a href="#关于隐藏应用" class="headerlink" title="关于隐藏应用"></a>关于隐藏应用</h1><p>之前用p9的时候，十分喜欢的功能是将不常用的应用，所谓眼不见为净嘿嘿，不过mate20pro竟然把这个功能给砍掉了emmmm，还好在论坛上有解决方案：</p><p>开启桌面隐藏的神器：<a href="https://club.huawei.com/thread-15930827-1-1.html" target="_blank" rel="noopener">Tweaker for Huawei_v2.4</a></p><h1 id="关于手机克隆的速度"><a href="#关于手机克隆的速度" class="headerlink" title="关于手机克隆的速度"></a>关于手机克隆的速度</h1><p>按照说明对米6进行克隆的时候，大多数情况特别特别慢，速度在5K到10M之间浮动，，，终于在一个偶然的机会，我发现当两个手机背对背拥抱的时候，就是使用NFC配对的时候，可以保持在非常高的速度，大概40-50M，几乎是米6的带宽极限了吧。</p><h1 id="关于自启动权限"><a href="#关于自启动权限" class="headerlink" title="关于自启动权限"></a>关于自启动权限</h1><p>emmmm，这个十分令人无语，因为捷波朗耳机的软件需要后台运行一个插件，我把设置翻了个遍也没找到这样的权限设置，最后在网上查了一下竟然在应用<code>手机管家</code>里面，，</p><h1 id="和米6的对比"><a href="#和米6的对比" class="headerlink" title="和米6的对比"></a>和米6的对比</h1><p>之所以和小米的上一代产品比，是因为真的没有钱再买米8了啊，，</p><p>优势：</p><ol><li>无敌的摄像水平，就不放样张了，见了都说好</li><li>960帧慢动作，AI摄影，AR表情，手持夜景，这些都是小米6没有的</li><li>40W的快充和4200毫安的电池，十分的安心</li><li>无线充电和反向无线充电实在是太酷了</li><li>优秀的屏幕A屏，极高的屏占比，看起来赏心悦目，还有息屏信息</li><li>蓝牙耳机几乎没有底噪</li><li>稳定的信号，比如在电梯里依然可以看视频！</li><li>完整的Google框架，翻墙很轻松</li><li>云电脑和无线投屏还是很赞的</li><li>指关节操作还是很赞的，而且比p9好用多了</li><li>支持长按图标呼出菜单，很方便</li><li>IP68防水，冲洗十分方便</li><li>抬腕亮屏+人脸解锁+屏下指纹，十分优秀的解锁方案</li><li>蓝色版本背后的纹理十分的好看，耐指纹</li><li>比米6陶瓷版要轻一些哈哈</li></ol><p>劣势主要集中在系统方面：</p><ol><li>没有负一屏比较鸡肋，没有我的购物、我的快递、我的收藏这些聚类</li><li>一些设定的逻辑混乱，就比如自启动的权限竟然不在设置当中</li><li>UI统一度有待加强，比如夜间模式中邮箱小部件完全没有改动（在2018年12月13日的更新中修复，赞）</li><li>无法自动获取流量套餐情况</li><li>应用双开完全没法和小米比</li><li>同步功能不如小米完善</li><li>相册没有按文字查找的功能，人脸分析的水平有待提高</li><li>可选的主题没有小米丰富</li></ol><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>华为mate20pro满足了我对于2018乃至2019年上半年对于机皇的所有想象。再加上对于国产零部件的带动，可以说是用心做手机了。同时，还有很多细节是值得进一步改善的。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;讲道理的话，本不应该换手机的，米6用起来还是不错的。但是遇到了mate20pro这一部国产真旗舰，还是不由地高呼“真香”，于是入手了8+128G蓝色版本。详细的测评就不写了，网上铺天盖地，就写一些比较独特的吧。&lt;/p&gt;
-&lt;h1 id=&quot;关于绿屏&quot;&gt;&lt;a href=&quot;#关于绿
-      
-    
-    </summary>
-    
-      <category term="杂记" scheme="http://wang22ti.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
     
   </entry>
